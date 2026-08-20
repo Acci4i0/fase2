@@ -63,6 +63,17 @@ window.addEventListener('load',function(){
   });
 })();
 
+/* ------------- hero: sorgente scelta per forma schermo ------------ */
+(function(){
+  var v=$('#heroVideo'); if(!v)return;
+  var tall=window.matchMedia('(max-width:833px)').matches;
+  if(tall && v.getAttribute('data-poster-tall')) v.poster=v.getAttribute('data-poster-tall');
+  v.src = v.getAttribute(tall ? 'data-tall' : 'data-wide');
+  v.preload='auto';
+  var play=function(){ var q=v.play(); if(q&&q.catch) q.catch(function(){}); };
+  if(v.readyState>=2) play(); else v.addEventListener('loadeddata',play,{once:true});
+})();
+
 /* ------------------------------ il metodo ------------------------- */
 (function(){
   var stack=$('#testimonials'); if(!stack)return;
@@ -152,19 +163,30 @@ window.addEventListener('load',function(){
       seqTitle=$('#seqTitleWrap'), seqCopy=$('#seqCopy'), heroFade=$('#heroFade'),
       hero=$('.home-hero'), intro=$('#intro'), introBg=$('#introBg'), veil=$('#veil');
 
-  var duration=0,seekTarget=0,seeking=false;
+  var duration=0, seekTarget=0, seeking=false;
   if(video){
+    video.src = video.getAttribute(
+      window.matchMedia('(max-width:833px)').matches ? 'data-tall' : 'data-wide');
     video.addEventListener('loadedmetadata',function(){duration=video.duration||0;apply();});
     video.addEventListener('seeked',function(){
       seeking=false;
-      if(Math.abs(video.currentTime-seekTarget)>0.02)apply();
+      if(Math.abs(video.currentTime-seekTarget)>0.03)apply();
     });
   }
   function apply(){
     if(!video||!duration||seeking)return;
-    if(Math.abs(video.currentTime-seekTarget)<0.02)return;
+    if(Math.abs(video.currentTime-seekTarget)<0.03)return;
     seeking=true;
     try{video.currentTime=seekTarget;}catch(e){seeking=false;}
+  }
+  /* Come nella sequenza di on.energy il grosso del percorso si consuma nella
+     prima meta' dello scroll e l'arrivo decelera: l'uscita dal pin si posa
+     invece di fermarsi di colpo. */
+  function camera(p){
+    if(!duration)return;
+    var e=1-Math.pow(1-p,1.7);
+    seekTarget=e*(duration-0.08);
+    apply();
   }
 
   var ticking=false;
@@ -202,7 +224,7 @@ window.addEventListener('load',function(){
     if(section){
       var sTop=section.offsetTop,sH=section.offsetHeight;
       var p=clamp((y-sTop)/(sH-vh),0,1);
-      if(duration){seekTarget=p*(duration-0.05);apply();}
+      camera(p);
       if(y>sTop-vh&&y<sTop+sH){
         var o=1-smoothstep(0,0.035,p), oEnd=smoothstep(0.965,1,p);
         if(seqBg)seqBg.style.opacity=Math.max(o,oEnd).toFixed(3);
