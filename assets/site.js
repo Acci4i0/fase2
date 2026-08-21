@@ -163,28 +163,28 @@ window.addEventListener('load',function(){
       seqTitle=$('#seqTitleWrap'), seqCopy=$('#seqCopy'), heroFade=$('#heroFade'),
       hero=$('.home-hero'), intro=$('#intro'), introBg=$('#introBg'), veil=$('#veil');
 
-  var duration=0, seekTarget=0, seeking=false;
+  var duration=0, seekTarget=0;
   if(video){
     video.src = video.getAttribute(
       window.matchMedia('(max-width:833px)').matches ? 'data-tall' : 'data-wide');
     video.addEventListener('loadedmetadata',function(){duration=video.duration||0;apply();});
-    video.addEventListener('seeked',function(){
-      seeking=false;
-      if(Math.abs(video.currentTime-seekTarget)>0.03)apply();
-    });
   }
+  /* Nessun semaforo sul salto in corso: se un 'seeked' non arriva — succede
+     quando il browser accorpa due richieste vicine — il semaforo resta chiuso
+     e il video si pianta. Con GOP corto il salto costa poco: si assegna e basta,
+     al massimo il browser scarta la richiesta intermedia. */
   function apply(){
-    if(!video||!duration||seeking)return;
-    if(Math.abs(video.currentTime-seekTarget)<0.03)return;
-    seeking=true;
-    try{video.currentTime=seekTarget;}catch(e){seeking=false;}
+    if(!video||!duration)return;
+    if(Math.abs(video.currentTime-seekTarget)<0.02)return;
+    try{video.currentTime=seekTarget;}catch(e){}
   }
-  /* Come nella sequenza di on.energy il grosso del percorso si consuma nella
-     prima meta' dello scroll e l'arrivo decelera: l'uscita dal pin si posa
-     invece di fermarsi di colpo. */
+  /* Traversata laterale: la velocita' resta costante, perche' e' proprio
+     l'andatura regolare a far leggere la parallasse come profondita'.
+     Solo entrata e uscita sono ammorbidite, per non partire e non fermarsi
+     di scatto ai bordi del blocco. */
   function camera(p){
     if(!duration)return;
-    var e=1-Math.pow(1-p,1.7);
+    var e=0.85*p + 0.15*(p*p*(3-2*p));
     seekTarget=e*(duration-0.08);
     apply();
   }

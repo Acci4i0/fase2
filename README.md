@@ -85,14 +85,21 @@ non si butta via metà inquadratura in un ritaglio.
 | `hero-16x9.mp4` / `hero-9x16.mp4` | testata | 8,1 s in ciclo | 2,2 MB / 929 KB |
 | `seq-16x9.mp4` / `seq-9x16.mp4` | sezione agganciata allo scroll | 16,1 s scorrimento | 1,7 MB / 885 KB |
 
-La testata monta tre inquadrature con stacco netto, circa 2,5 s l'una. La
-sezione agganciata è una ripresa continua senza stacchi: lo scroll ne governa
-il tempo con una curva che consuma gran parte del filmato nella prima metà e
-decelera in chiusura, così l'uscita dal blocco si posa invece di fermarsi.
+La testata monta tre inquadrature con stacco netto, circa 2,5 s l'una.
 
-**Le riprese scorrono solo se il server risponde alle richieste Range.**
-GitHub Pages lo fa. `python3 -m http.server` no: in locale la sezione
-agganciata resta ferma sul primo fotogramma, e non è un difetto del sito.
+La sezione agganciata allo scroll e' una **traversata laterale** costruita da
+zero: nove macchine scontornate dalla libreria a fondo neutro, disposte su tre
+piani di profondita' che scorrono a velocita' diverse. La parallasse fa leggere
+i piani come spazio; l'andatura resta costante, con entrata e uscita
+ammorbidite. Ogni tratto di corsa fa entrare una macchina nuova e ne fa uscire
+un'altra: il primo e l'ultimo fotogramma non hanno un solo oggetto in comune.
+E' una ripresa continua, senza stacchi, perche' sotto scrub ogni taglio si
+legge come un difetto.
+
+I fotogrammi sono resi con `traversata.py` (fuori da questo repo, nel materiale
+di lavorazione) e codificati **tutti come fotogrammi chiave**: pesa il 30% in
+piu' di un GOP lungo, ma il salto a qualsiasi punto e' immediato, che e'
+esattamente quello che serve a un video guidato dallo scroll.
 
 ### Provenienza e licenze
 
@@ -100,7 +107,7 @@ agganciata resta ferma sul primo fotogramma, e non è un difetto del sito.
 |---|---|---|
 | `img/foto:video_tutto/Trituratori_TR4-6-7/VID_TR_ALLUMINIO.mp4` — riprese Fase | testata, 2ª e 3ª inquadratura | materiale del committente |
 | Pexels, video 9033891, "A Machine is Cutting Metal with a Metal Cutting Tool", di Daniel Smyth | testata, 1ª inquadratura | [Pexels License](https://www.pexels.com/license/) — uso commerciale consentito, attribuzione non richiesta |
-| Pexels, video 31016924, "High-Speed Lathe Metalworking in Factory" | sezione agganciata allo scroll | [Pexels License](https://www.pexels.com/license/) — uso commerciale consentito, attribuzione non richiesta |
+| `img/immagini/` — nove scontornati a fondo neutro (centrifughe FC/FCV/FD, trituratore, rotore, manipolatore) | sezione agganciata allo scroll | materiale del committente |
 
 La Pexels License consente l'uso commerciale e la modifica senza attribuzione.
 Vieta la redistribuzione del materiale come stock su altre piattaforme, l'uso
@@ -108,7 +115,7 @@ come marchio e l'uso che implichi un'approvazione da parte di persone o aziende
 riprese: niente di tutto questo avviene qui. Nei due spezzoni esterni non
 compaiono marchi né macchinari identificabili di terzi.
 
-Le due fonti sono state portate alla stessa resa — desaturazione, temperatura
+Le fonti sono state portate alla stessa resa — desaturazione, temperatura
 colore più fredda, contrasto, grana aggiunta e cadenza uniforme a 20 fotogrammi
 al secondo — perché il montaggio si legga come un unico girato.
 
