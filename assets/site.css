@@ -574,5 +574,13 @@ main{position:relative}
 @media only screen and (min-width:834px){.cta-band .base-button{margin-top:2.5vw}}
 .news-page{padding-top:32vw}
 @media only screen and (min-width:834px){.news-page{padding-top:8.3333333333vw}}
+/* Sezione "Sistemi": ferma, alta una schermata. Non e' piu' agganciata allo
+   scroll, quindi niente sticky e niente 800lvh. */
+.technology-sequence.statica .scene-wrapper{height:100svh}
+.technology-sequence.statica .scene-inner{position:relative}
+.technology-sequence.statica .image-sequence img{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
+.technology-sequence.statica .seq-content{opacity:1}
+.technology-sequence.statica:after{background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.25) 46%,transparent 70%);content:"";height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%;z-index:1}
+.technology-sequence.statica .seq-content{z-index:2}
 .page-main{padding-bottom:32vw}
 @media only screen and (min-width:834px){.page-main{padding-bottom:11.1111111111vw}}

@@ -91,17 +91,22 @@
   </div>
 </section>
 
-<!-- ====================== TECHNOLOGY SEQUENCE ====================== -->
-<section class="technology-sequence" id="techSeq">
+<!-- ===================== SISTEMI: SEZIONE FERMA ===================== -->
+<!-- Niente scorrimento agganciato: senza un modello 3D da far ruotare, una
+     finta panoramica su fermi immagine si legge come un difetto. Meglio una
+     composizione ferma e onesta. -->
+<section class="technology-sequence statica" id="techSeq">
   <div class="scene-wrapper">
     <div class="scene-inner">
       <div class="image-sequence">
-        <video id="seqVideo" muted playsinline preload="auto"
-               poster="assets/video/seq-poster.jpg"
-               data-wide="assets/video/seq-16x9.mp4"
-               data-tall="assets/video/seq-9x16.mp4"></video>
+        <picture>
+          <source media="(max-width:833px)" srcset="assets/img/sala-9x16.jpg">
+          <img id="seqPlate" alt="Centrifughe, trituratori e rotore Fase"
+               src="assets/img/sala-16x9.jpg"
+               srcset="assets/img/sala-16x9-sm.jpg 1024w, assets/img/sala-16x9.jpg 2048w"
+               sizes="100vw" decoding="async">
+        </picture>
       </div>
-      <div class="seq-bg" id="seqBg"></div>
       <div class="seq-content">
         <div class="seq-title-wrapper" id="seqTitleWrap">
           <div class="reveal-blur">

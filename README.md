@@ -73,33 +73,45 @@ https://cdn.jsdelivr.net/gh/Acci4i0/fase@main/<percorso>
 Per ospitarle in proprio basta copiare `img/` da quel repo e sostituire il
 prefisso nelle pagine.
 
-### I due filmati della home
+### Il filmato della testata
 
-Stanno in `assets/video/`, montati e gradati per questo sito. Ogni sorgente
-esiste in due tagli, 16:9 e 9:16: la scelta avviene al caricamento in base alla
-larghezza dello schermo, così su telefono non si scarica il file da desktop e
-non si butta via metà inquadratura in un ritaglio.
+Sta in `assets/video/`, montato e gradato per questo sito. Esiste in due tagli,
+16:9 e 9:16: la scelta avviene al caricamento in base alla larghezza dello
+schermo, cosi' su telefono non si scarica il file da desktop e non si butta via
+meta' inquadratura in un ritaglio.
 
-| file | dove | durata | peso |
-|---|---|---|---|
-| `hero-16x9.mp4` / `hero-9x16.mp4` | testata | 8,1 s in ciclo | 2,2 MB / 929 KB |
-| `seq-16x9.mp4` / `seq-9x16.mp4` | sezione agganciata allo scroll | 16,1 s scorrimento | 1,7 MB / 885 KB |
+| file | durata | peso |
+|---|---|---|
+| `hero-16x9.mp4` | 8,1 s in ciclo | 2,2 MB |
+| `hero-9x16.mp4` | 8,1 s in ciclo | 929 KB |
 
-La testata monta tre inquadrature con stacco netto, circa 2,5 s l'una.
+Tre inquadrature con stacco netto, circa 2,5 s l'una, tagliate su fotogrammi
+fermi scelti misurando il movimento e non a occhio.
 
-La sezione agganciata allo scroll e' una **traversata laterale** costruita da
-zero: nove macchine scontornate dalla libreria a fondo neutro, disposte su tre
-piani di profondita' che scorrono a velocita' diverse. La parallasse fa leggere
-i piani come spazio; l'andatura resta costante, con entrata e uscita
-ammorbidite. Ogni tratto di corsa fa entrare una macchina nuova e ne fa uscire
-un'altra: il primo e l'ultimo fotogramma non hanno un solo oggetto in comune.
-E' una ripresa continua, senza stacchi, perche' sotto scrub ogni taglio si
-legge come un difetto.
+### Perche' la sezione "Sistemi" e' ferma
 
-I fotogrammi sono resi con `traversata.py` (fuori da questo repo, nel materiale
-di lavorazione) e codificati **tutti come fotogrammi chiave**: pesa il 30% in
-piu' di un GOP lungo, ma il salto a qualsiasi punto e' immediato, che e'
-esattamente quello che serve a un video guidato dallo scroll.
+Il riferimento visivo usa una sequenza agganciata allo scroll dove la camera
+gira attorno al prodotto: ogni grado di rotazione mostra geometria nuova. Quella
+sequenza e' un render 3D.
+
+Con i materiali disponibili — fotografie e riprese a mano — quel congegno non e'
+riproducibile. Una fotografia che scorre resta una figurina che si sposta: la
+macchina non ruota mai su se' stessa e l'occhio lo riconosce subito come finto.
+Sono state provate e scartate tre strade: uno zoom su un fermo immagine
+(stesso soggetto a scale diverse, informazione zero), uno scorrimento su un
+carrello di stock (stesso mandrino piu' vicino), una traversata laterale con
+parallasse costruita dagli scontornati (nessuna rotazione dei singoli oggetti).
+
+La sezione e' quindi una **composizione ferma**: nove macchine scontornate
+dalla libreria a fondo neutro, disposte su tre piani di profondita' con ombre
+di contatto e una pozza di luce sul pavimento. E' un fermo immagine dichiarato,
+non una finta ripresa.
+
+**Per arrivare al risultato del riferimento serve il modello 3D delle macchine.**
+I render che stanno in `img/immagini` del repo dei contenuti — `SEZIONE-CENTRIFUGHE`,
+`FC`, `trituratore-orizzontale`, `IMP-a-ciclo-continuo` — dimostrano che i
+modelli esistono. Da quelli un giro completo si renderizza, ed e' esattamente
+il congegno del riferimento.
 
 ### Provenienza e licenze
 
@@ -107,12 +119,12 @@ esattamente quello che serve a un video guidato dallo scroll.
 |---|---|---|
 | `img/foto:video_tutto/Trituratori_TR4-6-7/VID_TR_ALLUMINIO.mp4` — riprese Fase | testata, 2ª e 3ª inquadratura | materiale del committente |
 | Pexels, video 9033891, "A Machine is Cutting Metal with a Metal Cutting Tool", di Daniel Smyth | testata, 1ª inquadratura | [Pexels License](https://www.pexels.com/license/) — uso commerciale consentito, attribuzione non richiesta |
-| `img/immagini/` — nove scontornati a fondo neutro (centrifughe FC/FCV/FD, trituratore, rotore, manipolatore) | sezione agganciata allo scroll | materiale del committente |
+| `img/immagini/` — nove scontornati a fondo neutro | sezione "Sistemi", composizione ferma | materiale del committente |
 
 La Pexels License consente l'uso commerciale e la modifica senza attribuzione.
 Vieta la redistribuzione del materiale come stock su altre piattaforme, l'uso
 come marchio e l'uso che implichi un'approvazione da parte di persone o aziende
-riprese: niente di tutto questo avviene qui. Nei due spezzoni esterni non
+riprese: niente di tutto questo avviene qui. Nell'unico spezzone esterno non
 compaiono marchi né macchinari identificabili di terzi.
 
 Le fonti sono state portate alla stessa resa — desaturazione, temperatura
