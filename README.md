@@ -102,10 +102,9 @@ Sono state provate e scartate tre strade: uno zoom su un fermo immagine
 carrello di stock (stesso mandrino piu' vicino), una traversata laterale con
 parallasse costruita dagli scontornati (nessuna rotazione dei singoli oggetti).
 
-La sezione e' quindi una **composizione ferma**: nove macchine scontornate
-dalla libreria a fondo neutro, disposte su tre piani di profondita' con ombre
-di contatto e una pozza di luce sul pavimento. E' un fermo immagine dichiarato,
-non una finta ripresa.
+La sezione e' quindi una **fotografia ferma a tutta pagina**: la macro della
+trasmissione a catena di un trituratore — pignone, albero, targa. E' l'unico
+dettaglio ravvicinato del sito, e non compare da nessun'altra parte.
 
 **Per arrivare al risultato del riferimento serve il modello 3D delle macchine.**
 I render che stanno in `img/immagini` del repo dei contenuti — `SEZIONE-CENTRIFUGHE`,
@@ -119,7 +118,7 @@ il congegno del riferimento.
 |---|---|---|
 | `img/foto:video_tutto/Trituratori_TR4-6-7/VID_TR_ALLUMINIO.mp4` — riprese Fase | testata, 2ª e 3ª inquadratura | materiale del committente |
 | Pexels, video 9033891, "A Machine is Cutting Metal with a Metal Cutting Tool", di Daniel Smyth | testata, 1ª inquadratura | [Pexels License](https://www.pexels.com/license/) — uso commerciale consentito, attribuzione non richiesta |
-| `img/immagini/` — nove scontornati a fondo neutro | sezione "Sistemi", composizione ferma | materiale del committente |
+| `img/immagini/C5D694D8…` — macro della trasmissione | sezione "Sistemi" | materiale del committente |
 
 La Pexels License consente l'uso commerciale e la modifica senza attribuzione.
 Vieta la redistribuzione del materiale come stock su altre piattaforme, l'uso
