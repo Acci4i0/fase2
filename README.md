@@ -82,11 +82,17 @@ meta' inquadratura in un ritaglio.
 
 | file | durata | peso |
 |---|---|---|
-| `hero-16x9.mp4` | 8,1 s in ciclo | 2,2 MB |
-| `hero-9x16.mp4` | 8,1 s in ciclo | 929 KB |
+| `hero-16x9.mp4` | 7,8 s in ciclo | 481 KB |
+| `hero-9x16.mp4` | 7,8 s in ciclo | 252 KB |
 
-Tre inquadrature con stacco netto, circa 2,5 s l'una, tagliate su fotogrammi
-fermi scelti misurando il movimento e non a occhio.
+Tre inquadrature con stacco netto, circa 2,6 s l'una, **tutte da riprese
+professionali**: fresatura di precisione, tornitura con il truciolo che si
+arriccia sul tagliente, ingranaggi in presa. Il percorso e' quello del lavoro
+di Fase — si asporta materiale, nasce il truciolo, il meccanismo lo tratta.
+
+Le riprese aziendali girate a telefono sono state tolte: camera instabile e
+luce non controllata non reggono accanto al materiale professionale, e il
+montaggio si vedeva.
 
 ### Perche' la sezione "Sistemi" e' ferma
 
@@ -116,14 +122,15 @@ il congegno del riferimento.
 
 | sorgente | usata in | licenza |
 |---|---|---|
-| `img/foto:video_tutto/Trituratori_TR4-6-7/VID_TR_ALLUMINIO.mp4` — riprese Fase | testata, 2ª e 3ª inquadratura | materiale del committente |
-| Pexels, video 9033891, "A Machine is Cutting Metal with a Metal Cutting Tool", di Daniel Smyth | testata, 1ª inquadratura | [Pexels License](https://www.pexels.com/license/) — uso commerciale consentito, attribuzione non richiesta |
+| Pexels 9033891, "A Machine is Cutting Metal with a Metal Cutting Tool", di Daniel Smyth | testata, 1ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
+| Pexels 36438809, "Industrial lathe machine in action" | testata, 2ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
+| Pexels 31802320, "Mesmerizing close-up of industrial gears in motion" | testata, 3ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | `img/immagini/C5D694D8…` — macro della trasmissione | sezione "Sistemi" | materiale del committente |
 
 La Pexels License consente l'uso commerciale e la modifica senza attribuzione.
 Vieta la redistribuzione del materiale come stock su altre piattaforme, l'uso
 come marchio e l'uso che implichi un'approvazione da parte di persone o aziende
-riprese: niente di tutto questo avviene qui. Nell'unico spezzone esterno non
+riprese: niente di tutto questo avviene qui. Negli spezzoni esterni non
 compaiono marchi né macchinari identificabili di terzi.
 
 Le fonti sono state portate alla stessa resa — desaturazione, temperatura

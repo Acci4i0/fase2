@@ -161,7 +161,7 @@ window.addEventListener('load',function(){
   var lightSections=[].slice.call(document.querySelectorAll('[data-nav="dark"]'));
   var video=$('#seqVideo'), section=$('#techSeq'), seqBg=$('#seqBg'),
       seqTitle=$('#seqTitleWrap'), seqCopy=$('#seqCopy'), heroFade=$('#heroFade'),
-      hero=$('.home-hero'), intro=$('#intro'), introBg=$('#introBg'), veil=$('#veil');
+      hero=$('.home-hero'), intro=$('#intro'), introBg=$('#introBg');
 
   var duration=0, seekTarget=0;
   if(video){
@@ -204,21 +204,18 @@ window.addEventListener('load',function(){
       menu.classList.toggle('dark',isDark);
     }
 
+    /* La testata si scurisce mentre esce di campo, ma niente velo nero sopra
+       la pagina: la fascia rossa deve restare rossa dall'inizio alla fine. */
     if(hero&&heroFade){
       var heroH=hero.offsetHeight;
       heroFade.style.opacity=smoothstep(heroH*0.35,heroH*0.95,y).toFixed(3);
-      if(intro&&veil){
-        var iTop=intro.offsetTop,iH=intro.offsetHeight;
-        var rise=smoothstep(heroH*0.72,heroH*1.0,y);
-        var fall=smoothstep(iTop+iH*0.01,iTop+iH*0.16,y);
-        veil.style.opacity=(rise*(1-fall)).toFixed(3);
-        if(introBg){
-          var iCenter=iTop+iH/2-y;
-          var tt=clamp(Math.abs(iCenter-vh/2)/(vh/2+iH/2),0,1);
-          introBg.style.transform='scaleX('+(1-0.05*tt).toFixed(4)+')';
-          introBg.style.borderRadius=(56*tt*tt).toFixed(1)+'px';
-        }
-      }
+    }
+    if(intro&&introBg){
+      var iTop=intro.offsetTop,iH=intro.offsetHeight;
+      var iCenter=iTop+iH/2-y;
+      var tt=clamp(Math.abs(iCenter-vh/2)/(vh/2+iH/2),0,1);
+      introBg.style.transform='scaleX('+(1-0.05*tt).toFixed(4)+')';
+      introBg.style.borderRadius=(56*tt*tt).toFixed(1)+'px';
     }
 
     if(section){
