@@ -227,12 +227,17 @@ window.addEventListener('load',function(){
 
     if(bar){
       var r0=bar.getBoundingClientRect();
-      var mid=r0.top+r0.height/2, isDark=false;
+      var mid=r0.top+r0.height/2, isDark=false, suRosso=false;
       for(var s=0;s<lightSections.length;s++){
         var r=lightSections[s].getBoundingClientRect();
-        if(r.top<=mid&&r.bottom>=mid){isDark=true;break;}
+        if(r.top<=mid&&r.bottom>=mid){
+          isDark=true;
+          suRosso=lightSections[s].getAttribute('data-nav-tone')==='rosso';
+          break;
+        }
       }
       menu.classList.toggle('dark',isDark);
+      menu.classList.toggle('su-rosso',isDark&&suRosso);
     }
 
     /* La testata si scurisce mentre esce di campo, ma niente velo nero sopra
