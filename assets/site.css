@@ -83,6 +83,17 @@ main{position:relative}
 .burger svg{height:4.2666666667vw;width:4.2666666667vw}
 @media only screen and (min-width:834px){.burger{display:none}}
 .menu .container{display:none}
+/* Selettore di lingua: terza pastiglia del gruppo in alto a destra, fra il
+   marchio e i tre puntini. Angoli vivi perche' e' l'elemento di mezzo. */
+.lang-toggle{align-items:center;background-color:var(--color-yellow);color:var(--color-off-white);display:flex;flex-shrink:0;font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;height:11.7333333333vw;justify-content:center;letter-spacing:-.02em;line-height:1;transition:background-color .3s,color .3s;width:11.7333333333vw}
+.lang-toggle:hover{background-color:var(--color-black);color:var(--color-off-white)}
+.menu.dark .lang-toggle{background-color:var(--color-black);color:var(--color-off-white)}
+@media only screen and (max-width:833px){
+  .menu.open .lang-toggle{background-color:var(--color-off-white);color:var(--color-black)}
+}
+@media only screen and (min-width:834px){
+  .lang-toggle{border-radius:.4166666667vw;height:1.9444444444vw;margin-left:.4rem;min-width:3rem;padding:0 .6rem;width:auto}
+}
 @media only screen and (max-width:833px){
   .logo-svg{transform:translate3d(46.9333333333vw,0,0);transform-origin:left center;transition:transform .3s var(--ease-expo-out)}
   .menu.open .logo-svg{transform:translateZ(0)}

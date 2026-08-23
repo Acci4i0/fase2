@@ -88,11 +88,37 @@ collegamenti veri (mail, telefono, mappa). L'indirizzo nel piè di pagina non è
 un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 `<meta name="format-detection">` in testa a ogni pagina lo impedisce.
 
+## Inglese
+
+In alto a destra, fra il marchio e i tre puntini, c'e' una terza pastiglia:
+**EN** porta la pagina in inglese, **IT** la riporta in italiano. La scelta
+resta in `localStorage` e vale per tutte le pagine successive.
+
+Non ci sono pagine doppie. `assets/i18n.js` tiene la corrispondenza fra le
+stringhe italiane e quelle inglesi — 394 voci, che coprono ogni testo visibile
+delle 27 pagine, piu' i titoli, le descrizioni, i testi alternativi delle
+immagini e le etichette animate. Il resto del file scambia i testi nel
+documento e aggiorna `<html lang>`.
+
+**Se si cambia un testo nell'HTML va cambiata anche la chiave** in `i18n.js`,
+altrimenti quella riga resta in italiano quando si passa all'inglese. Le sigle,
+i numeri e i codici di modello non hanno voce e restano come sono.
+
+Il ritorno all'italiano non usa la mappa inversa se puo' evitarlo: l'originale
+italiano resta appeso al nodo di testo. Serve perche' l'inglese fa meno
+distinzioni — `cesto` e `paniere` sono tutti e due `basket` — e la sola mappa
+inversa le appiattirebbe.
+
+**Nota per i motori di ricerca.** L'HTML servito e' quello italiano: la
+traduzione avviene nel browser, quindi le pagine si indicizzano in italiano.
+Per posizionarsi anche in inglese servirebbero pagine inglesi vere sotto `/en/`,
+generate da questo stesso dizionario.
+
 ## Versione degli asset
 
-`site.css` e `site.js` sono richiamati con `?v=<data>`. Senza, chi ha già
+`site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
-una pubblicazione. **Va cambiato a ogni modifica dei due file.**
+una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
 ## Immagini e video
 
