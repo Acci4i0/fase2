@@ -103,51 +103,82 @@ window.addEventListener('load',function(){
   [[466.5,92.2,3.8],[463.2,97.4,2.2],[435.9,97.7,2.2],[414.7,100.5,2.2],[458.9,134.2,2.2],[384.0,114.1,2.2]].forEach(function(c,i){
     var el=document.createElementNS(ns,'circle');
     el.setAttribute('cx',c[0]);el.setAttribute('cy',c[1]);el.setAttribute('r',c[2]);
-    el.setAttribute('fill',i===0?'#D10015':'#AFAFAF');
+    el.setAttribute('fill',i===0?'#A72B2A':'#AFAFAF');
     svg.appendChild(el);
   });
 })();
 
-/* --------------------- scie rosse su canvas ----------------------- */
+/* ------------------- bagliore di fondo su canvas ------------------ */
+/* Prima erano otto archi tracciati uno sopra l'altro, ognuno di un colore
+   diverso — bianco, rosa, arancio, quattro rossi — e sommati in "lighter".
+   Sovrapposti si leggevano come righe, non come luce. Qui la sorgente e'
+   una sola, nel rosso del marchio, e si spegne nel nero senza bordi. */
 (function(){
   var canvas=$('#trailsCanvas'); if(!canvas)return;
   var ctx=canvas.getContext('2d');
   var dpr=Math.min(window.devicePixelRatio||1,2);
-  var W=0,H=0,t=0,running=false;
-  function resize(){ W=canvas.clientWidth;H=canvas.clientHeight;
-    canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr); }
-  var bands=[
-    {r:1.00,w:0.018,a:0.95,c:'255,246,242',s:0.00},
-    {r:1.06,w:0.030,a:0.70,c:'255,190,178',s:0.35},
-    {r:1.14,w:0.046,a:0.60,c:'246,96,74',s:0.80},
-    {r:1.24,w:0.070,a:0.48,c:'216,16,34',s:1.30},
-    {r:1.36,w:0.105,a:0.34,c:'190,0,22',s:1.85},
-    {r:1.52,w:0.160,a:0.22,c:'150,0,17',s:2.40},
-    {r:1.74,w:0.250,a:0.13,c:'110,0,13',s:3.00},
-    {r:2.02,w:0.380,a:0.07,c:'80,0,10',s:3.60}
-  ];
-  function draw(){
-    if(!W||!H){resize();}
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.clearRect(0,0,W,H);
-    ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
-    var cx=-W*0.08, cy=H*1.42, R=H*1.34;
-    ctx.globalCompositeOperation='lighter'; ctx.lineCap='round';
-    for(var i=bands.length-1;i>=0;i--){
-      var b=bands[i];
-      var wob=Math.sin(t*0.00035+b.s)*H*0.010;
-      ctx.beginPath();
-      ctx.arc(cx,cy+wob,R*b.r,Math.PI*1.57,Math.PI*1.995);
-      ctx.strokeStyle='rgba('+b.c+','+b.a+')';
-      ctx.lineWidth=H*b.w;
-      ctx.filter='blur('+(H*b.w*0.45+1)+'px)';
-      ctx.stroke();
+  var fermo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var W=0,H=0,t=0,running=false,grana=null;
+
+  /* Un campo di rosso steso su mille pixel mostra i gradini del gradiente:
+     una velatura di rumore li rompe. Si disegna una volta e si ripete. */
+  function creaGrana(){
+    var n=document.createElement('canvas'); n.width=n.height=96;
+    var g=n.getContext('2d'), d=g.createImageData(96,96), a=d.data;
+    for(var i=0;i<a.length;i+=4){
+      var v=(Math.random()*255)|0;
+      a[i]=a[i+1]=a[i+2]=v; a[i+3]=9;
     }
-    ctx.filter='none'; ctx.globalCompositeOperation='source-over';
+    g.putImageData(d,0,0);
+    return ctx.createPattern(n,'repeat');
+  }
+  function resize(){
+    W=canvas.clientWidth; H=canvas.clientHeight;
+    canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+    grana=null;
+  }
+  function draw(){
+    if(!W||!H)resize();
+    if(!grana)grana=creaGrana();
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.globalCompositeOperation='source-over';
+    ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+
+    var b=0.5+0.5*Math.sin(t*0.00019);           /* respiro lento */
+
+    /* La sorgente sta sotto il bordo inferiore: in campo entra solo la parte
+       alta della luce, quella che sale. Raggio e centro si misurano
+       sull'altezza, non sul lato piu' lungo: altrimenti su schermo largo il
+       nucleo finisce lontano e resta un nero piatto. */
+    var cx=W*0.32, cy=H*(1.16+0.02*b), R=H*(1.36+0.05*b);
+    var luce=ctx.createRadialGradient(cx,cy,0,cx,cy,R);
+    luce.addColorStop(0,    'rgba(167,43,42,0.62)');
+    luce.addColorStop(0.20, 'rgba(132,34,34,0.34)');
+    luce.addColorStop(0.44, 'rgba(88,22,23,0.16)');
+    luce.addColorStop(0.68, 'rgba(48,12,13,0.06)');
+    luce.addColorStop(0.88, 'rgba(20,5,6,0.015)');
+    luce.addColorStop(1,    'rgba(0,0,0,0)');
+    ctx.fillStyle=luce; ctx.fillRect(0,0,W,H);
+
+    /* una seconda sorgente, piu' alta e piu' debole, toglie al campo
+       l'aria della macchia unica */
+    var hx=W*(0.84+0.02*b), hy=H*(0.86-0.03*b), hR=H*0.62;
+    var alone=ctx.createRadialGradient(hx,hy,0,hx,hy,hR);
+    alone.addColorStop(0,   'rgba(112,28,28,0.15)');
+    alone.addColorStop(0.5, 'rgba(62,16,17,0.05)');
+    alone.addColorStop(1,   'rgba(0,0,0,0)');
+    ctx.globalCompositeOperation='lighter';
+    ctx.fillStyle=alone; ctx.fillRect(0,0,W,H);
+
+    ctx.globalCompositeOperation='source-over';
+    ctx.fillStyle=grana; ctx.fillRect(0,0,W,H);
   }
   function loop(){ t+=16; draw(); if(running) requestAnimationFrame(loop); }
   var vis=new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ if(!running){running=true;loop();} } else { running=false; } });
+    es.forEach(function(e){
+      if(e.isIntersecting){ if(!running&&!fermo){running=true;loop();} }
+      else { running=false; }
+    });
   },{threshold:0.01});
   vis.observe(canvas);
   window.addEventListener('resize',function(){resize();draw();});

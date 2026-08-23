@@ -25,7 +25,7 @@ pubblicare così com'è (GitHub Pages, un bucket, una sottodirectory).
 ## Struttura
 
 ```
-index.html              home
+index.html              home (senza la sezione news: vive solo in news.html)
 azienda.html            profilo, metodo, area test
 centrifughe.html        \
 impianti.html            > le tre famiglie di macchine
@@ -48,18 +48,51 @@ file e si modifica, senza passare da un build.
 
 ## Colore
 
-Un solo colore di marchio, il rosso `#D10015` campionato dai pixel del logo
-(`img/logo-FASE-1.png` del repo sorgente). Vale per la fascia introduttiva, il
-piè di pagina, il pulsante di contatto e gli accenti. Il resto della scala è
-neutra: nero `#000`, grigio scuro `#202020`, `#4b4b4b`, argento `#afafaf`,
-bianco sporco `#eee`.
+Un solo colore di marchio, il rosso `#A72B2A` — **Pantone 7627 C**, lo stesso
+`--color-accent` del repo sorgente ([Acci4i0/fase](https://github.com/Acci4i0/fase),
+`css/style.css`). Sostituisce il `#D10015` campionato dai pixel del logo, che
+era più acceso. Vale per la fascia introduttiva, il piè di pagina, il pulsante
+di contatto e gli accenti. Il resto della scala è neutra: nero `#000`, grigio
+scuro `#202020`, `#4b4b4b`, argento `#afafaf`, bianco sporco `#eee`.
 
 **Nota sul contrasto.** Sulle superfici rosse il testo è nero, come nell'impianto
-originale. Sul giallo di partenza il rapporto era 17:1, sul rosso scende a circa
-3,3:1: i titoli grandi reggono, il testo piccolo del piè di pagina e le etichette
-della navigazione si leggono male. Se serve rispettare WCAG AA anche sul corpo,
-le due strade sono passare a testo bianco su rosso (5:1) oppure usare il rosso
-scuro `#A72B2A` già presente nel sito precedente.
+originale. Sul giallo di partenza il rapporto era 17:1; sul `#D10015` scendeva a
+3,3:1 e su questo rosso, più scuro, si assesta a **3,0:1**. I titoli grandi
+restano sopra la soglia AA per il testo grande (3:1), ma di poco; il testo
+piccolo del piè di pagina e le etichette della navigazione non ci arrivano. Se
+serve rispettare WCAG AA anche sul corpo, la strada è il testo bianco su rosso
+(circa 7:1).
+
+## Densità verticale
+
+Il ritmo del riferimento on.energy è tarato su schermi larghi: tradotto in `vw`
+su un telefono diventava mezza schermata di nero prima di ogni cosa. Le
+spaziature di sezione sono state ridotte all'incirca della metà sul mobile e di
+un terzo sul desktop. Su `impianti.html`, a 375 px di larghezza: il filo di
+navigazione passa da 365 a 113 px dall'alto, la prima scheda di prodotto da
+1377 a 642 px, l'altezza della pagina da 3356 a 2208 px.
+
+Non è stata toccata la **fascia rossa introduttiva** della home: quel respiro è
+voluto.
+
+Sulle tre pagine dei sistemi (`centrifughe`, `impianti`, `trituratori`) è stata
+tolta anche la `page-statement`, la riga che ripeteva la meta description fra la
+fotografia e l'elenco delle macchine. Resta dove porta testo suo: `azienda`,
+`contatti`, `settori`, `applicazioni`.
+
+## Niente parole evidenziate
+
+I testi correnti non hanno più la prima frase in bianco sul resto in grigio: il
+paragrafo corre tutto nello stesso tono. Restano sottolineati solo i
+collegamenti veri (mail, telefono, mappa). L'indirizzo nel piè di pagina non è
+un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
+`<meta name="format-detection">` in testa a ogni pagina lo impedisce.
+
+## Versione degli asset
+
+`site.css` e `site.js` sono richiamati con `?v=<data>`. Senza, chi ha già
+visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
+una pubblicazione. **Va cambiato a ogni modifica dei due file.**
 
 ## Immagini e video
 
@@ -117,6 +150,20 @@ I render che stanno in `img/immagini` del repo dei contenuti — `SEZIONE-CENTRI
 `FC`, `trituratore-orizzontale`, `IMP-a-ciclo-continuo` — dimostrano che i
 modelli esistono. Da quelli un giro completo si renderizza, ed e' esattamente
 il congegno del riferimento.
+
+### Il fondale della sezione "La resa"
+
+Il riferimento on.energy ha qui un campo luminoso, giallo e profondo. La prima
+resa lo inseguiva con otto archi tracciati uno sopra l'altro — bianco, rosa,
+arancio, quattro rossi — sommati in `lighter`: sovrapposti si leggevano come
+righe colorate, non come luce.
+
+Ora la sorgente è **una sola**, nel rosso del marchio, sotto il bordo inferiore
+della sezione: in campo entra solo la parte alta del bagliore, quella che sale,
+e si spegne nel nero senza bordi. Raggio e centro si misurano sull'altezza e non
+sul lato più lungo, altrimenti su schermo largo il nucleo finisce lontano e
+resta un nero piatto. Una velatura di rumore rompe i gradini del gradiente. Con
+`prefers-reduced-motion` il campo viene disegnato una volta e resta fermo.
 
 ### Provenienza e licenze
 
