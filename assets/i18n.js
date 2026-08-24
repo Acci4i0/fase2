@@ -51,8 +51,8 @@ var EN = {
 /* --- home ---------------------------------------------------------- */
 "Sfrido asciutto.":"Dry scrap.",
 "Fluido in circolo.":"Coolant back in circuit.",
-"Scopri le centrifughe":"Discover the centrifuges",
-"Umidità residua sotto il 2%, dal cesto estraibile al ciclo continuo.":"Residual moisture below 2%, from removable basket to continuous cycle.",
+"Scopri le macchine":"Explore the machines",
+"Centrifughe, impianti di trattamento e trituratori: nove serie a catalogo.":"Centrifuges, treatment systems and shredders: nine series in the catalogue.",
 "Il nostro lavoro comincia dove finisce la lavorazione meccanica. Il truciolo esce dalla macchina utensile carico di lubrorefrigerante: i nostri sistemi lo separano, recuperano il fluido e restituiscono uno sfrido asciutto, pronto per essere valorizzato.":"Our work begins where machining ends. Chips leave the machine tool soaked in coolant: our systems separate the two, recover the fluid and return dry scrap, ready to be sold on.",
 "Sistemi costruiti":"Systems built",
 "sul vostro reparto":"around your shop floor",
