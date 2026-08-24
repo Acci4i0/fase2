@@ -16,11 +16,15 @@ document.querySelectorAll('.reveal-stagger').forEach(function(wrap){
 
 /* ------------------------ etichette scramble ---------------------- */
 var CHARS='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&@';
+/* Il testo di arrivo si rilegge a ogni fotogramma invece di fissarlo alla
+   partenza: se si cambia lingua mentre l'etichetta sta girando, l'ultimo
+   fotogramma scriverebbe la parola vecchia e la lascerebbe li'. */
 function scramble(el){
-  var target=el.getAttribute('data-scramble')||'';
   var span=el.querySelector('span'); if(!span)return;
-  var frame=0,total=target.length*3+18;
+  var frame=0;
   var id=setInterval(function(){
+    var target=el.getAttribute('data-scramble')||'';
+    var total=target.length*3+18;
     frame++;
     var out='';
     for(var i=0;i<target.length;i++){
