@@ -28,9 +28,14 @@ pubblicare così com'è (GitHub Pages, un bucket, una sottodirectory).
 index.html              home (senza la sezione news: vive solo in news.html)
 azienda.html            profilo, metodo, area test
 centrifughe.html        \
-impianti.html            > le tre famiglie di macchine
-trituratori.html        /
+trituratori.html         > le tre famiglie di macchine
+impianti.html           /
+accessori.html          nastri, ribalta cassoni e opzioni di macchina
 prodotti/               una scheda per macchina (9), con le tabelle tecniche
+
+L'ordine delle tre famiglie e' centrifughe, trituratori, impianti: vale per il
+sotto-menu "Sistemi", per il pie' di pagina, per le schede in home e per gli
+argomenti nella pagina contatti.
 applicazioni.html       le quattro lavorazioni
 settori.html            i reparti serviti
 news.html               elenco fiere e aggiornamenti

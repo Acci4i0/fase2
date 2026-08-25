@@ -126,7 +126,7 @@ var EN = {
 "Stessa famiglia":"Same family",
 "Le altre serie":"The other series",
 "Caratteristiche":"Features",
-"Accessori":"Options",
+"Accessori":"Accessories",
 "Taglie disponibili":"Available sizes",
 
 /* --- schede prodotto: descrizioni ---------------------------------- */
@@ -380,6 +380,23 @@ var EN = {
 "Il testo integrale di questa informativa viene fornito da Fase Mechanical Engineering S.r.l. e sarà pubblicato qui. Per richieste sul trattamento dei dati scrivi a":"The full text of this notice is provided by Fase Mechanical Engineering S.r.l. and will be published here. For questions about data processing, write to",
 "Informativa di Fase Mechanical Engineering S.r.l..":"Notice from Fase Mechanical Engineering S.r.l.",
 
+/* --- accessori -------------------------------------------------------- */
+"Nastri, ribalta cassoni e opzioni di macchina":"Conveyors, bin tippers and machine options",
+"Nastri trasportatori, ribalta cassoni e opzioni di macchina: quello che collega le fasi e toglie le movimentazioni a mano.":"Belt conveyors, bin tippers and machine options: what links the stages and takes the manual handling out.",
+"ribalta cassoni Fase con nastro di scarico in acciaio inox":"Fase bin tipper with stainless steel discharge conveyor",
+"ribalta cassoni Fase carenato, con il gruppo di sollevamento in vista":"enclosed Fase bin tipper, with the lifting unit in view",
+"Nastri trasportatori":"Belt conveyors",
+"Collegano le fasi senza spostare cassoni":"They link the stages without moving bins",
+"Il nastro porta lo sfrido da dove nasce a dove viene trattato: dal trituratore alla centrifuga, dalla centrifuga al cassone di raccolta. \u00c8 quello che trasforma due macchine affiancate in una linea, e toglie il passaggio in cui qualcuno deve muovere un contenitore pieno.":"The conveyor carries the scrap from where it is made to where it is treated: from the shredder to the centrifuge, from the centrifuge to the collection bin. It is what turns two machines standing side by side into a line, and removes the step where somebody has to move a full container.",
+"Percorso e pendenza nascono dalla pianta del reparto. Dove il truciolo gocciola lungo il tragitto, sotto il nastro va una vasca di raccolta che rimanda il fluido in circolo.":"Route and incline follow from the floor plan of your department. Where chips drip along the way, a collection tray under the conveyor sends the fluid back into circuit.",
+"Ribalta cassoni":"Bin tippers",
+"Il cassone si svuota senza intervento manuale":"The bin empties with no one lifting it",
+"Prende il contenitore pieno, lo solleva e lo rovescia sulla tramoggia o sul nastro. Sulle linee di asciugatura in ambiente galvanico \u00e8 il passaggio che porta il materiale dai cassoni al rotobarile senza che nessuno debba maneggiarlo.":"It takes the full container, lifts it and tips it onto the hopper or the conveyor. On drying lines for electroplating it is the step that moves material from the bins into the plating barrel with no handling at all.",
+"Serve dove il volume \u00e8 tale che svuotare a mano diventa il collo di bottiglia del reparto.":"It earns its place where the volumes are such that emptying by hand becomes the bottleneck of the department.",
+"Sulla macchina":"On the machine",
+"Le opzioni a catalogo":"The catalogue options",
+"Disoleatrici":"Oil-removal centrifuges",
+
 /* --- titoli delle pagine --------------------------------------------- */
 "Fase Mechanical Engineering | Centrifughe, impianti e trituratori per lo sfrido metallico":"Fase Mechanical Engineering | Centrifuges, treatment systems and shredders for metal scrap",
 "Centrifughe | Fase Mechanical Engineering":"Centrifuges | Fase Mechanical Engineering",
@@ -408,6 +425,7 @@ var EN = {
 "MECSPE 2026 | Fase Mechanical Engineering":"MECSPE 2026 | Fase Mechanical Engineering",
 "Fornitore Offresi 2025 | Fase Mechanical Engineering":"Fornitore Offresi 2025 | Fase Mechanical Engineering",
 "Test gratuiti di triturazione | Fase Mechanical Engineering":"Free shredding tests | Fase Mechanical Engineering",
+"Accessori | Fase Mechanical Engineering":"Accessories | Fase Mechanical Engineering",
 
 /* --- testi alternativi delle immagini -------------------------------- */
 "cumulo di truciolo metallico lucido con la targa Fase appoggiata davanti":"pile of bright metal chips with the Fase nameplate propped in front",
