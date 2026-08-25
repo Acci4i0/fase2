@@ -52,7 +52,7 @@ var EN = {
 "Sfrido asciutto.":"Dry scrap.",
 "Fluido in circolo.":"Coolant back in circuit.",
 "Scopri le macchine":"Explore the machines",
-"Centrifughe, impianti di trattamento e trituratori: otto serie a catalogo.":"Centrifuges, treatment systems and shredders: eight series in the catalogue.",
+"Centrifughe, impianti di trattamento e trituratori: sette serie a catalogo.":"Centrifuges, treatment systems and shredders: seven series in the catalogue.",
 "Il nostro lavoro comincia dove finisce la lavorazione meccanica. Il truciolo esce dalla macchina utensile carico di lubrorefrigerante: i nostri sistemi lo separano, recuperano il fluido e restituiscono uno sfrido asciutto, pronto per essere valorizzato.":"Our work begins where machining ends. Chips leave the machine tool soaked in coolant: our systems separate the two, recover the fluid and return dry scrap, ready to be sold on.",
 "Sistemi costruiti":"Systems built",
 "sul vostro reparto":"around your shop floor",
@@ -105,6 +105,12 @@ var EN = {
 "Frantumazione di trucioli lunghi e matassosi":"Breaking down long and tangled chips",
 
 /* --- schede prodotto: nomi e sottotitoli --------------------------- */
+"Centrifughe disoleatrici":"Oil-removal centrifuges",
+"Serie FD":"FD series",
+"Serie FCV":"FCV series",
+"Serie LM 660 AG":"LM 660 AG series",
+"Centrifughe disoleatrici serie LM 660 AG":"LM 660 AG series oil-removal centrifuges",
+"Centrifughe disoleatrici serie LM 660 AG | Fase Mechanical Engineering":"LM 660 AG series oil-removal centrifuges | Fase Mechanical Engineering",
 "Centrifughe asciugatrici serie FC":"FC series drying centrifuges",
 "Centrifughe asciugatrici serie FCV":"FCV series drying centrifuges",
 "Disoleatrici a ciclo continuo serie FD":"FD series continuous-cycle oil-removal centrifuges",
