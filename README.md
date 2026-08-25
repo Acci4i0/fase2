@@ -88,6 +88,30 @@ collegamenti veri (mail, telefono, mappa). L'indirizzo nel piè di pagina non è
 un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 `<meta name="format-detection">` in testa a ogni pagina lo impedisce.
 
+## Il carosello della fascia immagine
+
+`centrifughe.html`, `impianti.html` e `trituratori.html` hanno la fascia sotto al
+titolo montata a carosello: le fotografie si sovrappongono e si alternano in
+dissolvenza ogni 5,2 secondi, con i pallini in basso a sinistra per scegliere a
+mano.
+
+**Per cambiare le immagini si toccano solo le righe `<img>` nella pagina.** Una
+riga per fotografia; la prima porta `class="attiva"` perche' resti visibile se lo
+script non parte, le altre `loading="lazy"`. Aggiungerne o toglierne non richiede
+di aprire `site.js`: i pallini si contano da sole. Con una sola `<img>` il
+carosello non si attiva e la fascia si comporta come prima.
+
+L'intervallo sta in `data-carosello`, in millesimi di secondo.
+
+Il carosello gira solo quando la fascia e' in campo, si ferma sotto il puntatore
+o quando un pallino prende il fuoco, si ferma con la scheda del browser in
+secondo piano — altrimenti `setInterval` continuerebbe comunque e al ritorno si
+troverebbe una figura a caso — e non parte affatto con
+`prefers-reduced-motion: reduce`.
+
+I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
+`assets/i18n.js`, come tutti gli altri.
+
 ## Inglese
 
 In alto a destra, fra il marchio e i tre puntini, c'e' una terza pastiglia:
