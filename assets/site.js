@@ -201,8 +201,19 @@ window.addEventListener('load',function(){
   var fermo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   var inglese=(document.documentElement.getAttribute('lang')||'it').indexOf('en')===0;
   var DIC=inglese
-    ? {gruppo:'Choose the photograph', voce:function(n,t){return 'Photograph '+n+' of '+t;}}
-    : {gruppo:'Scegli la fotografia',  voce:function(n,t){return 'Fotografia '+n+' di '+t;}};
+    ? {gruppo:'Choose the photograph', voce:function(n,t){return 'Photograph '+n+' of '+t;},
+       prima:'Previous photograph', dopo:'Next photograph'}
+    : {gruppo:'Scegli la fotografia',  voce:function(n,t){return 'Fotografia '+n+' di '+t;},
+       prima:'Fotografia precedente', dopo:'Fotografia successiva'};
+
+  /* La freccia e' la stessa pastiglia a puntini della sezione "Il metodo".
+     Per tornare indietro si ruota di mezzo giro, come li'. */
+  var PUNTINI='<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    +'<circle cx="10" cy="10" r="1" fill="currentColor"/><circle cx="14" cy="10" r="1" fill="currentColor"/>'
+    +'<circle cx="18" cy="10" r="1" fill="currentColor"/><circle cx="6" cy="10" r="1" fill="currentColor"/>'
+    +'<circle cx="2" cy="10" r="1" fill="currentColor"/><circle cx="14" cy="6" r="1" fill="currentColor"/>'
+    +'<circle cx="14" cy="14" r="1" fill="currentColor"/><circle cx="10" cy="2" r="1" fill="currentColor"/>'
+    +'<circle cx="10" cy="18" r="1" fill="currentColor"/></svg>';
 
   caroselli.forEach(function(car){
     var figure=[].slice.call(car.querySelectorAll('img'));
@@ -225,6 +236,21 @@ window.addEventListener('load',function(){
       return b;
     });
     car.appendChild(punti);
+
+    function freccia(verso, etichetta, salto){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='dots-icon-button carosello-freccia'+(verso==='avanti'?' avanti':'');
+      b.setAttribute('aria-label',etichetta);
+      b.innerHTML=(verso==='avanti')
+        ? PUNTINI
+        : PUNTINI.replace('<svg ','<svg style="transform:rotate(180deg)" ');
+      b.addEventListener('click',function(){mostra(i+salto);riavvia();});
+      car.appendChild(b);
+      return b;
+    }
+    freccia('indietro',DIC.prima,-1);
+    freccia('avanti',  DIC.dopo,  +1);
 
     function mostra(n){
       i=(n+figure.length)%figure.length;

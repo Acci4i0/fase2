@@ -97,8 +97,14 @@ un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 
 `centrifughe.html`, `impianti.html` e `trituratori.html` hanno la fascia sotto al
 titolo montata a carosello: le fotografie si sovrappongono e si alternano in
-dissolvenza ogni 5,2 secondi, con i pallini in basso a sinistra per scegliere a
-mano.
+dissolvenza ogni 2 secondi, con le frecce ai lati e i pallini in basso a sinistra
+per scegliere a mano. Le frecce sono le stesse pastiglie a puntini della sezione
+"Il metodo" in home, col fondo scuro al posto del rosso perche' qui stanno sopra
+la fotografia, e piu' grandi: 28 px sono un bersaglio scomodo per il dito.
+
+La dissolvenza dura 0,55 secondi. Con la cadenza a 2 secondi una sfumatura piu'
+lunga terrebbe le figure quasi sempre a mezz'aria: cambiando l'intervallo conviene
+rivedere anche questa, in `assets/site.css`.
 
 **Per cambiare le immagini si toccano solo le righe `<img>` nella pagina.** Una
 riga per fotografia; la prima porta `class="attiva"` perche' resti visibile se lo
