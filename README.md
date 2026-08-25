@@ -31,10 +31,7 @@ centrifughe.html        \
 trituratori.html         > le tre famiglie di macchine
 impianti.html           /
 accessori.html          nastri, ribalta cassoni e opzioni di macchina
-prodotti/               una scheda per macchina, con le tabelle tecniche
-                        8 collegate; resta a terra il file della linea di
-                        asciugatura in ambiente galvanico, tolta dal
-                        catalogo ma non cancellata
+prodotti/               una scheda per macchina (8), con le tabelle tecniche
 
 L'ordine delle tre famiglie e' centrifughe, trituratori, impianti: vale per il
 sotto-menu "Sistemi", per il pie' di pagina, per le schede in home e per gli
