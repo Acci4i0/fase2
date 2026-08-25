@@ -46,6 +46,8 @@ cookie-policy.html
 assets/site.css         foglio unico, variabili di progetto in :root
 assets/site.js          comparse allo scroll, menu mobile, carosello, canvas
 assets/fonts/           i quattro tagli usati dal foglio di stile
+assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
+                        resa comune (vedi sotto)
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -122,6 +124,25 @@ troverebbe una figura a caso — e non parte affatto con
 
 I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 `assets/i18n.js`, come tutti gli altri.
+
+## Le fotografie dei trituratori
+
+Sono le uniche immagini del sito servite da qui e non dal repo dei contenuti:
+stanno in `assets/img/trituratori/`, ricavate dalle cartelle di scatti di
+reparto. Ognuna e' portata a 1600x900 con lo stesso trattamento, perche' erano
+riprese con luci molto diverse e affiancate litigavano:
+
+- bilanciamento a grigio-mondo, che annulla la dominante di ciascuna;
+- colore all'80%, contrasto a 1,10, una velatura di grana.
+
+La fascia e' 16:9 ma i trituratori ad asse verticale sono macchine alte,
+fotografate in verticale: ritagliarle avrebbe tolto la macchina. Quindi la
+figura entra intera e il fondo lo riempie una copia sfocata e scurita di se'
+stessa. Gli scatti in posa su fondo chiaro fanno eccezione — li' il fondo e' una
+tinta piena presa dal bordo della fotografia, cosi' non si vede l'attacco.
+
+Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
+mettendo un'immagine 16:9 con lo stesso nome.
 
 ## Inglese
 
