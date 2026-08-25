@@ -189,6 +189,79 @@ window.addEventListener('load',function(){
   resize();draw();
 })();
 
+/* -------------------- carosello della fascia ---------------------- */
+/* Un blocco per fascia. Le fotografie si scrivono nell'HTML, una riga
+   ciascuna: aggiungerne o toglierne non richiede di toccare questo file.
+   Il carosello gira solo quando la fascia e' in campo, si ferma sotto il
+   dito o il puntatore, e non parte affatto se il sistema chiede meno
+   animazioni. */
+(function(){
+  var caroselli=[].slice.call(document.querySelectorAll('[data-carosello]'));
+  if(!caroselli.length)return;
+  var fermo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var inglese=(document.documentElement.getAttribute('lang')||'it').indexOf('en')===0;
+  var DIC=inglese
+    ? {gruppo:'Choose the photograph', voce:function(n,t){return 'Photograph '+n+' of '+t;}}
+    : {gruppo:'Scegli la fotografia',  voce:function(n,t){return 'Fotografia '+n+' di '+t;}};
+
+  caroselli.forEach(function(car){
+    var figure=[].slice.call(car.querySelectorAll('img'));
+    if(figure.length<2)return;
+    var pausa=parseInt(car.getAttribute('data-carosello'),10)||5200;
+    var i=0,timer=null,inVista=false,sospeso=false;
+
+    var punti=document.createElement('div');
+    punti.className='carosello-punti';
+    punti.setAttribute('role','tablist');
+    punti.setAttribute('aria-label',DIC.gruppo);
+    var bottoni=figure.map(function(im,n){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='carosello-punto';
+      b.setAttribute('role','tab');
+      b.setAttribute('aria-label',DIC.voce(n+1,figure.length));
+      b.addEventListener('click',function(){mostra(n);riavvia();});
+      punti.appendChild(b);
+      return b;
+    });
+    car.appendChild(punti);
+
+    function mostra(n){
+      i=(n+figure.length)%figure.length;
+      figure.forEach(function(im,k){
+        im.classList.toggle('attiva',k===i);
+        im.setAttribute('aria-hidden',k===i?'false':'true');
+      });
+      bottoni.forEach(function(b,k){
+        b.classList.toggle('attivo',k===i);
+        b.setAttribute('aria-selected',k===i?'true':'false');
+      });
+    }
+    function avvia(){ if(fermo||timer||!inVista||sospeso)return;
+      timer=setInterval(function(){mostra(i+1);},pausa); }
+    function ferma(){ if(timer){clearInterval(timer);timer=null;} }
+    function riavvia(){ ferma();avvia(); }
+
+    car.addEventListener('mouseenter',function(){sospeso=true;ferma();});
+    car.addEventListener('focusin',  function(){sospeso=true;ferma();});
+    car.addEventListener('mouseleave',function(){sospeso=false;avvia();});
+    car.addEventListener('focusout', function(){sospeso=false;avvia();});
+
+    new IntersectionObserver(function(voci){
+      voci.forEach(function(v){ inVista=v.isIntersecting; if(inVista)avvia(); else ferma(); });
+    },{threshold:0.15}).observe(car);
+
+    /* Con la scheda in secondo piano setInterval continua comunque, sia pure
+       rallentato: le fotografie scorrerebbero senza che nessuno le guardi e
+       al ritorno si troverebbe una figura a caso. */
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden) ferma(); else avvia();
+    });
+
+    mostra(0);
+  });
+})();
+
 /* --------- nav che si inverte + sequenza pinnata della home ------- */
 (function(){
   var menu=$('.menu'); if(!menu)return;
