@@ -298,6 +298,8 @@ main{position:relative}
 .expertise-card .content{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.375;display:flex;flex-direction:column;justify-content:center;padding:.3rem 0;width:66%}
 @media only screen and (min-width:834px){.expertise-card .content{font-size:clamp(1.6rem,1.3888888889vw,1.3888888889vw);justify-content:flex-start;line-height:1.2;min-width:18rem;padding:1.3888888889vw 0 .4513888889vw;width:56%}}
 .expertise-card .name{color:var(--color-off-white);transition:color .2s}
+/* La sigla della serie sta sotto al nome di famiglia, non di seguito. */
+.expertise-card .name span{display:block}
 .expertise-card:hover .name{color:var(--color-off-white)}
 .expertise-card .copy{color:var(--color-silver);margin-top:.2rem;transition:color .2s}
 .expertise-card:hover .copy{color:var(--color-off-white40)}
