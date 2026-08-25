@@ -551,6 +551,10 @@ main{position:relative}
 @media only screen and (min-width:834px){.key-value{font-size:clamp(1.6rem,1.3888888889vw,1.3888888889vw);line-height:1.2;margin-top:.5555555556vw}}
 
 .detail-cols{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr;row-gap:9vw}
+/* Sulla pagina accessori le colonne seguono direttamente il titolo di
+   sezione: nelle schede prodotto in mezzo c'e' la griglia dei dati, qui no. */
+.detail-prose + .detail-cols{margin-top:9vw}
+@media only screen and (min-width:834px){.detail-prose + .detail-cols{margin-top:3vw}}
 @media only screen and (min-width:834px){.detail-cols{grid-template-columns:1fr 1fr;row-gap:0}}
 .list-title,.spec-title{font-size:clamp(1.6rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.04em;line-height:1.2;margin-bottom:4.5vw}
 @media only screen and (min-width:834px){.list-title,.spec-title{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167;margin-bottom:1.6666666667vw}}
