@@ -132,11 +132,16 @@ stanno in `assets/img/trituratori/`, ricavate dagli scatti in posa del
 committente e portate a 1600x900.
 
 Il riferimento e' `assets/img/trasmissione-16x9.jpg`, la fotografia della
-sezione "Sistemi": quasi monocroma, acciaio freddo, neri pieni, grana fine,
-fotogramma occupato fino ai bordi. Gli scatti di prodotto, chiari e su fondo
-grigio uniforme, accanto a quella sembravano ritagli di catalogo incollati sul
-sito. Il trattamento li porta alla stessa lingua, **senza toccare soggetto,
-geometria o composizione**: solo taglio, luce, colore e materia.
+sezione "Sistemi": neri pieni, grana fine, fotogramma occupato fino ai bordi.
+Gli scatti di prodotto, chiari e su fondo grigio uniforme, accanto a quella
+sembravano ritagli di catalogo incollati sul sito.
+
+Quello che li integra e' **il taglio, il fondo e la luce, non il colore**. Le
+macchine tengono le loro tinte: il blu dei motori, il verde delle carpenterie,
+il rosso del marchio. Una prima versione le portava al quasi monocromo del
+riferimento — sbagliato: quello e' un intervento sul prodotto, non
+sull'atmosfera. Soggetto, geometria, composizione e colori restano quelli
+fotografati.
 
 1. **Taglio.** Il fondo da studio e' liscio, quello che se ne discosta e' la
    macchina: si misura il suo ingombro e si taglia li'. Cosi' la figura passa
@@ -144,10 +149,11 @@ geometria o composizione**: solo taglio, luce, colore e materia.
    il fondo non aiuta e il riquadro e' scritto a mano in `TAGLI`.
 2. **Riempimento.** Gli originali sono 4:3: i bordi della figura si allungano
    fino ai lati della tela invece di lasciare bande.
-3. **Resa.** Colore all'13% con dominante fredda, curva che scurisce i medi
-   (gamma 1,34) e apre i neri, contrasto 1,11.
-4. **Vignettatura** decisa, che spegne i bordi: e' quella che fa emergere la
-   macchina dal buio e nasconde l'attacco del riempimento.
+3. **Luce.** Una curva scurisce i medi — cioe' il fondo da studio — e apre i
+   neri (gamma 1,16), con un filo di contrasto. Non tocca la tinta: nessuna
+   desaturazione, nessuna dominante.
+4. **Vignettatura**, che spegne i bordi: e' quella che fa emergere la macchina
+   dal buio e nasconde l'attacco del riempimento.
 5. **Grana** al 6% su tutto, che rimette insieme figura e fondo.
 
 Lo script sta in `/tmp` e non nel repo: le immagini sono file finiti, si
