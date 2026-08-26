@@ -128,18 +128,19 @@ I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 ## Le fotografie dei trituratori
 
 Sono le uniche immagini del sito servite da qui e non dal repo dei contenuti:
-stanno in `assets/img/trituratori/`, ricavate dalle cartelle di scatti di
-reparto. Ognuna e' portata a 1600x900 con lo stesso trattamento, perche' erano
-riprese con luci molto diverse e affiancate litigavano:
+stanno in `assets/img/trituratori/`, ricavate dagli scatti in posa del
+committente. Ognuna e' portata a 1600x900.
 
-- bilanciamento a grigio-mondo, che annulla la dominante di ciascuna;
-- colore all'80%, contrasto a 1,10, una velatura di grana.
+Gli originali sono 4:3 e la fascia e' 16:9: ritagliarli avrebbe tolto la
+macchina, che nei trituratori ad asse verticale sta tutta in altezza. Quindi la
+figura entra intera al 97% e il fondo lo riempie una copia di se' stessa
+allargata e sfocata forte, **a luminosita' invariata**: sul grigio da studio
+l'attacco non si vede. Scurire il fondo, come si fa di solito, disegnava due
+bande evidenti ai lati.
 
-La fascia e' 16:9 ma i trituratori ad asse verticale sono macchine alte,
-fotografate in verticale: ritagliarle avrebbe tolto la macchina. Quindi la
-figura entra intera e il fondo lo riempie una copia sfocata e scurita di se'
-stessa. Gli scatti in posa su fondo chiaro fanno eccezione — li' il fondo e' una
-tinta piena presa dal bordo della fotografia, cosi' non si vede l'attacco.
+Sul colore la mano e' leggera — solo una velatura di grana al 3% — perche' gli
+scatti sono gia' coerenti fra loro. Il trattamento pesante serviva quando le
+fotografie erano riprese di reparto con luci diverse.
 
 Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
 mettendo un'immagine 16:9 con lo stesso nome.
