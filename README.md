@@ -48,6 +48,7 @@ assets/site.js          comparse allo scroll, menu mobile, carosello, canvas
 assets/fonts/           i quattro tagli usati dal foglio di stile
 assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
                         resa comune (vedi sotto)
+assets/doc/            l'attestato di brevetto del trituratore TR1
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -161,6 +162,24 @@ sostituiscono mettendo un 16:9 con lo stesso nome.
 
 Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
 mettendo un'immagine 16:9 con lo stesso nome.
+
+## Il brevetto del TR1
+
+L'espulsione automatica dello spezzone e' coperta da brevetto italiano
+n. 102017000109589, depositato il 29/09/2017 e concesso il 17/12/2019. Sulla
+scheda del TR1, nella pagina trituratori, compaiono il timbro e il rimando
+all'attestato: `assets/doc/brevetto.pdf`, copia del file che sta nel pie' di
+pagina di fasemec.com.
+
+**La scheda del TR1 non e' un `<a>` come le altre.** Un collegamento dentro un
+altro non e' valido e i browser lo spezzano: qui servono due mete diverse — la
+pagina del prodotto e il PDF — quindi la scheda e' un `<div>`, il rimando alla
+pagina e' una lastra trasparente distesa sotto il contenuto
+(`.scheda-intera`, `z-index:1`) e il brevetto le sta sopra (`z-index:2`).
+Cliccando ovunque si va alla scheda prodotto, sul timbro si apre l'attestato.
+
+Le altre schede restano `<a>` normali: la complicazione vale solo dove servono
+due destinazioni.
 
 ## Inglese
 

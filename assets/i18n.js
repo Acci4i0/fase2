@@ -105,6 +105,7 @@ var EN = {
 "Frantumazione di trucioli lunghi e matassosi":"Breaking down long and tangled chips",
 
 /* --- schede prodotto: nomi e sottotitoli --------------------------- */
+"Brevetto n. 102017000109589":"Patent no. 102017000109589",
 "Trituratore ad asse orizzontale":"Horizontal-shaft shredder",
 "Serie TR1":"TR1 series",
 "Trituratore ad asse verticale":"Vertical-shaft shredder",
@@ -442,6 +443,7 @@ var EN = {
 "Accessori | Fase Mechanical Engineering":"Accessories | Fase Mechanical Engineering",
 
 /* --- testi alternativi delle immagini -------------------------------- */
+"timbro \u00abpatented\u00bb: l\u2019espulsione del trituratore TR1 \u00e8 coperta da brevetto":"\u201cpatented\u201d stamp: the ejection system of the TR1 shredder is covered by a patent",
 "trituratore Fase TR1 su cavalletto bianco, con motoriduttore e quadro di comando a bordo macchina":"Fase TR1 shredder on a white stand, with gearmotor and on-board control panel",
 "trituratore Fase TR1 con tramoggia di carico, motore laterale e cassone di raccolta del truciolo":"Fase TR1 shredder with loading hopper, side-mounted motor and chip collection bin",
 "trituratore Fase TR1 in blu su bancale, con l\u2019accoppiamento fra motore e riduttore in primo piano":"Fase TR1 shredder in blue on a pallet, with the motor-to-gearbox coupling in the foreground",

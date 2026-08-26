@@ -305,6 +305,22 @@ main{position:relative}
 .expertise-card:hover .copy{color:var(--color-off-white40)}
 @media only screen and (min-width:834px){.expertise-card .copy{margin-top:1.1111111111vw}}
 .expertise-card .arrow-link{bottom:1.6vw;position:absolute;right:1.6vw}
+/* Il timbro del brevetto sulla scheda del TR1. Un collegamento dentro un
+   altro non e' valido: la scheda smette di essere un <a> e il rimando alla
+   pagina diventa una lastra trasparente sotto il contenuto, cosi' il
+   brevetto puo' stare sopra e restare cliccabile. */
+.expertise-card .scheda-intera{inset:0;overflow:hidden;position:absolute;text-indent:-200vw;white-space:nowrap;z-index:1}
+.expertise-card .brevetto{align-items:center;column-gap:2.6666666667vw;display:flex;margin-top:3.2vw;max-width:calc(100% - 9vw);position:relative;width:fit-content;z-index:2}
+.expertise-card .brevetto img{flex-shrink:0;opacity:.8;transition:opacity .2s;width:13.3333333333vw}
+.expertise-card .brevetto span{color:var(--color-mid-grey);font-family:var(--font-accent),monospace;font-size:1rem;font-weight:400;letter-spacing:-.02em;line-height:1.35;text-decoration:underline;text-underline-offset:.25em;transition:color .2s}
+.expertise-card .brevetto:hover img{opacity:1}
+.expertise-card .brevetto:hover span{color:var(--color-off-white)}
+.expertise-card:hover .brevetto span{color:var(--color-off-white)}
+@media only screen and (min-width:834px){
+  .expertise-card .brevetto{column-gap:.6944444444vw;margin-top:1.1111111111vw;max-width:calc(100% - 3.2vw)}
+  .expertise-card .brevetto span{font-size:1.1rem}
+  .expertise-card .brevetto img{width:3.4722222222vw}
+}
 .expertise-card:hover .arrow-link{background-color:var(--color-black);color:var(--color-off-white)}
 @media only screen and (min-width:834px){.expertise-card .arrow-link{bottom:1.1111111111vw;right:1.1111111111vw}}
 
