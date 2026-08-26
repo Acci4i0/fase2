@@ -48,7 +48,8 @@ assets/site.js          comparse allo scroll, menu mobile, carosello, canvas
 assets/fonts/           i quattro tagli usati dal foglio di stile
 assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
                         resa comune (vedi sotto)
-assets/doc/            l'attestato di brevetto del trituratore TR1
+assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
+assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -170,6 +171,24 @@ sostituiscono mettendo un 16:9 con lo stesso nome.
 
 Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
 mettendo un'immagine 16:9 con lo stesso nome.
+
+## La serie KOMBI
+
+Terza serie degli impianti. Il contenuto della scheda viene dal depliant del
+committente (`KOMBI/FASE_KOMBI.pdf` nella cartella delle fotografie, copiato in
+`assets/doc/kombi.pdf` e collegato dalla pagina): due taglie di centrifuga,
+150 e 400 kg/h, dati tecnici e le quattro configurazioni. Nessun dato e' stato
+dedotto.
+
+Il depliant riporta anche le quote d'ingombro (A 3900 mm max, B 1350, C 3200,
+D 2350, E 1200, F 1000) ma le lettere rimandano a un disegno: senza sapere quale
+lettera e' la lunghezza e quale l'altezza non sono finite in pagina. Chi lo sa
+le puo' aggiungere alla griglia dei dati.
+
+**La miniatura della scheda e' una fotografia, le due sorelle sono render.**
+Della KOMBI esistono solo scatti di reparto; l'unico render disponibile
+(`KOMBI-40.png`) ha il fondo sbagliato e colori da CAD. Si vede che e' diversa,
+ma mostra la macchina vera.
 
 ## Il brevetto del TR1
 
