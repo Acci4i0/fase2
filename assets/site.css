@@ -515,6 +515,13 @@ main{position:relative}
 
 .media-band{margin-top:10vw;padding:0 var(--grid-outer-gutter)}
 @media only screen and (min-width:834px){.media-band{margin-top:4.5vw}}
+/* Fascia seguita da una sezione con fondo proprio (es. "Le macchine"): li' il
+   fondo attacca sul bordo del carosello e sotto non resta spazio. La fascia
+   sale e la parte di margine tolta sopra torna sotto, cosi' i due spazi si
+   leggono uguali (sopra si tiene conto del vuoto che il titolo lascia sotto
+   la riga di testo). */
+.media-band:has(+.expertises-overview){margin-top:3.4vw;margin-bottom:6.6vw}
+@media only screen and (min-width:834px){.media-band:has(+.expertises-overview){margin-top:1.5555555556vw;margin-bottom:2.9444444444vw}}
 .media-band>div{aspect-ratio:16/9;border-radius:4.2666666667vw;overflow:hidden;position:relative;background:var(--color-dark-grey)}
 @media only screen and (min-width:834px){.media-band>div{border-radius:2.2222222222vw}}
 .media-band img{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
@@ -527,6 +534,9 @@ main{position:relative}
 @media only screen and (min-width:834px){
   .carosello-punti{border-radius:.4166666667vw;bottom:1.1111111111vw;column-gap:.5555555556vw;left:1.1111111111vw;padding:.5555555556vw}
 }
+.carosello-punti.fitti{border-radius:1.0666666667vw;column-gap:1.0666666667vw;padding:1.6vw}
+@media only screen and (min-width:834px){.carosello-punti.fitti{border-radius:.2777777778vw;column-gap:.2777777778vw;padding:.5555555556vw}}
+.carosello-punti.fitti .carosello-punto{height:.5rem;width:.5rem}
 .carosello-punto{background-color:var(--color-off-white40);border-radius:50%;height:.7rem;padding:0;width:.7rem;transition:background-color .3s,transform .3s}
 .carosello-punto:hover{background-color:var(--color-off-white)}
 .carosello-punto.attivo{background-color:var(--color-off-white);transform:scale(1.2)}

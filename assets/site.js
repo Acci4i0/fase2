@@ -222,7 +222,9 @@ window.addEventListener('load',function(){
     var i=0,timer=null,inVista=false,sospeso=false;
 
     var punti=document.createElement('div');
-    punti.className='carosello-punti';
+    /* Oltre le otto fotografie la fila di pallini diventa una barra larga
+       quanto la fascia: da li' in poi si stringono. */
+    punti.className='carosello-punti'+(figure.length>8?' fitti':'');
     punti.setAttribute('role','tablist');
     punti.setAttribute('aria-label',DIC.gruppo);
     var bottoni=figure.map(function(im,n){

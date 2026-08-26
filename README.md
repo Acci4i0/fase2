@@ -51,6 +51,7 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   le installazioni per la fascia della pagina impianti
+assets/img/centrifughe/ le venti taglie della serie FD, dalla 250 alla 1000
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -85,6 +86,18 @@ navigazione passa da 365 a 113 px dall'alto, la prima scheda di prodotto da
 Non è stata toccata la **fascia rossa introduttiva** della home: quel respiro è
 voluto.
 
+Dove la fascia immagine è seguita da una sezione con fondo proprio — le tre
+pagine dei sistemi, con «Le macchine» sul grigio scuro — sopra restava un vuoto
+largo e sotto il fondo attaccava sul bordo del carosello. La fascia è stata
+tirata su e il margine tolto sopra è tornato sotto: lo spazio complessivo è lo
+stesso di prima, ma i due vuoti si leggono uguali. Il conto tiene dentro anche
+lo spazio morto che il titolo lascia sotto la riga di testo, così la misura va
+dalla base delle lettere al carosello. Su `trituratori.html`, a 375 px: sopra
+25 px, sotto 25 px (prima 38 e 0). La regola è `.media-band:has(+
+.expertises-overview)` in `site.css`: le pagine dove sotto il carosello c'è
+nero — accessori, schede prodotto, news — non la prendono, perché lì i due
+vuoti erano già pari.
+
 Sulle tre pagine dei sistemi (`centrifughe`, `impianti`, `trituratori`) è stata
 tolta anche la `page-statement`, la riga che ripeteva la meta description fra la
 fotografia e l'elenco delle macchine. Resta dove porta testo suo: `azienda`,
@@ -100,8 +113,9 @@ un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 
 ## Il carosello della fascia immagine
 
-`centrifughe.html`, `impianti.html` e `trituratori.html` hanno la fascia sotto al
-titolo montata a carosello: le fotografie si sovrappongono e si alternano in
+`centrifughe.html`, `impianti.html`, `trituratori.html` e `accessori.html` hanno
+la fascia sotto al titolo montata a carosello, e con loro le schede dei due
+trituratori, della serie KOMBI e delle disoleatrici FD: le fotografie si sovrappongono e si alternano in
 dissolvenza ogni 2 secondi, con le frecce ai lati e i pallini in basso a sinistra
 per scegliere a mano. Le frecce sono le stesse pastiglie a puntini della sezione
 "Il metodo" in home, col fondo scuro al posto del rosso perche' qui stanno sopra
@@ -116,6 +130,12 @@ riga per fotografia; la prima porta `class="attiva"` perche' resti visibile se l
 script non parte, le altre `loading="lazy"`. Aggiungerne o toglierne non richiede
 di aprire `site.js`: i pallini si contano da sole. Con una sola `<img>` il
 carosello non si attiva e la fascia si comporta come prima.
+
+Oltre le otto fotografie i pallini si stringono da soli: la classe `fitti`,
+che `site.js` mette sul gruppo, dimezza pallino e distanza. Senza, le venti
+taglie della scheda FD diventerebbero una barra larga quanto la fascia, appoggiata
+sulla macchina. A venti pallini la pastiglia occupa poco piu' di meta' della
+fascia, dove con sei pallini ne occupa meno di un terzo.
 
 L'intervallo sta in `data-carosello`, in millesimi di secondo.
 
@@ -172,6 +192,73 @@ sostituiscono mettendo un 16:9 con lo stesso nome.
 
 Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
 mettendo un'immagine 16:9 con lo stesso nome.
+
+## Le fotografie delle centrifughe FD
+
+Stanno in `assets/img/centrifughe/`, servite da qui come quelle dei trituratori.
+Vengono dagli scatti in posa raccolti dal committente in `FD_da_350_a_1000`:
+gli stessi soggetti della cartella `Centrifughe continue FD`, ma ripresi in
+studio e ripuliti dal fondo di reparto.
+
+**La taglia non si legge sulla macchina.** I file di partenza hanno nomi
+generati (`AD24F848…`) e la targa dati e' in bianco: nelle fotografie il campo
+`MODELLO` non e' compilato. E' stata ricavata per confronto con la cartella piu'
+vecchia, dove il nome del file porta il modello: ogni scatto nuovo e' la stessa
+inquadratura di uno vecchio, rifatta in studio. Il legame va tenuto scritto,
+altrimenti l'ordine del carosello non e' piu' ricostruibile:
+
+| file in pagina | scatto di partenza | taglia |
+|---|---|---|
+| `fd250-01` | `FD250_1` | FD 250 |
+| `fd250-02` | `FD250_2` | FD 250 |
+| `fd250-03` | `FD250_3` | FD 250 |
+| `fd250-04` | `FD250_4` | FD 250 |
+| `fd250-05` | `FD250_5` | FD 250 |
+| `fd250-06` | `FD250_7` | FD 250 |
+| `fd350-01` | `FD350_1` | FD 350 |
+| `fd350-02` | `FD350_2` | FD 350 |
+| `fd350-03` | `FD350SA_2` | FD 350 SA |
+| `fd350-04` | `FD350SA_1` | FD 350 SA |
+| `fd420-01` | `FD420S_1` | FD 420 S |
+| `fd500-01` | `FD500_3` | FD 500 |
+| `fd500-02` | `FD500_4` | FD 500 |
+| `fd500-03` | `FD500_1` | FD 500 |
+| `fd500-04` | `FD500_2` | FD 500 |
+| `fd500-05` | `FD500_6` | FD 500 |
+| `fd650-01` | `FD650_1` | FD 650 |
+| `fd650-02` | `FD650_2` | FD 650 |
+| `fd650-03` | `FD650_3` | FD 650 |
+| `fd1000-01` | `FD1000_2` | FD 1000 |
+
+Il carosello le porta in quest'ordine, dalla piu' piccola alla piu' grande. Le
+varianti SA e S stanno con la loro taglia; il nome del file usa la nomenclatura
+del catalogo in pagina, che si ferma a `FD 350` e `FD 420`.
+
+Delle ventuno fotografie della cartella ne sono entrate venti. La scartata
+(`FF29D76E`) e' uno scontornato su bianco, di taglia non identificata: accanto
+alle altre si legge come una figurina di catalogo.
+
+Il trattamento e' piu' leggero di quello dei trituratori, perche' qui gli
+originali sono gia' scatti da studio puliti:
+
+1. **Riempimento.** Gli originali sono 4:3, la fascia e' 16:9: manca larghezza.
+   Le macchine non arrivano ai lati, quindi si prolunga il fondo riga per riga,
+   prendendo il colore da una fascia di venti colonne — presa un po' dentro,
+   perche' sul bordo di questi scatti corre un filo scuro che, ripetuto,
+   diventava una riga verticale in mezzo al fondo. Il riquadro si centra
+   sull'ingombro della macchina, non sull'immagine.
+2. **Vignettatura e grana**, con i valori misurati sulle immagini gia' in
+   pagina: angoli a circa tre quarti del centro, grana con sigma 1,2.
+
+Nessuna correzione di colore: le macchine tengono le loro tinte, il bianco, il
+verde, il rosso e il blu con cui sono state verniciate.
+
+**FCV e LM 660 AG restano senza carosello.** Nel repo dei contenuti c'e' una
+sola fotografia per macchina — `su-grigio/fcv-serie.jpg`, ripetuta in
+`immagini/fcv-verticale.jpg` — piu' un render (`immagini/FCV480.jpg`), che
+accanto a una fotografia si vede per quello che e'. Con una sola `<img>` il
+carosello non si attiva e la fascia si comporta come prima. Bastano altre
+fotografie della stessa macchina per montarlo come quello delle FD.
 
 ## La serie KOMBI
 
