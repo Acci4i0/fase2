@@ -148,8 +148,16 @@ fotografati.
    macchina: si misura il suo ingombro e si taglia li'. Cosi' la figura passa
    dal riempire meta' fotogramma a occuparne il 70-98%. Sugli scatti di reparto
    il fondo non aiuta e il riquadro e' scritto a mano in `TAGLI`.
-2. **Riempimento.** Gli originali sono 4:3: i bordi della figura si allungano
-   fino ai lati della tela invece di lasciare bande.
+2. **Riempimento.** Gli originali sono 4:3 e la fascia e' 16:9, quindi manca
+   larghezza. La scelta dipende da dove arriva la macchina:
+   - **arriva ai lati** → taglio pieno. La figura copre tutto il fotogramma e
+     esce dai bordi in alto e in basso, come in una fotografia vera. Il taglio
+     si centra sul soggetto, non sull'immagine.
+   - **ai lati c'e' fondo** → si prolunga il fondo, riga per riga, prendendo il
+     colore da una fascia di bordo e non da un pixel solo.
+
+   La distinzione conta: allungare un bordo dove passa la macchina la stira in
+   una scia orizzontale. Era il difetto della prima versione.
 3. **Luce.** Una curva scurisce i medi — cioe' il fondo da studio — e apre i
    neri (gamma 1,16), con un filo di contrasto. Non tocca la tinta: nessuna
    desaturazione, nessuna dominante.
