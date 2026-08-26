@@ -50,6 +50,7 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
                         resa comune (vedi sotto)
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
+assets/img/impianti/   le installazioni per la fascia della pagina impianti
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -185,10 +186,8 @@ D 2350, E 1200, F 1000) ma le lettere rimandano a un disegno: senza sapere quale
 lettera e' la lunghezza e quale l'altezza non sono finite in pagina. Chi lo sa
 le puo' aggiungere alla griglia dei dati.
 
-**La miniatura della scheda e' una fotografia, le due sorelle sono render.**
-Della KOMBI esistono solo scatti di reparto; l'unico render disponibile
-(`KOMBI-40.png`) ha il fondo sbagliato e colori da CAD. Si vede che e' diversa,
-ma mostra la macchina vera.
+La miniatura della scheda viene da uno scatto in posa su fondo grigio: sta
+bene accanto alle due sorelle, che sono render sullo stesso grigio.
 
 ## Il brevetto del TR1
 
