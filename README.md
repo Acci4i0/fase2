@@ -129,18 +129,29 @@ I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 
 Sono le uniche immagini del sito servite da qui e non dal repo dei contenuti:
 stanno in `assets/img/trituratori/`, ricavate dagli scatti in posa del
-committente. Ognuna e' portata a 1600x900.
+committente e portate a 1600x900.
 
-Gli originali sono 4:3 e la fascia e' 16:9: ritagliarli avrebbe tolto la
-macchina, che nei trituratori ad asse verticale sta tutta in altezza. Quindi la
-figura entra intera al 97% e il fondo lo riempie una copia di se' stessa
-allargata e sfocata forte, **a luminosita' invariata**: sul grigio da studio
-l'attacco non si vede. Scurire il fondo, come si fa di solito, disegnava due
-bande evidenti ai lati.
+Il riferimento e' `assets/img/trasmissione-16x9.jpg`, la fotografia della
+sezione "Sistemi": quasi monocroma, acciaio freddo, neri pieni, grana fine,
+fotogramma occupato fino ai bordi. Gli scatti di prodotto, chiari e su fondo
+grigio uniforme, accanto a quella sembravano ritagli di catalogo incollati sul
+sito. Il trattamento li porta alla stessa lingua, **senza toccare soggetto,
+geometria o composizione**: solo taglio, luce, colore e materia.
 
-Sul colore la mano e' leggera — solo una velatura di grana al 3% — perche' gli
-scatti sono gia' coerenti fra loro. Il trattamento pesante serviva quando le
-fotografie erano riprese di reparto con luci diverse.
+1. **Taglio.** Il fondo da studio e' liscio, quello che se ne discosta e' la
+   macchina: si misura il suo ingombro e si taglia li'. Cosi' la figura passa
+   dal riempire meta' fotogramma a occuparne il 70-98%. Sugli scatti di reparto
+   il fondo non aiuta e il riquadro e' scritto a mano in `TAGLI`.
+2. **Riempimento.** Gli originali sono 4:3: i bordi della figura si allungano
+   fino ai lati della tela invece di lasciare bande.
+3. **Resa.** Colore all'13% con dominante fredda, curva che scurisce i medi
+   (gamma 1,34) e apre i neri, contrasto 1,11.
+4. **Vignettatura** decisa, che spegne i bordi: e' quella che fa emergere la
+   macchina dal buio e nasconde l'attacco del riempimento.
+5. **Grana** al 6% su tutto, che rimette insieme figura e fondo.
+
+Lo script sta in `/tmp` e non nel repo: le immagini sono file finiti, si
+sostituiscono mettendo un 16:9 con lo stesso nome.
 
 Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
 mettendo un'immagine 16:9 con lo stesso nome.
