@@ -134,6 +134,38 @@ collegamenti veri (mail, telefono, mappa). L'indirizzo nel piè di pagina non è
 un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 `<meta name="format-detection">` in testa a ogni pagina lo impedisce.
 
+## Le copertine delle schede
+
+Nell'elenco "Le macchine" ogni scheda porta un quadrato con la macchina. Il
+riquadro e' `aspect-ratio: 1` con `object-fit: cover`, quindi taglia ai lati:
+**la copertina non e' il 16:9 della fascia ridotto, e' un'immagine sua**, tagliata
+per stare in un quadrato.
+
+Le copertine che il sito gia' aveva sono scatti di catalogo: fondo chiaro
+uniforme intorno a 220, macchina centrata, **aria su tutti e quattro i lati**,
+nessuna vignettatura. Quella del KOMBI usciva da questa famiglia — la macchina
+toccava i due lati, senza margine — e si vedeva accanto alle altre due schede
+degli impianti. Ora viene dallo stesso scatto in posa di `kombi-01`, rifatta con
+la regola: la macchina sta dentro all'**84% del quadrato**, centrata, sul fondo
+portato a 220, senza vignettatura. Con lo stesso conto e' rifatta anche
+`tr1-copertina`, l'altra copertina servita da qui.
+
+| macchina | copertina | dove sta |
+|---|---|---|
+| FD | `su-grigio/fd-serie.jpg` | repo dei contenuti |
+| FCV | `su-grigio/fcv-serie.jpg` | repo dei contenuti |
+| LM 660 AG | `su-grigio/placeholder-nero.jpg` | nessuna foto verificata |
+| TR1 | `assets/img/trituratori/tr1-copertina.jpg` | qui |
+| TR-Dual | `su-grigio/trw-serie.jpg` | repo dei contenuti |
+| ciclo continuo | `su-grigio/imp-continuo-serie.jpg` | repo dei contenuti |
+| paniere estraibile | `su-grigio/imp-paniere-serie.jpg` | repo dei contenuti |
+| KOMBI | `assets/img/kombi/kombi-copertina.jpg` | qui |
+
+Le cinque servite dal repo dei contenuti stanno gia' dentro la regola e non sono
+state toccate: rifarle vorrebbe dire scegliere un'altra macchina a rappresentare
+la serie, che e' una decisione di contenuto e non di forma. `kombi-scheda.jpg`
+resta in cartella senza essere richiamata.
+
 ## Il carosello della fascia immagine
 
 `centrifughe.html`, `impianti.html`, `trituratori.html` e `accessori.html` hanno
@@ -333,12 +365,15 @@ due schede — `su-grigio/imp-continuo-serie.jpg` e `su-grigio/imp-paniere-serie
 | `continuo-04` | `B594F2CA` | ciclo continuo |
 | `continuo-05` | `0D9C5D02` | ciclo continuo |
 | `continuo-06` | `3F5C0B9D` | ciclo continuo |
+| `continuo-07` | `F4DD016D` | ciclo continuo |
+| `continuo-08` | `020C8B1A` | ciclo continuo |
+| `continuo-09` | `52CF9F0F` | ciclo continuo |
 | `paniere-01` | `EB8BB113` | paniere estraibile (e' la copertina della scheda) |
 | `paniere-02` | `1F932EEB` | paniere estraibile |
 | `paniere-03` | `BD859DD7` | paniere estraibile |
 | `paniere-04` | `6558C577` | paniere estraibile |
 
-Delle venti ne sono entrate dieci. Fuori i doppioni della stessa linea da
+Delle venti ne sono entrate tredici. Fuori i doppioni della stessa linea da
 un'angolazione vicina e uno scatto che non sta ne' di qua ne' di la': `8748707C`,
 la stazione con i due cassoni ribaltabili, che e' un modo di caricare e non una
 famiglia di impianto. Chi vuole rimetterne dentro un'altra la trova in cartella
@@ -354,9 +389,12 @@ si tiene la banda che ne contiene di piu'. Dove il conto tirava giu' sul
 pavimento la finestra e' stata alzata a mano, se no restava fuori la testa
 dell'elevatore. Vignettatura e grana sono gli stessi delle altre.
 
-**Nella fascia della pagina `impianti.html`** le tre famiglie si alternano:
-ciclo continuo, KOMBI, paniere estraibile, e da capo. Le cinque `imp-0*` che
-c'erano prima restano in cartella senza essere richiamate.
+**Nella fascia della pagina `impianti.html`** stanno otto fotografie scelte dal
+committente: sei del ciclo continuo e due del KOMBI, con `continuo-01` in
+apertura. Il paniere estraibile in questa fascia non compare — le sue fotografie
+restano sulla scheda della serie. Le cinque `imp-0*` che c'erano prima restano
+in cartella senza essere richiamate, come `continuo-02` e `continuo-03`, che
+stanno solo sulla scheda del ciclo continuo.
 
 ## La serie KOMBI
 
