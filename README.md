@@ -271,13 +271,29 @@ macchina sola, e le due voci dell'elenco — nastri trasportatori e ribalta
 cassoni — hanno ciascuna il suo carosello **nella colonna del titolo**, che dice
 gia' quello che serve. Dal titolo della pagina si passa dritti al primo blocco.
 
-**Qui il formato e' 4:3, non 16:9.** Gli scatti dei ribalta cassoni sono
-verticali (1086x1448) e le macchine sono colonne alte. Portarli a 16:9 vuol dire
-o tagliare l'altezza — e ne resta il 42%, con la macchina spezzata a meta' — o
-prolungare il fondo ai lati, che qui e' reparto e non studio: si stira in una
-scia. Col 4:3 resta il 56% dell'altezza e la macchina si legge ancora. Delle
-dieci fotografie ne sono entrate sette; le tre fuori, tagliate, mostravano solo
-un pezzo di telaio.
+**I file sono 4:3.** Gli scatti dei ribalta cassoni sono verticali (1086x1448) e
+le macchine sono colonne alte. Portarli a 16:9 vuol dire o tagliare l'altezza —
+e ne resta il 42%, con la macchina spezzata a meta' — o prolungare il fondo ai
+lati, che qui e' reparto e non studio: si stira in una scia. Col 4:3 resta il
+56% dell'altezza e la macchina si legge ancora. Delle dieci fotografie ne sono
+entrate sette; le tre fuori, tagliate, mostravano solo un pezzo di telaio.
+
+**In pagina il riquadro non e' 4:3: e' alto quanto il testo di destra.** Le due
+colonne devono cominciare e finire insieme, e il testo e' molto piu' corto di un
+4:3 a tutta colonna — su finestra larga la meta'. Percio' il carosello si allunga
+fino a dove arriva il testo (`flex:1` con `height:100%`), con due limiti: e' largo
+il **70% della colonna** e non scende sotto un **16:10** (`min-height:15.3vw`).
+Senza il primo limite non si chiuderebbe mai il vuoto; senza il secondo, dove il
+testo e' corto, il riquadro diventerebbe una fessura 5:1. Il file resta 4:3 e
+`object-fit: cover` taglia sopra e sotto, ma la macchina sta al centro e non si
+perde.
+
+Come viene, misurato: le due colonne **cominciano sempre alla stessa altezza**;
+finiscono insieme sul blocco dei nastri fino a 1440 px, e sull'altro — che ha un
+paragrafo piu' corto — resta un residuo di 39-71 px. Il corpo del testo, che era
+tappato a 1,8rem e su finestra larga smetteva di crescere mentre il riquadro
+cresceva, sale a 2,2rem: e' il tappo il motivo per cui il vuoto si apriva
+proprio sugli schermi grandi.
 
 Frecce e pallini sono gli stessi della fascia ma rimpiccioliti: sono tarati in
 `vw` su una fascia a tutta pagina e in una colonna larga un terzo verrebbero
@@ -290,12 +306,12 @@ sostituiscono le tre righe `<img>` e non serve toccare altro.
 **Il testo di destra scende all'altezza del titolo.** Le due colonne partono
 dalla stessa riga della griglia, ma a sinistra sopra il titolo c'e' il numero
 d'ordine: senza correzione la riga di destra attaccava all'altezza del numero.
-Ora `.split-body` scende di `calc(1.2rem*1.5 + 1.1111111111vw + .54vw)`: i primi
-due termini sono l'altezza del numero piu' il suo margine — se cambia lo stile
-del numero, l'allineamento segue da solo — e l'ultimo mezzo vw e' la differenza
-fra l'altezza delle maiuscole del titolo e quella della riga di destra. Senza,
-le due si allineano in cima e la riga di destra sembra alta; con, le due
-poggiano sulla stessa linea di base.
+Ora `.split-body` scende di
+`calc(1.2rem*1.5 + 1.1111111111vw + max(3rem,2.5vw)*1.167 + 1.6666666667vw)`:
+numero, suo margine, altezza del titolo e margine del carosello. Il testo non
+parte quindi all'altezza del titolo ma **all'altezza del carosello**. Il `max`
+ripete il `clamp` del corpo del titolo, se no sotto i 1200 px il conto sbaglia
+di qualche pixel.
 
 ## Le immagini delle Soluzioni
 
