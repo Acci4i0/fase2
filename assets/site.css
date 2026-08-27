@@ -472,7 +472,12 @@ main{position:relative}
 @media only screen and (min-width:834px){.method-mark{width:6.9444444444vw}}
 .method-mark svg{width:100%;height:auto}
 .footer-address{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-style:normal;font-weight:300;letter-spacing:-.02em;line-height:1.5}
-@media only screen and (min-width:834px){.footer-address{font-size:clamp(1.4rem,1.1111111111vw,1.8rem)}}
+/* Da telefono l'indirizzo corre in riga, con i trattini a separare. Da 834 px
+   in su ogni voce prende la sua riga: via, comune, telefono, mail. I
+   separatori e l'a capo di mezzo spariscono, se no lascerebbero righe vuote. */
+@media only screen and (min-width:834px){.footer-address{font-size:clamp(1.4rem,1.1111111111vw,1.8rem)}
+  .footer-address .voce{display:block}
+  .footer-address .stacco,.footer-address br{display:none}}
 .expertise-card .image-wrapper img,.post-card .image-wrapper img,.hero-card img{background:#dcdcdc}
 
 /* Le riprese Fase sono girate in reparto e restano piu chiare dei render
