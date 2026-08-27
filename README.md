@@ -266,9 +266,10 @@ I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 
 ## I caroselli in colonna degli accessori
 
-Su `accessori.html` la fascia in cima resta com'era. Sotto, ogni voce dell'elenco
-— nastri trasportatori e ribalta cassoni — ha il suo carosello **nella colonna
-del titolo**, non a tutta pagina.
+Su `accessori.html` la fascia in cima e' stata tolta: la pagina non presenta una
+macchina sola, e le due voci dell'elenco — nastri trasportatori e ribalta
+cassoni — hanno ciascuna il suo carosello **nella colonna del titolo**, che dice
+gia' quello che serve. Dal titolo della pagina si passa dritti al primo blocco.
 
 **Qui il formato e' 4:3, non 16:9.** Gli scatti dei ribalta cassoni sono
 verticali (1086x1448) e le macchine sono colonne alte. Portarli a 16:9 vuol dire
@@ -289,9 +290,12 @@ sostituiscono le tre righe `<img>` e non serve toccare altro.
 **Il testo di destra scende all'altezza del titolo.** Le due colonne partono
 dalla stessa riga della griglia, ma a sinistra sopra il titolo c'e' il numero
 d'ordine: senza correzione la riga di destra attaccava all'altezza del numero.
-Ora `.split-body` scende di `calc(1.2rem*1.5 + 1.1111111111vw)`, cioe' esattamente
-l'altezza del numero piu' il suo margine — se cambia lo stile del numero,
-l'allineamento segue da solo.
+Ora `.split-body` scende di `calc(1.2rem*1.5 + 1.1111111111vw + .54vw)`: i primi
+due termini sono l'altezza del numero piu' il suo margine — se cambia lo stile
+del numero, l'allineamento segue da solo — e l'ultimo mezzo vw e' la differenza
+fra l'altezza delle maiuscole del titolo e quella della riga di destra. Senza,
+le due si allineano in cima e la riga di destra sembra alta; con, le due
+poggiano sulla stessa linea di base.
 
 ## Le immagini delle Soluzioni
 
