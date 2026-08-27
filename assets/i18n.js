@@ -489,6 +489,7 @@ var EN = {
 "trituratore Fase TR1 su cavalletto bianco, con motoriduttore e quadro di comando a bordo macchina":"Fase TR1 shredder on a white stand, with gearmotor and on-board control panel",
 "trituratore Fase TR1 con tramoggia di carico, motore laterale e cassone di raccolta del truciolo":"Fase TR1 shredder with loading hopper, side-mounted motor and chip collection bin",
 "trituratore Fase TR1 in blu su bancale, con l\u2019accoppiamento fra motore e riduttore in primo piano":"Fase TR1 shredder in blue on a pallet, with the motor-to-gearbox coupling in the foreground",
+"trituratore Fase TR1 con quadro di comando a bordo macchina e cassone blu di raccolta su ruote":"Fase TR1 shredder with on-board control panel and blue collection bin on castors",
 "trituratore Fase TR-Dual completo: tramoggia di carico, corpo macchina con il marchio, scivolo di scarico e motore":"complete Fase TR-Dual shredder: loading hopper, machine body with the brand mark, discharge chute and motor",
 "trituratore Fase TR-Dual con tramoggia conica grigia, su bancale":"Fase TR-Dual shredder with grey conical hopper, on a pallet",
 "trituratore Fase TR-Dual con tramoggia nera, centralina idraulica e basamento blu":"Fase TR-Dual shredder with black hopper, hydraulic power pack and blue base frame",
