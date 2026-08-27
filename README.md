@@ -124,6 +124,21 @@ direzione e coordinamento di LM Industry Srl», col nome che porta a
 `lm-industry.com`. La stessa dichiarazione, per esteso e col numero di registro,
 resta nel blocco legale di `privacy.html` e `cookie-policy.html`.
 
+In coda a quella riga sta il marchio LM, alto quanto una maiuscola. Da 834 px in
+su la riga diventa una fascia larga quanto la nota e il marchio va **a filo con
+la fine della riga sopra**, l'ultima cifra della partita IVA: non e' una
+misura scritta a mano, e' `justify-content: space-between` dentro una nota che
+prende la larghezza della sua riga piu' lunga, quindi tiene a ogni larghezza e
+in tutte e due le lingue. Da telefono, dove la riga va a capo da sola, il
+marchio resta di seguito al testo.
+
+Il file e' `assets/img/lm-industry.png`, ricavato dal marchio pubblicato su
+`lm-industry.com`: **bianco pieno**, perche' l'originale e' rosso e sul fondo del
+piede sparirebbe. E' il solo monogramma, senza le tre barre colorate del lockup:
+a 16 px diventavano una riga sporca. Va ricordato che e' `display:inline-block`
+— il foglio mette `img{display:block}`, e senza la correzione il marchio andava
+a capo da solo.
+
 Come gli altri collegamenti del piede — telefono, mail, privacy, cookie — non e'
 sottolineato: nel piede il sottolineato non si usa.
 

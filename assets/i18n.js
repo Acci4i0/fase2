@@ -31,6 +31,7 @@ var EN = {
 "Chiudi il menu":"Close the menu",
 "Percorso":"Breadcrumb",
 "LinkedIn":"LinkedIn",
+"LM Industry":"LM Industry",
 "Fase":"Fase",
 "Fase Mechanical Engineering — home":"Fase Mechanical Engineering — home",
 "Policy Privacy":"Privacy policy",
