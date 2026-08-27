@@ -139,6 +139,24 @@ a 16 px diventavano una riga sporca. Va ricordato che e' `display:inline-block`
 — il foglio mette `img{display:block}`, e senza la correzione il marchio andava
 a capo da solo.
 
+**L'allineamento in verticale e' misurato, non a occhio.** Il marchio e' piu'
+alto delle maiuscole, quindi sporge: quello che conta e' che sporga *uguale*
+sopra e sotto. Alla prima stesura non era cosi', ne' da una parte ne' dall'altra:
+
+| | sopra le maiuscole | sotto la linea di base |
+|---|---|---|
+| desktop, prima | 1,7 px | 4,3 px |
+| desktop, ora | 2,9 px | 3,0 px |
+| telefono, prima | 6,2 px | 0 px |
+| telefono, ora | 2,7 px | 3,2 px |
+
+Sul desktop il riquadro del testo non e' simmetrico attorno alle lettere — sotto
+ci sono lo spazio dei discendenti e mezza interlinea — quindi centrare i due
+riquadri con la fascia non basta: `.footnote .gruppo>span` scende di `.09em`, che
+e' esattamente quella asimmetria. Da telefono il marchio e' in linea col testo e
+si regola invece con `vertical-align:-.45em`. Le due misure sono in em, cosi'
+tengono quando il corpo del testo cambia con la larghezza.
+
 Come gli altri collegamenti del piede — telefono, mail, privacy, cookie — non e'
 sottolineato: nel piede il sottolineato non si usa.
 
