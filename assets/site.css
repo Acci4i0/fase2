@@ -456,10 +456,10 @@ main{position:relative}
    marchio finisce a filo con l'ultima cifra della partita IVA sopra; da
    telefono, dove la riga va a capo da sola, resta di seguito al testo. */
 .footnote .riga{display:block}
-.footnote .logo-lm{display:inline-block;height:1.15em;margin-left:.7em;vertical-align:-.45em;width:auto}
+.footnote .logo-lm{display:inline-block;height:.8em;margin-left:.5em;vertical-align:-.25em;width:auto}
 @media only screen and (min-width:834px){
   .footnote .gruppo{align-items:center;display:flex;justify-content:space-between}
-  .footnote .gruppo .logo-lm{margin-left:1.5em}
+  .footnote .gruppo .logo-lm{margin-left:.5em}
   /* La fascia centra i due riquadri, ma il riquadro del testo non e' simmetrico
      attorno alle lettere: sotto ci sono lo spazio dei discendenti e mezza
      interlinea. Centrati i riquadri, il marchio finiva 1,7 px sopra le maiuscole

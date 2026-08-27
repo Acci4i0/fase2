@@ -124,41 +124,46 @@ direzione e coordinamento di LM Industry Srl», col nome che porta a
 `lm-industry.com`. La stessa dichiarazione, per esteso e col numero di registro,
 resta nel blocco legale di `privacy.html` e `cookie-policy.html`.
 
-In coda a quella riga sta il marchio LM, alto quanto una maiuscola. Da 834 px in
-su la riga diventa una fascia larga quanto la nota e il marchio va **a filo con
-la fine della riga sopra**, l'ultima cifra della partita IVA: non e' una
+In coda a quella riga sta il marchio LM, alto quanto le maiuscole del testo. Da
+834 px in su la riga diventa una fascia larga quanto la nota e il marchio va **a
+filo con la fine della riga sopra**, l'ultima cifra della partita IVA: non e' una
 misura scritta a mano, e' `justify-content: space-between` dentro una nota che
-prende la larghezza della sua riga piu' lunga, quindi tiene a ogni larghezza e
-in tutte e due le lingue. Da telefono, dove la riga va a capo da sola, il
-marchio resta di seguito al testo.
+prende la larghezza della sua riga piu' lunga, quindi tiene a ogni larghezza e in
+tutte e due le lingue. Da telefono, dove la riga va a capo da sola, il marchio
+resta di seguito al testo.
 
 Il file e' `assets/img/lm-industry.png`, ricavato dal marchio pubblicato su
 `lm-industry.com`: **bianco pieno**, perche' l'originale e' rosso e sul fondo del
 piede sparirebbe. E' il solo monogramma, senza le tre barre colorate del lockup:
-a 16 px diventavano una riga sporca. Va ricordato che e' `display:inline-block`
-— il foglio mette `img{display:block}`, e senza la correzione il marchio andava
-a capo da solo.
+a questa misura diventavano una riga sporca. Va ricordato che e'
+`display:inline-block` — il foglio mette `img{display:block}`, e senza la
+correzione il marchio andava a capo da solo.
 
-**L'allineamento in verticale e' misurato, non a occhio.** Il marchio e' piu'
-alto delle maiuscole, quindi sporge: quello che conta e' che sporga *uguale*
-sopra e sotto. Alla prima stesura non era cosi', ne' da una parte ne' dall'altra:
+**La misura del marchio non e' libera: la detta la riga.** Perche' il marchio
+possa stare a filo, la seconda riga con dentro il marchio deve restare piu' corta
+della prima. Fra la fine del testo e la fine della riga sopra ci sono 24,5 px in
+italiano e 25 in inglese: dentro ci stanno la distanza minima (`.5em`) e il
+marchio, che percio' e' alto `.8em` — poco piu' delle maiuscole. Con `1.15em`,
+come nella prima stesura, la seconda riga sfondava di 19 px e l'allineamento
+saltava. **Se il testo di una delle due righe cambia, questo conto va rifatto.**
+
+**L'allineamento in verticale e' misurato, non a occhio.** Quello che conta e' che
+il marchio sporga uguale sopra le maiuscole e sotto la linea di base:
 
 | | sopra le maiuscole | sotto la linea di base |
 |---|---|---|
-| desktop, prima | 1,7 px | 4,3 px |
-| desktop, ora | 2,9 px | 3,0 px |
-| telefono, prima | 6,2 px | 0 px |
-| telefono, ora | 2,7 px | 3,2 px |
+| desktop | 0,4 px | 0,5 px |
+| telefono | 0,6 px | 0,4 px |
 
 Sul desktop il riquadro del testo non e' simmetrico attorno alle lettere — sotto
 ci sono lo spazio dei discendenti e mezza interlinea — quindi centrare i due
 riquadri con la fascia non basta: `.footnote .gruppo>span` scende di `.09em`, che
 e' esattamente quella asimmetria. Da telefono il marchio e' in linea col testo e
-si regola invece con `vertical-align:-.45em`. Le due misure sono in em, cosi'
+si regola invece con `vertical-align:-.25em`. Le due misure sono in em, cosi'
 tengono quando il corpo del testo cambia con la larghezza.
 
-Come gli altri collegamenti del piede — telefono, mail, privacy, cookie — non e'
-sottolineato: nel piede il sottolineato non si usa.
+Il trattino della prima riga e' quello medio (`–`), lo stesso del blocco legale di
+`privacy.html`, non quello lungo.
 
 ## Niente parole evidenziate
 
