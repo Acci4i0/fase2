@@ -488,6 +488,18 @@ var EN = {
 "Accessori | Fase Mechanical Engineering":"Accessories | Fase Mechanical Engineering",
 
 /* --- testi alternativi delle immagini -------------------------------- */
+"ribalta cassoni Fase con il cassone giallo dentro il telaio di sollevamento, in reparto":"Fase bin tipper with the yellow bin inside the lifting frame, on the shop floor",
+"ribalta cassoni Fase in giallo, con il gruppo di ribaltamento e i cilindri in vista":"Fase bin tipper in yellow, with the tipping assembly and cylinders in view",
+"ribalta cassoni Fase con il cassone sollevato in cima alla colonna":"Fase bin tipper with the bin raised to the top of the column",
+"ribalta cassoni Fase con tramoggia di scarico e cassone giallo a fianco":"Fase bin tipper with discharge hopper and yellow bin alongside",
+"due ribalta cassoni Fase affiancati, con lo scivolo di scarico in basso":"two Fase bin tippers side by side, with the discharge chute below",
+"ribalta cassoni Fase dentro la gabbia di protezione, col quadro elettrico a fianco":"Fase bin tipper inside its safety cage, with the electrical panel alongside",
+"gruppo di ribaltamento di un ribalta cassoni Fase, visto da vicino":"tipping assembly of a Fase bin tipper, close up",
+"fotografia del nastro trasportatore non ancora disponibile":"photograph of the belt conveyor not yet available",
+"centrifuga disoleatrice Fase serie FCV in blu, coperchio con maniglie e quadro a bordo macchina":"Fase FCV series oil-removal centrifuge in blue, lid with handles and on-board control panel",
+"centrifuga disoleatrice Fase serie FCV in bianco, vista di tre quarti":"Fase FCV series oil-removal centrifuge in white, seen three-quarters on",
+"centrifuga disoleatrice Fase serie FCV col coperchio aperto e il cesto estratto":"Fase FCV series oil-removal centrifuge with the lid open and the basket lifted out",
+"centrifuga disoleatrice Fase serie FD, fusto bianco e motore sul basamento che porta il marchio":"Fase FD series oil-removal centrifuge, white drum and motor on the base carrying the brand mark",
 "timbro \u00abpatented\u00bb: l\u2019espulsione del trituratore TR1 \u00e8 coperta da brevetto":"\u201cpatented\u201d stamp: the ejection system of the TR1 shredder is covered by a patent",
 "trituratore Fase TR1 su cavalletto bianco, con motoriduttore e quadro di comando a bordo macchina":"Fase TR1 shredder on a white stand, with gearmotor and on-board control panel",
 "trituratore Fase TR1 con tramoggia di carico, motore laterale e cassone di raccolta del truciolo":"Fase TR1 shredder with loading hopper, side-mounted motor and chip collection bin",

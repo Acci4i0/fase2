@@ -587,8 +587,30 @@ main{position:relative}
 @media only screen and (min-width:834px){.split-index{margin-bottom:1.1111111111vw}}
 .split-title{font-size:clamp(2rem,7.4666666667vw,7.4666666667vw);font-weight:300;letter-spacing:-.04em;line-height:1}
 @media only screen and (min-width:834px){.split-title{font-size:clamp(3rem,2.5vw,2.5vw);line-height:1.167}}
+/* Carosello nella colonna della scheda: stessa meccanica della fascia, ma 4:3
+   invece di 16:9. Gli scatti dei ribalta cassoni sono verticali e le macchine
+   sono alte: in un 16:9 resterebbe il 42% dell'altezza e la macchina si
+   spezzerebbe, in un 4:3 ne resta il 56% e si legge ancora. */
+.split-media{margin-top:6.4vw}
+@media only screen and (min-width:834px){.split-media{margin-top:1.6666666667vw}}
+.split-media .carosello{aspect-ratio:4/3;background-color:var(--color-dark-grey);border-radius:4.2666666667vw;overflow:hidden;position:relative}
+@media only screen and (min-width:834px){.split-media .carosello{border-radius:1.1111111111vw}}
+.split-media .carosello img{height:100%;left:0;object-fit:cover;opacity:0;position:absolute;top:0;transition:opacity .55s var(--ease-expo-out);width:100%}
+.split-media .carosello img.attiva{opacity:1}
+/* Frecce e pallini sono tarati sulla fascia a tutta pagina: in una colonna
+   larga un terzo verrebbero enormi, qui scendono di misura. */
+@media only screen and (min-width:834px){
+  .split-media .carosello-freccia{height:1.8055555556vw;left:.5555555556vw;width:1.8055555556vw}
+  .split-media .carosello-freccia.avanti{left:auto;right:.5555555556vw}
+  .split-media .carosello-punti{border-radius:.2777777778vw;bottom:.5555555556vw;column-gap:.2777777778vw;left:.5555555556vw;padding:.4166666667vw}}
+@media (prefers-reduced-motion:reduce){.split-media .carosello img{transition-duration:.01ms!important}}
 .split-body{grid-column:1/-1;margin-top:5vw}
-@media only screen and (min-width:834px){.split-body{grid-column:13/-1;margin-top:0}}
+/* Da 834 px in su le due colonne partono dalla stessa riga della griglia, ma a
+   sinistra sopra il titolo c'e' il numero: senza correzione il testo di destra
+   attacca all'altezza del numero e non del titolo. Scende quindi dell'altezza
+   del numero piu' il suo margine, cioe' esattamente di quello che il titolo ha
+   sopra di se'. */
+@media only screen and (min-width:834px){.split-body{grid-column:13/-1;margin-top:calc(1.2rem*1.5 + 1.1111111111vw)}}
 .split-hook{font-size:clamp(1.6rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.04em;line-height:1.2;color:var(--color-off-white)}
 @media only screen and (min-width:834px){.split-hook{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167}}
 .split-prose{margin-top:4vw}
