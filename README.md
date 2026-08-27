@@ -53,6 +53,7 @@ assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
 assets/img/centrifughe/ la serie FD dalla 250 alla 1000: dieci in pagina,
                         dieci di riserva
+assets/img/favicon*.png  l'icona della scheda del browser, marchio su fondo rosso
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -165,6 +166,26 @@ Le cinque servite dal repo dei contenuti stanno gia' dentro la regola e non sono
 state toccate: rifarle vorrebbe dire scegliere un'altra macchina a rappresentare
 la serie, che e' una decisione di contenuto e non di forma. `kombi-scheda.jpg`
 resta in cartella senza essere richiamata.
+
+## L'icona della scheda
+
+Nella scheda del browser compariva il mondo grigio del ripiego: nessuna pagina
+dichiarava un'icona. Ora tutte e 27 portano
+
+```
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+```
+
+L'immagine e' quella che il committente usa gia' come favicon
+(`logo/favicon.png` nella cartella delle fotografie): marchio bianco per esteso
+su fondo rosso pieno, con aria intorno — a 16 px il marchio si legge intero e non
+tagliato. Il rosso e' gia' il **#A72B2A** del sito, verificato sul file, quindi
+non e' stato ritoccato. Il fondo e' opaco e non trasparente: cosi' l'icona tiene
+sia sulla barra chiara sia su quella scura, invece di sparire in una delle due.
+
+I tre tagli (32, 180, 512) escono dallo stesso file a 512 px. Il 180 serve alla
+schermata di casa di iOS, il 512 sta li' per un eventuale manifest.
 
 ## Il carosello della fascia immagine
 
