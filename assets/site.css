@@ -451,6 +451,15 @@ main{position:relative}
 @media only screen and (min-width:834px){.social-links{column-gap:1.8055555556vw}}
 .social-link{display:inline-block;position:relative}
 .social-link svg{display:block;overflow:visible;pointer-events:none;width:auto}
+/* Il marchio del gruppo in coda alla riga della direzione e coordinamento.
+   Da 834 px in su la riga diventa una fascia larga quanto la nota, cosi' il
+   marchio finisce a filo con l'ultima cifra della partita IVA sopra; da
+   telefono, dove la riga va a capo da sola, resta di seguito al testo. */
+.footnote .riga{display:block}
+.footnote .logo-lm{display:inline-block;height:1.15em;margin-left:.7em;vertical-align:-.2em;width:auto}
+@media only screen and (min-width:834px){
+  .footnote .gruppo{align-items:center;display:flex;justify-content:space-between}
+  .footnote .gruppo .logo-lm{margin-left:1.5em}}
 .legal-links{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.375;display:flex}
 @media only screen and (min-width:834px){.legal-links{font-size:1.4rem}.legal-links.hidden-desktop{display:none}}
 @media only screen and (max-width:833px){.legal-links.hidden-mobile{display:none}}
