@@ -592,7 +592,8 @@ main{position:relative}
    sono alte: in un 16:9 resterebbe il 42% dell'altezza e la macchina si
    spezzerebbe, in un 4:3 ne resta il 56% e si legge ancora. */
 .split-media{margin-top:6.4vw}
-@media only screen and (min-width:834px){.split-media{margin-top:1.6666666667vw}}
+@media only screen and (min-width:834px){
+  .split-media{margin-top:1.6666666667vw}}
 .split-media .carosello{aspect-ratio:4/3;background-color:var(--color-dark-grey);border-radius:4.2666666667vw;overflow:hidden;position:relative}
 @media only screen and (min-width:834px){.split-media .carosello{border-radius:1.1111111111vw}}
 .split-media .carosello img{height:100%;left:0;object-fit:cover;opacity:0;position:absolute;top:0;transition:opacity .55s var(--ease-expo-out);width:100%}
@@ -604,21 +605,37 @@ main{position:relative}
   .split-media .carosello-freccia.avanti{left:auto;right:.5555555556vw}
   .split-media .carosello-punti{border-radius:.2777777778vw;bottom:.5555555556vw;column-gap:.2777777778vw;left:.5555555556vw;padding:.4166666667vw}}
 @media (prefers-reduced-motion:reduce){.split-media .carosello img{transition-duration:.01ms!important}}
+/* Il carosello si allunga fino a dove arriva il testo di destra, cosi' le due
+   colonne cominciano e finiscono insieme. Sotto non puo' scendere: il minimo e'
+   un 16:10 della colonna (21,8vw), se no su finestra larga — dove il testo va a
+   capo poche volte ed e' corto — diventerebbe una fessura. */
+@media only screen and (min-width:834px){
+  .split-head{display:flex;flex-direction:column}
+  .split-media{display:flex;flex:1;min-height:0}
+  /* Largo il 70% della colonna: a tutta larghezza un 16:10 sarebbe piu' alto
+     del testo a fianco su qualsiasi finestra, e il vuoto non si chiuderebbe
+     mai. Cosi' fino a circa 1500 px le due colonne finiscono insieme. */
+  .split-media .carosello{aspect-ratio:auto;height:100%;max-width:70%;min-height:15.3vw;width:100%}}
 .split-body{grid-column:1/-1;margin-top:5vw}
 /* Da 834 px in su le due colonne partono dalla stessa riga della griglia, ma a
    sinistra sopra il titolo c'e' il numero: senza correzione il testo di destra
    attacca all'altezza del numero e non del titolo. Scende quindi dell'altezza
    del numero piu' il suo margine, cioe' esattamente di quello che il titolo ha
-   sopra di se'. L'ultimo mezzo vw e' la differenza fra l'altezza delle maiuscole
-   del titolo e quella della riga di destra: senza, le due si allineano in cima e
-   la riga di destra sembra alta; con, le due poggiano sulla stessa linea. */
-@media only screen and (min-width:834px){.split-body{grid-column:13/-1;margin-top:calc(1.2rem*1.5 + 1.1111111111vw + .54vw)}}
+   sopra di se'. Ai due termini si aggiungono l'altezza del titolo e il margine
+   del carosello: cosi' il testo non parte all'altezza del titolo ma all'altezza
+   del carosello, e le due colonne cominciano insieme. Il `max` ripete il `clamp`
+   del corpo del titolo, altrimenti sotto i 1200 px il conto sbaglia di qualche
+   pixel. */
+@media only screen and (min-width:834px){.split-body{grid-column:13/-1;margin-top:calc(1.2rem*1.5 + 1.1111111111vw + max(3rem,2.5vw)*1.167 + 1.6666666667vw)}}
 .split-hook{font-size:clamp(1.6rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.04em;line-height:1.2;color:var(--color-off-white)}
 @media only screen and (min-width:834px){.split-hook{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167}}
 .split-prose{margin-top:4vw}
 @media only screen and (min-width:834px){.split-prose{margin-top:1.6666666667vw}}
 .split-prose p,.detail-prose p,.contact-prose p{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;color:var(--color-silver)}
 @media only screen and (min-width:834px){.split-prose p,.detail-prose p,.contact-prose p{font-size:clamp(1.4rem,1.1111111111vw,1.8rem)}}
+/* Nelle due schede degli accessori il corpo sale: era tappato a 1,8rem e su
+   finestra larga smetteva di crescere, mentre il carosello a fianco cresceva. */
+@media only screen and (min-width:834px){.split-prose p{font-size:clamp(1.6rem,1.25vw,2.2rem)}}
 .split-prose p+p,.detail-prose p+p,.contact-prose p+p{margin-top:4.2666666667vw}
 @media only screen and (min-width:834px){.split-prose p+p,.detail-prose p+p,.contact-prose p+p{margin-top:1.1111111111vw}}
 .detail-prose a{color:var(--color-off-white);text-decoration:underline;text-underline-offset:.2em}
