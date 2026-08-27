@@ -488,6 +488,11 @@ var EN = {
 "Accessori | Fase Mechanical Engineering":"Accessories | Fase Mechanical Engineering",
 
 /* --- testi alternativi delle immagini -------------------------------- */
+"cumulo fitto di truciolo d'acciaio appena uscito dalla lavorazione":"dense heap of steel chips straight off the machine",
+"mandrino di un tornio automatico al lavoro, con gli ugelli del lubrorefrigerante":"spindle of an automatic lathe at work, with the coolant nozzles",
+"fresatura di un blocco d'acciaio in un centro di lavoro, col truciolo che salta":"milling a steel block in a machining centre, with chips flying",
+"punta che fora l'acciaio sotto il getto di lubrorefrigerante":"a drill going through steel under the coolant jet",
+"spezzoni d'acciaio tornito alla rinfusa dentro un cassone":"turned steel offcuts loose in a bin",
 "ribalta cassoni Fase con il cassone giallo dentro il telaio di sollevamento, in reparto":"Fase bin tipper with the yellow bin inside the lifting frame, on the shop floor",
 "ribalta cassoni Fase in giallo, con il gruppo di ribaltamento e i cilindri in vista":"Fase bin tipper in yellow, with the tipping assembly and cylinders in view",
 "ribalta cassoni Fase con il cassone sollevato in cima alla colonna":"Fase bin tipper with the bin raised to the top of the column",
