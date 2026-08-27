@@ -51,7 +51,8 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   le installazioni per la fascia della pagina impianti
-assets/img/centrifughe/ le venti taglie della serie FD, dalla 250 alla 1000
+assets/img/centrifughe/ la serie FD dalla 250 alla 1000: dodici in pagina,
+                        otto di riserva
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -115,11 +116,12 @@ un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 
 `centrifughe.html`, `impianti.html`, `trituratori.html` e `accessori.html` hanno
 la fascia sotto al titolo montata a carosello, e con loro le schede dei due
-trituratori, della serie KOMBI e delle disoleatrici FD: le fotografie si sovrappongono e si alternano in
-dissolvenza ogni 2 secondi, con le frecce ai lati e i pallini in basso a sinistra
-per scegliere a mano. Le frecce sono le stesse pastiglie a puntini della sezione
-"Il metodo" in home, col fondo scuro al posto del rosso perche' qui stanno sopra
-la fotografia, e piu' grandi: 28 px sono un bersaglio scomodo per il dito.
+trituratori, della serie KOMBI e delle disoleatrici FD: le fotografie si
+sovrappongono e si alternano in dissolvenza ogni 2 secondi, con le frecce ai
+lati e i pallini in basso a sinistra per scegliere a mano. Le frecce sono le
+stesse pastiglie a puntini della sezione "Il metodo" in home, col fondo scuro al
+posto del rosso perche' qui stanno sopra la fotografia, e piu' grandi: 28 px
+sono un bersaglio scomodo per il dito.
 
 La dissolvenza dura 0,55 secondi. Con la cadenza a 2 secondi una sfumatura piu'
 lunga terrebbe le figure quasi sempre a mezz'aria: cambiando l'intervallo conviene
@@ -132,10 +134,9 @@ di aprire `site.js`: i pallini si contano da sole. Con una sola `<img>` il
 carosello non si attiva e la fascia si comporta come prima.
 
 Oltre le otto fotografie i pallini si stringono da soli: la classe `fitti`,
-che `site.js` mette sul gruppo, dimezza pallino e distanza. Senza, le venti
-taglie della scheda FD diventerebbero una barra larga quanto la fascia, appoggiata
-sulla macchina. A venti pallini la pastiglia occupa poco piu' di meta' della
-fascia, dove con sei pallini ne occupa meno di un terzo.
+che `site.js` mette sul gruppo, dimezza pallino e distanza. Senza, le dodici
+taglie della scheda FD diventerebbero una barra appoggiata sulla macchina —
+con venti, la prima versione, arrivava larga quanto la fascia.
 
 L'intervallo sta in `data-carosello`, in millesimi di secondo.
 
@@ -150,9 +151,10 @@ I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 
 ## Le fotografie dei trituratori
 
-Sono le uniche immagini del sito servite da qui e non dal repo dei contenuti:
-stanno in `assets/img/trituratori/`, ricavate dagli scatti in posa del
-committente e portate a 1600x900.
+Stanno in `assets/img/trituratori/`, ricavate dagli scatti in posa del
+committente e portate a 1600x900. Sono le prime immagini servite da qui e non
+dal repo dei contenuti; poi sono arrivate quelle di KOMBI, degli impianti e
+delle centrifughe FD, con lo stesso criterio.
 
 Il riferimento e' `assets/img/trasmissione-16x9.jpg`, la fotografia della
 sezione "Sistemi": neri pieni, grana fine, fotogramma occupato fino ai bordi.
@@ -187,11 +189,15 @@ fotografati.
    dal buio e nasconde l'attacco del riempimento.
 5. **Grana** al 6% su tutto, che rimette insieme figura e fondo.
 
-Lo script sta in `/tmp` e non nel repo: le immagini sono file finiti, si
-sostituiscono mettendo un 16:9 con lo stesso nome.
-
 Lo script che le ha prodotte non e' nel repo: sono file finiti, si sostituiscono
 mettendo un'immagine 16:9 con lo stesso nome.
+
+`tr1-04` e' arrivata dopo, dallo stesso genere di scatto in posa delle FD — fondo
+da studio gia' pulito — e ha preso il trattamento piu' leggero descritto sotto:
+riquadro 16:9 col fondo prolungato ai lati, vignettatura e grana, senza curva sui
+medi. Accanto alle altre tre non si distingue. Sta nel carosello della scheda TR1
+e in quello della pagina `trituratori.html`, dove l'elenco alterna una macchina e
+l'altra.
 
 ## Le fotografie delle centrifughe FD
 
@@ -207,36 +213,46 @@ vecchia, dove il nome del file porta il modello: ogni scatto nuovo e' la stessa
 inquadratura di uno vecchio, rifatta in studio. Il legame va tenuto scritto,
 altrimenti l'ordine del carosello non e' piu' ricostruibile:
 
-| file in pagina | scatto di partenza | taglia |
-|---|---|---|
-| `fd250-01` | `FD250_1` | FD 250 |
-| `fd250-02` | `FD250_2` | FD 250 |
-| `fd250-03` | `FD250_3` | FD 250 |
-| `fd250-04` | `FD250_4` | FD 250 |
-| `fd250-05` | `FD250_5` | FD 250 |
-| `fd250-06` | `FD250_7` | FD 250 |
-| `fd350-01` | `FD350_1` | FD 350 |
-| `fd350-02` | `FD350_2` | FD 350 |
-| `fd350-03` | `FD350SA_2` | FD 350 SA |
-| `fd350-04` | `FD350SA_1` | FD 350 SA |
-| `fd420-01` | `FD420S_1` | FD 420 S |
-| `fd500-01` | `FD500_3` | FD 500 |
-| `fd500-02` | `FD500_4` | FD 500 |
-| `fd500-03` | `FD500_1` | FD 500 |
-| `fd500-04` | `FD500_2` | FD 500 |
-| `fd500-05` | `FD500_6` | FD 500 |
-| `fd650-01` | `FD650_1` | FD 650 |
-| `fd650-02` | `FD650_2` | FD 650 |
-| `fd650-03` | `FD650_3` | FD 650 |
-| `fd1000-01` | `FD1000_2` | FD 1000 |
+| file | scatto di partenza | taglia | dove |
+|---|---|---|---|
+| `fd250-01` | `FD250_1` | FD 250 | carosello |
+| `fd250-02` | `FD250_2` | FD 250 | riserva |
+| `fd250-03` | `FD250_3` | FD 250 | carosello |
+| `fd250-04` | `FD250_4` | FD 250 | riserva |
+| `fd250-05` | `FD250_5` | FD 250 | riserva |
+| `fd250-06` | `FD250_7` | FD 250 | riserva |
+| `fd350-01` | `FD350_1` | FD 350 | carosello |
+| `fd350-02` | `FD350_2` | FD 350 | riserva |
+| `fd350-03` | `FD350SA_2` | FD 350 SA | carosello |
+| `fd350-04` | `FD350SA_1` | FD 350 SA | riserva |
+| `fd420-01` | `FD420S_1` | FD 420 S | carosello |
+| `fd500-01` | `FD500_3` | FD 500 | carosello |
+| `fd500-02` | `FD500_4` | FD 500 | riserva |
+| `fd500-03` | `FD500_1` | FD 500 | carosello |
+| `fd500-04` | `FD500_2` | FD 500 | riserva |
+| `fd500-05` | `FD500_6` | FD 500 | carosello |
+| `fd650-01` | `FD650_1` | FD 650 | carosello |
+| `fd650-02` | `FD650_2` | FD 650 | carosello |
+| `fd650-03` | `FD650_3` | FD 650 | carosello |
+| `fd1000-01` | `FD1000_2` | FD 1000 | carosello |
 
-Il carosello le porta in quest'ordine, dalla piu' piccola alla piu' grande. Le
-varianti SA e S stanno con la loro taglia; il nome del file usa la nomenclatura
-del catalogo in pagina, che si ferma a `FD 350` e `FD 420`.
+Il carosello ne porta dodici, in quest'ordine, dalla piu' piccola alla piu'
+grande. Le varianti SA e S stanno con la loro taglia; il nome del file usa la
+nomenclatura del catalogo in pagina, che si ferma a `FD 350` e `FD 420`.
 
-Delle ventuno fotografie della cartella ne sono entrate venti. La scartata
-(`FF29D76E`) e' uno scontornato su bianco, di taglia non identificata: accanto
-alle altre si legge come una figurina di catalogo.
+Le altre otto restano nella cartella senza essere richiamate: sono file finiti,
+pronti da mettere in pagina al posto di uno di questi con una riga `<img>`. Le
+venti in fila erano troppe — mezzo carosello era la taglia piu' piccola — e la
+scelta e' caduta sugli scatti puliti: per la 250 e la 350 due ciascuna, il
+ritratto della macchina e il gruppo completo sul telaio; fuori quelli dove il
+quadro elettrico o il cassone arrugginito prendono piu' spazio della centrifuga,
+i dettagli tagliati e i doppioni della stessa inquadratura. Della 650 restano
+tutte e tre: sono la stessa macchina in grigio, in verde e in rosso, e messe in
+fila dicono che la verniciatura segue il reparto del cliente.
+
+Delle ventuno fotografie della cartella ne sono state lavorate venti. La
+scartata (`FF29D76E`) e' uno scontornato su bianco, di taglia non identificata:
+accanto alle altre si legge come una figurina di catalogo.
 
 Il trattamento e' piu' leggero di quello dei trituratori, perche' qui gli
 originali sono gia' scatti da studio puliti:
