@@ -51,8 +51,8 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
-assets/img/centrifughe/ la serie FD dalla 250 alla 1000: dieci in pagina,
-                        dieci di riserva
+assets/img/centrifughe/ la serie FD dalla 250 alla 1000 e la FCV
+assets/img/accessori/  i ribalta cassoni, piu' il fondale in attesa dei nastri
 assets/img/favicon*.png  l'icona della scheda del browser, marchio su fondo rosso
 ```
 
@@ -191,8 +191,8 @@ portato a 220, senza vignettatura. Con lo stesso conto e' rifatta anche
 
 | macchina | copertina | dove sta |
 |---|---|---|
-| FD | `su-grigio/fd-serie.jpg` | repo dei contenuti |
-| FCV | `su-grigio/fcv-serie.jpg` | repo dei contenuti |
+| FD | `assets/img/centrifughe/fd-copertina.jpg` | qui |
+| FCV | `assets/img/centrifughe/fcv-copertina.jpg` | qui |
 | LM 660 AG | `su-grigio/placeholder-nero.jpg` | nessuna foto verificata |
 | TR1 | `assets/img/trituratori/tr1-copertina.jpg` | qui |
 | TR-Dual | `su-grigio/trw-serie.jpg` | repo dei contenuti |
@@ -200,10 +200,11 @@ portato a 220, senza vignettatura. Con lo stesso conto e' rifatta anche
 | paniere estraibile | `su-grigio/imp-paniere-serie.jpg` | repo dei contenuti |
 | KOMBI | `assets/img/kombi/kombi-copertina.jpg` | qui |
 
-Le cinque servite dal repo dei contenuti stanno gia' dentro la regola e non sono
-state toccate: rifarle vorrebbe dire scegliere un'altra macchina a rappresentare
-la serie, che e' una decisione di contenuto e non di forma. `kombi-scheda.jpg`
-resta in cartella senza essere richiamata.
+Con lo stesso conto sono rifatte anche le due delle centrifughe: la FCV dal suo
+scatto nuovo in blu, la FD dal ritratto di tre quarti della 250. Restano al repo
+dei contenuti le tre che non hanno un sostituto — TR-Dual, ciclo continuo,
+paniere estraibile — e stanno gia' dentro la regola. `kombi-scheda.jpg`,
+`su-grigio/fd-serie.jpg` e `su-grigio/fcv-serie.jpg` non sono piu' richiamate.
 
 ## L'icona della scheda
 
@@ -261,6 +262,35 @@ troverebbe una figura a caso — e non parte affatto con
 
 I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 `assets/i18n.js`, come tutti gli altri.
+
+## I caroselli in colonna degli accessori
+
+Su `accessori.html` la fascia in cima resta com'era. Sotto, ogni voce dell'elenco
+— nastri trasportatori e ribalta cassoni — ha il suo carosello **nella colonna
+del titolo**, non a tutta pagina.
+
+**Qui il formato e' 4:3, non 16:9.** Gli scatti dei ribalta cassoni sono
+verticali (1086x1448) e le macchine sono colonne alte. Portarli a 16:9 vuol dire
+o tagliare l'altezza — e ne resta il 42%, con la macchina spezzata a meta' — o
+prolungare il fondo ai lati, che qui e' reparto e non studio: si stira in una
+scia. Col 4:3 resta il 56% dell'altezza e la macchina si legge ancora. Delle
+dieci fotografie ne sono entrate sette; le tre fuori, tagliate, mostravano solo
+un pezzo di telaio.
+
+Frecce e pallini sono gli stessi della fascia ma rimpiccioliti: sono tarati in
+`vw` su una fascia a tutta pagina e in una colonna larga un terzo verrebbero
+enormi.
+
+**I nastri non hanno ancora fotografie.** Il carosello e' montato lo stesso, con
+tre fondali scuri (`nastro-attesa.jpg`): quando arrivano gli scatti si
+sostituiscono le tre righe `<img>` e non serve toccare altro.
+
+**Il testo di destra scende all'altezza del titolo.** Le due colonne partono
+dalla stessa riga della griglia, ma a sinistra sopra il titolo c'e' il numero
+d'ordine: senza correzione la riga di destra attaccava all'altezza del numero.
+Ora `.split-body` scende di `calc(1.2rem*1.5 + 1.1111111111vw)`, cioe' esattamente
+l'altezza del numero piu' il suo margine — se cambia lo stile del numero,
+l'allineamento segue da solo.
 
 ## Le fotografie dei trituratori
 
@@ -391,12 +421,14 @@ originali sono gia' scatti da studio puliti:
 Nessuna correzione di colore: le macchine tengono le loro tinte, il bianco, il
 verde, il rosso e il blu con cui sono state verniciate.
 
-**FCV e LM 660 AG restano senza carosello.** Nel repo dei contenuti c'e' una
-sola fotografia per macchina — `su-grigio/fcv-serie.jpg`, ripetuta in
-`immagini/fcv-verticale.jpg` — piu' un render (`immagini/FCV480.jpg`), che
-accanto a una fotografia si vede per quello che e'. Con una sola `<img>` il
-carosello non si attiva e la fascia si comporta come prima. Bastano altre
-fotografie della stessa macchina per montarlo come quello delle FD.
+**La FCV ha ora tre scatti suoi** (`fcv-01`, `fcv-02`, `fcv-03`), dalla cartella
+`centrifughe_FCV`: la macchina in blu, in bianco e col coperchio aperto e il
+cesto estratto. Sono verticali come quelli dei ribalta cassoni, ma qui il fondo
+e' un muro liscio con la linea del pavimento — righe orizzontali, che prolungate
+ai lati restano righe — quindi il 16:9 si ottiene allargando il fondo e la
+macchina resta intera.
+
+**LM 660 AG resta senza carosello e col fondo nero**: nessuna foto verificata.
 
 ## Le fotografie degli impianti
 
