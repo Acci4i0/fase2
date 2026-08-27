@@ -43,7 +43,7 @@ var EN = {
 "36056 Tezze sul Brenta (VI), Italia":"36056 Tezze sul Brenta (VI), Italy",
 "Fase Mechanical Engineering S.r.l.":"Fase Mechanical Engineering S.r.l.",
 "info@fasemec.com":"info@fasemec.com",
-"© 2026 Fase Mechanical Engineering S.r.l. — P.IVA 03166770242":"© 2026 Fase Mechanical Engineering S.r.l. — VAT IT03166770242",
+"© 2026 Fase Mechanical Engineering S.r.l. – P.IVA 03166770242":"© 2026 Fase Mechanical Engineering S.r.l. – VAT IT03166770242",
 "Soggetta alla direzione e coordinamento di":"Subject to the direction and coordination of",
 "C.F./P.IVA e n. iscriz. R.I. di VI: 03166770242 · N. REA di VI 304063 · Capitale sociale Euro 50.000,00 i.v. · Soggetta alla direzione e coordinamento di LM Industry Srl – Registro Imprese di Vicenza nr. 02739500243":"Tax code / VAT and Vicenza Companies Register no.: 03166770242 · Vicenza REA no. 304063 · Share capital EUR 50,000.00 fully paid up · Subject to the direction and coordination of LM Industry Srl – Vicenza Companies Register no. 02739500243",
 "Voce precedente":"Previous item",
