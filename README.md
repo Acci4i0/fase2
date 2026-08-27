@@ -51,8 +51,8 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   le installazioni per la fascia della pagina impianti
-assets/img/centrifughe/ la serie FD dalla 250 alla 1000: dodici in pagina,
-                        otto di riserva
+assets/img/centrifughe/ la serie FD dalla 250 alla 1000: dieci in pagina,
+                        dieci di riserva
 ```
 
 Ogni pagina è HTML completo e indipendente: per cambiare un testo si apre il
@@ -134,7 +134,7 @@ di aprire `site.js`: i pallini si contano da sole. Con una sola `<img>` il
 carosello non si attiva e la fascia si comporta come prima.
 
 Oltre le otto fotografie i pallini si stringono da soli: la classe `fitti`,
-che `site.js` mette sul gruppo, dimezza pallino e distanza. Senza, le dodici
+che `site.js` mette sul gruppo, dimezza pallino e distanza. Senza, le dieci
 taglie della scheda FD diventerebbero una barra appoggiata sulla macchina —
 con venti, la prima versione, arrivava larga quanto la fascia.
 
@@ -223,7 +223,7 @@ altrimenti l'ordine del carosello non e' piu' ricostruibile:
 
 | file | scatto di partenza | taglia | dove |
 |---|---|---|---|
-| `fd250-01` | `FD250_1` | FD 250 | carosello |
+| `fd250-01` | `FD250_1` | FD 250 | riserva |
 | `fd250-02` | `FD250_2` | FD 250 | riserva |
 | `fd250-03` | `FD250_3` | FD 250 | carosello |
 | `fd250-04` | `FD250_4` | FD 250 | riserva |
@@ -231,7 +231,7 @@ altrimenti l'ordine del carosello non e' piu' ricostruibile:
 | `fd250-06` | `FD250_7` | FD 250 | riserva |
 | `fd350-01` | `FD350_1` | FD 350 | carosello |
 | `fd350-02` | `FD350_2` | FD 350 | riserva |
-| `fd350-03` | `FD350SA_2` | FD 350 SA | carosello |
+| `fd350-03` | `FD350SA_2` | FD 350 SA | riserva |
 | `fd350-04` | `FD350SA_1` | FD 350 SA | riserva |
 | `fd420-01` | `FD420S_1` | FD 420 S | carosello |
 | `fd500-01` | `FD500_3` | FD 500 | carosello |
@@ -244,19 +244,20 @@ altrimenti l'ordine del carosello non e' piu' ricostruibile:
 | `fd650-03` | `FD650_3` | FD 650 | carosello |
 | `fd1000-01` | `FD1000_2` | FD 1000 | carosello |
 
-Il carosello ne porta dodici, in quest'ordine, dalla piu' piccola alla piu'
+Il carosello ne porta dieci, in quest'ordine, dalla piu' piccola alla piu'
 grande. Le varianti SA e S stanno con la loro taglia; il nome del file usa la
 nomenclatura del catalogo in pagina, che si ferma a `FD 350` e `FD 420`.
 
-Le altre otto restano nella cartella senza essere richiamate: sono file finiti,
+Le altre dieci restano nella cartella senza essere richiamate: sono file finiti,
 pronti da mettere in pagina al posto di uno di questi con una riga `<img>`. Le
 venti in fila erano troppe — mezzo carosello era la taglia piu' piccola — e la
-scelta e' caduta sugli scatti puliti: per la 250 e la 350 due ciascuna, il
-ritratto della macchina e il gruppo completo sul telaio; fuori quelli dove il
-quadro elettrico o il cassone arrugginito prendono piu' spazio della centrifuga,
-i dettagli tagliati e i doppioni della stessa inquadratura. Della 650 restano
-tutte e tre: sono la stessa macchina in grigio, in verde e in rosso, e messe in
-fila dicono che la verniciatura segue il reparto del cliente.
+scelta e' caduta sugli scatti puliti. Della 250 e della 350 resta uno scatto per
+taglia: il ritratto di tre quarti della macchina e il gruppo completo sul
+telaio. Fuori quelli dove il quadro elettrico o il cassone arrugginito prendono
+piu' spazio della centrifuga, i dettagli tagliati e i doppioni della stessa
+inquadratura. Della 650 restano tutte e tre: sono la stessa macchina in grigio,
+in verde e in rosso, e messe in fila dicono che la verniciatura segue il reparto
+del cliente.
 
 Delle ventuno fotografie della cartella ne sono state lavorate venti. La
 scartata (`FF29D76E`) e' uno scontornato su bianco, di taglia non identificata:
