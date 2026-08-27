@@ -199,6 +199,14 @@ medi. Accanto alle altre tre non si distingue. Sta nel carosello della scheda TR
 e in quello della pagina `trituratori.html`, dove l'elenco alterna una macchina e
 l'altra.
 
+Dallo stesso scatto viene `tr1-copertina.jpg`, il quadrato della scheda TR1
+nell'elenco "Le macchine" e in "Le altre serie" del TR-Dual. Prima era
+`su-grigio/tr-serie.jpg` dal repo dei contenuti, il corpo blu col rotore in
+vista. Il riquadro e' quadrato e `object-fit: cover` taglia ai lati, quindi la
+copertina non e' il 16:9 ritagliato ma un ritaglio suo, alto quanto l'originale e
+centrato sulla macchina. Niente vignettatura: qui accanto stanno le copertine
+piatte del repo dei contenuti, e si vedrebbe.
+
 ## Le fotografie delle centrifughe FD
 
 Stanno in `assets/img/centrifughe/`, servite da qui come quelle dei trituratori.
