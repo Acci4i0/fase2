@@ -50,7 +50,7 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
                         resa comune (vedi sotto)
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
-assets/img/impianti/   le installazioni per la fascia della pagina impianti
+assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
 assets/img/centrifughe/ la serie FD dalla 250 alla 1000: dieci in pagina,
                         dieci di riserva
 ```
@@ -138,12 +138,12 @@ un collegamento e non è sottolineato — su iOS lo diventava da solo, e il
 
 `centrifughe.html`, `impianti.html`, `trituratori.html` e `accessori.html` hanno
 la fascia sotto al titolo montata a carosello, e con loro le schede dei due
-trituratori, della serie KOMBI e delle disoleatrici FD: le fotografie si
-sovrappongono e si alternano in dissolvenza ogni 2 secondi, con le frecce ai
-lati e i pallini in basso a sinistra per scegliere a mano. Le frecce sono le
-stesse pastiglie a puntini della sezione "Il metodo" in home, col fondo scuro al
-posto del rosso perche' qui stanno sopra la fotografia, e piu' grandi: 28 px
-sono un bersaglio scomodo per il dito.
+trituratori, della serie KOMBI, delle disoleatrici FD e dei due impianti: le
+fotografie si sovrappongono e si alternano in dissolvenza ogni 2 secondi, con le
+frecce ai lati e i pallini in basso a sinistra per scegliere a mano. Le frecce
+sono le stesse pastiglie a puntini della sezione "Il metodo" in home, col fondo
+scuro al posto del rosso perche' qui stanno sopra la fotografia, e piu' grandi:
+28 px sono un bersaglio scomodo per il dito.
 
 La dissolvenza dura 0,55 secondi. Con la cadenza a 2 secondi una sfumatura piu'
 lunga terrebbe le figure quasi sempre a mezz'aria: cambiando l'intervallo conviene
@@ -306,6 +306,57 @@ sola fotografia per macchina — `su-grigio/fcv-serie.jpg`, ripetuta in
 accanto a una fotografia si vede per quello che e'. Con una sola `<img>` il
 carosello non si attiva e la fascia si comporta come prima. Bastano altre
 fotografie della stessa macchina per montarlo come quello delle FD.
+
+## Le fotografie degli impianti
+
+Stanno in `assets/img/impianti/`, dagli scatti raccolti dal committente nella
+cartella `impianti`: venti fotografie in un mucchio solo, senza distinzione di
+famiglia. La divisione e' stata fatta qui, sulle immagini, e va scritta perche'
+nessun nome di file la porta.
+
+**Cosa distingue le due famiglie, guardando.** Nel *paniere estraibile* il cesto
+esce dalla macchina: in campo si vedono il portale, la pinza che lo afferra, i
+panieri in acciaio appoggiati a terra e i bacini di contenimento sotto. Nel
+*ciclo continuo* il truciolo scorre e non si estrae niente: tramoggia, elevatore,
+centrifuga alimentata di continuo, cassone e cisterna del lubrorefrigerante.
+
+La lettura regge su due punti fermi: le copertine che il sito gia' usava per le
+due schede — `su-grigio/imp-continuo-serie.jpg` e `su-grigio/imp-paniere-serie.jpg`
+— sono gli stessi due scatti che nella cartella nuova diventano `continuo-01` e
+`paniere-01`. Da li' in poi la classificazione segue quei due modelli.
+
+| file | scatto di partenza | famiglia |
+|---|---|---|
+| `continuo-01` | `4F818315` | ciclo continuo (e' la copertina della scheda) |
+| `continuo-02` | `2ABBBE09` | ciclo continuo |
+| `continuo-03` | `91E26921` | ciclo continuo |
+| `continuo-04` | `B594F2CA` | ciclo continuo |
+| `continuo-05` | `0D9C5D02` | ciclo continuo |
+| `continuo-06` | `3F5C0B9D` | ciclo continuo |
+| `paniere-01` | `EB8BB113` | paniere estraibile (e' la copertina della scheda) |
+| `paniere-02` | `1F932EEB` | paniere estraibile |
+| `paniere-03` | `BD859DD7` | paniere estraibile |
+| `paniere-04` | `6558C577` | paniere estraibile |
+
+Delle venti ne sono entrate dieci. Fuori i doppioni della stessa linea da
+un'angolazione vicina e uno scatto che non sta ne' di qua ne' di la': `8748707C`,
+la stazione con i due cassoni ribaltabili, che e' un modo di caricare e non una
+famiglia di impianto. Chi vuole rimetterne dentro un'altra la trova in cartella
+con questi nomi.
+
+**Il ritaglio qui e' diverso.** Negli scatti delle FD il fondo e' il grigio liscio
+dello studio e il 16:9 si ottiene prolungandolo ai lati. Questi sono scatti di
+reparto: muri, pavimento, recinzioni. Prolungare quel fondo stirerebbe le righe
+orizzontali in una scia, quindi il 16:9 si ricava **tagliando in altezza**. La
+finestra non sta a meta' immagine: si misura riga per riga quanto disegno c'e' —
+il pavimento vuoto e il muro liscio hanno pochi bordi, il macchinario molti — e
+si tiene la banda che ne contiene di piu'. Dove il conto tirava giu' sul
+pavimento la finestra e' stata alzata a mano, se no restava fuori la testa
+dell'elevatore. Vignettatura e grana sono gli stessi delle altre.
+
+**Nella fascia della pagina `impianti.html`** le tre famiglie si alternano:
+ciclo continuo, KOMBI, paniere estraibile, e da capo. Le cinque `imp-0*` che
+c'erano prima restano in cartella senza essere richiamate.
 
 ## La serie KOMBI
 
