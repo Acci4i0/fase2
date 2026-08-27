@@ -53,6 +53,7 @@ assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
 assets/img/centrifughe/ la serie FD dalla 250 alla 1000 e la FCV
 assets/img/accessori/  i ribalta cassoni, piu' il fondale in attesa dei nastri
+assets/img/soluzioni/  le immagini di settori e applicazioni
 assets/img/favicon*.png  l'icona della scheda del browser, marchio su fondo rosso
 ```
 
@@ -291,6 +292,40 @@ d'ordine: senza correzione la riga di destra attaccava all'altezza del numero.
 Ora `.split-body` scende di `calc(1.2rem*1.5 + 1.1111111111vw)`, cioe' esattamente
 l'altezza del numero piu' il suo margine — se cambia lo stile del numero,
 l'allineamento segue da solo.
+
+## Le immagini delle Soluzioni
+
+`settori.html` e `applicazioni.html` non parlano di una macchina Fase ma del
+reparto del cliente e di cosa succede al materiale. Le immagini che c'erano —
+ottone lucido, una benna che solleva rottame, un capannone con macchine
+bianche e turchesi — erano stock preso altrove: chiare, sature, e in due casi
+fuori tema (la benna e' un piazzale di rottame, non lo sfrido di una macchina
+utensile). Sono state sostituite tutte e otto.
+
+Il criterio: **scuro, neutro, il soggetto che riempie il fotogramma** — la stessa
+regola delle altre immagini del sito — e il soggetto giusto per la voce.
+
+| dove | immagine | da dove viene |
+|---|---|---|
+| settori, fascia | cumulo di truciolo d'acciaio | Pexels 17887900 |
+| settori, tornerie automatiche | mandrino di un tornio al lavoro | Pexels 8865187 |
+| settori, officine e centri di lavoro | fresatura di un blocco d'acciaio | Pexels 10406128 |
+| applicazioni, fascia | punta che fora sotto il getto di lubrorefrigerante | Pexels 8956313 |
+| applicazioni, centrifugazione | FCV col cesto estratto | materiale Fase (`fcv-03`) |
+| applicazioni, asciugatura | spezzoni torniti dentro un cassone | Pexels 8940820 |
+| applicazioni, frantumazione | rotore a coltelli del TR-Dual | materiale Fase (`trdual-07`) |
+| applicazioni, trattamento in linea | linea a ciclo continuo | materiale Fase (`continuo-06`) |
+
+Tre delle otto vengono dal materiale del committente: dove la voce parla di
+un'operazione che fa una macchina Fase, la macchina Fase e' l'immagine piu'
+pertinente che ci sia. Le altre cinque sono di reparto e Fase non ne ha: li'
+si va su Pexels, la stessa fonte del filmato della testata.
+
+Il ritaglio e' 16:9 per le due fasce e **16:10 per le schede**, che e' il
+rapporto del riquadro in `.solution-card`. Tutte prendono la vignettatura del
+sito; sulle due fitte di texture — il cumulo di truciolo e gli spezzoni — la
+grana non e' stata aggiunta, perche' il soggetto ne ha gia' e raddoppiava il peso
+del file senza cambiare la resa.
 
 ## Le fotografie dei trituratori
 
@@ -656,6 +691,11 @@ resta un nero piatto. Una velatura di rumore rompe i gradini del gradiente. Con
 | Pexels 36438809, "Industrial lathe machine in action" | testata, 2ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | Pexels 31802320, "Mesmerizing close-up of industrial gears in motion" | testata, 3ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | `img/immagini/C5D694D8…` — macro della trasmissione | sezione "Sistemi" | materiale del committente |
+| [Pexels 17887900](https://www.pexels.com/photo/heap-of-screws-17887900/) — cumulo di truciolo | fascia di `settori` | [Pexels License](https://www.pexels.com/license/) |
+| [Pexels 8865187](https://www.pexels.com/photo/close-up-shot-of-a-cnc-machine-8865187/) — mandrino al lavoro | scheda "Tornerie automatiche" | [Pexels License](https://www.pexels.com/license/) |
+| [Pexels 10406128](https://www.pexels.com/photo/close-up-photo-of-metal-tool-10406128/) — fresatura | scheda "Officine meccaniche" | [Pexels License](https://www.pexels.com/license/) |
+| [Pexels 8956313](https://www.pexels.com/photo/close-up-phot-of-a-cnc-milling-machine-with-metalworking-fluid-8956313/) — foratura col lubrorefrigerante | fascia di `applicazioni` | [Pexels License](https://www.pexels.com/license/) |
+| [Pexels 8940820](https://www.pexels.com/photo/steel-bars-in-a-metal-box-8940820/) — spezzoni torniti | scheda "Asciugatura di pezzi minuti" | [Pexels License](https://www.pexels.com/license/) |
 
 La Pexels License consente l'uso commerciale e la modifica senza attribuzione.
 Vieta la redistribuzione del materiale come stock su altre piattaforme, l'uso
