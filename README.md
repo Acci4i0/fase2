@@ -448,6 +448,30 @@ le puo' aggiungere alla griglia dei dati.
 La miniatura della scheda viene da uno scatto in posa su fondo grigio: sta
 bene accanto alle due sorelle, che sono render sullo stesso grigio.
 
+## Come si chiamano le centrifughe
+
+Tutte e tre le serie si chiamano **centrifughe disoleatrici**, con lo stesso
+attacco: `Centrifughe disoleatrici a ciclo continuo serie FD`, `Centrifughe
+disoleatrici serie FCV`, `Centrifughe disoleatrici serie LM 660 AG`. Il nome
+compare in tre punti per pagina — `<title>`, filo di navigazione, titolo — e
+sulle schede dell'elenco, che gia' lo portavano.
+
+Prima la FD si presentava come «Disoleatrici a ciclo continuo serie FD» e la FCV
+come «Centrifughe asciugatrici serie FCV»: due nomi diversi per macchine che
+nell'elenco erano gia' entrambe «Centrifughe disoleatrici». In inglese la FCV
+passa da *drying* a *oil-removal*, come le altre due.
+
+**I nomi dei file non sono cambiati.** `prodotti/centrifughe-asciugatrici-serie-fcv.html`
+si chiama ancora cosi': rinominarlo cambierebbe l'indirizzo di una pagina gia'
+pubblicata, e chi ci fosse arrivato da un collegamento esterno o dai motori
+troverebbe un 404. Se si vuole rinominare, va messo in conto un rimando dal
+vecchio indirizzo.
+
+Resta com'era l'etichetta sopra il titolo di `centrifughe.html` — «Disoleatrici a
+ciclo continuo e a cesto estraibile» — che non e' il nome di una macchina ma la
+riga che dice cosa c'e' dentro la famiglia, sotto un titolo che gia' dice
+«Centrifughe».
+
 ## Il brevetto del TR1
 
 L'espulsione automatica dello spezzone e' coperta da brevetto italiano
