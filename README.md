@@ -104,6 +104,28 @@ tolta anche la `page-statement`, la riga che ripeteva la meta description fra la
 fotografia e l'elenco delle macchine. Resta dove porta testo suo: `azienda`,
 `contatti`, `settori`, `applicazioni`.
 
+## Il piè di pagina
+
+L'indirizzo cambia forma con la larghezza. Da telefono le quattro voci corrono
+in riga come sono scritte — via e comune separati da un trattino, telefono e
+mail da un punto — perche' su uno schermo stretto quattro righe in colonna
+allungano il piede senza aggiungere niente. Da 834 px in su ogni voce prende la
+sua riga: via, comune, telefono, mail. In pagina la differenza e' solo di CSS,
+il testo e' lo stesso: ogni voce sta in uno `span.voce` che diventa `block` sul
+desktop, mentre i separatori (`span.stacco`) e l'a capo di mezzo spariscono, se
+no lascerebbero righe vuote.
+
+Il segno sociale e' **LinkedIn**, non piu' Facebook: porta a
+`linkedin.com/company/fase-mechanical-engineering`.
+
+Sotto la riga della partita IVA sta la dichiarazione di gruppo — «Soggetta alla
+direzione e coordinamento di LM Industry Srl», col nome che porta a
+`lm-industry.com`. La stessa dichiarazione, per esteso e col numero di registro,
+resta nel blocco legale di `privacy.html` e `cookie-policy.html`.
+
+Come gli altri collegamenti del piede — telefono, mail, privacy, cookie — non e'
+sottolineato: nel piede il sottolineato non si usa.
+
 ## Niente parole evidenziate
 
 I testi correnti non hanno più la prima frase in bianco sul resto in grigio: il
