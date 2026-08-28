@@ -491,12 +491,19 @@ macchie del pavimento, niente variazione — che si legge come un alone, e non s
 salva ne' copiando la grana ne' sfumando l'attacco: manca la struttura, non il
 rumore.
 
-**Le tre FCV sono quindi ritagli, non allargamenti.** Il 16:9 viene preso dentro
-lo scatto, inquadrato in alto sulla macchina: coperchio, maniglie, quadro, e nel
-terzo il cesto estratto col coperchio aperto. La macchina esce dal fotogramma
-come in un primo piano — e' una scelta, non un rattoppo — e **il 100% di quello
-che si vede e' fotografia vera**. Stesso criterio per la copertina, che e' il
-quadrato piu' grande che sta dentro allo scatto.
+Provata anche la strada del ritaglio — il 16:9 preso dentro lo scatto, in alto
+sulla macchina — che almeno non inventa niente. Nemmeno quella e' piaciuta:
+**la fascia della scheda FCV e' in attesa**, tre fondali scuri come su
+`centrifughe.html`. I tre ritagli restano in cartella (`fcv-01`, `fcv-02`,
+`fcv-03`) senza essere richiamati.
+
+Gli scatti pero' reggono dove non serve una fascia larga: la **copertina** della
+scheda e' il quadrato piu' grande preso dentro lo scatto — la macchina intera,
+niente fondo inventato — e la **scheda "centrifugazione"** di `applicazioni.html`
+e' il ritaglio 16:10 di quello col cesto estratto. Quelli due restano in pagina.
+
+**Per la fascia della FCV servono scatti orizzontali**, o comunque con la
+macchina che lascia margine ai lati.
 
 La regola che ne esce: **il fondo si prolunga solo dove ce n'e' gia' abbastanza**
 — gli scatti da studio delle FD, dove la macchina lascia margini larghi e il
