@@ -44,7 +44,7 @@ contatti.html           recapiti, argomenti, mappa
 privacy.html            informative (testo da fornire)
 cookie-policy.html
 assets/site.css         foglio unico, variabili di progetto in :root
-assets/site.js          comparse allo scroll, menu mobile, carosello, canvas
+assets/site.js          comparse allo scroll, menu mobile, carosello, lente, canvas
 assets/fonts/           i quattro tagli usati dal foglio di stile
 assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
                         resa comune (vedi sotto)
@@ -193,7 +193,7 @@ portato a 220, senza vignettatura. Con lo stesso conto e' rifatta anche
 | macchina | copertina | dove sta |
 |---|---|---|
 | FD | `assets/img/centrifughe/fd-copertina.jpg` | qui |
-| FCV | `assets/img/centrifughe/fcv-copertina.jpg` | qui |
+| FCV | `su-grigio/placeholder-nero.jpg` | in attesa |
 | LM 660 AG | `su-grigio/placeholder-nero.jpg` | nessuna foto verificata |
 | TR1 | `assets/img/trituratori/tr1-copertina.jpg` | qui |
 | TR-Dual | `su-grigio/trw-serie.jpg` | repo dei contenuti |
@@ -201,8 +201,11 @@ portato a 220, senza vignettatura. Con lo stesso conto e' rifatta anche
 | paniere estraibile | `su-grigio/imp-paniere-serie.jpg` | repo dei contenuti |
 | KOMBI | `assets/img/kombi/kombi-copertina.jpg` | qui |
 
-Con lo stesso conto sono rifatte anche le due delle centrifughe: la FCV dal suo
-scatto nuovo in blu, la FD dal ritratto di tre quarti della 250. Restano al repo
+Con lo stesso conto e' rifatta anche quella della FD, dallo scatto della
+macchina blu col coperchio a cupola aperto (`immagini/F247E8A4`) indicato dal
+committente. La FCV per ora non ha copertina: porta il fondo nero come la
+LM 660 AG, cosi' le due schede senza fotografia si leggono uguali. Il quadrato
+ricavato dagli scatti nuovi resta in cartella (`fcv-copertina.jpg`). Restano al repo
 dei contenuti le tre che non hanno un sostituto — TR-Dual, ciclo continuo,
 paniere estraibile — e stanno gia' dentro la regola. `kombi-scheda.jpg`,
 `su-grigio/fd-serie.jpg` e `su-grigio/fcv-serie.jpg` non sono piu' richiamate.
@@ -263,6 +266,43 @@ troverebbe una figura a caso — e non parte affatto con
 
 I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 `assets/i18n.js`, come tutti gli altri.
+
+## La lente: la fotografia intera
+
+Il carosello ritaglia. La fascia e' un 16:9, la colonna un 4:3, e `object-fit:
+cover` toglie quello che avanza: delle macchine alte e strette — i ribalta
+cassoni, l'elevatore del KOMBI, la colonna del TR-Dual — resta quasi sempre
+fuori un pezzo. **Un tocco in mezzo al carosello riapre la stessa fotografia
+sopra la pagina**, dove `contain` la fa stare tutta, e da li' si continua a
+scorrere la fila.
+
+Vale per tutti e dodici i caroselli del sito: il pannello nasce dallo stesso
+blocco che li monta, quindi un carosello nuovo ce l'ha senza aggiungere niente.
+
+Dentro la lente si scorre in cinque modi: le due frecce, i tasti freccia della
+tastiera, il dito trascinato di lato sul telefono. Si chiude con la croce in
+alto a destra, con `Esc`, o toccando il nero intorno — non la fotografia, se no
+basterebbe sbagliare mira mentre si guarda per ritrovarsi fuori. In basso il
+conteggio dice a che punto della fila si e'.
+
+Il pannello e' **uno solo per pagina** e si costruisce alla prima apertura: fino
+a quel momento nel documento non c'e' niente in piu'. Ogni volta si riempie con
+le figure del carosello che l'ha chiamato, e alla chiusura il carosello resta
+sulla fotografia che si stava guardando invece di tornare dov'era. Mentre la
+lente e' aperta il giro automatico sta fermo, se no il fondo scorrerebbe da
+solo.
+
+Le pastiglie qui hanno il fondo di grafite, non il nero al 40% del carosello:
+li' stanno sopra una fotografia e il nero basta a staccarle, qui il fondo e' gia'
+nero e sparirebbero. Sotto il puntatore passano al rosso di marchio.
+
+Il carosello prende `tabindex="0"` e si apre anche con `Invio` o con la barra:
+e' un riquadro e non un bottone — dentro ha gia' le frecce e i pallini, e un
+comando dentro l'altro non si annida.
+
+Le etichette della lente stanno nel dizionario di `assets/i18n.js` insieme a
+quelle delle frecce del carosello, cosi' seguono il tasto EN anche a pagina
+gia' aperta.
 
 ## I caroselli in colonna degli accessori
 

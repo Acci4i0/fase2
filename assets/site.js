@@ -199,12 +199,21 @@ window.addEventListener('load',function(){
   var caroselli=[].slice.call(document.querySelectorAll('[data-carosello]'));
   if(!caroselli.length)return;
   var fermo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var inglese=(document.documentElement.getAttribute('lang')||'it').indexOf('en')===0;
-  var DIC=inglese
-    ? {gruppo:'Choose the photograph', voce:function(n,t){return 'Photograph '+n+' of '+t;},
-       prima:'Previous photograph', dopo:'Next photograph'}
-    : {gruppo:'Scegli la fotografia',  voce:function(n,t){return 'Fotografia '+n+' di '+t;},
-       prima:'Fotografia precedente', dopo:'Fotografia successiva'};
+  /* La lingua si rilegge a ogni chiamata invece di fissarla al caricamento:
+     la lente si costruisce alla prima apertura, che puo' arrivare dopo che
+     si e' premuto EN. Quello che sta gia' nella pagina lo ripassa i18n. */
+  function dizionario(){
+    return (document.documentElement.getAttribute('lang')||'it').indexOf('en')===0
+      ? {gruppo:'Choose the photograph', voce:function(n,t){return 'Photograph '+n+' of '+t;},
+         prima:'Previous photograph', dopo:'Next photograph',
+         apri:'Open the photographs full screen',
+         pannello:'Photograph, full screen', chiudi:'Close the photograph'}
+      : {gruppo:'Scegli la fotografia',  voce:function(n,t){return 'Fotografia '+n+' di '+t;},
+         prima:'Fotografia precedente', dopo:'Fotografia successiva',
+         apri:'Apri le fotografie a schermo intero',
+         pannello:'Fotografia a schermo intero', chiudi:'Chiudi la fotografia'};
+  }
+  var DIC=dizionario();
 
   /* La freccia e' la stessa pastiglia a puntini della sezione "Il metodo".
      Per tornare indietro si ruota di mezzo giro, come li'. */
@@ -215,11 +224,171 @@ window.addEventListener('load',function(){
     +'<circle cx="14" cy="14" r="1" fill="currentColor"/><circle cx="10" cy="2" r="1" fill="currentColor"/>'
     +'<circle cx="10" cy="18" r="1" fill="currentColor"/></svg>';
 
+  /* La croce di chiusura e' fatta degli stessi pallini: due diagonali che
+     si incrociano nel mezzo, nove punti come nelle altre pastiglie. */
+  var CROCE='<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    +'<circle cx="4" cy="4" r="1" fill="currentColor"/><circle cx="7" cy="7" r="1" fill="currentColor"/>'
+    +'<circle cx="10" cy="10" r="1" fill="currentColor"/><circle cx="13" cy="13" r="1" fill="currentColor"/>'
+    +'<circle cx="16" cy="16" r="1" fill="currentColor"/><circle cx="16" cy="4" r="1" fill="currentColor"/>'
+    +'<circle cx="13" cy="7" r="1" fill="currentColor"/><circle cx="7" cy="13" r="1" fill="currentColor"/>'
+    +'<circle cx="4" cy="16" r="1" fill="currentColor"/></svg>';
+
+  /* ---------------------------- la lente ---------------------------
+     Il carosello ritaglia, e delle macchine alte resta fuori un pezzo.
+     Qui la stessa fotografia si riapre intera sopra la pagina e le frecce
+     continuano a scorrere la fila. Il pannello si costruisce alla prima
+     apertura e poi si riusa: e' uno solo per pagina, e ogni volta si
+     riempie con le figure del carosello che l'ha chiamato. */
+  var lente=(function(){
+    var pannello,quadro,foto,conta,chiudiB,giro;
+    var lista=[],idx=0,aperta=false,alCambio=null,alChiudere=null,rimetti=null,richiesta=0;
+
+    function pastiglia(classe,etichetta,disegno){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='dots-icon-button '+classe;
+      b.setAttribute('aria-label',etichetta);
+      b.innerHTML=disegno;
+      return b;
+    }
+
+    function costruisci(){
+      var D=dizionario();
+      pannello=document.createElement('div');
+      pannello.className='lente';
+      pannello.setAttribute('role','dialog');
+      pannello.setAttribute('aria-modal','true');
+      pannello.setAttribute('aria-label',D.pannello);
+
+      quadro=document.createElement('div');
+      quadro.className='lente-quadro';
+      foto=document.createElement('img');
+      foto.className='lente-foto';
+      foto.setAttribute('alt','');
+      quadro.appendChild(foto);
+      pannello.appendChild(quadro);
+
+      chiudiB=pastiglia('lente-chiudi',D.chiudi,CROCE);
+      chiudiB.addEventListener('click',chiudi);
+      pannello.appendChild(chiudiB);
+
+      var barra=document.createElement('div');
+      barra.className='lente-barra';
+      var prima=pastiglia('lente-freccia',D.prima,
+        PUNTINI.replace('<svg ','<svg style="transform:rotate(180deg)" '));
+      var dopo=pastiglia('lente-freccia avanti',D.dopo,PUNTINI);
+      prima.addEventListener('click',function(){mostra(idx-1);});
+      dopo.addEventListener('click', function(){mostra(idx+1);});
+      conta=document.createElement('p');
+      conta.className='lente-conta';
+      conta.setAttribute('aria-live','polite');
+      barra.appendChild(prima);barra.appendChild(conta);barra.appendChild(dopo);
+      pannello.appendChild(barra);
+      giro=[chiudiB,prima,dopo];
+
+      /* Il nero intorno chiude; la fotografia no. Se chiudesse anche lei
+         basterebbe sbagliare mira mentre si guarda per ritrovarsi fuori. */
+      pannello.addEventListener('click',function(e){
+        if(e.target===pannello||e.target===quadro)chiudi();
+      });
+      /* Pannello modale: il giro del tabulatore resta dentro. */
+      pannello.addEventListener('keydown',function(e){
+        if(e.key!=='Tab')return;
+        e.preventDefault();
+        var p=giro.indexOf(document.activeElement);
+        giro[(p+(e.shiftKey?-1:1)+giro.length)%giro.length].focus();
+      });
+      /* Sul telefono le frecce ci sono lo stesso, ma il dito si aspetta di
+         poter trascinare: quaranta pixel bastano a distinguere lo
+         scorrimento da un tocco storto. */
+      var x0=null,y0=0;
+      pannello.addEventListener('touchstart',function(e){
+        if(e.touches.length!==1){x0=null;return;}
+        x0=e.touches[0].clientX;y0=e.touches[0].clientY;
+      },{passive:true});
+      pannello.addEventListener('touchend',function(e){
+        if(x0===null)return;
+        var t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;
+        x0=null;
+        if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))mostra(idx+(dx<0?1:-1));
+      },{passive:true});
+
+      document.body.appendChild(pannello);
+    }
+
+    /* Le figure oltre la prima hanno `loading="lazy"`: quando si apre la
+       lente possono non essere ancora arrivate. Si aspetta la fotografia e
+       solo allora si scambia, se no si vedrebbe il buco. Il gettone butta
+       via le risposte delle richieste sorpassate, che con le frecce
+       premute in fretta tornano fuori ordine. */
+    function mostra(n){
+      if(!lista.length)return;
+      idx=(n+lista.length)%lista.length;
+      var im=lista[idx],url=im.currentSrc||im.src,mia=++richiesta;
+      conta.textContent=(idx+1)+' / '+lista.length;
+      if(alCambio)alCambio(idx);
+      foto.classList.add('in-attesa');
+      var pre=new Image();
+      pre.onload=pre.onerror=function(){
+        if(mia!==richiesta)return;
+        foto.src=url;
+        foto.setAttribute('alt',im.getAttribute('alt')||'');
+        foto.classList.remove('in-attesa');
+      };
+      pre.src=url;
+      if(pre.complete)pre.onload();
+    }
+
+    function apri(figure,partenza,cambio,chiusura){
+      if(!pannello)costruisci();
+      lista=figure;alCambio=cambio||null;alChiudere=chiusura||null;
+      rimetti=document.activeElement;
+      mostra(partenza||0);
+      pannello.classList.add('aperta');
+      aperta=true;
+      document.documentElement.style.overflow='hidden';
+      chiudiB.focus();
+    }
+
+    function chiudi(){
+      if(!aperta)return;
+      aperta=false;
+      pannello.classList.remove('aperta');
+      document.documentElement.style.overflow='';
+      /* Il pannello va in `visibility:hidden`: se il fuoco restasse dentro
+         resterebbe appeso a un comando che non c'e' piu'. Torna dove era,
+         e se era il corpo della pagina si toglie e basta. */
+      chiudiB.blur();
+      if(rimetti&&rimetti.focus&&rimetti!==document.body&&document.contains(rimetti))rimetti.focus();
+      rimetti=null;
+      /* A tendina chiusa si sgancia la fotografia: alla riapertura da un
+         altro carosello non si vedrebbe per un attimo quella di prima. */
+      setTimeout(function(){
+        if(aperta)return;
+        richiesta++;
+        foto.classList.add('in-attesa');
+        foto.removeAttribute('src');
+        foto.setAttribute('alt','');
+      },450);
+      var f=alChiudere;alCambio=null;alChiudere=null;
+      if(f)f();
+    }
+
+    document.addEventListener('keydown',function(e){
+      if(!aperta)return;
+      if(e.key==='Escape'){e.preventDefault();chiudi();}
+      else if(e.key==='ArrowRight'){e.preventDefault();mostra(idx+1);}
+      else if(e.key==='ArrowLeft'){e.preventDefault();mostra(idx-1);}
+    });
+
+    return {apri:apri};
+  })();
+
   caroselli.forEach(function(car){
     var figure=[].slice.call(car.querySelectorAll('img'));
     if(figure.length<2)return;
     var pausa=parseInt(car.getAttribute('data-carosello'),10)||5200;
-    var i=0,timer=null,inVista=false,sospeso=false;
+    var i=0,timer=null,inVista=false,sospeso=false,ingrandita=false;
 
     var punti=document.createElement('div');
     /* Oltre le otto fotografie la fila di pallini diventa una barra larga
@@ -265,7 +434,7 @@ window.addEventListener('load',function(){
         b.setAttribute('aria-selected',k===i?'true':'false');
       });
     }
-    function avvia(){ if(fermo||timer||!inVista||sospeso)return;
+    function avvia(){ if(fermo||timer||!inVista||sospeso||ingrandita)return;
       timer=setInterval(function(){mostra(i+1);},pausa); }
     function ferma(){ if(timer){clearInterval(timer);timer=null;} }
     function riavvia(){ ferma();avvia(); }
@@ -284,6 +453,28 @@ window.addEventListener('load',function(){
        al ritorno si troverebbe una figura a caso. */
     document.addEventListener('visibilitychange',function(){
       if(document.hidden) ferma(); else avvia();
+    });
+
+    /* Un tocco in mezzo apre la fotografia intera. Frecce e pallini stanno
+       sopra il carosello: li' il tocco resta loro. Mentre la lente e'
+       aperta il giro automatico sta fermo — se no il fondo scorrerebbe da
+       solo — e alla chiusura il carosello resta sulla figura che si stava
+       guardando. Il carosello e' un riquadro, non un bottone: prende il
+       tabulatore per conto suo, cosi' si apre anche da tastiera senza
+       annidare un comando dentro l'altro. */
+    car.setAttribute('tabindex','0');
+    car.setAttribute('aria-label',DIC.apri);
+    function ingrandisci(){
+      ingrandita=true; ferma();
+      lente.apri(figure,i,mostra,function(){ ingrandita=false; avvia(); });
+    }
+    car.addEventListener('click',function(e){
+      if(e.target.closest&&e.target.closest('button'))return;
+      ingrandisci();
+    });
+    car.addEventListener('keydown',function(e){
+      if(e.target!==car)return;
+      if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){e.preventDefault();ingrandisci();}
     });
 
     mostra(0);
