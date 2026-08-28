@@ -501,6 +501,7 @@ var EN = {
 "ribalta cassoni Fase dentro la gabbia di protezione, col quadro elettrico a fianco":"Fase bin tipper inside its safety cage, with the electrical panel alongside",
 "gruppo di ribaltamento di un ribalta cassoni Fase, visto da vicino":"tipping assembly of a Fase bin tipper, close up",
 "fotografia del nastro trasportatore non ancora disponibile":"photograph of the belt conveyor not yet available",
+"fotografia delle centrifughe non ancora disponibile":"photograph of the centrifuges not yet available",
 "centrifuga disoleatrice Fase serie FCV in blu, coperchio con maniglie e quadro a bordo macchina":"Fase FCV series oil-removal centrifuge in blue, lid with handles and on-board control panel",
 "centrifuga disoleatrice Fase serie FCV in bianco, vista di tre quarti":"Fase FCV series oil-removal centrifuge in white, seen three-quarters on",
 "centrifuga disoleatrice Fase serie FCV col coperchio aperto e il cesto estratto":"Fase FCV series oil-removal centrifuge with the lid open and the basket lifted out",

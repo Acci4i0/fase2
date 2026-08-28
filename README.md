@@ -478,12 +478,30 @@ verde, il rosso e il blu con cui sono state verniciate.
 
 **La FCV ha ora tre scatti suoi** (`fcv-01`, `fcv-02`, `fcv-03`), dalla cartella
 `centrifughe_FCV`: la macchina in blu, in bianco e col coperchio aperto e il
-cesto estratto. Sono verticali come quelli dei ribalta cassoni, ma qui il fondo
-e' un muro liscio con la linea del pavimento — righe orizzontali, che prolungate
-ai lati restano righe — quindi il 16:9 si ottiene allargando il fondo e la
-macchina resta intera.
+cesto estratto. Sono verticali e la macchina riempie il fotogramma — occupa
+l'85-90% dell'altezza — quindi tagliare non si puo': il 16:9 si ottiene
+prolungando il fondo, che qui e' un muro col battiscopa e un pavimento di
+cemento, tutte righe orizzontali che prolungate restano righe.
+
+**Ma il fondo prolungato va anche sporcato.** Alla prima stesura la parte
+inventata — il 58% del fotogramma — era liscia: grana 0,6 contro 4,6 dello
+scatto, e attorno alla macchina si vedeva un alone pulito, di quelli che fanno
+pensare a un ritocco automatico. Ora la grana viene misurata sullo scatto e
+ricopiata sulla parte inventata, e l'attacco e' sfumato su ottanta pixel. Lo
+stesso vale per qualunque altro scatto di reparto da allargare: senza grana
+l'inganno si vede.
 
 **LM 660 AG resta senza carosello e col fondo nero**: nessuna foto verificata.
+E' la disoliatrice ad alti giri **mod. 660 di LM Industry** — «AG» sta per alti
+giri, e la gamma sul sito del gruppo e' 550 / 660 / 800 / 950. Una fotografia del
+modello esiste li'
+(`wp-content/uploads/2016/12/CentrifugaDisoliaturaAltiGiriMod660.jpg`), ma e'
+800x600 e datata: per la fascia, che vuole 1600x900, non basta.
+
+**Anche la fascia di `centrifughe.html` e' in attesa**: tre fondali scuri
+(`centrifughe/attesa.jpg`) al posto delle tre vecchie immagini del repo dei
+contenuti, finche' le altre serie non hanno fotografie loro. Si sostituiscono le
+righe `<img>` e basta.
 
 ## Le fotografie degli impianti
 
