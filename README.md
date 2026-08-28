@@ -483,13 +483,24 @@ l'85-90% dell'altezza — quindi tagliare non si puo': il 16:9 si ottiene
 prolungando il fondo, che qui e' un muro col battiscopa e un pavimento di
 cemento, tutte righe orizzontali che prolungate restano righe.
 
-**Ma il fondo prolungato va anche sporcato.** Alla prima stesura la parte
-inventata — il 58% del fotogramma — era liscia: grana 0,6 contro 4,6 dello
-scatto, e attorno alla macchina si vedeva un alone pulito, di quelli che fanno
-pensare a un ritocco automatico. Ora la grana viene misurata sullo scatto e
-ricopiata sulla parte inventata, e l'attacco e' sfumato su ottanta pixel. Lo
-stesso vale per qualunque altro scatto di reparto da allargare: senza grana
-l'inganno si vede.
+**Il fondo prolungato qui non funziona, ed e' stato abbandonato.** Portare questi
+scatti al 16:9 allargando voleva dire inventare il **58% del fotogramma** partendo
+da un margine di fondo largo 84 px: il resto della cornice e' occupato dalla
+macchina. Il risultato era una fascia liscia attorno alla macchina — niente
+macchie del pavimento, niente variazione — che si legge come un alone, e non si
+salva ne' copiando la grana ne' sfumando l'attacco: manca la struttura, non il
+rumore.
+
+**Le tre FCV sono quindi ritagli, non allargamenti.** Il 16:9 viene preso dentro
+lo scatto, inquadrato in alto sulla macchina: coperchio, maniglie, quadro, e nel
+terzo il cesto estratto col coperchio aperto. La macchina esce dal fotogramma
+come in un primo piano — e' una scelta, non un rattoppo — e **il 100% di quello
+che si vede e' fotografia vera**. Stesso criterio per la copertina, che e' il
+quadrato piu' grande che sta dentro allo scatto.
+
+La regola che ne esce: **il fondo si prolunga solo dove ce n'e' gia' abbastanza**
+— gli scatti da studio delle FD, dove la macchina lascia margini larghi e il
+fondo e' un grigio liscio. Dove la macchina riempie il fotogramma, si taglia.
 
 **LM 660 AG resta senza carosello e col fondo nero**: nessuna foto verificata.
 E' la disoliatrice ad alti giri **mod. 660 di LM Industry** — «AG» sta per alti
