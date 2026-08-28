@@ -726,3 +726,54 @@ main{position:relative}
 .technology-sequence.statica .seq-content{z-index:2}
 .page-main{padding-bottom:14vw}
 @media only screen and (min-width:834px){.page-main{padding-bottom:6vw}}
+
+/* ================= LA LENTE: LA FOTOGRAFIA INTERA ================
+   I caroselli ritagliano — 16/9 nella fascia, 4/3 nella colonna, e
+   `object-fit:cover` toglie quello che avanza. Le macchine sono alte e
+   strette: quasi sempre ne resta fuori un pezzo. Un tocco in mezzo al
+   carosello riapre la stessa fotografia sopra la pagina, dove `contain`
+   la fa stare tutta, e da li' si continua a scorrere la fila con le
+   frecce. Il pannello e' uno solo per pagina: si riempie ogni volta con
+   le figure del carosello che l'ha aperto. */
+.carosello{cursor:zoom-in}
+.carosello:focus-visible{outline:2px solid var(--color-off-white);outline-offset:3px}
+.lente{-webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);background-color:rgba(0,0,0,.94);height:100vh;height:100svh;left:0;opacity:0;position:fixed;top:0;visibility:hidden;width:100%;z-index:40;transition:opacity .4s var(--ease-expo-out),visibility 0s .4s}
+.lente.aperta{opacity:1;visibility:visible;transition-delay:0s}
+/* Il riquadro lascia liberi i due capi: sopra passa la croce di chiusura,
+   sotto la riga delle frecce, e la fotografia non ci finisce sotto. */
+.lente-quadro{align-items:center;display:flex;height:100%;justify-content:center;padding:16vw 4.2666666667vw 17vw;width:100%}
+@media only screen and (min-width:834px){.lente-quadro{padding:4.5vw 6.5vw}}
+.lente-foto{border-radius:2.1333333333vw;height:auto;max-height:100%;max-width:100%;object-fit:contain;width:auto;transform:scale(.96);transition:opacity .25s linear,transform .5s var(--ease-expo-out)}
+@media only screen and (min-width:834px){.lente-foto{border-radius:.5555555556vw}}
+.lente.aperta .lente-foto{transform:none}
+/* La figura del carosello puo' non essere ancora scaricata: finche' non
+   arriva il riquadro resta vuoto invece di mostrare un rotto. */
+.lente-foto.in-attesa{opacity:0}
+/* Nel carosello le pastiglie stanno sopra una fotografia e il nero al 40%
+   basta a staccarle. Qui il fondo e' gia' nero: lo stesso nero sparirebbe,
+   e resterebbero nove pallini appesi al buio. Fondo di grafite, e sotto il
+   puntatore il rosso del marchio. */
+.lente-chiudi,.lente-freccia{background-color:var(--color-charcoal);color:var(--color-off-white);height:10.6666666667vw;width:10.6666666667vw}
+.lente-chiudi:hover,.lente-freccia:hover{background-color:var(--color-yellow);color:var(--color-off-white)}
+/* All'apertura il fuoco va sulla croce. L'anello azzurro del browser sopra il
+   nero stona: stesso segno bianco del carosello. */
+.lente-chiudi:focus-visible,.lente-freccia:focus-visible{outline:2px solid var(--color-off-white);outline-offset:3px}
+.lente-chiudi{position:absolute;right:4.2666666667vw;top:4.2666666667vw;z-index:2}
+@media only screen and (min-width:834px){
+  .lente-chiudi,.lente-freccia{height:2.9166666667vw;width:2.9166666667vw}
+  .lente-chiudi{right:2.5vw;top:2.5vw}
+}
+/* Su telefono le tre voci stanno in riga sotto la fotografia, nel nero che
+   il `contain` lascia comunque libero: cosi' non coprono niente e quel
+   fondo non resta vuoto. Da 834 px in su la riga si apre ai due bordi e le
+   frecce tornano ai lati, dove stanno anche nel carosello. */
+.lente-barra{align-items:center;bottom:4.2666666667vw;column-gap:4.2666666667vw;display:flex;justify-content:center;left:50%;position:absolute;transform:translateX(-50%);z-index:2}
+@media only screen and (min-width:834px){
+  .lente-barra{bottom:0;column-gap:0;justify-content:space-between;left:0;padding:0 2.5vw;pointer-events:none;right:0;top:0;transform:none}
+  .lente-barra>*{pointer-events:auto}
+  .lente-conta{bottom:2.2vw;left:50%;position:absolute;transform:translateX(-50%)}
+}
+.lente-conta{color:var(--color-silver);font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;letter-spacing:-.02em;line-height:1.5}
+@media (prefers-reduced-motion:reduce){
+  .lente,.lente-foto{transition-duration:.01ms!important}
+}
