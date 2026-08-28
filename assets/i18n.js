@@ -503,7 +503,7 @@ var EN = {
 "fotografia del nastro trasportatore non ancora disponibile":"photograph of the belt conveyor not yet available",
 "fotografia delle centrifughe non ancora disponibile":"photograph of the centrifuges not yet available",
 "centrifuga disoleatrice Fase serie FCV in blu, coperchio con maniglie e quadro a bordo macchina":"Fase FCV series oil-removal centrifuge in blue, lid with handles and on-board control panel",
-"centrifuga disoleatrice Fase serie FCV in bianco, vista di tre quarti":"Fase FCV series oil-removal centrifuge in white, seen three-quarters on",
+"coperchio con maniglie e quadro di una centrifuga disoleatrice Fase serie FCV in bianco":"lid with handles and control panel of a Fase FCV series oil-removal centrifuge in white",
 "centrifuga disoleatrice Fase serie FCV col coperchio aperto e il cesto estratto":"Fase FCV series oil-removal centrifuge with the lid open and the basket lifted out",
 "centrifuga disoleatrice Fase serie FD, fusto bianco e motore sul basamento che porta il marchio":"Fase FD series oil-removal centrifuge, white drum and motor on the base carrying the brand mark",
 "timbro \u00abpatented\u00bb: l\u2019espulsione del trituratore TR1 \u00e8 coperta da brevetto":"\u201cpatented\u201d stamp: the ejection system of the TR1 shredder is covered by a patent",
