@@ -545,6 +545,12 @@ main{position:relative}
 .media-band>div{aspect-ratio:16/9;border-radius:4.2666666667vw;overflow:hidden;position:relative;background:var(--color-dark-grey)}
 @media only screen and (min-width:834px){.media-band>div{border-radius:2.2222222222vw}}
 .media-band img{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
+/* La sede non sta in un riquadro: e' scontornata, e la sagoma dell'edificio
+   attacca sul nero della pagina correndo da un bordo all'altro dello schermo.
+   Niente cornice, niente raggio, niente 16:9 — l'altezza la detta l'edificio. */
+.media-sagoma{margin-top:9vw}
+@media only screen and (min-width:834px){.media-sagoma{margin-top:3.6vw}}
+.media-sagoma img{display:block;height:auto;width:100%}
 /* Carosello della fascia: le figure stanno gia' una sopra l'altra e a tutta
    fascia, quindi basta accenderne una per volta. Senza JS resta accesa la
    prima e la fascia si comporta come prima. */
