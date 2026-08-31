@@ -582,7 +582,7 @@ var EN = {
 "reparto con serbatoi conici bianchi allineati sotto un carroponte":"department with white conical tanks in a row under an overhead crane",
 "benna a polipo che solleva rottame metallico sopra un cumulo di sfridi":"orange-peel grab lifting scrap metal above a pile of offcuts",
 "prova di triturazione nell’area test":"shredding test in the test area",
-"stand Fase alla fiera MECSPE":"Fase stand at the MECSPE trade fair",
+"banner MECSPE 2026: appuntamento a BolognaFiere dal 4 al 6 marzo 2026, ventiquattresima edizione":"MECSPE 2026 banner: see you at BolognaFiere, 4–6 March 2026, twenty-fourth edition",
 "stand Fase a MECSPE 2021":"Fase stand at MECSPE 2021",
 "visitatori allo stand MECSPE 2022":"visitors at the MECSPE 2022 stand",
 "macchine esposte a MECSPE 2024":"machines on show at MECSPE 2024",

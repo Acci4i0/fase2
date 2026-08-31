@@ -807,3 +807,12 @@ main{position:relative}
    della memoria del browser — vanno in mono come le etichette del sito. */
 .legale .mono{color:var(--color-off-white);font-family:var(--font-accent),monospace;font-size:.92em}
 
+
+/* Il banner della fiera non e' una fotografia: e' una composizione con la
+   scritta in alto. Le fasce sono 16:9 e le schede 3:2, il banner e' quasi
+   quadrato (1,185), quindi il ritaglio centrato mangia un terzo dell'altezza
+   e si porta via «Vi aspettiamo a». Ancorato in alto la scritta resta tutta
+   e a cadere e' il fondo di ingranaggi, che non dice niente. Il banner 2025
+   ha la scritta in mezzo e non ne ha bisogno: la classe si mette a mano,
+   solo dove serve. */
+img.in-alto{object-position:50% 0}
