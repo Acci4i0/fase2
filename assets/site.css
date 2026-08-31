@@ -777,3 +777,33 @@ main{position:relative}
 @media (prefers-reduced-motion:reduce){
   .lente,.lente-foto{transition-duration:.01ms!important}
 }
+
+/* ===================== LE DUE INFORMATIVE ========================
+   Privacy e cookie sono le uniche pagine del sito fatte di testo lungo
+   diviso in sezioni: il corpo e' gia' quello di `.detail-prose`, qui si
+   aggiungono solo i titoli di sezione, gli elenchi e la riga della data.
+   Misura tenuta stretta — sotto i 68 caratteri — perche' un'informativa
+   si legge riga per riga, non si scorre. */
+.legale{max-width:62rem}
+@media only screen and (min-width:834px){.legale{max-width:46vw}}
+.legale h2{font-size:clamp(1.8rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.03em;line-height:1.14;margin-top:11vw}
+@media only screen and (min-width:834px){.legale h2{font-size:clamp(2rem,1.6666666667vw,2.4rem);margin-top:3.6vw}}
+.legale h2:first-child{margin-top:0}
+.legale h3{color:var(--color-off-white);font-size:clamp(1.4rem,4vw,1.9rem);font-weight:300;letter-spacing:-.02em;line-height:1.3;margin-top:6vw}
+@media only screen and (min-width:834px){.legale h3{font-size:clamp(1.5rem,1.1805555556vw,1.9rem);margin-top:1.8vw}}
+.legale h2+p,.legale h3+p{margin-top:3.2vw}
+@media only screen and (min-width:834px){.legale h2+p,.legale h3+p{margin-top:0.9vw}}
+.legale ul{display:flex;flex-direction:column;margin-top:3.2vw;row-gap:2.4vw}
+@media only screen and (min-width:834px){.legale ul{margin-top:0.9vw;row-gap:0.7vw}}
+/* Il trattino e' il segno degli elenchi del sito; il rosso lo tiene
+   agganciato al marchio senza accendere la parola che segue. */
+.legale li{color:var(--color-silver);font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;padding-left:3.7333333333vw;position:relative}
+@media only screen and (min-width:834px){.legale li{font-size:clamp(1.4rem,1.1111111111vw,1.8rem);padding-left:1.3888888889vw}}
+.legale li:before{color:var(--color-yellow);content:"—";left:0;position:absolute}
+.legale li b,.legale p b{color:var(--color-off-white);font-weight:400}
+.legale .data{color:var(--color-mid-grey);font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;letter-spacing:-.02em;line-height:1.5;margin-top:10vw;text-transform:uppercase}
+@media only screen and (min-width:834px){.legale .data{margin-top:3.2vw}}
+/* I nomi tecnici citati nelle informative — la chiave della lingua, il nome
+   della memoria del browser — vanno in mono come le etichette del sito. */
+.legale .mono{color:var(--color-off-white);font-family:var(--font-accent),monospace;font-size:.92em}
+
