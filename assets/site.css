@@ -593,9 +593,9 @@ main{position:relative}
    larghezza piena — a 2,24 il trituratore perdeva la cima della tramoggia e i
    piedi del banco, ed e' esattamente quello che questo sito non fa.
 
-   Il tetto e' `58svh`: da li' esce la larghezza (58svh x 16/9, cioe' 103svh) e
+   Il tetto e' `66svh`: da li' esce la larghezza (66svh x 16/9, cioe' 117svh) e
    l'altezza va dietro. Su una finestra 1440x900 la fascia passa da 1368x770 —
-   che sfondava lo schermo — a 928x522, e sta tutta dentro col titolo sopra.
+   che sfondava lo schermo — a 1056x594, e sta dentro col titolo sopra.
    Su una finestra alta o stretta comanda invece il `min(100%, ...)` e la
    fascia torna larga quanto la pagina.
 
@@ -613,8 +613,8 @@ main{position:relative}
 }
 @media only screen and (min-width:834px){
   .media-band.stretta{align-items:center;column-gap:1.1111111111vw;display:flex;justify-content:center}
-  .media-band.stretta>.carosello{flex:0 1 auto;order:2;width:min(100%,calc(58svh*16/9))}
-  .media-band.stretta.alta>.carosello{width:min(46vw,calc(58svh*4/3))}
+  .media-band.stretta>.carosello{flex:0 1 auto;order:2;width:min(100%,calc(66svh*16/9))}
+  .media-band.stretta.alta>.carosello{width:min(52vw,calc(66svh*4/3))}
   /* Il JS appende le frecce in coda alla sezione: con `order` tornano ai due
      lati, indietro a sinistra e avanti a destra. */
   .media-band.stretta>.carosello-freccia{flex-shrink:0;left:auto;order:1;position:static;right:auto;top:auto;transform:none}
