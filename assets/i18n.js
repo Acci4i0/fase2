@@ -55,7 +55,6 @@ var EN = {
 "Fotografia a schermo intero":"Photograph, full screen",
 "Chiudi la fotografia":"Close the photograph",
 "Apri la sede sulla mappa":"Open our location on the map",
-"Scrivi a info@fasemec.com":"Write to info@fasemec.com",
 
 /* --- home ---------------------------------------------------------- */
 "Sfrido asciutto.":"Dry scrap.",
@@ -398,7 +397,6 @@ var EN = {
 
 /* --- contatti ------------------------------------------------------- */
 "Per rispondere con qualcosa di più di un listino ci serve sapere cosa esce dalla vostra lavorazione. Il materiale, la forma del truciolo, quanto ne producete in un turno e che fluido lo bagna cambiano la macchina da proporre molto più della cifra a budget.":"To answer with more than a price list, we need to know what comes off your machining. The material, the shape of the chips, how much you make in a shift and which fluid wets them change the machine we would propose far more than the budget figure does.",
-"Su cosa scrivere":"What to tell us",
 "Descriveteci il componente e il ciclo attuale: come viene raccolto oggi lo sfrido, dove finisce, quanto lubrorefrigerante ci resta dentro e che risultato vi serve a valle. Se ci sono vincoli di spazio, di altezza sotto trave o di movimentazione, sono quelli a definire il layout.":"Describe the part and your current cycle: how the scrap is collected today, where it ends up, how much coolant stays in it and what result you need downstream. Where there are constraints on space, headroom or handling, those are what shape the layout.",
 "Su richiesta trattiamo un campione del vostro materiale prima di qualsiasi offerta.":"On request we process a sample of your material before any quotation.",
 "Contatti diretti":"Direct contacts",
@@ -462,6 +460,7 @@ var EN = {
 
 
 /* --- le tre caselle nella pagina dei contatti -------------------------- */
+"Recapiti":"Contact details",
 "Richieste generali e dimensionamento":"General enquiries and sizing",
 "Offerte e rapporti commerciali":"Quotations and sales",
 /* --- Centrifor -------------------------------------------------------- */
