@@ -56,7 +56,7 @@ assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
 assets/img/centrifughe/ la serie FD dalla 250 alla 1000 e la FCV
 assets/img/accessori/  i ribalta cassoni, piu' il fondale in attesa dei nastri
-assets/img/centrifor/  i tre modelli Centrifor, sul bianco di LM, non ingranditi
+assets/img/centrifor/  i tre modelli Centrifor, sul bianco di LM, a 1400x1050
 assets/img/soluzioni/  le immagini di settori e applicazioni
 assets/img/favicon*.png  l'icona della scheda del browser, marchio su fondo rosso
 ```
@@ -706,21 +706,33 @@ nessuna parte, quindi in pagina restano nomi e basta.
 **Sulle macchine si legge il marchio LM, non Fase.** Sono le fotografie di LM e
 non sono state ritoccate su quel punto.
 
-**Le fotografie restano sul bianco di LM, e non si ingrandiscono.** Il primo
-tentativo le aveva scontornate per posarle sul grigio sfumato delle altre
-schede: il ritaglio sbagliava in troppi punti e il risultato era peggiore
-dell'originale. Ora non si tocca niente. Dove serve cambiare il rapporto, la
-fotografia viene allargata **col suo stesso bianco** — un'aggiunta che non si
-vede — e gli scatti fatti in reparto, che il bianco non ce l'hanno, si ritagliano
-al centro. La regola sta in una riga: se almeno il **70%** del bordo e' bianco
-pieno si allarga, se no si ritaglia. Il 70 e non il 100 perche' su qualche scatto
-la macchina tocca un lato, ma il fondo resta quello dello studio.
+**Le fotografie restano sul bianco di LM.** Un primo tentativo le aveva
+scontornate per posarle sul grigio sfumato delle altre schede: il ritaglio
+sbagliava in troppi punti e il risultato era peggiore dell'originale. Ora non si
+tocca niente. Dove serve cambiare il rapporto la fotografia viene allargata **col
+suo stesso bianco** — un'aggiunta che non si vede — e gli scatti fatti in
+reparto, che il bianco non ce l'hanno, si ritagliano al centro. La regola sta in
+una riga: se almeno il **70%** del bordo e' bianco pieno si allarga, se no si
+ritaglia. Il 70 e non il 100 perche' su qualche scatto la macchina tocca un lato,
+ma il fondo resta quello dello studio.
 
-Nessun ingrandimento: gli originali di LM sono 800x600 al massimo — quelli senza
-suffisso di taglia, cioe' gia' i file pieni — e tirarli a 1600x900 era quello che
-li faceva sembrare sgranati. I file finiti vanno da 600x450 a 1067x800 e sono
-nitidi quanto la sorgente lo consente. Le copertine sono 800x800, la fascia della
-pagina di sezione 1067x600 (800x450 quella scattata in reparto).
+**L'ingrandimento si fa qui, non nel browser.** Gli originali di LM sono
+**800x600** e file piu' grandi non esistono: provati i tagli `-scaled`,
+`-1024x768`, `-1536x1152` e `-2048x1536`, tutti 404, e anche le immagini dentro
+`Centrifor.pdf` sono piu' piccole. Ma su un telefono a tre volte la densita' il
+riquadro chiede 1125 pixel, quindi l'ingrandimento avviene comunque — e il
+browser lo fa con un filtro grossolano, che e' il motivo per cui le fotografie
+sembravano sgranate. Meglio farlo una volta sola qui, con **Lanczos piu' una
+maschera di contrasto** (raggio 1,2 / 80% / soglia 3): non aggiunge dettaglio che
+non c'e', ma i bordi restano fermi invece di impastarsi, e la soglia lascia stare
+i fondi lisci invece di granularli. L'ingrandimento viene **prima** del bianco
+aggiunto, se no si contrasterebbe un bordo finto.
+
+Le misure finite: **1400x1050** per le fasce e i caroselli delle schede,
+**1000x1000** per le copertine. A quelle misure il browser non deve piu'
+ingrandire niente, ne' a due ne' a tre volte la densita'. La cartella pesa 4,1 MB
+per 32 file: le fotografie contrastate costano bit, e le piu' pesanti sono gli
+scatti in reparto, che hanno grana vera.
 
 **La fascia delle schede e' 4:3, non 16:9.** Queste macchine sono armadi
 verticali: il rapporto fra larghezza e altezza sta fra 0,53 e 0,78. Dentro una
@@ -730,9 +742,11 @@ tre schede usano `.media-band.alta`: riquadro 4:3 e, da 834 px in su, largo
 `46vw` e centrato, se no su schermo largo un 4:3 a tutta pagina sarebbe piu'
 alto della finestra. Da telefono resta largo quanto la pagina, come le altre.
 
-La pagina di sezione tiene invece la fascia 16:9 normale, perche' li' ci vanno
-i tre scatti larghi che ci sono: la linea intera sul basamento, le tre macchine
-in fila in reparto, la macchina fra nastro e tramoggia.
+Anche la pagina di sezione usa `.media-band.alta`, e non la fascia 16:9 delle
+altre sezioni. Il 4:3 e' il rapporto **nativo** di quasi tutti questi scatti
+(800x600): dentro un 4:3 non si ritaglia e non si allarga niente, la fotografia
+entra com'e'. Il suo carosello porta **nove** scatti invece di tre, i tre modelli
+in fila — prima il 270, poi il 480, poi il 660.
 
 ## La serie KOMBI
 
@@ -821,7 +835,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902h`. Senza, chi ha già
+`?v=20260902i`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 

@@ -519,8 +519,6 @@ var EN = {
 "Centrifor mod. 270 su fondo chiaro, vista di tre quarti":"Centrifor mod. 270 on a light background, three-quarter view",
 "Centrifor mod. 480 su fondo chiaro, vista di tre quarti":"Centrifor mod. 480 on a light background, three-quarter view",
 "Centrifor mod. 660 su fondo chiaro, vista di tre quarti":"Centrifor mod. 660 on a light background, three-quarter view",
-"linea Centrifor su basamento unico: nastro di carico, macchina e cassone di raccolta":"Centrifor line on a single base frame: loading conveyor, machine and collection bin",
-"tre Centrifor mod. 480 in verde affiancati in reparto":"three green Centrifor mod. 480 machines side by side on the shop floor",
 "Centrifor mod. 480 fra il nastro di carico e la tramoggia di raccolta":"Centrifor mod. 480 between the loading conveyor and the collection hopper",
 "Centrifor mod. 270 di tre quarti, con lo scivolo di carico aperto sul davanti":"Centrifor mod. 270 in three-quarter view, with the loading chute open at the front",
 "Centrifor mod. 270 con lo sportello aperto, il cesto e il quadro di comando in vista":"Centrifor mod. 270 with the door open, basket and control panel in view",
