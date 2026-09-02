@@ -43,7 +43,7 @@ applicazioni.html       le quattro lavorazioni
 settori.html            i reparti serviti
 news.html               elenco fiere e aggiornamenti
 news/                   una scheda per notizia (7)
-contatti.html           marchio e recapiti, poi argomenti e mappa
+contatti.html           marchio e testo a sinistra, recapiti nel riquadro
 privacy.html            informative (testo da fornire)
 cookie-policy.html
 assets/site.css         foglio unico, variabili di progetto in :root
@@ -56,7 +56,7 @@ assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
 assets/img/centrifughe/ la serie FD dalla 250 alla 1000 e la FCV
 assets/img/accessori/  i ribalta cassoni, piu' il fondale in attesa dei nastri
-assets/img/centrifor/  i tre modelli Centrifor, rifatti sul fondale delle schede
+assets/img/centrifor/  i tre modelli Centrifor, sul bianco di LM, non ingranditi
 assets/img/soluzioni/  le immagini di settori e applicazioni
 assets/img/favicon*.png  l'icona della scheda del browser, marchio su fondo rosso
 ```
@@ -185,34 +185,32 @@ tengono quando il corpo del testo cambia con la larghezza.
 Il trattino della prima riga e' quello medio (`–`), lo stesso del blocco legale di
 `privacy.html`, non quello lungo.
 
-## Il biglietto dei contatti
+## I recapiti in contatti
 
 `contatti.html` e' l'unica pagina che non ha una macchina da mostrare: si
-presenta lei. Sotto al titolo sta il **marchio grande in rosso** e a fianco i
-recapiti, uno per riga col suo segno — luogo, telefono, le tre caselle. E' la
-stessa impaginazione che LM Industry tiene nel proprio pie' di pagina, portata
-qui in cima e in una pagina sua.
+presenta lei. In cima alla **colonna di sinistra** sta il marchio, e sotto il
+testo che c'era gia' — quello che chiede di descrivere componente e ciclo. Nel
+**riquadro scuro a destra**, al posto dell'elenco degli argomenti, stanno i
+recapiti: luogo, telefono, le tre caselle, ognuno con il suo segno.
 
 Le caselle sono **tre**: `info@` per le richieste generali e il dimensionamento,
-`service@` per l'assistenza su un impianto installato, `commerciale@` per
-offerte e rapporti commerciali. Sotto ognuna c'e' la riga che dice a cosa serve,
-in monospaziato grigio come le altre etichette della pagina: senza, tre indirizzi
-in fila non dicono a chi scrivere.
+`service@` per l'assistenza su un impianto installato, `commerciale@` per offerte
+e rapporti commerciali. Sotto ognuna la riga che dice a cosa serve, in
+monospaziato grigio come le altre etichette: senza, tre indirizzi in fila non
+dicono a chi scrivere.
 
-Il marchio e' lo stesso tracciato del pie' di pagina, ripreso in linea. **Non
-prende tutta la colonna:** a tutta larghezza diventa un'insegna e schiaccia i
-recapiti. Sta al 58% della riga da telefono e a `20vw` da 834 px in su.
+Le righe seguono lo stesso passo dell'elenco puntato che stava li' prima — filo
+sopra a ognuna, filo sotto all'ultima — cosi' il riquadro resta quello di sempre.
+Il segno di ogni riga e' allineato in alto e non al centro: l'indirizzo va a capo,
+e centrato il puntino scivolerebbe in mezzo alle due righe.
 
-Da 834 px in su marchio e recapiti si affiancano sulle stesse colonne della
-sezione che segue — 1-10 e 13-24 — cosi' le due parti della pagina stanno sullo
-stesso impianto. Il segno di ogni riga e' allineato in alto e non al centro:
-l'indirizzo va a capo, e centrato il puntino scivolerebbe in mezzo alle due
-righe.
+Il marchio e' lo stesso tracciato del pie' di pagina. **Non prende tutta la
+colonna:** a tutta larghezza diventa un'insegna e si mangia il testo che gli sta
+sotto. Sta al 52% della riga da telefono e a `15vw` da 834 px in su.
 
-Dal riquadro scuro piu' in basso sono spariti i due blocchi «Sede e
-stabilimento» e «Contatti diretti»: dicevano le stesse cose che ora stanno in
-cima. Restano «Su cosa scrivere», il bottone per la mail e il collegamento alla
-mappa.
+Sono spariti il bottone «Scrivi a info@fasemec.com», che ora e' un doppione
+dell'indirizzo scritto li' sopra, e l'elenco «Su cosa scrivere», sostituito dai
+recapiti. Resta il collegamento alla mappa.
 
 ## Niente parole evidenziate
 
@@ -703,14 +701,21 @@ nessuna parte, quindi in pagina restano nomi e basta.
 **Sulle macchine si legge il marchio LM, non Fase.** Sono le fotografie di LM e
 non sono state ritoccate su quel punto.
 
-**Le fotografie sono state riportate sul fondale delle altre schede.** Arrivavano
-su bianco pieno, mentre tutto il catalogo Fase sta su un grigio sfumato. Il
-bianco viene tolto solo dove tocca il bordo dell'immagine — si parte dai lati e
-si prende la macchia contigua — cosi' le targhette bianche sulla macchina
-restano bianche; poi la macchina viene posata su un fondale ricostruito con la
-stessa sfumatura delle FD (centro 178, angoli 146; per le copertine 223 e 214,
-come `fd-copertina.jpg`). Gli scatti fatti in reparto non si toccano: si
-ritagliano e basta, il loro fondo non si puo' rifare.
+**Le fotografie restano sul bianco di LM, e non si ingrandiscono.** Il primo
+tentativo le aveva scontornate per posarle sul grigio sfumato delle altre
+schede: il ritaglio sbagliava in troppi punti e il risultato era peggiore
+dell'originale. Ora non si tocca niente. Dove serve cambiare il rapporto, la
+fotografia viene allargata **col suo stesso bianco** — un'aggiunta che non si
+vede — e gli scatti fatti in reparto, che il bianco non ce l'hanno, si ritagliano
+al centro. La regola sta in una riga: se almeno il **70%** del bordo e' bianco
+pieno si allarga, se no si ritaglia. Il 70 e non il 100 perche' su qualche scatto
+la macchina tocca un lato, ma il fondo resta quello dello studio.
+
+Nessun ingrandimento: gli originali di LM sono 800x600 al massimo — quelli senza
+suffisso di taglia, cioe' gia' i file pieni — e tirarli a 1600x900 era quello che
+li faceva sembrare sgranati. I file finiti vanno da 600x450 a 1067x800 e sono
+nitidi quanto la sorgente lo consente. Le copertine sono 800x800, la fascia della
+pagina di sezione 1067x600 (800x450 quella scattata in reparto).
 
 **La fascia delle schede e' 4:3, non 16:9.** Queste macchine sono armadi
 verticali: il rapporto fra larghezza e altezza sta fra 0,53 e 0,78. Dentro una
@@ -811,7 +816,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902e`. Senza, chi ha già
+`?v=20260902g`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
