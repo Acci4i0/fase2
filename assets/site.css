@@ -555,6 +555,17 @@ main{position:relative}
 .media-band>div{aspect-ratio:16/9;border-radius:4.2666666667vw;overflow:hidden;position:relative;background:var(--color-dark-grey)}
 @media only screen and (min-width:834px){.media-band>div{border-radius:2.2222222222vw}}
 .media-band img{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
+/* Fascia alta, per le Centrifor. Quelle macchine sono armadi verticali: il
+   rapporto fra larghezza e altezza sta fra 0,53 e 0,78, e dentro un 16:9 a
+   tutta pagina la macchina resta un francobollo in mezzo al grigio. Qui il
+   riquadro diventa 4:3 e da 834 px in su si stringe a meno di meta' pagina,
+   se no su schermo largo un 4:3 a tutta pagina sarebbe piu' alto della
+   finestra. Da telefono resta largo quanto la pagina, com'erano gli altri. */
+.media-band.alta>div{aspect-ratio:4/3}
+@media only screen and (min-width:834px){
+  .media-band.alta{display:flex;justify-content:center}
+  .media-band.alta>div{width:46vw}
+}
 /* La sede non sta in un riquadro: e' scontornata, e la sagoma dell'edificio
    attacca sul nero della pagina correndo da un bordo all'altro dello schermo.
    Niente cornice, niente raggio, niente 16:9 — l'altezza la detta l'edificio. */
