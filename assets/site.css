@@ -144,6 +144,12 @@ main{position:relative}
   .menu.dark.su-rosso .contact-button{background-color:var(--color-black);color:var(--color-off-white)}
   .menu.dark.su-rosso .contact-button:hover{background-color:var(--color-off-white);color:var(--color-black)}
 }
+/* Sul piede rosso la pastiglia resta nera, ma il marchio e i tre puntini
+   passano al chiaro. Il loro rosso e' lo stesso rosso del fondo: sul nero
+   restava spento, e accanto l'EN era gia' chiaro. Ora le tre pastiglie si
+   leggono come un pezzo solo. */
+.menu.dark.su-rosso .menu-logo{color:var(--color-off-white)}
+.menu.dark.su-rosso .burger{color:var(--color-off-white)}
 .contact-button{background-color:var(--color-yellow);border-radius:1.6vw;color:var(--color-off-white);font-family:var(--font-accent),monospace;font-size:clamp(1.4rem,4.2666666667vw,1.8rem);font-weight:400;height:11.7333333333vw;line-height:1;padding:0 4.5333333333vw;transition:background-color .3s,color .3s;white-space:nowrap}
 .contact-button:hover{background-color:var(--color-black);color:var(--color-off-white)}
 @media only screen and (min-width:834px){.contact-button{border-radius:.4166666667vw;flex-shrink:0;font-size:1.2rem;height:1.9444444444vw;padding:0 1.1805555556vw}}
@@ -429,7 +435,11 @@ main{position:relative}
   background-color:var(--color-black);
   background-image:radial-gradient(circle at center,transparent var(--circle-radius),var(--outline-color) var(--circle-radius),var(--outline-color) calc(var(--circle-radius) + 1px),transparent calc(var(--circle-radius) + 1px)),linear-gradient(var(--outline-color) 1px,transparent 1px),linear-gradient(90deg,var(--outline-color) 1px,transparent 1px);
   background-size:var(--pattern-size) var(--pattern-size),var(--pattern-size) var(--pattern-size),var(--pattern-size) var(--pattern-size);
-  color:var(--color-off-white);padding:0 0 10vw;position:relative;z-index:12}
+  /* z-index 4: sopra le sezioni della pagina, che arrivano al 3, e sotto la
+     barra di navigazione, che sta all'11. Prima stava al 12 e il piede
+     copriva la barra: le regole .menu.dark.su-rosso, scritte apposta per
+     quando la barra passa sul rosso, non si vedevano mai. */
+  color:var(--color-off-white);padding:0 0 10vw;position:relative;z-index:4}
 .footer:after{background:linear-gradient(180deg,transparent,rgba(32,32,32,.8));content:"";height:100%;left:0;position:absolute;top:0;width:100%}
 @media only screen and (min-width:834px){.footer{--pattern-size:6.66667vw;padding:1.3888888889vw 1.1111111111vw 6vw}}
 .footer-container{background-color:var(--color-yellow);border-bottom-left-radius:6.4vw;border-bottom-right-radius:6.4vw;column-gap:var(--grid-gutter);display:grid;grid-template-columns:repeat(var(--grid-column-count),1fr);padding:12vw var(--grid-outer-gutter);position:relative;z-index:1}
