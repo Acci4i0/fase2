@@ -30,7 +30,7 @@ azienda.html            profilo, metodo, area test
 centrifughe.html        \
 trituratori.html         > le tre famiglie di macchine
 impianti.html           /
-accessori.html          nastri, ribalta cassoni e opzioni di macchina
+accessori.html          nastri trasportatori e ribalta cassoni
 prodotti/               una scheda per macchina (7), con le tabelle tecniche
 
 L'ordine delle tre famiglie e' centrifughe, trituratori, impianti: vale per il
@@ -338,6 +338,22 @@ proprio sugli schermi grandi.
 Frecce e pallini sono gli stessi della fascia ma rimpiccioliti: sono tarati in
 `vw` su una fascia a tutta pagina e in una colonna larga un terzo verrebbero
 enormi.
+
+**Via l'elenco "Le opzioni a catalogo".** In fondo alla pagina c'era una
+sezione con due colonne, "Centrifughe" e "Disoleatrici", che elencava le opzioni
+di macchina. Non si capiva a cosa si riferisse: sul sito tutte e tre le serie si
+chiamano *centrifughe disoleatrici*, quindi le due intestazioni non separavano
+niente, e le macchine in questione nemmeno stanno in questa pagina — qui ci sono
+nastri e ribalta cassoni. Le stesse voci sono gia' al posto giusto, sotto
+"Accessori", in ognuna delle tre schede: FD, FCV e LM 660 AG. Tolta la sezione,
+l'etichetta sopra il titolo e la descrizione della pagina non promettono piu'
+"opzioni di macchina".
+
+Tre voci uscivano solo da qui e ora non stanno piu' da nessuna parte: variatore
+di giri per accelerazione e decelerazione controllate, apertura automatica del
+coperchio con cilindro pneumatico, kit soffiante ad aria calda. Le traduzioni
+restano nel glossario degli elenchi puntati in `assets/i18n.js`, pronte se le
+voci trovano una scheda.
 
 **I nastri non hanno ancora fotografie.** Il carosello e' montato lo stesso, con
 tre fondali scuri (`nastro-attesa.jpg`): quando arrivano gli scatti si

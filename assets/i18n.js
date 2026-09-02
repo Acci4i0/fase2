@@ -447,8 +447,8 @@ var EN = {
 "Informativa di Fase Mechanical Engineering S.r.l..":"Notice from Fase Mechanical Engineering S.r.l.",
 
 /* --- accessori -------------------------------------------------------- */
-"Nastri, ribalta cassoni e opzioni di macchina":"Conveyors, bin tippers and machine options",
-"Nastri trasportatori, ribalta cassoni e opzioni di macchina: quello che collega le fasi e toglie le movimentazioni a mano.":"Belt conveyors, bin tippers and machine options: what links the stages and takes the manual handling out.",
+"Nastri trasportatori e ribalta cassoni":"Belt conveyors and bin tippers",
+"Nastri trasportatori e ribalta cassoni: quello che collega le fasi e toglie le movimentazioni a mano.":"Belt conveyors and bin tippers: what links the stages and takes the manual handling out.",
 "ribalta cassoni Fase con nastro di scarico in acciaio inox":"Fase bin tipper with stainless steel discharge conveyor",
 "ribalta cassoni Fase carenato, con il gruppo di sollevamento in vista":"enclosed Fase bin tipper, with the lifting unit in view",
 "Nastri trasportatori":"Belt conveyors",
@@ -459,9 +459,6 @@ var EN = {
 "Il cassone si svuota senza intervento manuale":"The bin empties with no one lifting it",
 "Prende il contenitore pieno, lo solleva e lo rovescia sulla tramoggia o sul nastro. Sulle linee di asciugatura in ambiente galvanico \u00e8 il passaggio che porta il materiale dai cassoni al rotobarile senza che nessuno debba maneggiarlo.":"It takes the full container, lifts it and tips it onto the hopper or the conveyor. On drying lines for electroplating it is the step that moves material from the bins into the plating barrel with no handling at all.",
 "Serve dove il volume \u00e8 tale che svuotare a mano diventa il collo di bottiglia del reparto.":"It earns its place where the volumes are such that emptying by hand becomes the bottleneck of the department.",
-"Sulla macchina":"On the machine",
-"Le opzioni a catalogo":"The catalogue options",
-"Disoleatrici":"Oil-removal centrifuges",
 
 /* --- titoli delle pagine --------------------------------------------- */
 "Fase Mechanical Engineering | Centrifughe, impianti e trituratori per lo sfrido metallico":"Fase Mechanical Engineering | Centrifuges, treatment systems and shredders for metal scrap",
