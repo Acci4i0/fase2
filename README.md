@@ -358,32 +358,45 @@ I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 La fascia ritaglia in 16:9, e le fotografie di macchina nascono 4:3: nel
 ritaglio la cima della tramoggia e il piede della macchina restano fuori.
 Finche' la lente riapriva **lo stesso file**, ingrandire faceva vedere la stessa
-inquadratura piu' grande — e non serviva a niente.
+inquadratura piu' grande, e non serviva a niente.
 
-Ora, dove esiste, l'`<img>` porta **`data-intera`** con lo scatto **per intero**,
-nel rapporto suo e non in quello della fascia, e la lente usa quello:
+Ora, dove esiste, l'`<img>` porta **`data-intera`** con lo scatto per intero, nel
+rapporto suo e non in quello della fascia, e la lente usa quello:
 `im.getAttribute('data-intera') || im.currentSrc || im.src`. Dove l'attributo non
-c'e' la lente si comporta come prima, quindi non serve averlo su tutte.
+c'e' la lente si comporta come prima.
+
+**Il conto, sulle 101 fotografie che stanno nei caroselli:**
+
+| | quante | cosa succede aprendo la lente |
+|---|---|---|
+| hanno l'intera | 49 | si vede da x1,16 a x1,78 di area in piu' (mediana x1,33) |
+| Centrifor | 25 | il file **e' gia'** la fotografia LM intera: il bianco viene allargato, non tagliato |
+| fondali in attesa | 9 | non sono fotografie |
+| studio, macchina gia' intera | 15 | il ritaglio 16:9 non taglia niente, c'e' margine intorno |
+| dettagli voluti | 3 | inquadrature ravvicinate, non ritagli |
+
+Il **x1,33** e' il caso normale e non e' poco per caso: un 16:9 dentro un 4:3 e'
+esattamente un terzo di altezza in meno, ed e' tutto quello che l'originale ha.
+I **x1,78** sono i ribalta cassoni, dove l'originale e' verticale (1086x1448) e
+la fascia ne mostra poco piu' della meta'.
 
 **Come sono stati ritrovati gli originali.** Le fotografie del sito sono ritagli
-di scatti che stanno in `foto_fase/`, ma senza un elenco che li leghi. Il
-riscontro e' automatico: miniatura in bianco e nero normalizzata (media zero,
-scarto uno) — cosi' la resa di colore diversa non conta, conta la figura — e per
-ogni originale si prova una finestra 16:9 che scorre in verticale, perche' il
-ritaglio non e' sempre centrato. Su 68 fotografie di fascia, 28 hanno trovato un
-originale con scarto sotto 0,45.
+di scatti che stanno in `foto_fase/`, senza un elenco che li leghi. Il riscontro
+e' automatico: miniatura in bianco e nero normalizzata — cosi' la resa di colore
+diversa non conta, conta la figura — e per ogni originale una finestra 16:9 che
+scorre in verticale, perche' il ritaglio non e' sempre centrato.
 
-**Le 28 sono state guardate una per una**, appaiate al loro originale. Due sono
-state scartate a mano: `fd-copertina.jpg`, che finiva su una fotografia di
-trucioli, e `fd1000-01.jpg`, dove l'originale era la stessa macchina ma da
-un'altra parte. Le copertine sono fuori comunque: non stanno nei caroselli, la
-lente non le apre. Restano **25** versioni intere, piu' **8** per le Centrifor —
-li' l'intera e' il file LM tal quale, e serve solo agli scatti fatti in reparto,
-perche' quelli su bianco sono gia' interi (il bianco viene allargato, non
-tagliato).
+**Il numero da solo non basta, e vanno guardate.** Fra gli abbinamenti giusti ce
+ne sono a scarto 0,26 e altri a 0,82; fra quelli sbagliati ce n'erano a 0,42.
+Sono state controllate a occhio tutte, appaiate al loro originale. Scartate:
+`fd-copertina` finiva su una fotografia di trucioli, `fd1000-01` e `fd650-03`
+erano macchine simili ma altre, `fd250-03` era lo scatto giusto ma sul sito ha il
+fondo rifatto in studio mentre l'originale e' in reparto — aprirlo avrebbe
+cambiato il fondo sotto gli occhi. E quattro «intere» delle Centrifor sono state
+tolte perche' non mostravano **niente** di piu' della fascia.
 
 I file si chiamano `<nome>-intera.jpg` e stanno accanto all'originale del sito.
-Pesano 7,6 MB in tutto ma non li scarica nessuno finche' non si apre la lente.
+Pesano 11 MB in tutto e nessuno li scarica finche' non si apre la lente.
 
 ## La lente: la fotografia intera
 
@@ -902,7 +915,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902m`. Senza, chi ha già
+`?v=20260903a`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
