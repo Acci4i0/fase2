@@ -28,14 +28,17 @@ pubblicare così com'è (GitHub Pages, un bucket, una sottodirectory).
 index.html              home (senza la sezione news: vive solo in news.html)
 azienda.html            profilo, metodo, area test
 centrifughe.html        \
-trituratori.html         > le tre famiglie di macchine
+centrifor.html           > le famiglie di macchine
+trituratori.html        /
 impianti.html           /
 accessori.html          nastri trasportatori e ribalta cassoni
-prodotti/               una scheda per macchina (7), con le tabelle tecniche
+prodotti/               una scheda per macchina (10), con le tabelle tecniche
+                        dove i dati ci sono
 
-L'ordine delle tre famiglie e' centrifughe, trituratori, impianti: vale per il
+L'ordine e' centrifughe, Centrifor, trituratori, impianti: vale per il
 sotto-menu "Sistemi", per il pie' di pagina, per le schede in home e per gli
-argomenti nella pagina contatti.
+argomenti nella pagina contatti. Centrifor sta subito dopo le centrifughe
+perche' e' una serie di centrifughe anche lei; Accessori resta in fondo.
 applicazioni.html       le quattro lavorazioni
 settori.html            i reparti serviti
 news.html               elenco fiere e aggiornamenti
@@ -53,6 +56,7 @@ assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
 assets/img/centrifughe/ la serie FD dalla 250 alla 1000 e la FCV
 assets/img/accessori/  i ribalta cassoni, piu' il fondale in attesa dei nastri
+assets/img/centrifor/  i tre modelli Centrifor, rifatti sul fondale delle schede
 assets/img/soluzioni/  le immagini di settori e applicazioni
 assets/img/favicon*.png  l'icona della scheda del browser, marchio su fondo rosso
 ```
@@ -649,6 +653,48 @@ restano sulla scheda della serie. Le cinque `imp-0*` che c'erano prima restano
 in cartella senza essere richiamate, come `continuo-02` e `continuo-03`, che
 stanno solo sulla scheda del ciclo continuo.
 
+## Centrifor
+
+Le **Centrifor** sono le disoleatrici automatiche di LM Industry: `centrifor.html`
+con le tre schede in `prodotti/centrifor-mod-270|480|660.html`. Testi e
+fotografie vengono dalle pagine LM
+(`lm-industry.com/centrifugal-solutions/centrifugal-products/disoliatura-con-caricoscarico-aut/`
+e le tre schede collegate), riscritti nel modo in cui parla il resto del sito.
+
+**Non ci sono tabelle, perche' non ci sono dati.** LM non pubblica ne' portate,
+ne' diametri, ne' potenze: la «scheda tecnica» che le tre pagine offrono in
+scarico e' un depliant di una facciata, uguale per tutti e tre i modelli, con
+la stessa frase in italiano, inglese e tedesco e nessun numero. Le altre schede
+del sito hanno tutte la loro `section.specs`; queste tre no, ed e' un punto
+aperto in attesa dei numeri, non una dimenticanza. Quello che c'e' scritto viene
+o dalla frase di LM o da quello che si vede nelle fotografie: niente e' stato
+dedotto. Anche il significato dei numeri 270, 480 e 660 non e' scritto da
+nessuna parte, quindi in pagina restano nomi e basta.
+
+**Sulle macchine si legge il marchio LM, non Fase.** Sono le fotografie di LM e
+non sono state ritoccate su quel punto.
+
+**Le fotografie sono state riportate sul fondale delle altre schede.** Arrivavano
+su bianco pieno, mentre tutto il catalogo Fase sta su un grigio sfumato. Il
+bianco viene tolto solo dove tocca il bordo dell'immagine — si parte dai lati e
+si prende la macchia contigua — cosi' le targhette bianche sulla macchina
+restano bianche; poi la macchina viene posata su un fondale ricostruito con la
+stessa sfumatura delle FD (centro 178, angoli 146; per le copertine 223 e 214,
+come `fd-copertina.jpg`). Gli scatti fatti in reparto non si toccano: si
+ritagliano e basta, il loro fondo non si puo' rifare.
+
+**La fascia delle schede e' 4:3, non 16:9.** Queste macchine sono armadi
+verticali: il rapporto fra larghezza e altezza sta fra 0,53 e 0,78. Dentro una
+fascia 16:9 a tutta pagina la macchina resta un francobollo in mezzo al grigio —
+lo stesso motivo per cui `accessori.html` ha rinunciato alla fascia. Percio' le
+tre schede usano `.media-band.alta`: riquadro 4:3 e, da 834 px in su, largo
+`46vw` e centrato, se no su schermo largo un 4:3 a tutta pagina sarebbe piu'
+alto della finestra. Da telefono resta largo quanto la pagina, come le altre.
+
+La pagina di sezione tiene invece la fascia 16:9 normale, perche' li' ci vanno
+i tre scatti larghi che ci sono: la linea intera sul basamento, le tre macchine
+in fila in reparto, la macchina fra nastro e tramoggia.
+
 ## La serie KOMBI
 
 Terza serie degli impianti. Il contenuto della scheda viene dal depliant del
@@ -736,7 +782,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902a`. Senza, chi ha già
+`?v=20260902b`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
