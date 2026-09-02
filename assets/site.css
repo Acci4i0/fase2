@@ -154,6 +154,41 @@ main{position:relative}
 .contact-button:hover{background-color:var(--color-black);color:var(--color-off-white)}
 @media only screen and (min-width:834px){.contact-button{border-radius:.4166666667vw;flex-shrink:0;font-size:1.2rem;height:1.9444444444vw;padding:0 1.1805555556vw}}
 
+/* ===================== BIGLIETTO DEI CONTATTI ===================== */
+/* La pagina dei contatti e' l'unica che non ha una macchina da mostrare: si
+   presenta lei. In cima va il marchio grande e sotto i recapiti, uno per riga
+   col suo segno — luogo, telefono, le tre caselle. Da 834 px in su marchio e
+   recapiti si affiancano sulle stesse colonne della sezione che segue (1-10 e
+   13-24), cosi' le due parti della pagina stanno sullo stesso impianto. */
+.biglietto{padding:9vw 0 0}
+@media only screen and (min-width:834px){.biglietto{padding:4vw 0 0}}
+.biglietto-marchio{grid-column:1/-1;color:var(--color-yellow)}
+.biglietto-recapiti{grid-column:1/-1;margin-top:7vw}
+/* Il marchio non prende tutta la colonna: a tutta larghezza diventa un'insegna
+   e schiaccia i recapiti. Sta a poco piu' di meta' riga da telefono e a un
+   quinto di pagina da 834 px in su, che e' la proporzione con cui compare
+   sulle pagine del gruppo. */
+.biglietto-marchio svg{display:block;height:auto;width:58%}
+@media only screen and (min-width:834px){
+  .biglietto-marchio{grid-column:1/span 10;align-self:center}
+  .biglietto-marchio svg{width:20vw}
+  .biglietto-recapiti{grid-column:13/-1;align-self:center;margin-top:0}
+}
+.elenco-recapiti{display:flex;flex-direction:column;row-gap:4.8vw}
+@media only screen and (min-width:834px){.elenco-recapiti{row-gap:1.3888888889vw}}
+/* Il segno sta in cima alla riga e non al centro: l'indirizzo va a capo, e con
+   l'allineamento centrato il puntino gli scivolerebbe in mezzo. */
+.voce-recapito{align-items:flex-start;column-gap:3.2vw;display:flex}
+@media only screen and (min-width:834px){.voce-recapito{column-gap:.9722222222vw}}
+.voce-recapito .segno{color:var(--color-yellow);flex-shrink:0;height:4.8vw;width:4.8vw;margin-top:.6vw}
+@media only screen and (min-width:834px){.voce-recapito .segno{height:1.5277777778vw;width:1.5277777778vw;margin-top:.2vw}}
+.voce-recapito .testo{display:flex;flex-direction:column}
+.voce-recapito address,.voce-recapito a{font-size:clamp(1.5rem,4.8vw,4.8vw);font-style:normal;font-weight:300;letter-spacing:-.02em;line-height:1.4;transition:color .2s}
+@media only screen and (min-width:834px){.voce-recapito address,.voce-recapito a{font-size:clamp(1.6rem,1.3888888889vw,1.3888888889vw)}}
+.voce-recapito a:hover{color:var(--color-yellow)}
+.a-cosa-serve{color:var(--color-mid-grey);font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;letter-spacing:-.02em;line-height:1.5;margin-top:.8vw}
+@media only screen and (min-width:834px){.a-cosa-serve{margin-top:.2777777778vw}}
+
 /* =========================== BUTTONS =========================== */
 .base-button{align-items:center;border-radius:.4rem;color:inherit;display:flex;font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;height:4rem;justify-content:center;letter-spacing:-.04em;line-height:1.67;overflow:hidden;padding:0 2.4rem;position:relative;width:fit-content;transition:box-shadow .6s ease,color .6s}
 .base-button .bg{-webkit-backdrop-filter:blur(32px);backdrop-filter:blur(32px);background-color:var(--color-off-white20);border-radius:.4rem;height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%;z-index:1}

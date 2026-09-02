@@ -461,6 +461,9 @@ var EN = {
 "Serve dove il volume \u00e8 tale che svuotare a mano diventa il collo di bottiglia del reparto.":"It earns its place where the volumes are such that emptying by hand becomes the bottleneck of the department.",
 
 
+/* --- le tre caselle nella pagina dei contatti -------------------------- */
+"Richieste generali e dimensionamento":"General enquiries and sizing",
+"Offerte e rapporti commerciali":"Quotations and sales",
 /* --- Centrifor -------------------------------------------------------- */
 "Disoleatrici automatiche Centrifor: il carico arriva sul nastro, lo scarico avviene rovesciando il cesto. Tre modelli, 270, 480 e 660.":"Centrifor automatic de-oiling centrifuges: loaded by conveyor, unloaded by tipping the basket. Three models: 270, 480 and 660.",
 "Carico sul nastro, scarico per rovesciamento":"Loaded by conveyor, unloaded by tipping",
