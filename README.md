@@ -108,6 +108,21 @@ fotografia e l'elenco delle macchine. Resta dove porta testo suo: `azienda`,
 
 ## Il piè di pagina
 
+**La barra di navigazione ci passa sopra e resta leggibile.** Prima spariva: il
+piede stava a `z-index:12` e la barra all'11, quindi il rosso la copriva
+appena arrivava in fondo alla pagina. Era un errore, non una scelta — il piede
+porta `data-nav="dark" data-nav-tone="rosso"` e nel foglio di stile ci sono le
+regole `.menu.dark.su-rosso`, scritte apposta per quando la barra passa sul
+rosso, che cosi' non entravano mai in funzione. Ora il piede sta a `z-index:4`:
+sopra le sezioni della pagina, che arrivano al 3, e sotto la barra.
+
+Sul rosso la pastiglia resta nera, ma il marchio e i tre puntini passano al
+chiaro. Il loro rosso e' lo stesso rosso del fondo e sul nero restava spento,
+mentre l'EN accanto era gia' chiaro: adesso le tre pastiglie si leggono come un
+pezzo solo. Da 834 px in su valgono le regole che c'erano gia', con le pillole
+chiare invece che nere — nero su rosso scuro sta a 2:1 e non si legge.
+
+
 L'indirizzo cambia forma con la larghezza. Da telefono le quattro voci corrono
 in riga come sono scritte — via e comune separati da un trattino, telefono e
 mail da un punto — perche' su uno schermo stretto quattro righe in colonna
@@ -720,7 +735,8 @@ generate da questo stesso dizionario.
 
 ## Versione degli asset
 
-`site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Senza, chi ha già
+`site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
+`?v=20260902a`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
