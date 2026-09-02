@@ -43,7 +43,7 @@ applicazioni.html       le quattro lavorazioni
 settori.html            i reparti serviti
 news.html               elenco fiere e aggiornamenti
 news/                   una scheda per notizia (7)
-contatti.html           recapiti, argomenti, mappa
+contatti.html           marchio e recapiti, poi argomenti e mappa
 privacy.html            informative (testo da fornire)
 cookie-policy.html
 assets/site.css         foglio unico, variabili di progetto in :root
@@ -184,6 +184,35 @@ tengono quando il corpo del testo cambia con la larghezza.
 
 Il trattino della prima riga e' quello medio (`–`), lo stesso del blocco legale di
 `privacy.html`, non quello lungo.
+
+## Il biglietto dei contatti
+
+`contatti.html` e' l'unica pagina che non ha una macchina da mostrare: si
+presenta lei. Sotto al titolo sta il **marchio grande in rosso** e a fianco i
+recapiti, uno per riga col suo segno — luogo, telefono, le tre caselle. E' la
+stessa impaginazione che LM Industry tiene nel proprio pie' di pagina, portata
+qui in cima e in una pagina sua.
+
+Le caselle sono **tre**: `info@` per le richieste generali e il dimensionamento,
+`service@` per l'assistenza su un impianto installato, `commerciale@` per
+offerte e rapporti commerciali. Sotto ognuna c'e' la riga che dice a cosa serve,
+in monospaziato grigio come le altre etichette della pagina: senza, tre indirizzi
+in fila non dicono a chi scrivere.
+
+Il marchio e' lo stesso tracciato del pie' di pagina, ripreso in linea. **Non
+prende tutta la colonna:** a tutta larghezza diventa un'insegna e schiaccia i
+recapiti. Sta al 58% della riga da telefono e a `20vw` da 834 px in su.
+
+Da 834 px in su marchio e recapiti si affiancano sulle stesse colonne della
+sezione che segue — 1-10 e 13-24 — cosi' le due parti della pagina stanno sullo
+stesso impianto. Il segno di ogni riga e' allineato in alto e non al centro:
+l'indirizzo va a capo, e centrato il puntino scivolerebbe in mezzo alle due
+righe.
+
+Dal riquadro scuro piu' in basso sono spariti i due blocchi «Sede e
+stabilimento» e «Contatti diretti»: dicevano le stesse cose che ora stanno in
+cima. Restano «Su cosa scrivere», il bottone per la mail e il collegamento alla
+mappa.
 
 ## Niente parole evidenziate
 
@@ -782,7 +811,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902b`. Senza, chi ha già
+`?v=20260902e`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
