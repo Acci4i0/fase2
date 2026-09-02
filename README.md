@@ -281,6 +281,41 @@ sia sulla barra chiara sia su quella scura, invece di sparire in una delle due.
 I tre tagli (32, 180, 512) escono dallo stesso file a 512 px. Il 180 serve alla
 schermata di casa di iOS, il 512 sta li' per un eventuale manifest.
 
+## La fascia delle pagine dei Sistemi
+
+In cima a `centrifughe.html`, `centrifor.html`, `trituratori.html` e
+`impianti.html` la fascia porta la classe **`stretta`**. A tutta larghezza in
+16:9 non ci stava nemmeno in una schermata desktop: su una finestra 1440x900
+era 1368x770, cominciava a 327 px dal bordo e finiva a 1097 — restava tagliata
+in fondo, e sotto non si vedeva niente.
+
+**Si rimpicciolisce in proporzione, senza toccare il rapporto.** Il tetto e'
+`58svh`: da li' esce la larghezza (`58svh x 16/9`) e l'altezza va dietro. Sulla
+stessa finestra la fascia diventa **928x522** e finisce a 849, col titolo sopra
+e un pezzo della sezione dopo gia' in vista. Su una finestra alta o stretta
+comanda il `min(100%, …)` e la fascia torna larga quanto la pagina.
+
+**Il rapporto resta 16:9 esatto, quindi la fotografia si rimpicciolisce insieme
+al riquadro: non viene ritagliata piu' di prima.** Era stata provata anche la
+strada opposta — tenere la larghezza piena e schiacciare l'altezza — ma a 2,24
+il trituratore perdeva la cima della tramoggia e i piedi del banco, ed e'
+esattamente quello che questo sito non fa.
+
+**Le frecce escono dal riquadro** e vanno nei margini. Il riquadro ritaglia
+(`overflow:hidden`), quindi col solo CSS non uscirebbero: e' `site.js` che le
+appende alla sezione invece che al carosello quando la sezione porta `stretta`,
+e il foglio le rimette ai due lati con `order`. Da telefono non cambia niente —
+li' la fascia e' alta un terzo di schermo — e le frecce tornano sopra la
+fotografia, dove stavano.
+
+**Le misure dei file bastano e non vanno abbassate.** Il riquadro nuovo chiede
+1856 px su schermo desktop a doppia densita' e 1029 px su telefono a tripla: i
+file di fascia sono 1600x900 e quelli Centrifor 1400x1050, cioe' gia' dentro
+quella forbice. Scendere ancora vorrebbe dire tornare sfocati sul desktop.
+
+Le schede prodotto e le pagine delle Soluzioni tengono la fascia com'era: la
+classe si aggiunge a mano, una parola per pagina.
+
 ## Il carosello della fascia immagine
 
 `centrifughe.html`, `impianti.html`, `trituratori.html` e `accessori.html` hanno
@@ -835,7 +870,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902i`. Senza, chi ha già
+`?v=20260902l`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 

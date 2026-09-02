@@ -417,7 +417,13 @@ window.addEventListener('load',function(){
         ? PUNTINI
         : PUNTINI.replace('<svg ','<svg style="transform:rotate(180deg)" ');
       b.addEventListener('click',function(){mostra(i+salto);riavvia();});
-      car.appendChild(b);
+      /* Sulle fasce marcate "stretta" le frecce escono dal riquadro e vanno
+         nei margini: il riquadro ritaglia (overflow:hidden), quindi devono
+         proprio uscire dal suo DOM, col CSS non basterebbe. Da telefono il
+         foglio di stile le rimette dove stavano, sopra la fotografia. */
+      var fuori = car.parentNode && car.parentNode.classList
+               && car.parentNode.classList.contains('stretta');
+      (fuori ? car.parentNode : car).appendChild(b);
       return b;
     }
     freccia('indietro',DIC.prima,-1);
