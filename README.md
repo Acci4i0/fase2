@@ -290,9 +290,9 @@ era 1368x770, cominciava a 327 px dal bordo e finiva a 1097 — restava tagliata
 in fondo, e sotto non si vedeva niente.
 
 **Si rimpicciolisce in proporzione, senza toccare il rapporto.** Il tetto e'
-`58svh`: da li' esce la larghezza (`58svh x 16/9`) e l'altezza va dietro. Sulla
-stessa finestra la fascia diventa **928x522** e finisce a 849, col titolo sopra
-e un pezzo della sezione dopo gia' in vista. Su una finestra alta o stretta
+`66svh`: da li' esce la larghezza (`66svh x 16/9`) e l'altezza va dietro. Sulla
+stessa finestra la fascia diventa **1056x594** e finisce a 921, col titolo sopra
+e la sezione dopo che si affaccia. Su una finestra alta o stretta
 comanda il `min(100%, …)` e la fascia torna larga quanto la pagina.
 
 **Il rapporto resta 16:9 esatto, quindi la fotografia si rimpicciolisce insieme
@@ -352,6 +352,38 @@ troverebbe una figura a caso — e non parte affatto con
 
 I testi alternativi delle nuove fotografie vanno aggiunti anche al dizionario in
 `assets/i18n.js`, come tutti gli altri.
+
+## Ingrandire deve mostrare di piu'
+
+La fascia ritaglia in 16:9, e le fotografie di macchina nascono 4:3: nel
+ritaglio la cima della tramoggia e il piede della macchina restano fuori.
+Finche' la lente riapriva **lo stesso file**, ingrandire faceva vedere la stessa
+inquadratura piu' grande — e non serviva a niente.
+
+Ora, dove esiste, l'`<img>` porta **`data-intera`** con lo scatto **per intero**,
+nel rapporto suo e non in quello della fascia, e la lente usa quello:
+`im.getAttribute('data-intera') || im.currentSrc || im.src`. Dove l'attributo non
+c'e' la lente si comporta come prima, quindi non serve averlo su tutte.
+
+**Come sono stati ritrovati gli originali.** Le fotografie del sito sono ritagli
+di scatti che stanno in `foto_fase/`, ma senza un elenco che li leghi. Il
+riscontro e' automatico: miniatura in bianco e nero normalizzata (media zero,
+scarto uno) — cosi' la resa di colore diversa non conta, conta la figura — e per
+ogni originale si prova una finestra 16:9 che scorre in verticale, perche' il
+ritaglio non e' sempre centrato. Su 68 fotografie di fascia, 28 hanno trovato un
+originale con scarto sotto 0,45.
+
+**Le 28 sono state guardate una per una**, appaiate al loro originale. Due sono
+state scartate a mano: `fd-copertina.jpg`, che finiva su una fotografia di
+trucioli, e `fd1000-01.jpg`, dove l'originale era la stessa macchina ma da
+un'altra parte. Le copertine sono fuori comunque: non stanno nei caroselli, la
+lente non le apre. Restano **25** versioni intere, piu' **8** per le Centrifor —
+li' l'intera e' il file LM tal quale, e serve solo agli scatti fatti in reparto,
+perche' quelli su bianco sono gia' interi (il bianco viene allargato, non
+tagliato).
+
+I file si chiamano `<nome>-intera.jpg` e stanno accanto all'originale del sito.
+Pesano 7,6 MB in tutto ma non li scarica nessuno finche' non si apre la lente.
 
 ## La lente: la fotografia intera
 
@@ -870,7 +902,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902l`. Senza, chi ha già
+`?v=20260902m`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 

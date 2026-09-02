@@ -324,7 +324,11 @@ window.addEventListener('load',function(){
     function mostra(n){
       if(!lista.length)return;
       idx=(n+lista.length)%lista.length;
-      var im=lista[idx],url=im.currentSrc||im.src,mia=++richiesta;
+      /* La fascia ritaglia in 16:9 e di certe macchine resta fuori un pezzo.
+         Dove esiste, `data-intera` porta lo scatto per intero — nel rapporto
+         suo, non in quello della fascia — cosi' ingrandire serve davvero a
+         vedere di piu' e non solo a vedere piu' grande. */
+      var im=lista[idx],url=im.getAttribute('data-intera')||im.currentSrc||im.src,mia=++richiesta;
       conta.textContent=(idx+1)+' / '+lista.length;
       if(alCambio)alCambio(idx);
       foto.classList.add('in-attesa');
