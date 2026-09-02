@@ -208,7 +208,12 @@ Il marchio e' lo stesso tracciato del pie' di pagina. **Non prende tutta la
 colonna:** a tutta larghezza diventa un'insegna e si mangia il testo che gli sta
 sotto. Sta al 52% della riga da telefono e a `15vw` da 834 px in su.
 
-Sono spariti il bottone «Scrivi a info@fasemec.com», che ora e' un doppione
+La pagina e' fatta di **due sezioni sole**: la testata col titolo e questa. Fra
+le due c'era una fascia di apertura — «Per rispondere con qualcosa di piu' di un
+listino…» — ed e' stata tolta: diceva a parole quello che il testo qui sotto dice
+gia' per esteso, e in mezzo restava mezza schermata di nero.
+
+Sono spariti anche il bottone «Scrivi a info@fasemec.com», che ora e' un doppione
 dell'indirizzo scritto li' sopra, e l'elenco «Su cosa scrivere», sostituito dai
 recapiti. Resta il collegamento alla mappa.
 
@@ -816,7 +821,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260902g`. Senza, chi ha già
+`?v=20260902h`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
