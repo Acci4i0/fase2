@@ -465,7 +465,6 @@ var EN = {
 /* --- Centrifor -------------------------------------------------------- */
 "Disoleatrici automatiche Centrifor: il carico arriva sul nastro, lo scarico avviene rovesciando il cesto. Tre modelli, 270, 480 e 660.":"Centrifor automatic de-oiling centrifuges: loaded by conveyor, unloaded by tipping the basket. Three models: 270, 480 and 660.",
 "Carico sul nastro, scarico per rovesciamento":"Loaded by conveyor, unloaded by tipping",
-"Le Centrifor disoleano la minuteria metallica che esce in continuo da stampatrici e rullatrici. Il pezzo arriva sul nastro trasportatore, entra nel cesto e viene scaricato rovesciandolo: carico e scarico avvengono da soli, senza che nessuno debba aprire la macchina fra un ciclo e l’altro.":"Centrifor machines de-oil the small metal parts that come off stamping and rolling machines in a continuous flow. The part arrives on the conveyor, drops into the basket and is discharged by tipping it: loading and unloading happen on their own, with nobody opening the machine between one cycle and the next.",
 "3 modelli a catalogo,":"3 models in the catalogue,",
 "carico e scarico automatici.":"automatic loading and unloading.",
 "Il modello compatto, su telaio a colonne":"The compact model, on a column frame",
