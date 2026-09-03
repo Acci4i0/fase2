@@ -614,22 +614,10 @@ main{position:relative}
 @media only screen and (min-width:834px){
   .media-band.stretta{align-items:center;column-gap:1.1111111111vw;display:flex;justify-content:center}
   .media-band.stretta>.carosello{flex:0 1 auto;order:2;width:min(100%,calc(66svh*16/9))}
-  .media-band.stretta.alta>.carosello{width:min(52vw,calc(66svh*4/3))}
   /* Il JS appende le frecce in coda alla sezione: con `order` tornano ai due
      lati, indietro a sinistra e avanti a destra. */
   .media-band.stretta>.carosello-freccia{flex-shrink:0;left:auto;order:1;position:static;right:auto;top:auto;transform:none}
   .media-band.stretta>.carosello-freccia.avanti{order:3}
-}
-/* Fascia alta, per le Centrifor. Quelle macchine sono armadi verticali: il
-   rapporto fra larghezza e altezza sta fra 0,53 e 0,78, e dentro un 16:9 a
-   tutta pagina la macchina resta un francobollo in mezzo al grigio. Qui il
-   riquadro diventa 4:3 e da 834 px in su si stringe a meno di meta' pagina,
-   se no su schermo largo un 4:3 a tutta pagina sarebbe piu' alto della
-   finestra. Da telefono resta largo quanto la pagina, com'erano gli altri. */
-.media-band.alta>div{aspect-ratio:4/3}
-@media only screen and (min-width:834px){
-  .media-band.alta{display:flex;justify-content:center}
-  .media-band.alta>div{width:46vw}
 }
 /* La sede non sta in un riquadro: e' scontornata, e la sagoma dell'edificio
    attacca sul nero della pagina correndo da un bordo all'altro dello schermo.

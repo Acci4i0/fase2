@@ -787,46 +787,45 @@ nessuna parte, quindi in pagina restano nomi e basta.
 non sono state ritoccate su quel punto.
 
 **Le fotografie restano sul bianco di LM.** Un primo tentativo le aveva
-scontornate per posarle sul grigio sfumato delle altre schede: il ritaglio
-sbagliava in troppi punti e il risultato era peggiore dell'originale. Ora non si
-tocca niente. Dove serve cambiare il rapporto la fotografia viene allargata **col
-suo stesso bianco** — un'aggiunta che non si vede — e gli scatti fatti in
-reparto, che il bianco non ce l'hanno, si ritagliano al centro. La regola sta in
-una riga: se almeno il **70%** del bordo e' bianco pieno si allarga, se no si
-ritaglia. Il 70 e non il 100 perche' su qualche scatto la macchina tocca un lato,
-ma il fondo resta quello dello studio.
+scontornate per posarle sul grigio delle altre schede: il ritaglio sbagliava in
+troppi punti. Ora non si tocca niente. La fascia e' **16:9 come tutte le altre
+del sito**, e gli scatti di LM — che sono 4:3 o 3:4 — ci entrano **allargati col
+loro stesso bianco**, non ritagliati: la macchina resta intera e la fascia ha la
+misura delle altre pagine dei Sistemi. Gli scatti fatti in reparto, che il bianco
+non ce l'hanno, si ritagliano al centro e per loro c'e' la versione intera che
+apre la lente.
 
-**L'ingrandimento si fa qui, non nel browser.** Gli originali di LM sono
+**Perche' sembravano sgranate, e cosa si e' fatto.** Gli originali di LM sono
 **800x600** e file piu' grandi non esistono: provati i tagli `-scaled`,
-`-1024x768`, `-1536x1152` e `-2048x1536`, tutti 404, e anche le immagini dentro
-`Centrifor.pdf` sono piu' piccole. Ma su un telefono a tre volte la densita' il
-riquadro chiede 1125 pixel, quindi l'ingrandimento avviene comunque — e il
-browser lo fa con un filtro grossolano, che e' il motivo per cui le fotografie
-sembravano sgranate. Meglio farlo una volta sola qui, con **Lanczos piu' una
-maschera di contrasto** (raggio 1,2 / 80% / soglia 3): non aggiunge dettaglio che
-non c'e', ma i bordi restano fermi invece di impastarsi, e la soglia lascia stare
-i fondi lisci invece di granularli. L'ingrandimento viene **prima** del bianco
-aggiunto, se no si contrasterebbe un bordo finto.
+`-1024x768`, `-1536x1152`, `-2048x1536`, tutti 404; i collegamenti «full size»
+delle loro pagine rimandano a quegli stessi file, e le immagini dentro
+`Centrifor.pdf` sono piu' piccole. L'ingrandimento va fatto comunque, perche' un
+telefono a tripla densita' chiede piu' pixel di quelli. Si fa qui una volta sola,
+in tre passaggi:
 
-Le misure finite: **1400x1050** per le fasce e i caroselli delle schede,
-**1000x1000** per le copertine. A quelle misure il browser non deve piu'
-ingrandire niente, ne' a due ne' a tre volte la densita'. La cartella pesa 4,1 MB
-per 32 file: le fotografie contrastate costano bit, e le piu' pesanti sono gli
-scatti in reparto, che hanno grana vera.
+1. **antigrana che rispetta i bordi** — media pesata sulla somiglianza locale su
+   sette spostamenti. Toglie la grana e i quadretti del JPEG di LM sui fondi
+   piatti. **E' questo il passaggio che mancava:** senza, la nitidezza applicata
+   dopo esaltava quei difetti invece di toglierli, ed e' il motivo per cui le
+   fotografie continuavano a sembrare sgranate.
+2. **Lanczos** alla misura finale.
+3. **maschera di contrasto mite**, 70% con soglia 2 — la soglia lascia stare i
+   fondi appena ripuliti invece di rigranularli.
 
-**La fascia delle schede e' 4:3, non 16:9.** Queste macchine sono armadi
-verticali: il rapporto fra larghezza e altezza sta fra 0,53 e 0,78. Dentro una
-fascia 16:9 a tutta pagina la macchina resta un francobollo in mezzo al grigio —
-lo stesso motivo per cui `accessori.html` ha rinunciato alla fascia. Percio' le
-tre schede usano `.media-band.alta`: riquadro 4:3 e, da 834 px in su, largo
-`46vw` e centrato, se no su schermo largo un 4:3 a tutta pagina sarebbe piu'
-alto della finestra. Da telefono resta largo quanto la pagina, come le altre.
+Le misure finite: **1600x900** per fasce e caroselli, come il resto del sito, e
+**1000x1000** per le copertine.
 
-Anche la pagina di sezione usa `.media-band.alta`, e non la fascia 16:9 delle
-altre sezioni. Il 4:3 e' il rapporto **nativo** di quasi tutti questi scatti
-(800x600): dentro un 4:3 non si ritaglia e non si allarga niente, la fotografia
-entra com'e'. Il suo carosello porta **nove** scatti invece di tre, i tre modelli
-in fila — prima il 270, poi il 480, poi il 660.
+**La pagina di sezione e le tre schede sono uguali a tutte le altre.**
+`centrifor.html` ha la stessa struttura di `trituratori.html` e
+`centrifughe.html` — testata, fascia `media-band stretta`, elenco delle macchine
+— e le tre schede hanno la fascia delle altre schede prodotto. Misurato a 1440x900:
+22 px fra titolo e fascia, 591 px di fascia, 42 px fino alla sezione dopo, identici
+sulle tre pagine dei Sistemi.
+
+C'era anche un testo di apertura fra la fascia e l'elenco delle macchine. E' stato
+tolto: le altre pagine dei Sistemi non ce l'hanno, e quello che diceva sta gia'
+nelle tre schede.
+
 
 ## La serie KOMBI
 
@@ -915,7 +914,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260903a`. Senza, chi ha già
+`?v=20260903b`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
