@@ -860,9 +860,14 @@ cursore da seguire, e la fascia in cima mostra gia' le macchine.
 dimenticanza: e' che di quella taglia non esiste uno scatto, e la macchina
 sbagliata sarebbe peggio del niente.
 
+Sulla scheda FD la fotografia sta **solo sulla prima tabella**, «Taglie
+disponibili». Nella seconda, «Resa per materiale», le righe sono le stesse
+macchine ma il discorso e' un altro — i chilogrammi all'ora per materiale — e
+rivedere la stessa fotografia una seconda volta non aggiungeva niente.
+
 | scheda | righe | con fotografia | da dove viene |
 |---|---|---|---|
-| serie FD | 6 (x2 tabelle) | **tutte** | uno scatto per taglia, dalla 250 alla 1000 |
+| serie FD | 6 | **tutte** | uno scatto per taglia, dalla 250 alla 1000 |
 | KOMBI | 4 | **tutte** | i quattro disegni etichettati del depliant `assets/doc/kombi.pdf` |
 | serie TR-Dual | 5 | **tutte** | vedi sotto |
 | serie TR (orizzontale) | 2 | **tutte** | TR 1 e TR DUAL |
@@ -888,6 +893,11 @@ arrivano scatti per taglia, si cambia una riga per volta.
 Sopra la famiglia, sotto la serie: «Centrifughe disoleatrici» / «Serie LM AG»,
 come nelle schede d'elenco. Il taglio e' su « serie » o « mod. »; le schede degli
 impianti, che non hanno ne' l'una ne' l'altro, restano su una riga.
+
+Da 834 px in su il titolo prende **tutta la riga** e non sedici colonne su
+ventiquattro: a sedici, «Centrifughe disoleatrici a ciclo continuo» non ci stava
+e «continuo» andava a capo da solo. I titoli corti non cambiano — la larghezza
+conta solo quando il testo va a capo.
 
 ## La serie LM AG
 
@@ -1002,7 +1012,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260904d`. Senza, chi ha già
+`?v=20260904e`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
