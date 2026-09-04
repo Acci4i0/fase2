@@ -761,18 +761,20 @@ main{position:relative}
 @media only screen and (min-width:834px){.spec-table th,.spec-table td{padding:1.1111111111vw 2.2222222222vw 1.1111111111vw 0}}
 .spec-table tbody tr:hover td{background-color:var(--color-dark-grey)}
 /* Col cursore su una taglia compare la sua fotografia, come nell'elenco delle
-   news. Solo da 834 px in su: da telefono non c'e' un cursore da seguire e la
-   fascia in cima mostra gia' le macchine. Le righe senza `data-foto` — le
-   taglie di cui non abbiamo uno scatto proprio — non fanno comparire niente
-   invece di mostrare la macchina sbagliata. */
+   news: la tabella resta larga quanto la pagina e la fotografia le passa
+   sopra, appoggiata a destra e all'altezza della riga che si sta guardando —
+   l'altezza gliela da' il JS. Solo da 834 px in su: da telefono non c'e' un
+   cursore da seguire, e la fascia in cima mostra gia' le macchine. Le righe
+   senza `data-foto` non fanno comparire niente invece di mostrare la macchina
+   sbagliata. */
 .spec-foto{display:none}
 @media only screen and (min-width:834px){
   .spec-block{position:relative}
-  /* la tabella lascia libera la fascia di destra dove esce la fotografia */
-  .spec-block:has(.spec-foto) .spec-scroll{max-width:64%}
-  .spec-foto{background-color:var(--color-dark-grey);border-radius:1.1111111111vw;display:block;
-    height:17vw;opacity:0;overflow:hidden;pointer-events:none;position:absolute;right:0;
-    top:4.5vw;visibility:hidden;width:30%;transition:opacity .2s,visibility .2s}
+  .spec-foto{background-color:var(--color-dark-grey);border-radius:1.1111111111vw;
+    box-shadow:0 1.2vw 3vw rgba(0,0,0,.55);display:block;height:13.5vw;opacity:0;
+    overflow:hidden;pointer-events:none;position:absolute;right:0;top:0;
+    visibility:hidden;width:24vw;z-index:2;
+    transition:opacity .2s,visibility .2s,top .25s var(--ease-expo-out)}
   .spec-foto img{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
   .spec-block.mostra .spec-foto{opacity:1;visibility:visible}
 }

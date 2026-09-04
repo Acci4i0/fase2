@@ -510,6 +510,12 @@ window.addEventListener('load',function(){
       r.addEventListener('mouseenter',function(){
         var u=r.getAttribute('data-foto');
         if(im.getAttribute('src')!==u)im.setAttribute('src',u);
+        /* il riquadro si mette all'altezza della riga guardata, come nelle
+           news; se sborda sopra o sotto il blocco, si ferma al bordo */
+        var alto=riquadro.offsetHeight||0;
+        var y=r.offsetTop+r.offsetHeight/2-alto/2;
+        var max=blocco.offsetHeight-alto;
+        riquadro.style.top=Math.max(0,Math.min(y,max))+'px';
         blocco.classList.add('mostra');
       });
     });

@@ -281,10 +281,10 @@ sia sulla barra chiara sia su quella scura, invece di sparire in una delle due.
 I tre tagli (32, 180, 512) escono dallo stesso file a 512 px. Il 180 serve alla
 schermata di casa di iOS, il 512 sta li' per un eventuale manifest.
 
-## La fascia delle pagine dei Sistemi
+## La fascia stretta
 
-In cima a `centrifughe.html`, `centrifor.html`, `trituratori.html` e
-`impianti.html` la fascia porta la classe **`stretta`**. A tutta larghezza in
+La portano le quattro pagine dei Sistemi — `centrifughe.html`, `centrifor.html`,
+`trituratori.html`, `impianti.html` — e **tutte e undici le schede prodotto**. A tutta larghezza in
 16:9 non ci stava nemmeno in una schermata desktop: su una finestra 1440x900
 era 1368x770, cominciava a 327 px dal bordo e finiva a 1097 — restava tagliata
 in fondo, e sotto non si vedeva niente.
@@ -847,27 +847,41 @@ bene accanto alle due sorelle, che sono render sullo stesso grigio.
 
 **Stanno in cima, non in fondo.** Su ogni scheda prodotto la sezione `specs`
 viene subito dopo il carosello: prima le fotografie della macchina, poi le
-taglie, e solo dopo il testo e gli elenchi. Prima era l'ultima cosa della
-pagina.
+taglie, e solo dopo il testo e gli elenchi.
 
-**Col cursore su una taglia compare la sua fotografia**, a destra della tabella,
-come nell'elenco delle news. La riga porta `data-foto` e `site.js` costruisce un
-riquadro per blocco che cambia sorgente al `mouseenter`. Solo da 834 px in su:
-da telefono non c'e' un cursore da seguire, e la fascia in cima mostra gia' le
-macchine.
+**La tabella e' larga quanto la pagina** e la fotografia le passa **sopra**,
+appoggiata a destra e all'altezza della riga che si sta guardando — come
+nell'elenco delle news. La riga porta `data-foto`, `site.js` costruisce un
+riquadro per blocco, ne cambia la sorgente al `mouseenter` e gli scrive il
+`top` calcolato sulla riga. Solo da 834 px in su: da telefono non c'e' un
+cursore da seguire, e la fascia in cima mostra gia' le macchine.
 
 **Le righe senza `data-foto` non fanno comparire niente.** Non e' una
-dimenticanza: e' che di quelle taglie non esiste uno scatto proprio, e mettere la
-macchina sbagliata sarebbe peggio del niente. Dove siamo:
+dimenticanza: e' che di quella taglia non esiste uno scatto, e la macchina
+sbagliata sarebbe peggio del niente.
 
-| scheda | taglie | con fotografia propria |
-|---|---|---|
-| serie FD | 6 | **6** — una per taglia, dalla 250 alla 1000 |
-| serie TR (orizzontale) | 2 | **2** — TR 1 e TR DUAL |
-| serie LM AG | 4 | **3** — manca la 550, che LM non fotografa |
-| serie FCV | 2 | 0 — la serie non ha ancora fotografie |
-| KOMBI | 4 | 0 — ci sono scatti, ma non legati alle quattro configurazioni |
-| serie TR (verticale) | 5 | 0 — le fotografie sono della TR-Dual, non delle singole taglie |
+| scheda | righe | con fotografia | da dove viene |
+|---|---|---|---|
+| serie FD | 6 (x2 tabelle) | **tutte** | uno scatto per taglia, dalla 250 alla 1000 |
+| KOMBI | 4 | **tutte** | i quattro disegni etichettati del depliant `assets/doc/kombi.pdf` |
+| serie TR-Dual | 5 | **tutte** | vedi sotto |
+| serie TR (orizzontale) | 2 | **tutte** | TR 1 e TR DUAL |
+| serie LM AG | 4 | 3 | manca la 550, che LM non fotografa |
+| serie FCV | 2 | 0 | la serie non ha ancora fotografie |
+
+**Le quattro KOMBI vengono dal depliant.** Il PDF porta i disegni delle quattro
+configurazioni gia' etichettati — KOMBI-40, 40 D, 40 T, 40 DT — e si distinguono
+a occhio: la vasca dragante in basso a destra, il trituratore TR1 a sinistra.
+Sono stati ritagliati dalla resa del PDF a 3960x5600 (i riquadri bianchi
+individuati per contrasto, non a mano) e portati a 1600x900 allargando col
+bianco.
+
+**Il TR-Dual e' un accoppiamento ragionato, non certo.** Le fotografie sono
+della famiglia, non delle singole taglie: una TR6-22 e una TR7-30 si somigliano.
+L'accoppiamento segue allora la colonna **Movimentazione** della tabella stessa:
+alle due meccaniche vanno le macchine senza idraulica, alle tre idro gli
+allestimenti con la centralina — fino alla centralina sola sulla TR7-30. Se
+arrivano scatti per taglia, si cambia una riga per volta.
 
 ## Il titolo delle schede, su due righe
 
@@ -988,7 +1002,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260904c`. Senza, chi ha già
+`?v=20260904d`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
