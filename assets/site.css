@@ -557,7 +557,11 @@ main{position:relative}
 .page-hero{padding-top:30vw}
 @media only screen and (min-width:834px){.page-hero{padding-top:11vw}}
 .page-hero .title-wrapper{grid-column:1/-1}
-@media only screen and (min-width:834px){.page-hero .title-wrapper{grid-column:span 16}}
+/* Il titolo sta su tutta la riga e non su sedici colonne: a sedici,
+   «Centrifughe disoleatrici a ciclo continuo» non ci stava e «continuo»
+   andava a capo da solo. I titoli corti non cambiano — la larghezza conta
+   solo quando il testo va a capo. */
+@media only screen and (min-width:834px){.page-hero .title-wrapper{grid-column:1/-1}}
 .page-hero .title{font-size:clamp(2.8rem,9.6vw,9.6vw);font-weight:300;letter-spacing:-.02em;line-height:1.167}
 @media only screen and (min-width:834px){.page-hero .title{font-size:clamp(5rem,4.4444444444vw,4.4444444444vw);letter-spacing:-.04em;line-height:1.125}}
 .page-hero .scramble-label{margin-bottom:4vw}
