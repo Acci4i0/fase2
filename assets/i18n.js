@@ -213,6 +213,8 @@ var EN = {
 
 /* --- tabelle tecniche ---------------------------------------------- */
 "Modello":"Model",
+"Portata (kg)":"Capacity (kg)",
+"Centrifughe disoleatrici a ciclo continuo":"Continuous-cycle oil-removal centrifuges",
 "Giri/min":"RPM",
 "Portata paniere (kg)":"Basket capacity (kg)",
 "Volume paniere (l)":"Basket volume (l)",

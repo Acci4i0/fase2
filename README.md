@@ -843,6 +843,38 @@ le puo' aggiungere alla griglia dei dati.
 La miniatura della scheda viene da uno scatto in posa su fondo grigio: sta
 bene accanto alle due sorelle, che sono render sullo stesso grigio.
 
+## Le tabelle delle taglie
+
+**Stanno in cima, non in fondo.** Su ogni scheda prodotto la sezione `specs`
+viene subito dopo il carosello: prima le fotografie della macchina, poi le
+taglie, e solo dopo il testo e gli elenchi. Prima era l'ultima cosa della
+pagina.
+
+**Col cursore su una taglia compare la sua fotografia**, a destra della tabella,
+come nell'elenco delle news. La riga porta `data-foto` e `site.js` costruisce un
+riquadro per blocco che cambia sorgente al `mouseenter`. Solo da 834 px in su:
+da telefono non c'e' un cursore da seguire, e la fascia in cima mostra gia' le
+macchine.
+
+**Le righe senza `data-foto` non fanno comparire niente.** Non e' una
+dimenticanza: e' che di quelle taglie non esiste uno scatto proprio, e mettere la
+macchina sbagliata sarebbe peggio del niente. Dove siamo:
+
+| scheda | taglie | con fotografia propria |
+|---|---|---|
+| serie FD | 6 | **6** — una per taglia, dalla 250 alla 1000 |
+| serie TR (orizzontale) | 2 | **2** — TR 1 e TR DUAL |
+| serie LM AG | 4 | **3** — manca la 550, che LM non fotografa |
+| serie FCV | 2 | 0 — la serie non ha ancora fotografie |
+| KOMBI | 4 | 0 — ci sono scatti, ma non legati alle quattro configurazioni |
+| serie TR (verticale) | 5 | 0 — le fotografie sono della TR-Dual, non delle singole taglie |
+
+## Il titolo delle schede, su due righe
+
+Sopra la famiglia, sotto la serie: «Centrifughe disoleatrici» / «Serie LM AG»,
+come nelle schede d'elenco. Il taglio e' su « serie » o « mod. »; le schede degli
+impianti, che non hanno ne' l'una ne' l'altro, restano su una riga.
+
 ## La serie LM AG
 
 **Il nome.** Era «Centrifughe disoleatrici serie LM 660 AG». Il 660 e' solo una
@@ -870,11 +902,20 @@ Il mod. 950 e' l'unico che LM pubblica piu' grande di 800x600: e' **1200x822**.
 Gli altri sono 800x600 e file maggiori non esistono — riprovati anche qui i
 tagli `-scaled`, `-1024x768`, `-1536x1152`, `-2048x1536`, tutti 404.
 
-**Un punto da chiarire col cliente.** La tabella della scheda porta DK 55, DK 70
-e DK 80 (cesto 550, 700, 800). LM, per la stessa serie, elenca 550, **660**, 800
-e **950**. Il 700 della tabella e il 660 di LM non tornano, e il 950 nella
-tabella non c'e'. La tabella non e' stata toccata: e' il cliente che deve dire
-quale delle due elencazioni vale.
+**La tabella e' stata rifatta sui dati di LM.** Portava DK 55, DK 70 e DK 80 —
+elencazione che con LM non tornava. Ora porta le quattro taglie della scheda
+tecnica `Centrifughe550660800950.pdf`, scaricabile dalla pagina del mod. 800:
+
+| Modello | kW | Ø cesto | Portata | Volume paniere | Giri/min |
+|---|---|---|---|---|---|
+| LM AG 550 | 4 | 550 | 100 kg | 70 l | 800 |
+| LM AG 660 | 5,5 | 660 | 150 kg | 115 l | 700-750 |
+| LM AG 800 | 7,5 | 800 | 200 kg | 220 l | 650 |
+| LM AG 950 | 11 | 950 | 200 kg | 320 l | 600 |
+
+Lo stesso PDF porta anche gli ingombri A-F, ma sono lettere che rimandano a un
+disegno quotato che sul sito non c'e': senza il disegno non direbbero niente e
+sono state lasciate fuori.
 
 ## Come si chiamano le centrifughe
 
@@ -947,7 +988,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260904a`. Senza, chi ha già
+`?v=20260904c`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 

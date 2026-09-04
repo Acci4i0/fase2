@@ -316,6 +316,9 @@ main{position:relative}
 .expertises-overview .title{font-size:clamp(2rem,7.4666666667vw,7.4666666667vw);font-weight:300;letter-spacing:-.04em;line-height:1;margin-top:3.4666666667vw}
 @media only screen and (min-width:834px){.expertises-overview .title{font-size:clamp(3rem,2.5vw,2.5vw);line-height:1.167;margin-top:.9027777778vw}}
 .expertises-overview .title span{display:block}
+/* Il titolo di una scheda va su due righe: sopra la famiglia, sotto la serie —
+   «Centrifughe disoleatrici» / «Serie LM AG» — come nelle schede d'elenco. */
+.page-hero .title span{display:block}
 .expertises-overview .copy-wrapper{grid-column:1/-1;margin-top:8vw}
 @media only screen and (min-width:834px){.expertises-overview .copy-wrapper{grid-column:10/-1;margin-top:2.0833333333vw}}
 @media only screen and (min-width:1024px){.expertises-overview .copy-wrapper{grid-column:13/-1}}
@@ -757,6 +760,22 @@ main{position:relative}
 .spec-table th,.spec-table td{border-bottom:1px solid var(--color-arsenic);padding:3.2vw 4.2666666667vw 3.2vw 0}
 @media only screen and (min-width:834px){.spec-table th,.spec-table td{padding:1.1111111111vw 2.2222222222vw 1.1111111111vw 0}}
 .spec-table tbody tr:hover td{background-color:var(--color-dark-grey)}
+/* Col cursore su una taglia compare la sua fotografia, come nell'elenco delle
+   news. Solo da 834 px in su: da telefono non c'e' un cursore da seguire e la
+   fascia in cima mostra gia' le macchine. Le righe senza `data-foto` — le
+   taglie di cui non abbiamo uno scatto proprio — non fanno comparire niente
+   invece di mostrare la macchina sbagliata. */
+.spec-foto{display:none}
+@media only screen and (min-width:834px){
+  .spec-block{position:relative}
+  /* la tabella lascia libera la fascia di destra dove esce la fotografia */
+  .spec-block:has(.spec-foto) .spec-scroll{max-width:64%}
+  .spec-foto{background-color:var(--color-dark-grey);border-radius:1.1111111111vw;display:block;
+    height:17vw;opacity:0;overflow:hidden;pointer-events:none;position:absolute;right:0;
+    top:4.5vw;visibility:hidden;width:30%;transition:opacity .2s,visibility .2s}
+  .spec-foto img{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
+  .spec-block.mostra .spec-foto{opacity:1;visibility:visible}
+}
 
 .solution-grid{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr;row-gap:9vw}
 @media only screen and (min-width:834px){.solution-grid{grid-template-columns:1fr 1fr;row-gap:4.1666666667vw}}
