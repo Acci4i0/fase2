@@ -167,9 +167,9 @@ var EN = {
 "Centrifughe disoleatrici":"Oil-removal centrifuges",
 "Serie FD":"FD series",
 "Serie FCV":"FCV series",
-"Serie LM 660 AG":"LM 660 AG series",
-"Centrifughe disoleatrici serie LM 660 AG":"LM 660 AG series oil-removal centrifuges",
-"Centrifughe disoleatrici serie LM 660 AG | Fase Mechanical Engineering":"LM 660 AG series oil-removal centrifuges | Fase Mechanical Engineering",
+"Serie LM AG":"LM AG series",
+"Centrifughe disoleatrici serie LM AG":"LM AG series oil-removal centrifuges",
+"Centrifughe disoleatrici serie LM AG | Fase Mechanical Engineering":"LM AG series oil-removal centrifuges | Fase Mechanical Engineering",
 "Centrifughe asciugatrici serie FC":"FC series drying centrifuges",
 "Centrifughe disoleatrici serie FCV":"FCV series oil-removal centrifuges",
 "Centrifughe disoleatrici a ciclo continuo serie FD":"FD series continuous-cycle oil-removal centrifuges",
@@ -458,6 +458,18 @@ var EN = {
 "Serve dove il volume \u00e8 tale che svuotare a mano diventa il collo di bottiglia del reparto.":"It earns its place where the volumes are such that emptying by hand becomes the bottleneck of the department.",
 
 
+/* --- alternative delle fotografie LM AG -------------------------------- */
+"centrifuga disoleatrice LM AG grigia, col coperchio chiuso e i due cilindri pneumatici arancioni":"grey LM AG oil-removal centrifuge, lid closed, with the two orange pneumatic cylinders",
+"centrifuga disoleatrice LM AG verde, col raccordo di aspirazione sul coperchio":"green LM AG oil-removal centrifuge, with the extraction elbow on the lid",
+"centrifuga disoleatrice LM AG mod. 800 di fronte, sui montanti di sostegno":"LM AG mod. 800 oil-removal centrifuge seen from the front, on its support legs",
+"centrifuga disoleatrice LM AG mod. 800 col coperchio aperto e l’armadio elettrico a fianco":"LM AG mod. 800 oil-removal centrifuge with the lid open and the electrical cabinet alongside",
+"centrifuga disoleatrice LM AG verniciata in blu, col coperchio a due ante aperto":"LM AG oil-removal centrifuge painted blue, with the two-leaf lid open",
+"centrifuga disoleatrice LM AG mod. 950, la taglia maggiore della serie, sul suo basamento":"LM AG mod. 950 oil-removal centrifuge, the largest size in the range, on its base",
+"centrifuga disoleatrice LM AG di lato, col coperchio alzato e il cesto in vista":"LM AG oil-removal centrifuge from the side, lid raised and the basket in view",
+"centrifuga disoleatrice LM AG verde col coperchio nero aperto, sulla piastra di base":"green LM AG oil-removal centrifuge with the black lid open, on its base plate",
+"coperchio di una centrifuga LM AG sollevato dal cilindro pneumatico, visto da vicino":"lid of an LM AG centrifuge raised by the pneumatic cylinder, seen close up",
+"aggancio del coperchio di una centrifuga LM AG, con la targhetta del costruttore":"lid catch of an LM AG centrifuge, with the maker's plate",
+"centrifuga disoleatrice LM AG su fondo bianco, vista di fronte":"LM AG oil-removal centrifuge on a white background, seen from the front",
 /* --- le tre caselle nella pagina dei contatti -------------------------- */
 "Recapiti":"Contact details",
 "Richieste generali e dimensionamento":"General enquiries and sizing",

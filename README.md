@@ -54,7 +54,7 @@ assets/img/trituratori/ le fotografie dei trituratori, portate a 16:9 e a una
 assets/doc/            l'attestato di brevetto del TR1 e il depliant KOMBI
 assets/img/kombi/      le fotografie della serie KOMBI, stesso trattamento
 assets/img/impianti/   gli impianti, divisi per famiglia: continuo-, paniere-
-assets/img/centrifughe/ la serie FD dalla 250 alla 1000 e la FCV
+assets/img/centrifughe/ la serie FD dalla 250 alla 1000, la FCV e la LM AG
 assets/img/accessori/  i ribalta cassoni, piu' il fondale in attesa dei nastri
 assets/img/centrifor/  i tre modelli Centrifor, sul bianco di LM, a 1400x1050
 assets/img/soluzioni/  le immagini di settori e applicazioni
@@ -843,6 +843,39 @@ le puo' aggiungere alla griglia dei dati.
 La miniatura della scheda viene da uno scatto in posa su fondo grigio: sta
 bene accanto alle due sorelle, che sono render sullo stesso grigio.
 
+## La serie LM AG
+
+**Il nome.** Era «Centrifughe disoleatrici serie LM 660 AG». Il 660 e' solo una
+delle taglie — LM la presenta come «centrifughe disoliatrici ad alti giri» con
+quattro modelli, **550, 660, 800, 950** — quindi il numero e' uscito dal nome e
+la serie si chiama **LM AG**. Cambiato in `centrifughe.html`, nella scheda
+`prodotti/disoleatrici-serie-dk.html`, nelle schede FD e FCV che la richiamano,
+e nel dizionario inglese.
+
+**Le fotografie.** Prima la scheda aveva un solo segnaposto nero. Ora porta un
+carosello di **dieci** scatti presi dalle pagine LM
+(`lm-industry.com/centrifugal-solutions/centrifugal-products/disoliatrici-alti-giri/`
+e le quattro schede collegate): prima le macchine intere — il 660 grigio, il 660
+verde, il mod. 800 di fronte, il mod. 800 col quadro a fianco, la versione blu,
+il mod. 950 — poi le due viste col coperchio alzato e i due dettagli
+dell'aggancio. La copertina sulle schede di elenco e' il 660 grigio.
+
+Stessa lavorazione delle Centrifor: fondo bianco tenuto, formato 16:9 ottenuto
+allargando col bianco invece che ritagliando, e i tre passaggi di nitidezza
+(antigrana che rispetta i bordi, Lanczos, maschera mite 70/2). Misure finite
+**1600x900**, copertina **1000x1000**. I due dettagli, che il bianco non ce
+l'hanno, si ritagliano e hanno la loro versione intera per la lente.
+
+Il mod. 950 e' l'unico che LM pubblica piu' grande di 800x600: e' **1200x822**.
+Gli altri sono 800x600 e file maggiori non esistono — riprovati anche qui i
+tagli `-scaled`, `-1024x768`, `-1536x1152`, `-2048x1536`, tutti 404.
+
+**Un punto da chiarire col cliente.** La tabella della scheda porta DK 55, DK 70
+e DK 80 (cesto 550, 700, 800). LM, per la stessa serie, elenca 550, **660**, 800
+e **950**. Il 700 della tabella e il 660 di LM non tornano, e il 950 nella
+tabella non c'e'. La tabella non e' stata toccata: e' il cliente che deve dire
+quale delle due elencazioni vale.
+
 ## Come si chiamano le centrifughe
 
 Tutte e tre le serie si chiamano **centrifughe disoleatrici**, con lo stesso
@@ -914,7 +947,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260903b`. Senza, chi ha già
+`?v=20260904a`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
