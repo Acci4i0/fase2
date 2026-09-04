@@ -491,6 +491,32 @@ window.addEventListener('load',function(){
   });
 })();
 
+/* ------- la fotografia della taglia, al passaggio del cursore -------
+   Le righe della tabella portano `data-foto`; il riquadro a destra e' uno
+   solo per blocco e cambia sorgente. Le righe senza attributo non lo fanno
+   comparire: meglio niente che la macchina sbagliata. Da telefono il foglio
+   di stile lo tiene nascosto e qui non succede nulla. */
+(function(){
+  document.querySelectorAll('.spec-block').forEach(function(blocco){
+    var righe=blocco.querySelectorAll('tbody tr[data-foto]');
+    if(!righe.length)return;
+    var riquadro=document.createElement('div');
+    riquadro.className='spec-foto';
+    riquadro.setAttribute('aria-hidden','true');
+    var im=document.createElement('img');
+    im.setAttribute('alt',''); im.setAttribute('loading','lazy');
+    riquadro.appendChild(im); blocco.appendChild(riquadro);
+    righe.forEach(function(r){
+      r.addEventListener('mouseenter',function(){
+        var u=r.getAttribute('data-foto');
+        if(im.getAttribute('src')!==u)im.setAttribute('src',u);
+        blocco.classList.add('mostra');
+      });
+    });
+    blocco.addEventListener('mouseleave',function(){blocco.classList.remove('mostra');});
+  });
+})();
+
 /* --------- nav che si inverte + sequenza pinnata della home ------- */
 (function(){
   var menu=$('.menu'); if(!menu)return;
