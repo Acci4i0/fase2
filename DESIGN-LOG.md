@@ -635,6 +635,12 @@ La regola che ne esce: **il fondo si prolunga solo dove ce n'e' gia' abbastanza*
 — gli scatti da studio delle FD, dove la macchina lascia margini larghi e il
 fondo e' un grigio liscio. Dove la macchina riempie il fotogramma, si taglia.
 
+> **Aggiornamento.** Il fondo prolungato a mano non funzionava; prolungato con
+> l'espansione generativa di Photoshop, si'. Vedi *La fascia della FCV, allargata
+> davvero* in fondo: i tre scatti stanno ora nella fascia a 16:9, con la macchina
+> intera. Il paragrafo qui sopra descrive il tentativo precedente e resta come
+> traccia di cosa era stato provato, e perche' non bastava.
+
 **LM 660 AG resta senza carosello e col fondo nero**: nessuna foto verificata.
 E' la disoliatrice ad alti giri **mod. 660 di LM Industry** — «AG» sta per alti
 giri, e la gamma sul sito del gruppo e' 550 / 660 / 800 / 950. Una fotografia del
@@ -1110,10 +1116,11 @@ posto della copertina. I tre ritagli 16:9 (`fcv-01`, `fcv-02`, `fcv-03`) e il
 quadrato (`fcv-copertina`) erano gia' in cartella da quando furono lavorati:
 qui sopra sta scritto perche' erano rimasti fuori — la macchina riempie il
 fotogramma verticale e il ritaglio orizzontale non era piaciuto. Il committente
-ha chiesto di usarli, e ci sono: la macchina in blu, quella in bianco, e quella
-col coperchio aperto e il cesto estratto, che porta `data-intera` verso
-`fcv-03-intera` per la lente. La copertina va nelle tre schede che richiamano la
-serie — `centrifughe.html`, FD, LM AG.
+ha chiesto di usarli, e sono entrati in pagina. Quei ritagli sono poi stati
+rifatti da capo — vedi *La fascia della FCV, allargata davvero* — perche' anche
+al committente non piacevano: mostravano il coperchio, non la macchina. La
+copertina va nelle tre schede che richiamano la serie — `centrifughe.html`, FD,
+LM AG.
 
 **Manca ancora la fotografia per riga di tabella.** Le altre serie hanno
 `data-foto` sulle righe delle taglie; la FCV no, e non per dimenticanza. Le due
@@ -1200,6 +1207,63 @@ della FD, che dice «a ciclo continuo». «AG» sta per alti giri, come e' scrit
 piu' sopra. Cambiato in titolo, filo di navigazione e `<title>`, e nel
 dizionario inglese: *High-speed oil-removal centrifuges*. Le schede dell'elenco
 tengono il nome corto «Centrifughe disoleatrici», come gia' fanno per la FD.
+
+
+## La fascia della FCV, allargata davvero
+
+**Il ritaglio non andava.** Messi in pagina, i tre ritagli 16:9 mostravano il
+coperchio e il quadro, non la macchina: gli scatti sono verticali e la macchina
+occupa l'85-90% dell'altezza, quindi un 16:9 preso dentro il fotogramma prende
+una fetta. Accanto alle FD, che si vedono per intero, leggevano come primi piani
+finiti li' per sbaglio. Il committente lo ha detto in due parole.
+
+**Il fondo prolungato, questa volta con l'espansione generativa.** Piu' sopra sta
+scritto che allargare il fondo a mano non aveva funzionato: veniva una fascia
+liscia attorno alla macchina, senza le macchie del pavimento, e si leggeva come
+un alone. Rifatto con `image_generative_expand` di Photoshop — 744 px per lato
+sui 1086 di partenza, che porta il fotogramma a 2574x1448, cioe' 16:9 esatto — il
+fondo si prolunga con la sua struttura: il muro grigio, il battiscopa che
+continua alla stessa quota, il cemento con le sue macchie. Le tre uscite sono
+state guardate una per una: nessun oggetto inventato, nessuna parte di macchina
+aggiunta, la linea del battiscopa continua senza scalini. Poi Lanczos a 1600x900
+e la solita maschera mite 70/2, come per ogni figura ridotta.
+
+**Cosa e' generato e cosa no.** Il 58% della larghezza del fotogramma finale non
+c'era nello scatto: e' muro e pavimento calcolati dal modello. La macchina no —
+quella e' la fotografia, intatta, e nessun dato tecnico viene da li'. Vale la
+distinzione che questo quaderno fa dappertutto: si prolunga il fondo, non si
+inventa la macchina.
+
+**La lente mostra lo scatto vero.** `fcv-01` e `fcv-02` non avevano `data-intera`
+e cliccare la fascia rimostrava lo stesso ritaglio — da cui «non vedo le foto per
+intero». Adesso tutte e tre portano `data-intera` verso `fcv-01-intera`,
+`fcv-02-intera`, `fcv-03-intera`: i tre scatti come sono stati fatti, 1086x1448,
+senza un pixel aggiunto. Chi clicca esce dal fotogramma allargato e vede la
+fotografia. `.lente-foto` ha `object-fit:contain`, quindi si vede tutta.
+
+## La copertina della FCV
+
+Era **un ritaglio della macchina blu** sul pavimento di cemento, tagliato in cima
+e a destra: accanto alle sorelle — la FD blu su grigio chiaro, la LM AG avorio su
+bianco, tutte e due macchine intere, centrate, su fondo liscio — non stava.
+
+**Rifatta come le altre.** Ritaglio del soggetto con `image_remove_background`
+sullo scatto blu, e la macchina rimessa su fondo pieno **#dcdcdc**, che e' il
+grigio che il foglio di stile mette gia' sotto le miniature e lo stesso della
+copertina FD. Nessuna ombra di contatto: non ce l'hanno nemmeno le due sorelle,
+il fondo li' e' piatto. Misure: macchina 652x800 dentro il quadrato da 1000,
+**174 px di margine ai lati, 100 sopra e sotto**, centrata sul suo ingombro.
+
+Il ritaglio e' stato guardato da vicino nei due punti che di solito si rompono —
+le asole della maniglia in acciaio e il piede con il foro di ancoraggio: passano
+tutte, senza frangia chiara del vecchio fondo. Il colore medio dei pixel di bordo
+sta sui 122-131, che e' il bordo della macchina, non il muro dietro.
+
+**E' rimasta la macchina blu.** Lo scatto avorio e' stato provato — la sua
+prospettiva e' un po' piu' frontale — ma il blu tiene tre cose: e' la macchina
+che la scheda gia' mostrava, e' la stessa che apre la fascia, e la sua sagoma e'
+piu' larga in proporzione, come quelle delle sorelle. Il ritaglio avorio resta
+fattibile in un minuto se si preferisce.
 
 
 ## Tipografia
