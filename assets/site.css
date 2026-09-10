@@ -517,6 +517,19 @@ main{position:relative}
 @media only screen and (min-width:834px){.footer .logo{grid-column:1/8;margin-top:1.1111111111vw;width:calc(100% + var(--grid-gutter))}}
 .footnote-wrapper{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.375;align-items:flex-end;display:flex;grid-column:1/-1;justify-content:space-between;margin:5.3333333333vw auto 0}
 @media only screen and (min-width:834px){.footnote-wrapper{font-size:clamp(1.4rem,1.1111111111vw,1.8rem);grid-column:13/-1;margin:0}}
+/* Sotto i 1280 px la fascia della nota e' meta' schermo: la riga della partita
+   IVA da sola la riempie quasi tutta, e i due link legali accanto non ci
+   stavano piu'. Andavano a capo una parola per riga, e il marchio LM, spinto a
+   filo di una riga che si era spezzata in due, finiva staccato dal testo. Da
+   834 a 1279 px la nota si impila: partita IVA, direzione e coordinamento con
+   il marchio in coda, link legali sotto. La nota si stringe sulla riga piu'
+   lunga, cosi' il marchio torna a filo con l'ultima cifra sopra. Il corpo
+   scende a 1,3 rem, il minimo che tiene su una riga anche la versione inglese,
+   piu' larga di quella italiana. */
+@media only screen and (min-width:834px) and (max-width:1279px){
+  .footnote-wrapper{align-items:flex-start;flex-direction:column;font-size:clamp(1.3rem,1.1111111111vw,1.8rem);justify-content:flex-end;row-gap:.6em}
+  .footnote-wrapper .legal-links{font-size:1.3rem}
+}
 
 @media (prefers-reduced-motion:reduce){
   .reveal,.reveal-blur,.reveal-stagger>*,.line-mask>span{transition-duration:.01ms!important}
@@ -747,7 +760,11 @@ main{position:relative}
 @media only screen and (min-width:834px){.list-title,.spec-title{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167;margin-bottom:1.6666666667vw}}
 .dot-list li{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;border-top:1px solid var(--color-arsenic);color:var(--color-silver);padding:4.2666666667vw 0 4.2666666667vw 6.4vw;position:relative}
 @media only screen and (min-width:834px){.dot-list li{font-size:clamp(1.4rem,1.1111111111vw,1.8rem);padding:1.1111111111vw 0 1.1111111111vw 1.6666666667vw}}
-.dot-list li:last-child{border-bottom:1px solid var(--color-arsenic)}
+/* Gli elenchi puntati restano aperti in basso: l'ultima voce non porta la
+   riga di chiusura. La riga c'era, e chiudeva l'elenco come il bordo di una
+   tabella proprio dove comincia la sezione dopo: due righe orizzontali a
+   pochi millimetri una dall'altra, senza che la seconda dicesse nulla.
+   Le voci si separano con il bordo alto di ciascuna, e tanto basta. */
 .dot-list li:before{background-color:var(--color-yellow);border-radius:50%;content:"";height:.6rem;left:0;position:absolute;top:6.4vw;width:.6rem}
 @media only screen and (min-width:834px){.dot-list li:before{top:1.6666666667vw}}
 
@@ -762,6 +779,8 @@ main{position:relative}
 .spec-table td:first-child{color:var(--color-off-white)}
 .spec-table td:not(:first-child){color:var(--color-silver)}
 .spec-table th,.spec-table td{border-bottom:1px solid var(--color-arsenic);padding:3.2vw 4.2666666667vw 3.2vw 0}
+/* Stessa scelta delle liste: sotto l'ultima riga la tabella non si chiude. */
+.spec-table tbody tr:last-child td{border-bottom:0}
 @media only screen and (min-width:834px){.spec-table th,.spec-table td{padding:1.1111111111vw 2.2222222222vw 1.1111111111vw 0}}
 .spec-table tbody tr:hover td{background-color:var(--color-dark-grey)}
 /* Col cursore su una taglia compare la sua fotografia, come nell'elenco delle

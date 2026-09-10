@@ -31,8 +31,9 @@ centrifor.html           > the machine families
 trituratori.html        /
 impianti.html           /
 accessori.html          conveyor belts and bin tippers
-prodotti/               one page per machine (10), with the technical tables
-                        wherever the data exists
+prodotti/               one page per machine (11), with the technical tables
+                        wherever the data exists, plus four one-line redirects
+                        left behind at the addresses those pages used to have
 applicazioni.html       the four processes
 settori.html            the departments served
 news.html               trade fairs and updates

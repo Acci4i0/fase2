@@ -843,9 +843,11 @@ conta solo quando il testo va a capo.
 **Il nome.** Era «Centrifughe disoleatrici serie LM 660 AG». Il 660 e' solo una
 delle taglie — LM la presenta come «centrifughe disoliatrici ad alti giri» con
 quattro modelli, **550, 660, 800, 950** — quindi il numero e' uscito dal nome e
-la serie si chiama **LM AG**. Cambiato in `centrifughe.html`, nella scheda
-`prodotti/disoleatrici-serie-dk.html`, nelle schede FD e FCV che la richiamano,
-e nel dizionario inglese.
+la serie si chiama **LM AG**. Cambiato in `centrifughe.html`, nella scheda della
+serie, nelle schede FD e FCV che la richiamano, e nel dizionario inglese. Il
+file della scheda si chiamava ancora `disoleatrici-serie-dk.html`: oggi e'
+`prodotti/disoleatrici-alti-giri-serie-lm-ag.html` — vedi *Gli indirizzi delle
+schede* in fondo.
 
 **Le fotografie.** Prima la scheda aveva un solo segnaposto nero. Ora porta un
 carosello di **dieci** scatti presi dalle pagine LM
@@ -893,11 +895,13 @@ come «Centrifughe asciugatrici serie FCV»: due nomi diversi per macchine che
 nell'elenco erano gia' entrambe «Centrifughe disoleatrici». In inglese la FCV
 passa da *drying* a *oil-removal*, come le altre due.
 
-**I nomi dei file non sono cambiati.** `prodotti/centrifughe-asciugatrici-serie-fcv.html`
-si chiama ancora cosi': rinominarlo cambierebbe l'indirizzo di una pagina gia'
-pubblicata, e chi ci fosse arrivato da un collegamento esterno o dai motori
-troverebbe un 404. Se si vuole rinominare, va messo in conto un rimando dal
-vecchio indirizzo.
+**I nomi dei file sono stati allineati dopo.** Qui erano rimasti com'erano —
+`prodotti/centrifughe-asciugatrici-serie-fcv.html` diceva ancora «asciugatrici»
+sotto un titolo che dice «disoleatrici» — per non cambiare l'indirizzo di una
+pagina gia' pubblicata. Il committente ha poi chiesto che l'indirizzo dica
+quello che la pagina mostra: i file sono stati rinominati e dal vecchio
+indirizzo parte un rimando, come questa nota chiedeva. Vedi *Gli indirizzi
+delle schede*.
 
 Resta com'era l'etichetta sopra il titolo di `centrifughe.html` — «Disoleatrici a
 ciclo continuo e a cesto estraibile» — che non e' il nome di una macchina ma la
@@ -951,7 +955,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260904e`. Senza, chi ha già
+`?v=20260910b`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1049,6 +1053,154 @@ compaiono marchi né macchinari identificabili di terzi.
 Le fonti sono state portate alla stessa resa — desaturazione, temperatura
 colore più fredda, contrasto, grana aggiunta e cadenza uniforme a 20 fotogrammi
 al secondo — perché il montaggio si legga come un unico girato.
+
+## Il pie' di pagina da tavoletta
+
+**Cosa si vedeva.** Da 834 a 1279 px la nota in fondo — partita IVA, direzione e
+coordinamento, link legali — sta in una fascia larga meta' schermo: dodici
+colonne su ventiquattro, 391 px a 834, 560 a 1194. La sola riga della partita
+IVA ne chiede 388 a corpo 1,4 rem, e i due link legali altri 176 di fianco.
+Non ci stavano. Andavano a capo tutti e tre — «Policy / Privacy», «Cookie /
+policy», una parola per riga — e il marchio LM, che il `space-between` spinge a
+filo della riga, si trovava a filo di una riga spezzata in due: finiva staccato
+dal testo, in mezzo al niente. In inglese e' anche peggio: `VAT IT03166770242`
+misura 392 px, quattro decimi in piu' della fascia a 834.
+
+**Cosa si e' fatto.** Da 834 a 1279 px la nota si impila invece di correre in
+riga: partita IVA, direzione e coordinamento col marchio in coda, link legali
+sotto. `align-items:flex-start` stringe la nota sulla riga piu' lunga, e il
+`space-between` che era il problema torna a essere la soluzione: il marchio LM
+finisce esattamente a filo dell'ultima cifra della partita IVA sopra, che era il
+disegno voluto dall'inizio. Il corpo scende a 1,3 rem — il minimo che tiene su
+una riga anche l'inglese, con trenta pixel di margine invece di meno uno.
+
+**Da 1280 px in su non cambia niente**: li' la fascia misura 601 px e i due
+blocchi ci stanno affiancati con 26 px di stacco, che salgono a 40 a 1366 e a
+215 a 1920. Il punto di cambio e' 1280 perche' e' li' che lo stacco smette di
+essere zero.
+
+Misurato su venti pagine a 834, 900, 1024, 1194, 1279, 1280, 1366, 1440, 1920 e
+2560 px, in italiano e in inglese: ogni riga sta su una riga, il marchio e' a
+filo, e la nota resta allineata in basso col marchio Fase a sinistra.
+
+**Fuori dal pie' di pagina sono uscite due voci.** L'elenco portava dieci
+collegamenti; «Applicazioni» e «Settori» sono stati tolti su richiesta del
+committente. Restano nel menu, sotto «Soluzioni», e le pagine non sono state
+toccate: e' solo il pie' di pagina che ne parla piu'.
+
+## Le tabelle non si chiudono in fondo
+
+Ogni voce di `dot-list` porta il bordo **sopra**, e l'ultima portava anche
+quello sotto: una riga di chiusura che sigillava l'elenco come il bordo di una
+tabella. Stessa cosa per `spec-table`, dove il `border-bottom` sta su ogni `td`,
+ultima riga compresa. Il risultato era una riga orizzontale a pochi millimetri
+dall'inizio della sezione seguente, che non separava niente — sotto non c'era
+altro da separare.
+
+Tolte tutte e due: `.dot-list li:last-child` non ha piu' il bordo sotto e
+`.spec-table tbody tr:last-child td` nemmeno. Le voci restano separate dal bordo
+alto di ciascuna e le righe della tabella dal loro, l'intestazione tiene la sua
+sottolineatura. Le due classi vivono solo nelle undici schede prodotto, quindi
+la modifica non tocca nient'altro; verificate una per una.
+
+## Le fotografie della FCV, e la fascia delle centrifughe
+
+**La FCV aveva tre fondali neri** al posto del carosello, e un rettangolo nero al
+posto della copertina. I tre ritagli 16:9 (`fcv-01`, `fcv-02`, `fcv-03`) e il
+quadrato (`fcv-copertina`) erano gia' in cartella da quando furono lavorati:
+qui sopra sta scritto perche' erano rimasti fuori — la macchina riempie il
+fotogramma verticale e il ritaglio orizzontale non era piaciuto. Il committente
+ha chiesto di usarli, e ci sono: la macchina in blu, quella in bianco, e quella
+col coperchio aperto e il cesto estratto, che porta `data-intera` verso
+`fcv-03-intera` per la lente. La copertina va nelle tre schede che richiamano la
+serie — `centrifughe.html`, FD, LM AG.
+
+**Manca ancora la fotografia per riga di tabella.** Le altre serie hanno
+`data-foto` sulle righe delle taglie; la FCV no, e non per dimenticanza. Le due
+taglie sono FCV 350 e FCV 475, le macchine fotografate sono due — una blu col
+fusto rastremato, una avorio a cilindro pieno — ma niente nelle fotografie o nei
+nomi dei file dice quale sia quale, e la cartella vecchia, che altrove porta il
+modello nel nome, per la FCV ha tre file con nomi generati. Vale la regola
+scritta sopra: la macchina sbagliata sarebbe peggio del niente. Basta sapere
+quale scatto e' il 350 e quale il 475 e le due righe si collegano.
+
+**La fascia di `centrifughe.html`** portava gli stessi tre fondali neri. Adesso
+porta **nove** scatti, che e' la misura delle altre pagine di famiglia. Il criterio
+e' uno solo, e si vede a scorrerlo: le tre serie si danno il cambio a giro — FD,
+LM AG, FCV, e da capo — cosi' che nessuna compaia due volte di fila e nessuna
+faccia da comparsa. Si apre sulla FD 650, che e' la macchina piu' presentabile
+della famiglia, e le due chiuse sul dettaglio — il cesto estratto della FCV, il
+coperchio della LM AG sollevato dal cilindro — stanno in coda, dopo che le
+macchine intere hanno fatto il loro giro. Le due che hanno lo scatto per intero
+portano `data-intera`. Il conto: quattro FD (650, 1000, 500, 250), tre LM AG,
+due FCV — che e' la proporzione delle taglie a catalogo, sei, quattro e due.
+
+`centrifughe/attesa.jpg` e `su-grigio/placeholder-nero.jpg` non sono piu'
+richiamati da nessuna pagina. Restano in cartella come gli altri file di
+riserva.
+
+## La FD 500 senza il quadro elettrico
+
+La quarta figura del carosello FD — `fd500-01`, che viene da `FD500_3` — teneva
+in campo la macchina **e l'armadio elettrico** che le sta di fianco: due oggetti
+in una figura che ne racconta uno. L'armadio e' stato tolto.
+
+**Come.** Il fondo e' un grigio da studio, liscio, con la sola curva della luce:
+l'armadio, dal montante alla sua ombra sul pavimento, sta fra x 983 e x 1347 e
+li' dentro non passa niente della macchina, che finisce a 980. Le colonne sono
+state rifatte con una rampa per riga fra le due colonne pulite ai lati, piu' il
+profilo dello scarto misurato sulle righe intatte — le cinquanta in alto e le
+quindici in basso — interpolato verticalmente, piu' grana gaussiana a 0,5 livelli,
+che e' la grana del fondo misurata. Su righe tenute fuori dal calcolo il modello
+sbaglia al massimo 4,4 livelli su 255, in media 0,9: sotto la soglia di un
+gradino visibile. Nessun pixel copiato da un'altra zona — copiare portava dentro
+l'ombra dell'armadio, che e' quello che si voleva togliere.
+
+**Poi la macchina e' stata rimessa in mezzo.** Tolto l'armadio restava a
+sinistra, col centro a 657 invece che a 800. E' stata spostata di 143 px e il
+margine scoperto a sinistra e' stato riempito prolungando il fondo: la stessa
+grana, traslata, meno la pendenza della riga per 143 px, cosi' il gradiente
+prosegue invece di ripartire. La giunta misura 0,20 livelli di scarto medio, che
+e' quanto misura la differenza fra due colonne qualsiasi del fondo originale:
+non c'e' una giunta, c'e' il rumore.
+
+**Il file originale non e' stato toccato.** Il ritocco sta in
+`fd500-01-senza-quadro.jpg`, 1600x900, 110 KB, progressivo come gli altri;
+`fd500-01.jpg` resta in cartella con gli altri file di riserva. Cambia anche
+l'alternativa, che diceva «con l'armadio elettrico a fianco».
+
+## Gli indirizzi delle schede
+
+Il committente ha chiesto che l'indirizzo di ogni pagina dica quello che la
+pagina mostra. Quattro non lo dicevano:
+
+| prima | adesso | perche' |
+|---|---|---|
+| `prodotti/disoleatrici-serie-dk.html` | `prodotti/disoleatrici-alti-giri-serie-lm-ag.html` | la serie non si chiama piu' DK da quando la tabella e' stata rifatta sui dati LM |
+| `prodotti/centrifughe-asciugatrici-serie-fcv.html` | `prodotti/disoleatrici-serie-fcv.html` | il titolo dice «disoleatrici» da quando i tre nomi sono stati uniformati |
+| `prodotti/trituratori-asse-orizzontale-serie-tr.html` | `prodotti/trituratori-asse-orizzontale-serie-tr1.html` | la serie e' TR1, non TR |
+| `prodotti/trituratori-asse-verticale-serie-trw.html` | `prodotti/trituratori-asse-verticale-serie-tr-dual.html` | la serie e' TR-Dual, non TRW |
+
+**Dal vecchio indirizzo parte un rimando.** Al posto di ognuno dei quattro file
+c'e' una paginetta che non e' una pagina: `noindex`, `canonical` al nuovo
+indirizzo e un `meta refresh` immediato. Serve perche' chi arriva da un
+collegamento esterno o dai motori non trovi un 404 — e' quello che chiedeva la
+nota in *Come si chiamano le centrifughe*. Si tolgono quando i vecchi indirizzi
+non girano piu'.
+
+`kombi.html` resta com'e': e' corto, ma «kombi» e' il nome della serie e la
+pagina mostra la serie KOMBI. Tutti gli altri indirizzi — le tredici pagine di
+primo livello, le sette news, le sette schede rimaste — sono stati confrontati
+uno per uno col titolo che portano.
+
+**Il nome della serie LM AG, in alto.** La scheda diceva «Centrifughe
+disoleatrici / Serie LM AG», senza dire cosa distingue la serie. Adesso dice
+**«Centrifughe disoleatrici ad alti giri / Serie LM AG»**, con lo stesso taglio
+della FD, che dice «a ciclo continuo». «AG» sta per alti giri, come e' scritto
+piu' sopra. Cambiato in titolo, filo di navigazione e `<title>`, e nel
+dizionario inglese: *High-speed oil-removal centrifuges*. Le schede dell'elenco
+tengono il nome corto «Centrifughe disoleatrici», come gia' fanno per la FD.
+
 
 ## Tipografia
 
