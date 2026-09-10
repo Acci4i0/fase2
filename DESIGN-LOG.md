@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260910b`. Senza, chi ha già
+`?v=20260910c`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1264,6 +1264,85 @@ prospettiva e' un po' piu' frontale — ma il blu tiene tre cose: e' la macchina
 che la scheda gia' mostrava, e' la stessa che apre la fascia, e la sua sagoma e'
 piu' larga in proporzione, come quelle delle sorelle. Il ritaglio avorio resta
 fattibile in un minuto se si preferisce.
+
+
+## Le copertine degli impianti, senza la riga sotto il nome
+
+Ogni scheda dell'elenco portava, sotto il nome della serie, una riga di
+spiegazione: «Alimentazione continua, dati secondo Industria 4.0», «Piu'
+materiali trattati senza contaminazione», «Fino a 400 kg/h su base
+pallettizzata». Il committente le ha volute via dalle **tre schede degli
+impianti** — nove punti in tutto, fra `impianti.html` e le sezioni «Le altre
+serie» delle tre schede prodotto. Le altre famiglie tengono la loro riga.
+
+**Il nome si e' dovuto ricentrare.** Da 834 px in su `.expertise-card .content`
+allinea in alto: tolta la riga sotto, il nome restava appeso in cima con tutta
+l'aria della fotografia sotto di se'. Quando il nome e' l'unica cosa nel
+riquadro adesso si centra sull'altezza, che e' gia' quello che il riquadro fa da
+telefono. Regola sola, su `:has(>.name:only-child)`: le schede che la riga ce
+l'hanno ancora non cambiano di un pixel.
+
+Cambiata anche l'intestazione della sezione: **«3 serie a catalogo, dimensionate
+sulle vostre esigenze»**, dove prima diceva «dimensionate sul reparto». Solo qui:
+`centrifughe.html` e `trituratori.html` portano ancora la formula vecchia, e
+nessuno ha chiesto di toccarle.
+
+## Via i riferimenti a Industria 4.0
+
+Dalla scheda **a ciclo continuo**, perche' i decreti a cui si appoggiavano sono
+stati modificati e la dicitura non regge piu'. Erano quattro punti:
+
+| dove | prima | adesso |
+|---|---|---|
+| `<meta name="description">` | Alimentazione continua, dati secondo Industria 4.0 | Alimentazione continua, dati di processo archiviati |
+| etichetta sopra il titolo | idem | idem |
+| dati in evidenza, «Gestione» | elettrica e analogica, Industria 4.0 | elettrica e analogica |
+| «Caratteristiche», prima voce | Gestione elettrica e analogica secondo la direttiva Industria 4.0 | Gestione elettrica e analogica dell'impianto |
+
+Il fatto tecnico resta: la gestione e' elettrica e analogica, i dati si
+archiviano, il software e' dedicato, l'assistenza e' da remoto. Quello che
+sparisce e' il richiamo alla norma, non la macchina. Aggiornato anche il
+dizionario inglese.
+
+**Restano fuori due punti, e vanno segnalati.** `index.html` porta una voce di
+metodo intitolata «Industria 4.0 e teleassistenza», e `applicazioni.html` scrive
+«la gestione elettrica e' predisposta secondo la direttiva Industria 4.0». La
+richiesta parlava della sola scheda a ciclo continuo, e la copy di quelle due
+pagine non e' stata toccata: se il motivo e' quello dei decreti, valgono anche
+li'.
+
+## La scheda a paniere estraibile, dopo il taglio
+
+Via il dato in evidenza **«Mantello / forato, sotto il trasportatore»**. Ne
+restava uno solo, «Cesto / con bacino di contenimento liquidi», e la griglia dei
+dati e' a due colonne: la voce si stringeva a meta' fascia con l'altra meta'
+vuota di fianco. Da telefono quella meta' e' 175 px e la riga andava a capo per
+niente. Adesso, quando la voce e' sola, prende tutta la larghezza che ha —
+`.key-grid:has(>.key-item:only-child)`.
+
+**In «Caratteristiche» la riga sul mantello e' rimasta**: «Mantello forato da
+inserire sotto il trasportatore della macchina utensile». E' una frase diversa,
+in un elenco diverso, e la richiesta citava il dato in evidenza. Se il mantello
+non e' piu' in offerta va tolta anche di li'; se era solo che in cima non ci
+stava bene, sta dov'e'.
+
+## Il pulsante: «Contattaci»
+
+L'invito in barra e in fondo diceva **«Parla con un tecnico»**; adesso dice
+**«Contattaci»**. Sessantadue punti, due per pagina, su trentuno pagine, piu' il
+dizionario inglese — *Get in touch*.
+
+**L'indirizzo non e' cambiato.** Il pulsante puntava e punta a `contatti.html`,
+e quella pagina si chiama «Contatti» nel titolo, nella briciola di pane e nelle
+due voci di elenco. Rinominarla `contattaci.html` avrebbe rotto la regola scritta
+in *Gli indirizzi delle schede* — l'indirizzo dice quello che la pagina mostra —
+o costretto a rinominare anche la voce di menu. Chiesto al committente, che ha
+scelto di cambiare la sola etichetta del pulsante.
+
+## Una correzione ai dati
+
+`FD 350`, resa in **ottone**: da 525 a **600 kg/h**, su indicazione del
+committente. La colonna resta l'unica toccata della tabella.
 
 
 ## Tipografia

@@ -335,6 +335,13 @@ main{position:relative}
 @media only screen and (min-width:834px){.expertise-card .image-wrapper{border-radius:.625vw;width:29.58%}}
 .expertise-card .content{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.375;display:flex;flex-direction:column;justify-content:center;padding:.3rem 0;width:66%}
 @media only screen and (min-width:834px){.expertise-card .content{font-size:clamp(1.6rem,1.3888888889vw,1.3888888889vw);justify-content:flex-start;line-height:1.2;min-width:18rem;padding:1.3888888889vw 0 .4513888889vw;width:56%}}
+/* Le schede degli impianti non portano piu' la riga di spiegazione sotto il
+   nome. Da 834 px in su il nome si appoggiava in cima e restava sospeso, con
+   l'aria della fotografia tutta sotto: quando e' l'unica cosa nel riquadro, si
+   centra sull'altezza come gia' fa da telefono. */
+@media only screen and (min-width:834px){
+  .expertise-card .content:has(>.name:only-child){justify-content:center;padding-top:0;padding-bottom:0}
+}
 .expertise-card .name{color:var(--color-off-white);transition:color .2s}
 /* La sigla della serie sta sotto al nome di famiglia, non di seguito. */
 .expertise-card .name span{display:block}
@@ -745,6 +752,11 @@ main{position:relative}
 .detail-prose{grid-column:1/-1}
 @media only screen and (min-width:834px){.detail-prose{grid-column:1/span 10}}
 .key-grid{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr 1fr;margin-top:9vw;row-gap:6vw}
+/* I dati in evidenza vanno a due colonne, ma quando ne resta uno solo la
+   seconda restava vuota di fianco e la voce si stringeva a meta' fascia —
+   da telefono, dove la meta' e' 175 px, la riga andava a capo per niente.
+   Da sola, la voce prende tutta la larghezza che ha. */
+.key-grid:has(>.key-item:only-child){grid-template-columns:1fr}
 @media only screen and (min-width:834px){.key-grid{grid-column:13/-1;margin-top:0;row-gap:2.7777777778vw}}
 .key-label{color:var(--color-mid-grey);font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;letter-spacing:-.02em;line-height:1.5;text-transform:uppercase}
 .key-value{font-size:clamp(1.5rem,4.8vw,4.8vw);font-weight:300;letter-spacing:-.02em;line-height:1.22;margin-top:2.1333333333vw}
