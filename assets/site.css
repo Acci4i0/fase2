@@ -760,6 +760,10 @@ main{position:relative}
 @media only screen and (min-width:834px){.key-grid{grid-column:13/-1;margin-top:0;row-gap:2.7777777778vw}}
 .key-label{color:var(--color-mid-grey);font-family:var(--font-accent),monospace;font-size:1.2rem;font-weight:400;letter-spacing:-.02em;line-height:1.5;text-transform:uppercase}
 .key-value{font-size:clamp(1.5rem,4.8vw,4.8vw);font-weight:300;letter-spacing:-.02em;line-height:1.22;margin-top:2.1333333333vw}
+/* Quando il dato porta piu' di un valore — le due taglie della KOMBI — ognuno
+   prende la sua riga: su una riga sola andava a capo dentro il nome del
+   modello, e si leggeva «KOMBI-» sopra e «40» sotto. */
+.key-value span{display:block}
 @media only screen and (min-width:834px){.key-value{font-size:clamp(1.6rem,1.3888888889vw,1.3888888889vw);line-height:1.2;margin-top:.5555555556vw}}
 
 .detail-cols{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr;row-gap:9vw}
@@ -768,6 +772,17 @@ main{position:relative}
 .detail-prose + .detail-cols{margin-top:9vw}
 @media only screen and (min-width:834px){.detail-prose + .detail-cols{margin-top:3vw}}
 @media only screen and (min-width:834px){.detail-cols{grid-template-columns:1fr 1fr;row-gap:0}}
+/* Quando la scheda ha il solo elenco "Caratteristiche" e non anche
+   "Accessori" — le due schede degli impianti e le due dei trituratori — la
+   griglia a due colonne lasciava mezza pagina vuota sotto il titolo: un buco,
+   non aria. L'elenco da solo si prende tutta la larghezza e manda le voci su
+   due colonne, cosi' la sezione pesa quanto quella delle schede che di elenchi
+   ne hanno due. Le voci sono corte, una riga per voce. */
+@media only screen and (min-width:834px){
+  .detail-cols:has(>.list-block:only-child){grid-template-columns:1fr}
+  .detail-cols:has(>.list-block:only-child) .dot-list{columns:2;column-gap:var(--grid-gutter)}
+  .detail-cols:has(>.list-block:only-child) .dot-list li{break-inside:avoid}
+}
 .list-title,.spec-title{font-size:clamp(1.6rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.04em;line-height:1.2;margin-bottom:4.5vw}
 @media only screen and (min-width:834px){.list-title,.spec-title{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167;margin-bottom:1.6666666667vw}}
 .dot-list li{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;border-top:1px solid var(--color-arsenic);color:var(--color-silver);padding:4.2666666667vw 0 4.2666666667vw 6.4vw;position:relative}

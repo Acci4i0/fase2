@@ -136,7 +136,6 @@ var EN = {
 "Impianto automatico di disoleatura del truciolo metallico corto, montato su base pallettizzata: arriva in reparto già assemblato e si mette in funzione dove serve.":"Automatic de-oiling system for short metal chips, mounted on a palletised base: it arrives on the shop floor already assembled and goes to work where it is needed.",
 "Il gruppo comprende il trasportatore a tapparelle con tramoggia di accumulo che carica la centrifuga, il setaccio che separa i pezzi e i fine barra, la vasca di recupero dell\u2019olio o dell\u2019emulsione e il quadro elettrico. Due taglie di centrifuga: KOMBI-15 fino a 150 kg/h, KOMBI-40 fino a 400 kg/h.":"The unit comprises the slat conveyor with accumulation hopper that feeds the centrifuge, the sieve that separates parts and bar ends, the oil or emulsion recovery tank and the control panel. Two centrifuge sizes: KOMBI-15 up to 150 kg/h, KOMBI-40 up to 400 kg/h.",
 "Portata truciolo":"Chip throughput",
-"150 kg/h KOMBI-15, 400 kg/h KOMBI-40":"150 kg/h KOMBI-15, 400 kg/h KOMBI-40",
 "Potenza totale":"Total power",
 "Tramoggia di carico":"Loading hopper",
 "Peso":"Weight",

@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260910c`. Senza, chi ha già
+`?v=20260910d`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1343,6 +1343,40 @@ scelto di cambiare la sola etichetta del pulsante.
 
 `FD 350`, resa in **ottone**: da 525 a **600 kg/h**, su indicazione del
 committente. La colonna resta l'unica toccata della tabella.
+
+
+## Le schede con un elenco solo
+
+**Quattro schede su undici non hanno "Accessori"**: le due degli impianti e le
+due dei trituratori. Portano solo "Caratteristiche", e `.detail-cols` da 834 px
+in su e' a due colonne: l'elenco stava a sinistra e la meta' destra restava
+vuota sotto il titolo, per tutta l'altezza della sezione. Non era aria, era un
+buco — e sulla scheda a paniere estraibile, dove sopra c'e' un solo dato in
+evidenza, la pagina risultava vuota da meta' in la'.
+
+**L'elenco solo si prende tutta la larghezza, e va su due colonne.** Cosi' la
+sezione pesa quanto quella delle schede che di elenchi ne hanno due, e la pagina
+torna piena fino al margine destro. Le colonne sono quelle del CSS multi-colonna,
+quindi le voci si leggono in giu' e poi a destra, come si legge un elenco: le
+prime tre a sinistra, le altre tre a destra. `break-inside:avoid` tiene ogni
+voce col suo bordo, intera.
+
+Misurato da 1024 a 1920 px sulle quattro schede: ogni voce sta su una riga sola.
+Fra 834 e 950 px un paio di voci lunghe vanno a capo — ma prima, in mezza
+colonna, ci andavano tutte. Da telefono non cambia niente: la regola vive dentro
+`min-width:834px` e sotto l'elenco resta a una colonna, come sempre.
+
+**Le altre sette schede non cambiano di un pixel**: la regola guarda
+`:has(>.list-block:only-child)`, e dove i blocchi sono due non si applica.
+
+## Il dato che porta due valori
+
+Sulla scheda KOMBI la portata truciolo e' «150 kg/h KOMBI-15, 400 kg/h
+KOMBI-40». Su una riga sola non ci stava e il ritorno a capo cadeva dentro il
+nome del modello: si leggeva «KOMBI-» sopra e «40» sotto. Ora i due valori sono
+due `<span>`, uno per riga — `.key-value span{display:block}`, lo stesso modo in
+cui le schede dell'elenco mandano a capo la sigla della serie. E' l'unico dato
+del sito che porta piu' di un valore; se ne arrivano altri, la regola c'e' gia'.
 
 
 ## Tipografia
