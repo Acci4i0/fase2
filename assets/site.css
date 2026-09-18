@@ -810,6 +810,18 @@ main{position:relative}
 .spec-table tbody tr:last-child td{border-bottom:0}
 @media only screen and (min-width:834px){.spec-table th,.spec-table td{padding:1.1111111111vw 2.2222222222vw 1.1111111111vw 0}}
 .spec-table tbody tr:hover td{background-color:var(--color-dark-grey)}
+/* La scheda tecnica in coda alla riga. E' l'unica cosa cliccabile dentro una
+   tabella del sito e porta fuori — apre un PDF in una scheda nuova — quindi non
+   basta il colore del testo: e' una pastiglia col bordo e la freccia che esce
+   dal riquadro, lo stesso segno che si usa per i collegamenti esterni. Sopra,
+   si accende del rosso del marchio. La colonna e' l'ultima e sta in mezzo alla
+   sua cella, perche' non e' un dato che si legge in colonna con gli altri. */
+.spec-table th:last-child,.spec-table td.scheda{text-align:center}
+.spec-table td.scheda{padding-right:0}
+.scheda-doc{align-items:center;border:1px solid var(--color-arsenic);border-radius:10rem;color:var(--color-silver);column-gap:.5em;display:inline-flex;font-family:var(--font-accent),monospace;font-size:1.2rem;letter-spacing:-.02em;line-height:1;padding:.7em 1.1em;text-transform:uppercase;transition:background-color .2s,border-color .2s,color .2s}
+.scheda-doc svg{flex-shrink:0;height:1em;width:1em}
+.scheda-doc:hover{background-color:var(--color-yellow);border-color:var(--color-yellow);color:var(--color-off-white)}
+.scheda-doc:focus-visible{outline:2px solid var(--color-off-white);outline-offset:2px}
 /* Col cursore su una taglia compare la sua fotografia, come nell'elenco delle
    news: la tabella resta larga quanto la pagina e la fotografia le passa
    sopra, appoggiata a destra e all'altezza della riga che si sta guardando —

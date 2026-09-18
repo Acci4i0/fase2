@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260910d`. Senza, chi ha già
+`?v=20260918a`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1377,6 +1377,117 @@ nome del modello: si leggeva «KOMBI-» sopra e «40» sotto. Ora i due valori s
 due `<span>`, uno per riga — `.key-value span{display:block}`, lo stesso modo in
 cui le schede dell'elenco mandano a capo la sigla della serie. E' l'unico dato
 del sito che porta piu' di un valore; se ne arrivano altri, la regola c'e' gia'.
+
+
+## La scheda FCV rifatta sugli scatti e sui dati di LM
+
+La scheda portava due taglie — FCV 350 e FCV 475 — e tre fotografie di una
+macchina Fase. Il committente ha chiesto di sostituirle con la gamma che LM
+pubblica sotto `centrifugal-products/centrifughe/`: **mod. 270, 360, 480, 550,
+660, 800**.
+
+**I dati vengono dalle due schede tecniche di LM**, non dalle pagine: le pagine
+dei modelli non portano numeri, il PDF si'. Sono `Centrifughe270360480.pdf`
+(dalla pagina del mod. 360) e `Centrifughe550660800950.pdf` (dalla pagina del
+mod. 550) — quest'ultimo e' lo stesso gia' usato per la serie LM AG.
+
+| Mod. | kW | Ø cesto | Portata | Giri/min |
+|---|---|---|---|---|
+| 270 | 0,37 | 270 | 10 kg | 700 |
+| 360 | 0,75 | 360 | 30 kg | 500 |
+| 480 | 1,1 | 480 | 50 kg | 480 |
+| 550 | 4 | 550 | 100 kg | 800 |
+| 660 | 5,5 | 660 | 150 kg | 700-750 |
+| 800 | 7,5 | 800 | 200 kg | 650 |
+
+**Le colonne sono cinque e sono tutte piene.** Il PDF delle taglie piccole porta
+anche peso e resistenze, quello delle grandi il volume del paniere: nessuno dei
+due dati esiste per tutte e sei le taglie, e una colonna con tre caselle vuote
+si legge peggio di una colonna in meno. Il riscaldamento resta dove LM lo mette,
+fra le opzioni. Le quote A-F dei due PDF restano fuori come per la LM AG: sono
+lettere che rimandano a un disegno che sul sito non c'e'.
+
+**Le fotografie: stessa lavorazione delle Centrifor.** Gli originali di LM sono
+**800x600** e piu' grandi non esistono — riprovati anche qui `-scaled`,
+`-1024x768`, `-1536x1152`, `-2048x1536`, tutti 404, e l'API dei media non li
+elenca nemmeno. Quindi i tre passaggi di sempre: antigrana che rispetta i bordi
+(media pesata sulla somiglianza locale su sette spostamenti), Lanczos alla
+misura, maschera mite 70/2. Il 16:9 si ottiene **allargando col bianco di LM**,
+che qui e' bianco pieno fino al bordo — le colonne laterali misurano 255 su
+255 — quindi il riempimento e' esatto, non una tinta indovinata.
+
+Il carosello ne porta **dieci**: le sei taglie in ordine, dalla 270 alla 800,
+poi le quattro macchine affiancate, il coperchio aperto col cesto in vista, il
+cesto da solo e il quadro di comando. Gli ultimi due sono gli unici scatti senza
+il bianco — fondo grigio da studio l'uno, reparto l'altro — quindi si ritagliano
+al centro e portano la loro versione intera per la lente. La copertina e' il
+quadrato preso dentro il mod. 660.
+
+**Ogni riga della tabella ha ora la sua fotografia** (`data-foto`), che prima
+mancava: le due taglie vecchie non si sapeva a quale scatto legarle, queste sei
+hanno ognuna il suo, pubblicato da LM sotto il proprio modello.
+
+**Un punto aperto.** Le taglie 550, 660 e 800 stanno su questa scheda e anche su
+quella della serie LM AG: LM le pubblica sotto tutte e due le categorie e la
+scheda tecnica e' lo stesso PDF. Non e' un errore di trascrizione, e' come sta
+sul sito del gruppo — ma sul sito Fase le stesse tre macchine compaiono due
+volte. Se vanno tenute solo di qua o solo di la', si toglie la meta' che avanza.
+Resta aperto anche il nome: la scheda si chiama «serie FCV», che e' una sigla
+Fase, mentre le macchine e i dati ora sono quelli di LM, numerati «mod.».
+
+## La scheda tecnica in fondo alla riga
+
+Le tabelle delle taglie e delle configurazioni portano una colonna in piu',
+l'ultima: la scheda tecnica della macchina di quella riga, in PDF.
+
+**Solo dove il PDF esiste davvero.** Tre tabelle su sei ce l'hanno:
+
+| tabella | scheda |
+|---|---|
+| FCV, mod. 270/360/480 | `assets/doc/lm-centrifughe-270-360-480.pdf` |
+| FCV, mod. 550/660/800 | `assets/doc/lm-centrifughe-550-660-800-950.pdf` |
+| LM AG, tutte e quattro | `assets/doc/lm-centrifughe-550-660-800-950.pdf` |
+| KOMBI, tutte e quattro | `assets/doc/kombi.pdf` |
+
+Le altre tre — FD, TR1, TR-Dual — **non hanno la colonna**, perche' non hanno il
+PDF: `fasemec.com` pubblica quattro soli documenti, tre informative privacy e il
+certificato del brevetto, e non esiste una scheda tecnica per nessuna di quelle
+macchine. Una colonna con tutte le caselle vuote non e' un dato mancante, e'
+rumore: si aggiunge il giorno che i PDF arrivano. Per le Centrifor una scheda
+esiste (`Centrifor.pdf`), ma quelle pagine non hanno tabelle e il depliant non
+porta numeri.
+
+**I PDF stanno nel repo, non in collegamento diretto a LM.** Come gia' il
+depliant KOMBI: un indirizzo altrui cambia senza avvisare, e il collegamento
+morirebbe in silenzio.
+
+**Come si vede che porta fuori.** E' l'unica cosa cliccabile dentro una tabella
+del sito, e apre un PDF in una scheda nuova: il colore del testo non basta.
+E' una pastiglia col bordo, la freccia che esce dal riquadro — il segno dei
+collegamenti esterni — e la scritta «Scheda PDF» nel carattere monospaziato
+delle intestazioni. Sopra, si riempie del rosso del marchio. La colonna e'
+centrata nella sua cella: non e' un dato che si legge in colonna con gli altri.
+
+## Elevatore ribaltatore per cassoni
+
+Si chiamava «Ribalta cassoni». Il committente ha chiesto il nome per esteso —
+**«Elevatore ribaltatore per cassoni»** — e una descrizione nuova, scritta sul
+prodotto equivalente di FAMA (`famaproject.com`, *trucioli metallici >
+elevatori ribaltatori > ER*) ma con parole diverse.
+
+Quello che la descrizione ha preso di la': solleva e rovescia fusti, carrelli e
+cassoni di forme e portate diverse; l'aggancio si costruisce sul contenitore;
+l'altezza di scarico si fissa sull'applicazione; il microinterruttore sulla
+porta di carico; la cabina in lamiera o in rete attorno alle parti in
+movimento; le varianti di corsa, potenza, carter, porta e colore RAL; la
+telecamera a richiesta sul livello della tramoggia. Quello che era gia' di Fase
+e resta: il passaggio dai cassoni al rotobarile sulle linee di asciugatura in
+ambiente galvanico.
+
+Il nome cambia in tutti i punti in cui era un nome — titolo, etichetta sopra il
+titolo, descrizione della pagina, le sette alternative delle fotografie, e la
+menzione nella scheda a paniere estraibile — e nel dizionario inglese, dove
+*bin tipper* diventa *bin lifter-tipper*.
 
 
 ## Tipografia
