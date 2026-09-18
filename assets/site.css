@@ -816,7 +816,13 @@ main{position:relative}
    dal riquadro, lo stesso segno che si usa per i collegamenti esterni. Sopra,
    si accende del rosso del marchio. La colonna e' l'ultima e sta in mezzo alla
    sua cella, perche' non e' un dato che si legge in colonna con gli altri. */
-.spec-table th:last-child,.spec-table td.scheda{text-align:center}
+/* Solo la colonna della scheda tecnica va in mezzo alla cella. Il selettore
+   prima diceva `th:last-child`, e cosi' centrava l'ultima intestazione di
+   ogni tabella: dove la colonna non c'e' — FD, TR1, TR-Dual — finiva
+   centrato "Giri/min" sopra cifre allineate a sinistra, e il titolo non
+   stava piu' sopra il suo dato. Adesso la classe sta su tutte e due le
+   celle, intestazione e riga, e nessun'altra colonna si sposta. */
+.spec-table th.scheda,.spec-table td.scheda{text-align:center}
 .spec-table td.scheda{padding-right:0}
 .scheda-doc{align-items:center;border:1px solid var(--color-arsenic);border-radius:10rem;color:var(--color-silver);column-gap:.5em;display:inline-flex;font-family:var(--font-accent),monospace;font-size:1.2rem;letter-spacing:-.02em;line-height:1;padding:.7em 1.1em;text-transform:uppercase;transition:background-color .2s,border-color .2s,color .2s}
 .scheda-doc svg{flex-shrink:0;height:1em;width:1em}

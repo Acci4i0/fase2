@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260918b`. Senza, chi ha già
+`?v=20260918c`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1456,6 +1456,15 @@ macchine. Una colonna con tutte le caselle vuote non e' un dato mancante, e'
 rumore: si aggiunge il giorno che i PDF arrivano. Per le Centrifor una scheda
 esiste (`Centrifor.pdf`), ma quelle pagine non hanno tabelle e il depliant non
 porta numeri.
+
+**Il titolo sopra il suo dato.** La regola che centra la colonna della scheda
+tecnica diceva `th:last-child`, e cosi' centrava l'**ultima intestazione di ogni
+tabella**, comprese quelle che la colonna non ce l'hanno: sulla FD finiva
+centrato «Giri/min» sopra cifre allineate a sinistra, e il titolo non stava piu'
+sopra il suo dato. Ora la classe `scheda` sta su tutte e due le celle,
+intestazione e riga, e il selettore guarda quella. Misurato su tutte e sette le
+tabelle del sito, a 900, 1024, 1194, 1440, 1600 e 1920 px: **scarto zero** fra il
+bordo del titolo e il bordo del dato, su ogni colonna.
 
 **La fotografia della taglia si toglie di mezzo.** Il riquadro che compare al
 passaggio del cursore e' appoggiato a destra e passa **sopra** la tabella: e'
