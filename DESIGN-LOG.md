@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260918c`. Senza, chi ha già
+`?v=20260918d`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1450,12 +1450,26 @@ l'ultima: la scheda tecnica della macchina di quella riga, in PDF.
 | KOMBI, tutte e quattro | `assets/doc/kombi.pdf` |
 
 Le altre tre — FD, TR1, TR-Dual — **non hanno la colonna**, perche' non hanno il
-PDF: `fasemec.com` pubblica quattro soli documenti, tre informative privacy e il
-certificato del brevetto, e non esiste una scheda tecnica per nessuna di quelle
-macchine. Una colonna con tutte le caselle vuote non e' un dato mancante, e'
-rumore: si aggiunge il giorno che i PDF arrivano. Per le Centrifor una scheda
-esiste (`Centrifor.pdf`), ma quelle pagine non hanno tabelle e il depliant non
-porta numeri.
+PDF. Cercato a fondo, non a naso: l'API dei media di `fasemec.com` da' quattro
+documenti in tutto (tre informative privacy e il certificato del brevetto); le
+venticinque pagine e i ventitre' articoli italiani, scaricati uno per uno,
+portano solo `brevetto.pdf`, che sta nel pie' di pagina; e le **nove schede
+prodotto** — che vivono in un tipo di contenuto `stm_products` non esposto alle
+API, e si trovano solo dal `stm_products-sitemap.xml` — non ne portano altri.
+Una colonna con tutte le caselle vuote non e' un dato mancante, e' rumore: si
+aggiunge il giorno che i PDF arrivano.
+
+**Le Centrifor la scheda ce l'hanno**, ma le loro pagine non hanno tabelle:
+il depliant sta fra i dati in evidenza, come gia' faceva la KOMBI. E' lo stesso
+`Centrifor.pdf` per tutti e tre i modelli — verificato scaricando le tre pagine
+di LM, che offrono quel file e nessun altro — una facciata in tre lingue, con le
+fotografie del 270 e del 480 e nessun numero: per questo resta un depliant fra i
+dati e non diventa una tabella.
+
+**La KOMBI ha preso la stessa pastiglia.** Il suo depliant era un collegamento di
+testo sottolineato, scritto prima che la pastiglia esistesse: ora e' uguale a
+tutti gli altri, cosi' il segno «questo apre un PDF» e' uno solo su tutto il
+sito.
 
 **Il titolo sopra il suo dato.** La regola che centra la colonna della scheda
 tecnica diceva `th:last-child`, e cosi' centrava l'**ultima intestazione di ogni
