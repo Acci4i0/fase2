@@ -507,7 +507,12 @@ window.addEventListener('load',function(){
     im.setAttribute('alt',''); im.setAttribute('loading','lazy');
     riquadro.appendChild(im); blocco.appendChild(riquadro);
     righe.forEach(function(r){
-      r.addEventListener('mouseenter',function(){
+      /* `mouseover` e non `mouseenter`: quello bolla dalle celle alla riga,
+         quindi scatta anche quando il cursore passa da una cella all'altra
+         restando dentro la stessa riga. Serve per l'ultima colonna, dove la
+         fotografia si toglie di mezzo e torna appena si esce. */
+      r.addEventListener('mouseover',function(e){
+        if(e.target.closest('.scheda')){blocco.classList.remove('mostra');return;}
         var u=r.getAttribute('data-foto');
         if(im.getAttribute('src')!==u)im.setAttribute('src',u);
         /* il riquadro si mette all'altezza della riga guardata, come nelle

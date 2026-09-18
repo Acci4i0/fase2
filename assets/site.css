@@ -832,7 +832,10 @@ main{position:relative}
 .spec-foto{display:none}
 @media only screen and (min-width:834px){
   .spec-block{position:relative}
-  .spec-foto{background-color:var(--color-dark-grey);border-radius:1.1111111111vw;
+  /* Il riquadro passa sopra la tabella ed e' `aria-hidden`: e' decorazione,
+     e il cursore deve attraversarlo come se non ci fosse. Senza questa riga
+     si mangiava il clic sulla scheda tecnica, che gli sta proprio sotto. */
+  .spec-foto{pointer-events:none;background-color:var(--color-dark-grey);border-radius:1.1111111111vw;
     box-shadow:0 1.2vw 3vw rgba(0,0,0,.55);display:block;height:13.5vw;opacity:0;
     overflow:hidden;pointer-events:none;position:absolute;right:0;top:0;
     visibility:hidden;width:24vw;z-index:2;

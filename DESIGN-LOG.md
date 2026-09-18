@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260918a`. Senza, chi ha già
+`?v=20260918b`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1456,6 +1456,16 @@ macchine. Una colonna con tutte le caselle vuote non e' un dato mancante, e'
 rumore: si aggiunge il giorno che i PDF arrivano. Per le Centrifor una scheda
 esiste (`Centrifor.pdf`), ma quelle pagine non hanno tabelle e il depliant non
 porta numeri.
+
+**La fotografia della taglia si toglie di mezzo.** Il riquadro che compare al
+passaggio del cursore e' appoggiato a destra e passa **sopra** la tabella: e'
+esattamente dove sta la colonna nuova, e si mangiava il clic. Due correzioni,
+tutte e due piccole. Il riquadro e' `aria-hidden`, cioe' decorazione, e adesso
+porta `pointer-events:none`: il cursore lo attraversa come se non ci fosse — era
+quello a bloccare il clic, e valeva la pena sistemarlo comunque. E il gancio
+sulla riga passa da `mouseenter` a `mouseover`, che bolla dalle celle: cosi'
+scatta anche quando il cursore si sposta da una cella all'altra dentro la stessa
+riga, e sopra l'ultima colonna la fotografia sparisce e torna appena si esce.
 
 **I PDF stanno nel repo, non in collegamento diretto a LM.** Come gia' il
 depliant KOMBI: un indirizzo altrui cambia senza avvisare, e il collegamento
