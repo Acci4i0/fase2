@@ -961,7 +961,7 @@ generate da questo stesso dizionario.
 ## Versione degli asset
 
 `site.css`, `site.js` e `i18n.js` sono richiamati con `?v=<data>`. Oggi vale
-`?v=20260918d`. Senza, chi ha già
+`?v=20260918e`. Senza, chi ha già
 visitato il sito continua a vedere il foglio di stile e lo script vecchi dopo
 una pubblicazione. **Va cambiato a ogni modifica di quei file.**
 
@@ -1466,10 +1466,12 @@ di LM, che offrono quel file e nessun altro — una facciata in tre lingue, con 
 fotografie del 270 e del 480 e nessun numero: per questo resta un depliant fra i
 dati e non diventa una tabella.
 
-**La KOMBI ha preso la stessa pastiglia.** Il suo depliant era un collegamento di
-testo sottolineato, scritto prima che la pastiglia esistesse: ora e' uguale a
-tutti gli altri, cosi' il segno «questo apre un PDF» e' uno solo su tutto il
-sito.
+**La KOMBI ce l'ha solo in tabella.** Il suo depliant era un collegamento di testo
+sottolineato fra i dati in evidenza, scritto prima che la colonna esistesse: ora
+che le quattro configurazioni lo portano ognuna sulla propria riga, la voce fra i
+dati diceva la stessa cosa una seconda volta ed e' uscita. Il segno «questo apre
+un PDF» resta uno solo su tutto il sito, e su ogni scheda sta in un posto solo:
+in tabella dove la tabella c'e', fra i dati dove non c'e' — le tre Centrifor.
 
 **Il titolo sopra il suo dato.** La regola che centra la colonna della scheda
 tecnica diceva `th:last-child`, e cosi' centrava l'**ultima intestazione di ogni

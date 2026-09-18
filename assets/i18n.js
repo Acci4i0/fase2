@@ -141,7 +141,6 @@ var EN = {
 "Peso":"Weight",
 "Alimentazione":"Power supply",
 "Scheda tecnica":"Data sheet",
-"Depliant KOMBI":"KOMBI leaflet",
 "Depliant Centrifor":"Centrifor leaflet",
 "In dotazione":"Supplied as standard",
 "Base pallettizzata: l\u2019impianto arriva assemblato":"Palletised base: the system arrives assembled",
