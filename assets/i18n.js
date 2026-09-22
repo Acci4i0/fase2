@@ -629,7 +629,7 @@ var EN = {
 "trituratore Fase TR-Dual che scarica il truciolo frantumato in due cassette di raccolta":"Fase TR-Dual shredder discharging shredded chips into two collection trays",
 "centralina idraulica e quadro di comando di un trituratore Fase TR-Dual":"hydraulic power pack and control panel of a Fase TR-Dual shredder",
 "cumulo di truciolo metallico lucido con la targa Fase appoggiata davanti":"pile of bright metal chips with the Fase nameplate propped in front",
-"La sede Fase a Tezze sul Brenta":"The Fase headquarters in Tezze sul Brenta",
+"Una mano stringe una manciata di truciolo e il lubrorefrigerante cola sul cumulo":"a hand squeezing a fistful of swarf, with the cutting fluid running out onto the heap below",
 "centrifuga Fase serie FC, fusto inox su basamento verde acqua, cilindro di apertura del coperchio e motore esterno":"Fase FC series centrifuge, stainless drum on a sea-green base, lid opening cylinder and external motor",
 "disoleatrice Fase serie FD a ciclo continuo, imbuto di carico in sommità e portello di ispezione removibile":"Fase FD series continuous-cycle oil-removal centrifuge, loading funnel on top and removable inspection hatch",
 /* le venti taglie del carosello FD, dalla 250 alla 1000 */

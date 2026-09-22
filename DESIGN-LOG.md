@@ -1044,6 +1044,7 @@ resta un nero piatto. Una velatura di rumore rompe i gradini del gradiente. Con
 | Pexels 36438809, "Industrial lathe machine in action" | testata, 2ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | Pexels 31802320, "Mesmerizing close-up of industrial gears in motion" | testata, 3ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | `img/immagini/C5D694D8…` — macro della trasmissione | sezione "Sistemi" | materiale del committente |
+| `spremitura2.jpg` da `fasemec.com` — la mano che strizza il truciolo | fascia di `azienda` | materiale del committente |
 | [Pexels 17887900](https://www.pexels.com/photo/heap-of-screws-17887900/) — cumulo di truciolo | fascia di `settori` | [Pexels License](https://www.pexels.com/license/) |
 | [Pexels 8865187](https://www.pexels.com/photo/close-up-shot-of-a-cnc-machine-8865187/) — mandrino al lavoro | scheda "Tornerie automatiche" | [Pexels License](https://www.pexels.com/license/) |
 | [Pexels 10406128](https://www.pexels.com/photo/close-up-photo-of-metal-tool-10406128/) — fresatura | scheda "Officine meccaniche" | [Pexels License](https://www.pexels.com/license/) |
@@ -1523,6 +1524,61 @@ Il nome cambia in tutti i punti in cui era un nome — titolo, etichetta sopra i
 titolo, descrizione della pagina, le sette alternative delle fotografie, e la
 menzione nella scheda a paniere estraibile — e nel dizionario inglese, dove
 *bin tipper* diventa *bin lifter-tipper*.
+
+
+## La fascia di Azienda: la mano che strizza il truciolo
+
+Al posto della sede. Lo scontorno dell'edificio correva da un bordo all'altro
+dello schermo, ma raccontava un capannone: la pagina sopra parla di truciolo che
+esce dalla macchina carico di lubrorefrigerante, e sotto si vedeva una facciata.
+Il committente l'ha detto in due parole.
+
+**Da dove viene la fotografia.** Dal sito vecchio, `fasemec.com`
+(`wp-content/uploads/2021/07/spremitura2.jpg`, 2200x1450): una mano stringe una
+manciata di truciolo, il fluido cola e schizza sul cumulo sotto. E' l'immagine
+che il testo della pagina descrive, ed e' materiale del committente — nessuna
+licenza di terzi da chiedere.
+
+**Lo scontorno.** Il fondo dello scatto e' un grigio da studio, neutro e liscio
+(221-245, R=G=B), quindi la maschera non viene dal rilevamento del soggetto ma
+dal fondo stesso: una superficie polinomiale di quarto grado adattata ai soli
+pixel grigi, poi l'alfa presa dallo scarto — quanto il pixel si stacca dal
+grigio per buio **o per colore**. Serve il secondo termine: le gocce d'olio sono
+piu' chiare del fondo, e con la sola luminanza sparivano.
+
+Tre passaggi dopo, che sono quelli che di solito si sbagliano:
+- **i buchi si chiudono solo se piccoli.** Chiuderli tutti riempiva di bianco i
+  vuoti veri fra i trucioli; ora sotto i 900 px si chiudono (sono riflessi
+  speculari), sopra restano trasparenti e lasciano vedere il nero della pagina;
+- **le ombre morbide sul fondo se ne vanno, gli schizzi restano.** Ogni macchia
+  viene tenuta solo se ha colore (croma oltre 30) o e' davvero scura (60 livelli
+  sotto il fondo): l'ombra portata della mano non passa, la goccia si';
+- **il bordo viene scontaminato.** Sui pixel semitrasparenti il colore viene
+  ricalcolato togliendo la parte di grigio che ci era mescolata. Senza, sul nero
+  resta l'alone chiaro del vecchio fondo.
+
+Tolti anche gli ultimi 20 px in basso, dove si vedeva il ripiano di legno.
+
+**L'inquadratura.** 16:9 preso dal basso — `(0, 192)` per 2200x1238 — cosi' il
+cumulo e' intero e appoggia sul bordo inferiore, e la mano entra dall'angolo in
+alto a sinistra tagliata di poco. Provata anche l'inquadratura alta, con la mano
+intera e il cumulo tagliato sotto: il peso finiva in alto e sotto restava un
+vuoto. Il vuoto a destra e' quello dello scatto, che era composto per ospitare
+del testo; qui resta nero di pagina e si legge come respiro.
+
+**Perche' resta `media-sagoma` e non diventa `media-band`.** Provate tutte e
+due. Nel riquadro 16:9, col fondo `--color-dark-grey`, il vuoto a destra diventa
+un campo grigio chiuso dentro una cornice e si legge come fotografia mancata; a
+tutta larghezza, senza cornice, lo stesso vuoto e' la pagina. In piu' la sezione
+non cambia struttura: si sostituisce il `src` e le due misure.
+
+Provate anche le fasce larghe — 2:1, 2,40:1, 2,84:1 come la sede — con il
+soggetto a filo del bordo sinistro: la mano diventava un oggetto piccolo in un
+campo nero, e il 16:9 e' il rapporto piu' stretto che il soggetto regge.
+
+Il file e' `assets/img/mano-truciolo.webp`, 2200x1238 con canale alfa, 197 KB —
+la sede ne pesava 219. `sede-fase.webp` resta nel repo: se si vuole indietro,
+e' una riga.
 
 
 ## Tipografia
