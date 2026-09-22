@@ -1044,7 +1044,7 @@ resta un nero piatto. Una velatura di rumore rompe i gradini del gradiente. Con
 | Pexels 36438809, "Industrial lathe machine in action" | testata, 2ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | Pexels 31802320, "Mesmerizing close-up of industrial gears in motion" | testata, 3ª inquadratura | [Pexels License](https://www.pexels.com/license/) |
 | `img/immagini/C5D694D8…` — macro della trasmissione | sezione "Sistemi" | materiale del committente |
-| `spremitura2.jpg` da `fasemec.com` — la mano che strizza il truciolo | fascia di `azienda` | materiale del committente |
+| [Pexels 36101857](https://www.pexels.com/photo/36101857/), di Tomas Asurmendi — truciolo a spirale | fascia di `azienda` | [Pexels License](https://www.pexels.com/license/) |
 | [Pexels 17887900](https://www.pexels.com/photo/heap-of-screws-17887900/) — cumulo di truciolo | fascia di `settori` | [Pexels License](https://www.pexels.com/license/) |
 | [Pexels 8865187](https://www.pexels.com/photo/close-up-shot-of-a-cnc-machine-8865187/) — mandrino al lavoro | scheda "Tornerie automatiche" | [Pexels License](https://www.pexels.com/license/) |
 | [Pexels 10406128](https://www.pexels.com/photo/close-up-photo-of-metal-tool-10406128/) — fresatura | scheda "Officine meccaniche" | [Pexels License](https://www.pexels.com/license/) |
@@ -1526,60 +1526,63 @@ menzione nella scheda a paniere estraibile — e nel dizionario inglese, dove
 *bin tipper* diventa *bin lifter-tipper*.
 
 
-## La fascia di Azienda: la mano che strizza il truciolo
+## La fascia di Azienda
 
-Al posto della sede. Lo scontorno dell'edificio correva da un bordo all'altro
-dello schermo, ma raccontava un capannone: la pagina sopra parla di truciolo che
-esce dalla macchina carico di lubrorefrigerante, e sotto si vedeva una facciata.
-Il committente l'ha detto in due parole.
+**Due tentativi prima di questo.** Al posto della sede — uno scontorno
+dell'edificio che correva da un bordo all'altro — era finita la fotografia del
+sito vecchio, `fasemec.com/wp-content/uploads/2021/07/spremitura2.jpg`: una mano
+che strizza una manciata di truciolo, il fluido che cola. Il committente l'ha
+rifiutata in tre parole: *brutta, brutta, brutta*. Ha ragione, e vale scriverlo
+perche' non ci si torni: e' un fotomontaggio pubblicitario di quindici anni fa —
+schizzo d'olio color miele che nessun lubrorefrigerante ha mai avuto, mano rosa
+su fondo bianco da studio, meta' fotogramma vuoto perche' li' ci andava il
+testo. Nessuna gradazione la salva: il difetto non e' il colore, e' la
+costruzione.
 
-**Da dove viene la fotografia.** Dal sito vecchio, `fasemec.com`
-(`wp-content/uploads/2021/07/spremitura2.jpg`, 2200x1450): una mano stringe una
-manciata di truciolo, il fluido cola e schizza sul cumulo sotto. E' l'immagine
-che il testo della pagina descrive, ed e' materiale del committente — nessuna
-licenza di terzi da chiedere.
+**Perche' la mano non e' stata rifatta.** L'idea del committente resta giusta —
+la mano che disolia il truciolo *e'* quello che fa Fase. Ma quella fotografia
+non esiste e non si e' potuta produrre:
 
-**Lo scontorno.** Il fondo dello scatto e' un grigio da studio, neutro e liscio
-(221-245, R=G=B), quindi la maschera non viene dal rilevamento del soggetto ma
-dal fondo stesso: una superficie polinomiale di quarto grado adattata ai soli
-pixel grigi, poi l'alfa presa dallo scarto — quanto il pixel si stacca dal
-grigio per buio **o per colore**. Serve il secondo termine: le gocce d'olio sono
-piu' chiare del fondo, e con la sola luminanza sparivano.
+- **generata** — il modello di generazione immagini collegato risponde
+  `Requires basic plan or higher`. Senza abbonamento non parte;
+- **di repertorio** — cercata su Pexels (sei chiavi diverse, foto e video) e su
+  Adobe Stock: non c'e'. Ci sono torni, trapani, mani sporche di grasso, mani su
+  piallette. Una mano che stringe truciolo bagnato, no;
+- **ricomposta** — provata tre volte, montando il pugno scontornato su un letto
+  di truciolo. Non regge, e il motivo e' misurabile: il pugno nello scatto
+  originale e' 540x555 px, quindi in una fascia da 1920 sta al massimo a un
+  terzo di larghezza, e i trucioli che tiene in mano risultano cinque volte piu'
+  piccoli di quelli del letto sotto. La scala mente e l'occhio lo vede subito,
+  qualunque sia la gradazione.
 
-Tre passaggi dopo, che sono quelli che di solito si sbagliano:
-- **i buchi si chiudono solo se piccoli.** Chiuderli tutti riempiva di bianco i
-  vuoti veri fra i trucioli; ora sotto i 900 px si chiudono (sono riflessi
-  speculari), sopra restano trasparenti e lasciano vedere il nero della pagina;
-- **le ombre morbide sul fondo se ne vanno, gli schizzi restano.** Ogni macchia
-  viene tenuta solo se ha colore (croma oltre 30) o e' davvero scura (60 livelli
-  sotto il fondo): l'ombra portata della mano non passa, la goccia si';
-- **il bordo viene scontaminato.** Sui pixel semitrasparenti il colore viene
-  ricalcolato togliendo la parte di grigio che ci era mescolata. Senza, sul nero
-  resta l'alone chiaro del vecchio fondo.
+**Una trappola, segnata qui.** `foto_fase/settori/settori.jpg` (5184x3145) sembra
+il nastro d'acciaio perfetto ed e' stato a un passo dall'andare in pagina. E'
+Pexels 4049345, e il titolo dell'autore dice *magnetic tape ribbons*. Al 100% si
+vede: larghezza costante, nessuna bava di taglio, dorso opaco, pieghe morbide.
+Non e' truciolo. Non va usato dove si parla di truciolo.
 
-Tolti anche gli ultimi 20 px in basso, dove si vedeva il ripiano di legno.
+**Quello che c'e' adesso.** Pexels 36101857 di Tomas Asurmendi, 2600x1733:
+truciolo d'acciaio a spirale vero, fitto, opaco, ripreso da vicino. Ritaglio
+2,35:1, poi la gradazione di casa — desaturazione a 0,58, esposizione alzata,
+nero portato a 0,255, virata fredda, grana fine. Nessuna cornice e nessun
+raggio: la sezione resta `media-sagoma` e la regola e' quella della sede, la
+fotografia detta l'altezza.
 
-**L'inquadratura.** 16:9 preso dal basso — `(0, 192)` per 2200x1238 — cosi' il
-cumulo e' intero e appoggia sul bordo inferiore, e la mano entra dall'angolo in
-alto a sinistra tagliata di poco. Provata anche l'inquadratura alta, con la mano
-intera e il cumulo tagliato sotto: il peso finiva in alto e sotto restava un
-vuoto. Il vuoto a destra e' quello dello scatto, che era composto per ospitare
-del testo; qui resta nero di pagina e si legge come respiro.
+**La dissolvenza.** La novita' rispetto alla sede: il canale alfa non serve a
+scontornare un soggetto ma a **far nascere la fotografia dal nero della pagina**
+— forte in alto (0,25 dell'altezza), appena accennata ai lati (0,075) e in
+fondo (0,065). Niente bordo, niente rettangolo: il truciolo affiora e si spegne.
+Su fondo `#000` e' l'unica cosa che distingue una fascia da un riquadro.
 
-**Perche' resta `media-sagoma` e non diventa `media-band`.** Provate tutte e
-due. Nel riquadro 16:9, col fondo `--color-dark-grey`, il vuoto a destra diventa
-un campo grigio chiuso dentro una cornice e si legge come fotografia mancata; a
-tutta larghezza, senza cornice, lo stesso vuoto e' la pagina. In piu' la sezione
-non cambia struttura: si sostituisce il `src` e le due misure.
+**Peso.** 1920x817 webp con alfa, 354 KB. La texture e' ad alta entropia e non
+si comprime: a 2560 px lo stesso file pesava 686 KB. `settori-fascia.jpg`,
+l'altra fascia di truciolo del sito, ne pesa 380.
 
-Provate anche le fasce larghe — 2:1, 2,40:1, 2,84:1 come la sede — con il
-soggetto a filo del bordo sinistro: la mano diventava un oggetto piccolo in un
-campo nero, e il 16:9 e' il rapporto piu' stretto che il soggetto regge.
-
-Il file e' `assets/img/mano-truciolo.webp`, 2200x1238 con canale alfa, 197 KB —
-la sede ne pesava 219. `sede-fase.webp` resta nel repo: se si vuole indietro,
-e' una riga.
-
+**Se la mano la si vuole davvero.** Serve scattarla: una mano che strizza
+truciolo bagnato sopra un cassone, una finestra di lato come luce sola, un telo
+scuro dietro. Dieci minuti in officina con un telefono, e viene gradata in
+questa stessa lingua. E' l'unica strada che da' l'immagine giusta invece di una
+che le somiglia.
 
 ## Tipografia
 
