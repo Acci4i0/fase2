@@ -1584,6 +1584,120 @@ scuro dietro. Dieci minuti in officina con un telefono, e viene gradata in
 questa stessa lingua. E' l'unica strada che da' l'immagine giusta invece di una
 che le somiglia.
 
+## Azienda sul passo di ON
+
+Il committente ha bocciato anche la seconda versione: corretta, ma ferma.
+Il riferimento dichiarato e' on.energy, «dieci su dieci per design e
+fotografia». Studiata la loro home e la pagina Team, quello che fa la
+differenza non e' un ornamento: sono **immagini vere del loro prodotto, in
+movimento, a tutto schermo**, e una sequenza agganciata allo scorrimento in
+cui il palco resta fermo e cambia quello che c'e' sopra. La pagina e' stata
+rifatta su quei due principi.
+
+### I filmati
+
+**La testata** e' l'unico materiale non di Fase: Pexels 19791092, *turning
+steel on a CNC machine*, di Daniel Smyth, licenza Pexels (uso libero, anche
+commerciale, senza obbligo di citazione). 2560x1440 a 60 fps, otto secondi.
+E' l'istante in cui l'utensile stacca il truciolo da un albero d'acciaio —
+cioe' il punto esatto da cui la frase del titolo dice che Fase comincia.
+Rallentato a 0,6x (i 60 fps lo reggono senza scatti), gradazione di casa
+(saturazione 0,62, contrasto 1,07, virata fredda), e chiuso ad anello: gli
+ultimi 1,5 secondi sfumano nei primi, cosi' il giro non si vede. Due tagli
+come sulla home: 1920x1080 per lo schermo largo (1,4 MB) e 720x1280 dal
+centro dell'utensile per il telefono (660 KB). L'originale sta in
+`foto_fase/stock/`, fuori dal sito.
+
+**Il metodo** e' tutto girato da Fase, dalla cartella
+`foto_fase/foto:video_tutto`:
+
+- 01 *Dal truciolo al valore* — `KOMBI-40T/VID_KOMBI-40T_6`, da 4,7 a 9,8 s:
+  truciolo d'ottone che piove nella tramoggia come scie di luce;
+- 02 *Ogni impianto nasce da un reparto preciso* — `Trituratori_TR4-6-7/VID-TR_2`,
+  da 15,8 a 23,2 s: il trituratore che scarica nel cassone, l'unico tratto
+  del filmato in cui il telefono sta fermo;
+- 03 *Il rapporto non finisce alla consegna* — `KOMBI-40T/VID_KOMBI-40T_7`,
+  da 1 a 12 s: il rotore che gira.
+
+Sono tutti verticali, girati col telefono. Stirati a 16:9 avrebbero perso
+meta' dell'altezza e la definizione: restano verticali, tagliati a 3:4
+(720x960) e messi in un riquadro. Stabilizzati, ripuliti del rumore,
+gradati come la testata, chiusi ad anello. Il primo taglio della 02 era il
+cumulo d'alluminio di `VID_TR_ALLUMINIO`: bellissimo e incomprimibile —
+10 MB per otto secondi, 4,6 anche a qualita' ridotta. Scartato per la
+macchina, che pesa 840 KB. Totale dei tre: 3,2 MB, caricati solo quando il
+loro capitolo e' vicino.
+
+### La pagina, dall'alto
+
+1. **Testata a tutto schermo** — la stessa della home, con i suoi
+   identificativi: lo script sceglie il video per forma di schermo, lo fa
+   partire, scurisce la testata in uscita e fa entrare titolo, riga in basso
+   e scheda. Il titolo e' la frase che prima stava in testa alla
+   dichiarazione: «Il nostro lavoro comincia dove finisce la lavorazione
+   meccanica». La scheda in basso a destra porta alla sede, con lo scontorno
+   del capannone su grigio chiaro come il prodotto nella scheda di ON.
+2. **La fascia rossa** — la dichiarazione, ora corta come quella della home, si
+   accende parola dopo parola mentre attraversa la finestra.
+3. **Il metodo** — il palco agganciato: tre capitoli, tre filmati.
+4. **I numeri** — <2%, 7.000 kg/h, 20 anni, 8 serie. Contano da zero quando
+   entrano in vista.
+5. **La sede** — invariata: testo, mappa, capannone.
+
+La fascia di truciolo (`sfrido-asciutto.webp`), che per un giro era stata
+spostata fra il metodo e i numeri, e' stata tolta su richiesta del
+committente: dopo tre filmati in movimento una fotografia ferma rallentava
+invece di far respirare. Il file resta nel repository, senza pagina.
+
+### Tre meccanismi, annotati
+
+**Il testo che si accende.** Due sfondi sulla stessa campata in linea — sotto
+il bianco spento, sopra il bianco pieno largo `--riempi` — ritagliati sulle
+lettere con `background-clip:text`. Su un elemento in linea lo sfondo corre
+lungo le righe come se fossero una sola, quindi la percentuale avanza
+nell'ordine di lettura. Niente parole spezzate in cento `<span>`: il nodo di
+testo resta intero, e il dizionario inglese lo trova.
+
+Al committente e' piaciuto al punto da volerlo **su ogni scritta bianca su
+rosso del sito**: la fascia della home e la frase del pie' di pagina
+(«Trattiamo un campione del vostro sfrido prima dell'offerta»), su tutte e
+31 le pagine. E' diventato un modulo suo in `site.js`. Il pie' di pagina ha
+imposto una correzione al conto: sta in fondo, e su una pagina corta la
+scritta non arriva mai al 40% della finestra — sarebbe rimasta accesa a
+meta' per sempre. Adesso il conto si fa sullo scorrimento del documento, e
+se la pagina finisce prima del traguardo il traguardo si sposta al fondo:
+all'ultimo pixel ogni scritta e' accesa. Verificato sulla cookie policy,
+la pagina piu' corta: 0% a meta', 53% all'80% dello scorrimento, 100% al 95%.
+
+**Il palco.** Da 834 px in su la sezione e' alta 350vh e il palco e'
+`sticky`. I tre capitoli stanno nella stessa cella della griglia; ognuno e'
+a sua volta una griglia di 24 colonne larga quanto il contenitore, quindi le
+sue colonne coincidono con quelle fuori. Lo scorrimento decide il capitolo
+(un terzo ciascuno), riempie la barra rossa e fa suonare solo il filmato
+attivo — gli altri fermi, il successivo gia' in caricamento. Da telefono niente
+aggancio: i capitoli si impilano e ogni filmato parte quando e' in vista.
+
+**I numeri che contano.** Cifre a larghezza fissa perche' mentre salgono non
+ballino. Il separatore delle migliaia segue la lingua della pagina: se si
+passa all'inglese a conta finita, 7.000 diventa 7,000.
+
+Con meno animazioni richieste dal sistema: testo gia' acceso, capitoli senza
+dissolvenza, filmati fermi sul primo fotogramma, numeri gia' al valore.
+
+### Una cosa trovata per strada
+
+Il browser ferma da se' i video muti che escono di campo, ma non sempre li fa
+ripartire se a lanciarli e' stato uno script: tornando in cima il tornio era
+fermo a 3,3 secondi. Adesso e' lo scorrimento a fermarlo e a farlo ripartire.
+
+### Pulizia
+
+Via le regole delle versioni precedenti che la pagina non usa piu' — le voci
+senza carosello con la cifra grande, la fascia `key-grid` dei numeri, il
+margine della dichiarazione lunga — e le loro stringhe nel dizionario. Resta
+la correzione vera: in `.split-body` la discesa fino all'altezza della
+fotografia vale solo per `.split-block:has(.split-media)`.
+
 ## Tipografia
 
 Il foglio di stile chiama `Univers Next Pro` (pesi 250, 300, 400) e

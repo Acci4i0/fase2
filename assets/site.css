@@ -243,6 +243,18 @@ main{position:relative}
 @media only screen and (min-width:834px){.intro .copy{font-size:clamp(3.6rem,3.3333333333vw,3.3333333333vw);letter-spacing:-.04em;line-height:1.167}}
 .intro .bg{background-color:var(--color-yellow);height:100%;left:0;position:absolute;top:0;width:100%;will-change:transform;z-index:-1}
 
+/* ======================= IL TESTO CHE SI ACCENDE ================ */
+/* Ogni scritta bianca su rosso — la fascia della home, quella di Azienda, la
+   frase del pie' di pagina — non compare tutta insieme: si accende parola
+   dopo parola mentre scorre nella finestra. Due sfondi sulla stessa campata:
+   sotto il bianco spento, sopra il bianco pieno largo quanto dice --riempi;
+   tutti e due ritagliati sulle lettere. Su un elemento in linea lo sfondo
+   corre lungo le righe come se fossero una sola, quindi la percentuale
+   avanza nell'ordine di lettura, riga dopo riga. Il nodo di testo resta
+   intero: il dizionario inglese lo trova come prima. */
+.riempi{--riempi:0%;background-image:linear-gradient(var(--color-off-white),var(--color-off-white)),linear-gradient(rgba(238,238,238,.3),rgba(238,238,238,.3));background-repeat:no-repeat;background-size:var(--riempi) 100%,100% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){.riempi{background:none;color:inherit}}
+
 /* ====================== TECHNOLOGY SEQUENCE ==================== */
 .technology-sequence{position:relative;z-index:2}
 .scene-wrapper{height:800lvh;position:relative}
@@ -728,12 +740,17 @@ main{position:relative}
    sinistra sopra il titolo c'e' il numero: senza correzione il testo di destra
    attacca all'altezza del numero e non del titolo. Scende quindi dell'altezza
    del numero piu' il suo margine, cioe' esattamente di quello che il titolo ha
-   sopra di se'. Ai due termini si aggiungono l'altezza del titolo e il margine
-   del carosello: cosi' il testo non parte all'altezza del titolo ma all'altezza
-   del carosello, e le due colonne cominciano insieme. Il `max` ripete il `clamp`
+   sopra di se'. */
+@media only screen and (min-width:834px){.split-body{grid-column:13/-1;margin-top:calc(1.2rem*1.5 + 1.1111111111vw)}}
+/* Dove a sinistra sotto il titolo c'e' anche il carosello — le due schede degli
+   accessori — il testo scende ancora: dell'altezza del titolo piu' il margine
+   del carosello. Cosi' non parte all'altezza del titolo ma all'altezza della
+   fotografia, e le due colonne cominciano insieme. Il `max` ripete il `clamp`
    del corpo del titolo, altrimenti sotto i 1200 px il conto sbaglia di qualche
-   pixel. */
-@media only screen and (min-width:834px){.split-body{grid-column:13/-1;margin-top:calc(1.2rem*1.5 + 1.1111111111vw + max(3rem,2.5vw)*1.167 + 1.6666666667vw)}}
+   pixel. La discesa vale solo dove il carosello c'e': senza, sotto il titolo si
+   aprirebbe un vuoto alto quanto l'immagine che manca. */
+@media only screen and (min-width:834px){
+  .split-block:has(.split-media) .split-body{margin-top:calc(1.2rem*1.5 + 1.1111111111vw + max(3rem,2.5vw)*1.167 + 1.6666666667vw)}}
 .split-hook{font-size:clamp(1.6rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.04em;line-height:1.2;color:var(--color-off-white)}
 @media only screen and (min-width:834px){.split-hook{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167}}
 .split-prose{margin-top:4vw}
@@ -748,6 +765,7 @@ main{position:relative}
 .detail-prose a{color:var(--color-off-white);text-decoration:underline;text-underline-offset:.2em}
 .detail-prose .muted{color:var(--color-arsenic);margin-top:5vw}
 @media only screen and (min-width:834px){.detail-prose .muted{margin-top:2.7777777778vw}}
+
 
 .detail-prose{grid-column:1/-1}
 @media only screen and (min-width:834px){.detail-prose{grid-column:1/span 10}}
@@ -875,6 +893,127 @@ main{position:relative}
 .contact-panel a:hover{color:var(--color-yellow)}
 .map-link{display:inline-block;font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;color:var(--color-silver);margin-top:4.2666666667vw;text-decoration:underline;text-underline-offset:.2em}
 @media only screen and (min-width:834px){.map-link{font-size:clamp(1.4rem,1.1111111111vw,1.8rem);margin-top:1.1111111111vw}}
+
+/* ============================ AZIENDA ========================== */
+/* La pagina prende i due strumenti forti della home — la testata a tutto
+   schermo col video e la fascia rossa — e ne aggiunge due suoi: il metodo a
+   palco fermo e i numeri che contano. Tutto quello che si muove si ferma allo stato finale se il
+   sistema chiede meno animazioni. */
+
+/* La testata: sopra il titolo il percorso e l'etichetta, come nelle altre
+   pagine interne. Il titolo e' una frase e non un nome, quindi da telefono
+   scende di corpo: a 9,6vw «Il nostro lavoro comincia» andava a capo. */
+.azienda-hero .breadcrumb,.azienda-hero .scramble-label{margin-bottom:3.2vw}
+@media only screen and (min-width:834px){.azienda-hero .breadcrumb,.azienda-hero .scramble-label{margin-bottom:1.1111111111vw}}
+.azienda-hero .title{font-size:clamp(2.6rem,8.2666666667vw,8.2666666667vw)}
+@media only screen and (min-width:834px){.azienda-hero .title{font-size:clamp(5rem,4.4444444444vw,4.4444444444vw)}}
+:root:has(main.azienda){scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){:root:has(main.azienda){scroll-behavior:auto}}
+#sede{scroll-margin-top:6vw}
+
+/* Il metodo. Da telefono tre capitoli uno sotto l'altro, ognuno col suo
+   filmato sopra. */
+.metodo{padding:14vw 0 0;position:relative}
+.metodo-testa{align-items:center;display:flex;grid-column:1/-1;justify-content:space-between;margin-bottom:6.4vw}
+.metodo-avanzamento{display:none}
+.metodo-capitoli{display:flex;flex-direction:column;grid-column:1/-1;row-gap:16vw}
+.metodo-capitolo{display:flex;flex-direction:column;row-gap:6.4vw}
+.metodo-video{aspect-ratio:3/4;background:var(--color-dark-grey);border-radius:4.2666666667vw;margin:0;overflow:hidden;position:relative}
+.metodo-video video{height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}
+.metodo-numero{color:var(--color-yellow);font-size:16vw;font-weight:250;letter-spacing:-.06em;line-height:.9}
+.metodo-titolo{font-size:clamp(2rem,7.4666666667vw,7.4666666667vw);font-weight:300;letter-spacing:-.04em;line-height:1.05;margin-top:3.2vw}
+.metodo-gancio{color:var(--color-off-white);font-size:clamp(1.6rem,5.3333333333vw,5.3333333333vw);font-weight:300;letter-spacing:-.04em;line-height:1.2;margin-top:4.2666666667vw}
+.metodo-prosa{margin-top:4.2666666667vw}
+.metodo-prosa p{color:var(--color-silver);font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5}
+.metodo-prosa p+p{margin-top:4.2666666667vw}
+
+/* Da 834 px in su il palco si aggancia. La sezione e' alta tre schermate e
+   mezza: una per capitolo, piu' mezza perche' l'ultimo non scappi via appena
+   arrivato. I capitoli stanno tutti nella stessa cella della griglia, uno
+   sopra l'altro, e ognuno e' a sua volta una griglia di 24 colonne larga
+   quanto il contenitore: le colonne dentro coincidono con quelle fuori. */
+@media only screen and (min-width:834px){
+  .metodo{height:350vh;padding:0}
+  .metodo-palco{align-items:center;display:flex;height:100vh;height:100svh;overflow:hidden;position:sticky;top:0}
+  .metodo-palco>.grid-container{padding-top:2.5vw;width:100%}
+  .metodo-testa{margin-bottom:1.6666666667vw}
+  .metodo-avanzamento{align-items:center;column-gap:1.6666666667vw;display:flex}
+  .metodo-avanzamento ol{color:var(--color-arsenic);column-gap:1.1111111111vw;display:flex;font-family:var(--font-accent),monospace;font-size:1.2rem;letter-spacing:-.02em;line-height:1.5}
+  .metodo-avanzamento li{transition:color .4s}
+  .metodo-avanzamento li.fatto{color:var(--color-mid-grey)}
+  .metodo-avanzamento li.attivo{color:var(--color-off-white)}
+  .metodo-binario{background:var(--color-charcoal);height:1px;overflow:hidden;width:13vw}
+  .metodo-barra{background:var(--color-yellow);height:100%;transform:scaleX(0);transform-origin:0 50%;width:100%}
+  .metodo-capitoli{column-gap:var(--grid-gutter);display:grid;grid-template-columns:repeat(var(--grid-column-count),1fr)}
+  .metodo-capitolo{column-gap:var(--grid-gutter);display:grid;grid-area:1/1/2/-1;grid-template-columns:repeat(var(--grid-column-count),1fr);pointer-events:none}
+  .metodo-capitolo.attivo{pointer-events:auto;z-index:1}
+  .metodo-testo{align-self:center;grid-column:1/span 10;grid-row:1;opacity:0;transform:translate3d(0,2.4rem,0);transition:opacity .5s var(--ease-expo-out),transform .9s var(--ease-expo-out)}
+  .metodo-capitolo.attivo .metodo-testo{opacity:1;transform:none;transition-delay:.12s}
+  .metodo-video{border-radius:1.1111111111vw;grid-column:13/-1;grid-row:1;height:min(70svh,52vw);justify-self:end;opacity:0;transition:opacity .9s var(--ease-expo-out)}
+  .metodo-video video{transform:scale(1.07);transition:transform 1.6s var(--ease-expo-out)}
+  .metodo-capitolo.attivo .metodo-video{opacity:1}
+  .metodo-capitolo.attivo .metodo-video video{transform:none}
+  .metodo-numero{font-size:5.5vw}
+  .metodo-titolo{font-size:clamp(3.6rem,3.3333333333vw,3.3333333333vw);line-height:1.1;margin-top:1.1111111111vw}
+  .metodo-gancio{font-size:clamp(2rem,1.6666666667vw,1.6666666667vw);line-height:1.167;margin-top:1.6666666667vw}
+  .metodo-prosa{margin-top:1.6666666667vw}
+  .metodo-prosa p{font-size:clamp(1.5rem,1.1805555556vw,2rem)}
+  .metodo-prosa p+p{margin-top:1.1111111111vw}
+}
+@media (prefers-reduced-motion:reduce){
+  .metodo-testo,.metodo-video,.metodo-video video,.metodo-avanzamento li{transition-duration:.01ms!important;transition-delay:0s!important}
+}
+
+/* I numeri. Cifre nel peso 250 della home, a larghezza fissa perche' mentre
+   contano non ballino; l'unita' piccola, in alto, nel rosso del marchio. */
+.numeri-azienda{padding:16vw 0 0}
+@media only screen and (min-width:834px){.numeri-azienda{padding:5.5vw 0 0}}
+.numeri-testa{grid-column:1/-1}
+.numeri-titolo{font-size:clamp(2rem,7.4666666667vw,7.4666666667vw);font-weight:300;letter-spacing:-.04em;line-height:1.05;margin-top:3.2vw}
+@media only screen and (min-width:834px){.numeri-titolo{font-size:clamp(3.6rem,3.3333333333vw,3.3333333333vw);line-height:1.167;margin-top:1.1111111111vw}}
+.numeri-lista{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr 1fr;margin-top:9vw;row-gap:9vw}
+@media only screen and (min-width:834px){.numeri-lista{grid-template-columns:repeat(4,1fr);margin-top:3.3333333333vw;row-gap:0}}
+.numero-voce{border-top:1px solid var(--color-charcoal);padding-top:4.2666666667vw}
+@media only screen and (min-width:834px){.numero-voce{padding-top:1.6666666667vw}}
+.numero-cifra{align-items:flex-start;color:var(--color-off-white);display:flex;font-size:13vw;font-variant-numeric:tabular-nums;font-weight:250;letter-spacing:-.06em;line-height:.9;white-space:nowrap}
+@media only screen and (min-width:834px){.numero-cifra{font-size:5.8vw}}
+.numero-pre{color:var(--color-mid-grey);margin-right:.06em}
+.numero-unita{color:var(--color-yellow);font-size:.26em;font-weight:300;letter-spacing:-.02em;line-height:1;margin-left:.4em;margin-top:.2em}
+.numero-etichetta{color:var(--color-silver);font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.4;margin-top:3.2vw;max-width:22em}
+@media only screen and (min-width:834px){.numero-etichetta{font-size:clamp(1.4rem,1.1111111111vw,1.8rem);margin-top:1.1111111111vw}}
+
+/* ============================== LA SEDE ======================== */
+/* Chiude la pagina come la apre: una fotografia senza cornice che nasce dal
+   nero. A sinistra il testo e i recapiti, a destra la mappa — la stessa che
+   sulla home sta dentro una scheda, qui grande quanto mezza colonna perche'
+   e' lei a dare la notizia. Sotto, il capannone da un bordo all'altro. */
+.sede{padding:14vw 0 0}
+@media only screen and (min-width:834px){.sede{padding:5.5vw 0 0}}
+.sede>.grid-container{padding-top:6.4vw;position:relative}
+.sede>.grid-container:before{border-top:1px solid var(--color-charcoal);content:"";left:var(--grid-outer-gutter);position:absolute;right:var(--grid-outer-gutter);top:0}
+@media only screen and (min-width:834px){.sede>.grid-container{padding-top:1.6666666667vw}}
+.sede-testo{grid-column:1/-1}
+@media only screen and (min-width:834px){.sede-testo{grid-column:1/span 11}}
+.sede-testo .split-title{margin-top:4.2666666667vw}
+@media only screen and (min-width:834px){.sede-testo .split-title{margin-top:1.1111111111vw}}
+.sede-testo p{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;color:var(--color-silver);margin-top:4.2666666667vw}
+@media only screen and (min-width:834px){.sede-testo p{font-size:clamp(1.6rem,1.25vw,2.2rem);margin-top:1.6666666667vw}}
+/* I recapiti non sono prosa: vanno in colonna, nel monospaziato delle
+   etichette, cosi' si leggono come un indirizzo e non come una frase. */
+.sede-recapiti{color:var(--color-mid-grey);display:flex;flex-direction:column;font-family:var(--font-accent),monospace;font-size:1.2rem;font-style:normal;font-weight:400;letter-spacing:-.02em;line-height:1.9;margin-top:6.4vw;text-transform:uppercase}
+@media only screen and (min-width:834px){.sede-recapiti{margin-top:2.2222222222vw}}
+.sede-recapiti a{color:var(--color-silver);transition:color .2s}
+.sede-recapiti a:hover{color:var(--color-off-white)}
+.sede-mappa{grid-column:1/-1;margin-top:11vw}
+@media only screen and (min-width:834px){.sede-mappa{align-self:center;grid-column:15/-1;margin-top:0}}
+/* La penisola e' alta il doppio di quanto sia larga: lasciata a tutta
+   colonna diventerebbe piu' alta del testo che le sta a fianco. Si tiene a
+   misura e si appoggia al margine destro della pagina. */
+.mappa-italia{height:auto;margin:0 auto;max-width:52vw;width:100%}
+@media only screen and (min-width:834px){.mappa-italia{margin:0 0 0 auto;max-width:19vw}}
+.sede-foto{margin-top:12vw}
+@media only screen and (min-width:834px){.sede-foto{margin-top:4vw}}
+.sede-foto img{display:block;height:auto;width:100%}
 
 .cta-band{background-color:var(--color-yellow);color:var(--color-off-white);margin-top:14vw;padding:14vw 0}
 @media only screen and (min-width:834px){.cta-band{margin-top:7vw;padding:5.5vw 0}}

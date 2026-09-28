@@ -528,6 +528,146 @@ window.addEventListener('load',function(){
   });
 })();
 
+/* ----------------------- il testo che si accende ------------------ */
+/* Le scritte bianche su rosso si accendono parola dopo parola mentre
+   scorrono: la fascia della home, quella di Azienda, la frase del pie' di
+   pagina. Il conto si fa sullo scorrimento del documento e non sulla
+   finestra: la scritta comincia quando la sua prima riga tocca l'85% della
+   finestra e finisce quando l'ultima passa il 40% — ma se la pagina finisce
+   prima, e nel pie' di pagina succede, il traguardo si sposta al fondo
+   della pagina. Cosi' nessuna scritta resta a meta'. */
+(function(){
+  var scritte=[].slice.call(document.querySelectorAll('.riempi'));
+  if(!scritte.length)return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    scritte.forEach(function(el){el.style.setProperty('--riempi','100%');});
+    return;
+  }
+  function aggiorna(){
+    var vh=window.innerHeight, y=window.scrollY||window.pageYOffset;
+    var fondo=Math.max(0,document.documentElement.scrollHeight-vh);
+    scritte.forEach(function(el){
+      var r=el.getBoundingClientRect(), su=r.top+y, giu=r.bottom+y;
+      var inizio=su-vh*0.85, fine=Math.min(giu-vh*0.40,fondo);
+      var p=fine<=inizio?1:clamp((y-inizio)/(fine-inizio),0,1);
+      el.style.setProperty('--riempi',(p*100).toFixed(2)+'%');
+    });
+  }
+  var inCoda=false;
+  window.addEventListener('scroll',function(){ if(!inCoda){inCoda=true;requestAnimationFrame(function(){inCoda=false;aggiorna();});} },{passive:true});
+  window.addEventListener('resize',aggiorna);
+  window.addEventListener('load',aggiorna);
+  aggiorna();
+})();
+
+/* ------------------------------ azienda --------------------------- */
+/* I movimenti della pagina Azienda, ognuno si accende solo se trova il suo
+   elemento. Uno scorrimento solo per tutti, un fotogramma alla volta. */
+(function(){
+  var metodo=$('#metodo');
+  var conte=[].slice.call(document.querySelectorAll('.conta'));
+  var testata=$('.azienda-hero #heroVideo');
+  if(!metodo&&!conte.length&&!testata)return;
+  var fermo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var largo=window.matchMedia('(min-width:834px)');
+
+  /* --- il metodo: capitolo, video, avanzamento --- */
+  var capitoli=metodo?[].slice.call(metodo.querySelectorAll('.metodo-capitolo')):[];
+  var filmati=capitoli.map(function(c){return c.querySelector('video');});
+  var passi=metodo?[].slice.call(metodo.querySelectorAll('.metodo-avanzamento li')):[];
+  var barra=metodo?metodo.querySelector('.metodo-barra'):null;
+  var attivo=0, palcoInCampo=false;
+  /* Il filmato si carica solo quando serve: il suo capitolo, o quello prima. */
+  function carica(v){ if(v&&!v.getAttribute('src')&&v.getAttribute('data-src')){ v.src=v.getAttribute('data-src'); } }
+  function suona(v){ if(!v||fermo)return; carica(v); var q=v.play(); if(q&&q.catch)q.catch(function(){}); }
+  function ferma(v){ if(v&&!v.paused)v.pause(); }
+  function capitolo(n){
+    attivo=n;
+    capitoli.forEach(function(c,i){ c.classList.toggle('attivo',i===n); });
+    passi.forEach(function(p,i){ p.classList.toggle('attivo',i===n); p.classList.toggle('fatto',i<n); });
+    filmati.forEach(function(v,i){ if(i===n&&palcoInCampo) suona(v); else ferma(v); });
+    carica(filmati[n+1]);
+  }
+  function scorriMetodo(vh){
+    if(!metodo||!largo.matches)return;
+    var r=metodo.getBoundingClientRect();
+    palcoInCampo=r.bottom>0&&r.top<vh;
+    var p=clamp(-r.top/Math.max(1,r.height-vh),0,1);
+    if(barra)barra.style.transform='scaleX('+p.toFixed(4)+')';
+    var n=Math.min(capitoli.length-1,Math.floor(p*capitoli.length));
+    if(n!==attivo||palcoInCampo!==scorriMetodo.eraInCampo)capitolo(n);
+    scorriMetodo.eraInCampo=palcoInCampo;
+  }
+  /* Da telefono niente palco: ogni filmato parte quando e' in vista. */
+  if(filmati.length&&'IntersectionObserver' in window){
+    var vio=new IntersectionObserver(function(es){
+      if(largo.matches)return;
+      es.forEach(function(e){ if(e.isIntersecting)suona(e.target); else ferma(e.target); });
+    },{threshold:0.35});
+    filmati.forEach(function(v){vio.observe(v);});
+  }
+  largo.addEventListener&&largo.addEventListener('change',function(){
+    filmati.forEach(ferma);
+    if(largo.matches){ scorriMetodo.eraInCampo=null; aggiorna(); }
+    else capitoli.forEach(function(c){c.classList.add('attivo');});
+  });
+  if(metodo&&!largo.matches)capitoli.forEach(function(c){c.classList.add('attivo');});
+
+  /* --- i numeri che contano --- */
+  /* Il separatore delle migliaia segue la lingua della pagina: 7.000 in
+     italiano, 7,000 in inglese. Se si cambia lingua a conta finita, la cifra
+     si riscrive. */
+  function formato(n){
+    var s=String(Math.round(n)), sep=document.documentElement.lang==='en'?',':'.';
+    return s.replace(/\B(?=(\d{3})+(?!\d))/g,sep);
+  }
+  function scrivi(el,n){ el.textContent=formato(n); }
+  function conta(el){
+    var fine=parseFloat(el.getAttribute('data-valore'))||0;
+    if(fermo){ scrivi(el,fine); el.contata=true; return; }
+    var t0=null, durata=1800;
+    function passo(t){
+      if(t0===null)t0=t;
+      var k=clamp((t-t0)/durata,0,1), e=k===1?1:1-Math.pow(2,-10*k);
+      scrivi(el,fine*e);
+      if(k<1)requestAnimationFrame(passo); else el.contata=true;
+    }
+    scrivi(el,0); requestAnimationFrame(passo);
+  }
+  if(conte.length){
+    conte.forEach(function(el){ scrivi(el,parseFloat(el.getAttribute('data-valore'))||0); });
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ conta(e.target); cio.unobserve(e.target); } });
+    },{threshold:0.6});
+    conte.forEach(function(el){cio.observe(el);});
+    new MutationObserver(function(){
+      conte.forEach(function(el){ if(el.contata||fermo) scrivi(el,parseFloat(el.getAttribute('data-valore'))||0); });
+    }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  }
+
+  /* --- la testata riparte quando torna in vista --- */
+  /* Il browser ferma da se' i video muti che escono di campo, ma non sempre
+     li fa ripartire se a lanciarli e' stato lo script: tornando in cima si
+     trovava il tornio fermo. Lo scorrimento lo ferma e lo fa ripartire. */
+  function tieniTestata(vh){
+    if(!testata||!testata.getAttribute('src'))return;
+    var r=testata.getBoundingClientRect(), vista=r.bottom>0&&r.top<vh;
+    if(vista&&testata.paused){ var q=testata.play(); if(q&&q.catch)q.catch(function(){}); }
+    else if(!vista&&!testata.paused) testata.pause();
+  }
+
+  /* --- uno scorrimento per tutto --- */
+  function aggiorna(){
+    var vh=window.innerHeight;
+    scorriMetodo(vh);
+    tieniTestata(vh);
+  }
+  var inCoda=false;
+  window.addEventListener('scroll',function(){ if(!inCoda){inCoda=true;requestAnimationFrame(function(){inCoda=false;aggiorna();});} },{passive:true});
+  window.addEventListener('resize',aggiorna);
+  aggiorna();
+})();
+
 /* --------- nav che si inverte + sequenza pinnata della home ------- */
 (function(){
   var menu=$('.menu'); if(!menu)return;
