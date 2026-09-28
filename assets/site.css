@@ -907,9 +907,6 @@ main{position:relative}
 @media only screen and (min-width:834px){.azienda-hero .breadcrumb,.azienda-hero .scramble-label{margin-bottom:1.1111111111vw}}
 .azienda-hero .title{font-size:clamp(2.6rem,8.2666666667vw,8.2666666667vw)}
 @media only screen and (min-width:834px){.azienda-hero .title{font-size:clamp(5rem,4.4444444444vw,4.4444444444vw)}}
-:root:has(main.azienda){scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){:root:has(main.azienda){scroll-behavior:auto}}
-#sede{scroll-margin-top:6vw}
 
 /* Il metodo. Da telefono tre capitoli uno sotto l'altro, ognuno col suo
    filmato sopra. */
@@ -996,8 +993,6 @@ main{position:relative}
 @media only screen and (min-width:834px){.sede-testo{grid-column:1/span 11}}
 .sede-testo .split-title{margin-top:4.2666666667vw}
 @media only screen and (min-width:834px){.sede-testo .split-title{margin-top:1.1111111111vw}}
-.sede-testo p{font-size:clamp(1.3rem,3.7333333333vw,1.8rem);font-weight:300;letter-spacing:-.02em;line-height:1.5;color:var(--color-silver);margin-top:4.2666666667vw}
-@media only screen and (min-width:834px){.sede-testo p{font-size:clamp(1.6rem,1.25vw,2.2rem);margin-top:1.6666666667vw}}
 /* I recapiti non sono prosa: vanno in colonna, nel monospaziato delle
    etichette, cosi' si leggono come un indirizzo e non come una frase. */
 .sede-recapiti{color:var(--color-mid-grey);display:flex;flex-direction:column;font-family:var(--font-accent),monospace;font-size:1.2rem;font-style:normal;font-weight:400;letter-spacing:-.02em;line-height:1.9;margin-top:6.4vw;text-transform:uppercase}

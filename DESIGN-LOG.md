@@ -1632,17 +1632,27 @@ loro capitolo e' vicino.
 
 1. **Testata a tutto schermo** — la stessa della home, con i suoi
    identificativi: lo script sceglie il video per forma di schermo, lo fa
-   partire, scurisce la testata in uscita e fa entrare titolo, riga in basso
-   e scheda. Il titolo e' la frase che prima stava in testa alla
-   dichiarazione: «Il nostro lavoro comincia dove finisce la lavorazione
-   meccanica». La scheda in basso a destra porta alla sede, con lo scontorno
-   del capannone su grigio chiaro come il prodotto nella scheda di ON.
+   partire, scurisce la testata in uscita e fa entrare titolo e scheda. Il
+   titolo e' la frase che prima stava in testa alla dichiarazione: «Il
+   nostro lavoro comincia dove finisce la lavorazione meccanica». Nessuna
+   riga in basso a sinistra: c'era, l'elenco dei prodotti e dei reparti, ed
+   e' stata tolta su richiesta — il titolo basta.
+
+   La scheda in basso a destra porta alle macchine, con una centrifuga
+   intera su grigio chiaro: e' la logica della scheda di ON, un oggetto solo,
+   intero, con aria attorno. Il primo tentativo portava alla sede con uno
+   scontorno del capannone ritagliato in quadrato, ed era sbagliato in
+   partenza: un edificio largo tre volte quanto e' alto, chiuso in un
+   quadrato di cento pixel, diventa un pezzo di muro. Il quadrato di
+   `cop-centrifughe.jpg` e' ricavato senza tagliare la macchina: il fondo
+   e' allargato col suo stesso grigio (220, 220, 220).
 2. **La fascia rossa** — la dichiarazione, ora corta come quella della home, si
    accende parola dopo parola mentre attraversa la finestra.
 3. **Il metodo** — il palco agganciato: tre capitoli, tre filmati.
 4. **I numeri** — <2%, 7.000 kg/h, 20 anni, 8 serie. Contano da zero quando
    entrano in vista.
-5. **La sede** — invariata: testo, mappa, capannone.
+5. **La sede** — titolo, recapiti, mappa, capannone. Il paragrafo che la
+   descriveva e' stato tolto: ripeteva quello che il metodo ha appena detto.
 
 La fascia di truciolo (`sfrido-asciutto.webp`), che per un giro era stata
 spostata fra il metodo e i numeri, e' stata tolta su richiesta del
