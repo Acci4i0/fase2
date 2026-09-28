@@ -907,6 +907,9 @@ main{position:relative}
 @media only screen and (min-width:834px){.azienda-hero .breadcrumb,.azienda-hero .scramble-label{margin-bottom:1.1111111111vw}}
 .azienda-hero .title{font-size:clamp(2.6rem,8.2666666667vw,8.2666666667vw)}
 @media only screen and (min-width:834px){.azienda-hero .title{font-size:clamp(5rem,4.4444444444vw,4.4444444444vw)}}
+:root:has(main.azienda){scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){:root:has(main.azienda){scroll-behavior:auto}}
+#sede{scroll-margin-top:6vw}
 
 /* Il metodo. Da telefono tre capitoli uno sotto l'altro, ognuno col suo
    filmato sopra. */
@@ -969,7 +972,10 @@ main{position:relative}
 .numeri-titolo{font-size:clamp(2rem,7.4666666667vw,7.4666666667vw);font-weight:300;letter-spacing:-.04em;line-height:1.05;margin-top:3.2vw}
 @media only screen and (min-width:834px){.numeri-titolo{font-size:clamp(3.6rem,3.3333333333vw,3.3333333333vw);line-height:1.167;margin-top:1.1111111111vw}}
 .numeri-lista{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr 1fr;margin-top:9vw;row-gap:9vw}
-@media only screen and (min-width:834px){.numeri-lista{grid-template-columns:repeat(4,1fr);margin-top:3.3333333333vw;row-gap:0}}
+/* Tre numeri: su finestra larga tre colonne; da telefono due, e il terzo
+   prende tutta la riga invece di restare a meta' con un vuoto accanto. */
+.numero-voce:last-child:nth-child(odd){grid-column:1/-1}
+@media only screen and (min-width:834px){.numeri-lista{grid-template-columns:repeat(3,1fr);margin-top:3.3333333333vw;row-gap:0}.numero-voce:last-child:nth-child(odd){grid-column:auto}}
 .numero-voce{border-top:1px solid var(--color-charcoal);padding-top:4.2666666667vw}
 @media only screen and (min-width:834px){.numero-voce{padding-top:1.6666666667vw}}
 .numero-cifra{align-items:flex-start;color:var(--color-off-white);display:flex;font-size:13vw;font-variant-numeric:tabular-nums;font-weight:250;letter-spacing:-.06em;line-height:.9;white-space:nowrap}

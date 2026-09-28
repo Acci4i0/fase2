@@ -1638,19 +1638,22 @@ loro capitolo e' vicino.
    riga in basso a sinistra: c'era, l'elenco dei prodotti e dei reparti, ed
    e' stata tolta su richiesta — il titolo basta.
 
-   La scheda in basso a destra porta alle macchine, con una centrifuga
-   intera su grigio chiaro: e' la logica della scheda di ON, un oggetto solo,
-   intero, con aria attorno. Il primo tentativo portava alla sede con uno
-   scontorno del capannone ritagliato in quadrato, ed era sbagliato in
-   partenza: un edificio largo tre volte quanto e' alto, chiuso in un
-   quadrato di cento pixel, diventa un pezzo di muro. Il quadrato di
-   `cop-centrifughe.jpg` e' ricavato senza tagliare la macchina: il fondo
-   e' allargato col suo stesso grigio (220, 220, 220).
+   La scheda in basso a destra porta alla sede. La prima fotografia era lo
+   scontorno del capannone ritagliato in quadrato, e non poteva funzionare:
+   un edificio largo tre volte quanto e' alto, tagliato a quadrato, diventa
+   un pezzo di muro. Per un giro la scheda e' passata a una centrifuga su
+   grigio — bocciato: la sezione e' la sede e resta la sede, cambia solo
+   l'immagine. Ora c'e' `foto_fase/immagini/sede-fase.jpg`, il capannone
+   intero con l'insegna, rimisurato sui pixel (x 44–1670, y 218–782) e messo
+   nel quadrato con il suo stesso fondo chiaro sopra e sotto: sta tutto
+   dentro, con aria attorno, come il prodotto nella scheda di ON.
 2. **La fascia rossa** — la dichiarazione, ora corta come quella della home, si
    accende parola dopo parola mentre attraversa la finestra.
 3. **Il metodo** — il palco agganciato: tre capitoli, tre filmati.
-4. **I numeri** — <2%, 7.000 kg/h, 20 anni, 8 serie. Contano da zero quando
-   entrano in vista.
+4. **I numeri** — <2%, 7.000 kg/h, 20 anni. Contano da zero quando entrano
+   in vista. C'era un quarto numero, le 8 serie a catalogo, tolto su
+   richiesta: la griglia e' passata da quattro colonne a tre, e da telefono
+   il terzo numero prende tutta la riga.
 5. **La sede** — titolo, recapiti, mappa, capannone. Il paragrafo che la
    descriveva e' stato tolto: ripeteva quello che il metodo ha appena detto.
 
