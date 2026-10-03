@@ -1650,12 +1650,15 @@ loro capitolo e' vicino.
 2. **La fascia rossa** — la dichiarazione, ora corta come quella della home, si
    accende parola dopo parola mentre attraversa la finestra.
 3. **Il metodo** — il palco agganciato: tre capitoli, tre filmati.
-4. **I numeri** — <2%, 7.000 kg/h, 20 anni. Contano da zero quando entrano
+4. **I numeri** — <2%, +7.000 kg/h, 20 anni (controllati sulle fonti di Fase:
+   vedi *I numeri, controllati*). Contano da zero quando entrano
    in vista. C'era un quarto numero, le 8 serie a catalogo, tolto su
    richiesta: la griglia e' passata da quattro colonne a tre, e da telefono
    il terzo numero prende tutta la riga.
-5. **La sede** — titolo, recapiti, mappa, capannone. Il paragrafo che la
+5. **La sede** — titolo, recapiti, mappa. Il paragrafo che la
    descriveva e' stato tolto: ripeteva quello che il metodo ha appena detto.
+   Poi e' stato tolto anche il capannone in fondo (vedi *Azienda: via il
+   capannone in fondo*).
 
 La fascia di truciolo (`sfrido-asciutto.webp`), che per un giro era stata
 spostata fra il metodo e i numeri, e' stata tolta su richiesta del
@@ -1710,6 +1713,128 @@ senza carosello con la cifra grande, la fascia `key-grid` dei numeri, il
 margine della dichiarazione lunga — e le loro stringhe nel dizionario. Resta
 la correzione vera: in `.split-body` la discesa fino all'altezza della
 fotografia vale solo per `.split-block:has(.split-media)`.
+
+## I numeri, controllati
+
+I tre numeri di Azienda sono stati rifatti sulle fonti di Fase: il sito
+attuale e le sue tabelle.
+
+- **< 2 %** di umidita' residua: e' la frase di Fase, sulle pagine Centrifughe
+  e serie FD del sito attuale — «fino ad ottenere meno del 2% di umidita'
+  residua». Resta.
+- **20 anni**: «Da vent'anni punto di riferimento per la centrifugazione»,
+  dalla pagina Chi siamo; la societa' risulta costituita nel 2004. Resta.
+- **7.000 kg/h come portata massima era sbagliato.** La tabella delle rese
+  della FD — la stessa della scheda «Rendimenti» sul sito di Fase — arriva a
+  7.500 kg/h, FD 1000 su ottone; 7.000 e' la ghisa. Il testo di Fase dice
+  «a piu' di 7000 kg/h». Il committente ha scelto di scrivere **+7.000 kg/h**,
+  come fa Fase, invece del massimo della tabella, che vale per un materiale
+  solo: il numero di Azienda (col «+» nello stesso `numero-pre` del «<» di
+  2%), la cifra della home, le righe della FD, di Centrifughe, della LM AG e
+  della FCV. Il titolo della scheda in home dice «Oltre 7.000 kg/h.», perche'
+  «fino a +7.000» non si legge. La tabella resta con i suoi dati, 7500
+  compreso, e la frase della FD «le maggiori superano i 7.000 kg/h» resta.
+
+## Azienda: via il capannone in fondo
+
+Su richiesta del committente, lo scontorno dell'edificio (`sede-fase.webp`)
+che chiudeva la sezione della sede non c'e' piu'. La pagina finisce sulla
+mappa; lo spazio fino al pie' di pagina e' quello di `.page-main`: 92 px a
+1440 e 39 a 375, gli stessi di Contatti. Via anche le regole `.sede-foto` e il
+testo alternativo nel dizionario. Il file resta nel repository, senza pagina,
+come la fascia di truciolo.
+
+## Le correzioni del committente, 2 ottobre 2026
+
+Un documento Word del committente, pagina per pagina. I testi che dava sono
+entrati come li ha scritti; le poche mani messe sono elencate qui sotto.
+
+**«Sfrido» diventa «truciolo metallico», ovunque.** Sfrido si confonde con lo
+scarto di lamiera. Dove la frase nomina gia' il truciolo, o in un titolo,
+basta «truciolo» («Truciolo asciutto.», «Ogni reparto ha il suo truciolo»);
+altrove «truciolo metallico». Cambiano anche titoli, descrizioni delle
+pagine e la colonna «Sezione entrata truciolo» della TR1. In inglese
+*scrap* aveva lo stesso difetto e diventa *metal chips*. Nel dizionario non
+resta nessuna chiave con «sfrido»: anche le quattro che nessuna pagina usava
+piu' sono state tolte.
+
+**Il pie' di pagina rosso**, su tutte le pagine: «Impianti su misura delle
+vostre esigenze.» al posto di «Trattiamo un campione del vostro sfrido prima
+dell'offerta.» E' la frase che si accende, il meccanismo non cambia.
+
+**Azienda.** La scheda in testata non porta piu' il capannone: porta la mano
+che strizza il truciolo, la stessa fotografia del sito vecchio che era stata
+tolta dalla fascia (vedi *La fascia di Azienda*). Li' il difetto era la
+scala — un pugno di 540 px stirato su 1920 — e nel quadrato da 360 px della
+scheda non c'e' piu': ritaglio quadrato dal pugno al cumulo, fondo nero al
+posto del bianco da studio (`mano-scheda.jpg`). La scheda rimanda al metodo e
+ne riprende il primo capitolo, «Dal truciolo, un valore». I tre capitoli
+hanno i testi nuovi, e il terzo il titolo «Servizio post vendita»; la home,
+che nel suo «Il metodo» cita gli stessi tre capitoli, e' stata allineata,
+anche perche' la teleassistenza ora e' «presente su tutti gli impianti» e non
+piu' solo su quelli a ciclo continuo.
+
+**Le schede.**
+
+- **FD**: aggiunta la **FD 350 SL** nelle due tabelle, con i dati della FD
+  350 (nel documento si chiama «FC350 SL»: qui la serie e' FD). Non ha una
+  fotografia sua e la riga resta senza `data-foto`, per non mostrare la 350
+  sotto un altro nome. Descrizione, dati in evidenza (Corpo, Paniere,
+  Mantello, Basamento), caratteristiche e accessori nuovi. «Inseriti
+  antiusura» e' stato letto come **inserti** antiusura.
+- **Centrifor 270, 480, 660**: descrizione, dati e caratteristiche nuovi;
+  «Come sta in linea» diventa «Accessori».
+- **FCV**: via i **mod. 660 e 800**, righe e fotografie — e' il punto aperto
+  di *La scheda FCV rifatta*, ora chiuso: le due taglie restano solo sulla LM
+  AG. La copertina era il quadrato preso dentro il 660, quindi e' rifatta sul
+  **mod. 480** (`lmc-copertina-480.jpg`, stesso bianco di LM, stessa misura);
+  cambia sulle tre schede che la richiamano.
+- **TR-Dual**: «Motorizzazione elettrica o idraulica». La colonna della
+  tabella segue la frase: «Movimentazione: Meccanica» diventa
+  «Motorizzazione: Elettrica», altrimenti tabella e testo si smentivano.
+- **Ciclo continuo**: descrizione e quattro dati nuovi (Gestione,
+  Performance, Produttivita', Assistenza). L'elenco «Caratteristiche» e'
+  stato tolto: ripeteva i dati vecchi — gestione «elettrica e analogica»,
+  teleassistenza «per gli urgenti» — che i nuovi smentiscono. Senza elenchi
+  la griglia dei dati finiva a filo della fascia grigia: la regola
+  `.detail-section:not(.lists):has(+.expertises-overview)` le lascia sotto lo
+  stesso vuoto di un elenco.
+- **Paniere estraibile**: «con fondo chiuso» al posto di «con bacino», e una
+  terza caratteristica.
+- **KOMBI**: la tabella resta, coi modelli scritti **KOMBI 15-40** come
+  chiesto; descrizione «truciolo corto e lungo», «Basamento pallettizzato».
+  La frase «Completo di setaccio…» era senza verbo: «E' completo di setaccio…».
+- **Accessori**: testi nuovi per nastri ed elevatore. «Permettono» riferito
+  all'elevatore e' diventato «Permette», come il resto della frase.
+- **Applicazioni**: testi nuovi su tre schede su quattro; la terza si chiama
+  «Triturazione di trucioli lunghi e matasse». «Rendono la logica meno
+  efficiente» e' stato letto come **logistica**; «Tutte linee… predisposta»
+  come «Tutte le linee… predisposte»; a «sono la soluzione perfetta» mancava
+  il soggetto, e' «le linee». **«Asciugatura di pezzi minuti» non compare
+  nel documento ed e' rimasta com'era.**
+
+La FD dice ora «Le portate possono arrivare a 7.000 kg/h», col testo del
+committente: la frase «le maggiori superano i 7.000 kg/h» citata in *I
+numeri, controllati* non c'e' piu'. Il «+7.000» dei numeri di Azienda e della
+home resta.
+
+## REA e capitale sociale: nelle note legali, non nel pie' di pagina
+
+Il pie' di pagina porta la partita IVA e basta, ed e' giusto cosi'. La legge
+vuole la partita IVA **nella home page** (art. 35 D.P.R. 633/72), e il pie' di
+pagina la porta su tutte le pagine. Registro imprese, REA e capitale sociale
+il sito li deve dare (art. 2250 c.c., ultimo comma; art. 7 D.Lgs. 70/2003), ma
+la norma non dice dove: stanno nel blocco legale di `privacy.html` e
+`cookie-policy.html`, raggiungibili da ogni pagina. Una riga in piu' nel
+pie' di pagina e' stata provata e tolta, su indicazione del committente di
+non metterla se non obbligatoria.
+
+Se un giorno dovesse tornare, le misure ci sono: «REA VI-304063 – Capitale
+sociale € 50.000,00 i.v.» come riga a se' fra la partita IVA e la direzione e
+coordinamento sta su una riga da 320 a 1920 px, e' piu' corta della riga della
+partita IVA — 87 px a 834, 107 a 1440; in inglese 54 e 67 — quindi il
+marchio LM resta a filo. Solo l'inglese a 320 px va a capo, e vuole uno spazio
+indivisibile fra «paid» e «up».
 
 ## Tipografia
 

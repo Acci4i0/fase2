@@ -783,6 +783,12 @@ main{position:relative}
    modello, e si leggeva «KOMBI-» sopra e «40» sotto. */
 .key-value span{display:block}
 @media only screen and (min-width:834px){.key-value{font-size:clamp(1.6rem,1.3888888889vw,1.3888888889vw);line-height:1.2;margin-top:.5555555556vw}}
+/* Una scheda senza elenchi — oggi i soli impianti a ciclo continuo — finisce
+   sulla griglia dei dati, che sotto non ha margine: la fascia grigia delle
+   altre serie le arrivava addosso. Le si lascia lo stesso vuoto che resta
+   sotto l'ultima voce di un elenco, testo compreso. */
+.detail-section:not(.lists):has(+.expertises-overview){padding-bottom:6.4vw}
+@media only screen and (min-width:834px){.detail-section:not(.lists):has(+.expertises-overview){padding-bottom:1.6666666667vw}}
 
 .detail-cols{column-gap:var(--grid-gutter);display:grid;grid-column:1/-1;grid-template-columns:1fr;row-gap:9vw}
 /* Sulla pagina accessori le colonne seguono direttamente il titolo di
@@ -986,10 +992,10 @@ main{position:relative}
 @media only screen and (min-width:834px){.numero-etichetta{font-size:clamp(1.4rem,1.1111111111vw,1.8rem);margin-top:1.1111111111vw}}
 
 /* ============================== LA SEDE ======================== */
-/* Chiude la pagina come la apre: una fotografia senza cornice che nasce dal
-   nero. A sinistra il testo e i recapiti, a destra la mappa — la stessa che
-   sulla home sta dentro una scheda, qui grande quanto mezza colonna perche'
-   e' lei a dare la notizia. Sotto, il capannone da un bordo all'altro. */
+/* A sinistra il testo e i recapiti, a destra la mappa — la stessa che sulla
+   home sta dentro una scheda, qui grande quanto mezza colonna perche' e' lei
+   a dare la notizia. La pagina finisce sulla mappa: lo spazio fino al pie'
+   di pagina e' quello di .page-main, come sulle altre pagine. */
 .sede{padding:14vw 0 0}
 @media only screen and (min-width:834px){.sede{padding:5.5vw 0 0}}
 .sede>.grid-container{padding-top:6.4vw;position:relative}
@@ -1012,9 +1018,6 @@ main{position:relative}
    misura e si appoggia al margine destro della pagina. */
 .mappa-italia{height:auto;margin:0 auto;max-width:52vw;width:100%}
 @media only screen and (min-width:834px){.mappa-italia{margin:0 0 0 auto;max-width:19vw}}
-.sede-foto{margin-top:12vw}
-@media only screen and (min-width:834px){.sede-foto{margin-top:4vw}}
-.sede-foto img{display:block;height:auto;width:100%}
 
 .cta-band{background-color:var(--color-yellow);color:var(--color-off-white);margin-top:14vw;padding:14vw 0}
 @media only screen and (min-width:834px){.cta-band{margin-top:7vw;padding:5.5vw 0}}
