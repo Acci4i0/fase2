@@ -1766,15 +1766,20 @@ dell'offerta.» E' la frase che si accende, il meccanismo non cambia.
 che strizza il truciolo, la stessa fotografia del sito vecchio che era stata
 tolta dalla fascia (vedi *La fascia di Azienda*). Li' il difetto era la
 scala — un pugno di 540 px stirato su 1920 — e nel quadrato da 360 px della
-scheda non c'e' piu'. Il primo ritaglio, dal pugno al cumulo intero, metteva
-la mano piccola nell'angolo in alto a sinistra, tagliata su due lati: il
-committente l'ha giudicato messo malissimo, e a 120 px aveva ragione. Il
-ritaglio giusto e' piu' stretto (840 px del file, da x 100): il pugno grande
-in alto, il filo d'olio al centro del quadrato, la cima del cumulo in basso.
-Il taglio sopra le nocche c'e' gia' nello scatto originale e non si evita;
-con il pugno a tutta larghezza si legge come un'inquadratura stretta e non
-come un errore. Fondo nero al posto del bianco da studio, 480 px per gli
-schermi densi (`mano-truciolo-scheda.jpg`). La scheda rimanda al metodo e
+scheda non c'e' piu'. Due ritagli prima di questo sono stati bocciati: il
+primo metteva la mano piccola nell'angolo, il secondo la ingrandiva ma
+tagliava le nocche. Il taglio sopra il pugno non era una scelta: stava nel
+file `mano-truciolo.webp`, che e' l'originale gia' privato delle prime 192
+righe. **L'originale intero** (`spremitura2.jpg`, 2200x1450, dal sito di
+Fase) ha il pugno completo e l'aria sopra. Lo scontorno viene dal webp, che
+combacia con l'originale spostato di 192 righe (scarto medio 1,9 su 255);
+per le righe mancanti l'alfa e' ricavato dalla distanza dal fondo grigio di
+ogni riga, con le soglie tarate sulle 48 righe che i due file hanno in
+comune, e un raccordo di 12 righe sul confine. Quadrato da 1360 px dal bordo
+sinistro, dove entrano il braccio e il cumulo: pugno intero con il 6% di aria
+sopra, filo d'olio, cumulo fino al fondo del riquadro. Fondo nero al posto
+del bianco da studio, 480 px per gli schermi densi
+(`mano-truciolo-intera.jpg`). La scheda rimanda al metodo e
 ne riprende il primo capitolo, «Dal truciolo, un valore». I tre capitoli
 hanno i testi nuovi, e il terzo il titolo «Servizio post vendita»; la home,
 che nel suo «Il metodo» cita gli stessi tre capitoli, e' stata allineata,
